@@ -98,3 +98,16 @@ main {
     position: absolute;
     left: 33%;
 }
+
+footer {
+    background-color: #B38243;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+i {
+    color: #351F1D;
+    font-size: 25px;
+}

@@ -7,9 +7,6 @@
     }
     else {
         $("#scrolling_menu_produits").css("display", "none");
-        document.getElementById("scrolling_menu_produits").addEventListener("mouseleave", function () {
-            document.getElementById("scrolling_menu_produits").style.display = "none";
-        })
         nbClick = 0;
     }
 });
