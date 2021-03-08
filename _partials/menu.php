@@ -1,7 +1,7 @@
 <header>
-    <img id="coverPicture" src="../mockup/fond.png" alt="Les pieds sur terre">
+    <img id="coverPicture" src="../doc/mockup/fond.png" alt="Les pieds sur terre">
     <div id="menu" class="flexRow">
-        <img id="lpstLogo" src="../mockup/lpst.png" alt="Logo LPST">
+        <img id="lpstLogo" src="../doc/mockup/lpst.png" alt="Logo LPST">
         <a id="commerce" class="containedMenu" href="#"> Notre magasin</a>
         <div class="separatorVertical"></div>
         <a id="products" class="containedMenu" href="#"> Nos produits</a>
