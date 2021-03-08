@@ -107,7 +107,15 @@ footer {
     padding: 20px;
 }
 
-i {
+.network_i {
     color: #351F1D;
     font-size: 25px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.network_i:hover {
+    background-color: #351F1D;
+    color: white;
 }
