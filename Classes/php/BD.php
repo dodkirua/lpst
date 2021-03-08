@@ -1,18 +1,23 @@
 <?php
 
 class DB{
-    private string $host = 'localhost';
-    private string $db = "lspt";
-    private string $user = 'dev';
-    private string $pass = 'dev';
+    private string $host;
+    private string $db;
+    private string $user;
+    private string $pass;
 
     private static  ?PDO $dbInstance = null;
 
     /**
      * DbStatic constructor.
      */
-    public function __construct()
-    {
+    public function __construct(){
+        if (file_exists("conf.local.php")){
+            require_once "conf.local.php";
+        }
+        else {
+            require_once "conf.local.php";
+        }
         try {
             self::$dbInstance = new PDO("mysql:host=$this->host;dbname=$this->db;charset=utf8", $this->user, $this->pass);
             self::$dbInstance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
