@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #A9C500;
+}
+
+#coverPicture {
+    width: 100%;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#menu {
+    background-color: #351F1D;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+#lpstLogo {
+    height: 100px;
+    position: absolute;
+    left: 25px;
+}
+
+.containedMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    font-size: 25px;
+    width: 10%;
+    height: 100px;
+}
+
+.containedMenu:hover {
+    background-color: #A9C500;
+    height: 100px;
+}
+
+.separatorVertical {
+    border-right: 2px solid #595554;
+    height: 80px;
+    margin: 0 5px;
+}
+
+main {
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    height: 1000px;
+}
+
+.scrolling_Menu {
+    background-color: #B38243;
+    width: 13%;
+    padding: 10px;
+    color: white;
+}
+
+.contained_scrolling_menu {
+    color: white;
+    width: 100%;
+    padding: 10px;
+}
+
+.contained_scrolling_menu:hover {
+    background-color: #B36728;
+}
+
+#scrolling_menu_produits {
+    display: none;
+    position: absolute;
+    left: 33%;
+}
