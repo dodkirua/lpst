@@ -1,5 +1,5 @@
 <?php
-$title = "LPST acceuil";
+$title = "LPST accueil";
 require_once "Classes/php/BD.php";
 include "../_partials/header.php";
 include "../_partials/menu.php";
