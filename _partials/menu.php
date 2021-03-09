@@ -17,11 +17,9 @@
         </div>
 
         <div class="separatorVertical"></div>
-        <a id="local" class="containedMenu" href="#"> Les terroirs</a>
+        <a id="local" class="containedMenu" href="#"> Nos partenaires locaux</a>
         <div class="separatorVertical"></div>
-        <a id="account" class="containedMenu" href="#"> Mon compte</a>
-        <div class="separatorVertical"></div>
-        <a id="shop" class="containedMenu" href="#"> Panier</a>
+        <a id="account" class="containedMenu" href="#"> Epicerie en ligne</a>
     </div>
 </header>
 
