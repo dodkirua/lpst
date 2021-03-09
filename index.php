@@ -1,16 +1,15 @@
 <?php
 $title = "LPST accueil";
-require_once "Classes/php/BD.php";
-include "../_partials/header.php";
-include "../_partials/menu.php";
 
-$bd = new DB;
+include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
 ?>
 
-<main>
+    <main>
 
-
-</main>
+    </main>
 
 <?php
-include "../_partials/footer.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
+
