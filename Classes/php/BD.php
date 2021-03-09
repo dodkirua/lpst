@@ -1,10 +1,10 @@
 <?php
 
 class DB{
-    private string $host;
+    /*private string $host;
     private string $db;
     private string $user;
-    private string $pass;
+    private string $pass;*/
 
     private static  ?PDO $dbInstance = null;
 
@@ -18,8 +18,13 @@ class DB{
         else {
             require_once "conf.local.php";
         }
+        /*$this->host = $host;
+        $this->db = $bd;
+        $this->user = $user;
+        $this->pass = $pass;*/
+
         try {
-            self::$dbInstance = new PDO("mysql:host=$this->host;dbname=$this->db;charset=utf8", $this->user, $this->pass);
+            self::$dbInstance = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
             self::$dbInstance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             self::$dbInstance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         } catch (PDOException $exception) {
