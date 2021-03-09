@@ -18,6 +18,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             <a class="menuLink" href="#">Maison</a>
         </div>
 
+        <h2> Tous les produits</h2>
         <div id="allArticle">
 
         </div>

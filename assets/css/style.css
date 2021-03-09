@@ -35,7 +35,7 @@ a {
 }
 
 #menu {
-    background-color: #351F1D;
+    background-color: #8f5028;
     height: 120px;
     align-items: center;
     justify-content: center;
@@ -67,7 +67,7 @@ a {
 }
 
 .separatorVertical {
-    border-right: 2px solid #595554;
+    border-right: 2px solid #351F1D;
     height: 80px;
     margin: 0 5px;
 }
@@ -162,7 +162,7 @@ h1 {
 }
 
 .articleImage {
-    width: 90%;
+    width: 75%;
     margin: auto;
 }
 
@@ -216,3 +216,16 @@ h1 {
     font-size: 15px;
     color: darkgrey;
 }
+
+.number {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 40px;
+    color: #595554;
+    margin: 20px 0;
+}
+

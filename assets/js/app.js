@@ -16,17 +16,18 @@ let allArticle = [
 for (let i = 0; i < allArticle.length; i++) {
     $("#allArticle").append(
         "<div class='flexColumn containerArticle'>" +
-        "<img class='articleImage' src='"+ allArticle[i].imageSrc +"' alt='article'>" +
-        "<span class='articleName'>" + allArticle[i].name + "</span>" +
-        "<p class='articleDescription'>" + allArticle[i].description + "</p>" +
-
-        "<button class='addPrice'><i class=\"fas fa-plus\"></i></button>" +
-        "<input class='articleNumber' type='number'>" +
-        "<button class='minusPrice'><i class=\"fas fa-minus\"></i></button>" +
-        "<div class='flexRow'>" +
-        "<span class='articlePrice'>" + allArticle[i].price + " € <span class='articleUnit'> / " + allArticle[i].unit + " </span></span>" +
-        "<button class='addCart'><i class=\"fas fa-plus\"></i></button>" +
-        "</div>" +
+            "<img class='articleImage' src='"+ allArticle[i].imageSrc +"' alt='article'>" +
+            "<span class='articleName'>" + allArticle[i].name + "</span>" +
+            "<p class='articleDescription'>" + allArticle[i].description + "</p>" +
+            "<div class='number'>" +
+                "<button class='minusPrice'><i class=\"fas fa-minus\"></i></button>" +
+                "<input value='1' class='articleNumber' type='number'>" +
+                "<button class='addPrice'><i class=\"fas fa-plus\"></i></button>" +
+            "</div>" +
+            "<div class='flexRow'>" +
+                "<span class='articlePrice'>" + allArticle[i].price + " € <span class='articleUnit'> / " + allArticle[i].unit + " </span></span>" +
+                "<button class='addCart'><i class=\"fas fa-plus\"></i></button>" +
+            "</div>" +
         "</div>"
     );
 }
