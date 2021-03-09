@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ html {
 
 body {
     width: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #A9C500;
 }
 
@@ -128,104 +128,36 @@ footer {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 35px;
     color: #3b72bd;
     text-align: center;
     margin: 30px 0;
-}
-
-.menuLink {
-    background-color: #A9C500;
-    border-radius: 15px 15px;
-    box-shadow: 2px 2px 2px grey;
-    color: white;
-    padding: 5px;
-    margin: 10px 15px;
-    font-size: 18px;
-}
-
-.menuLink:hover {
-    background-color: #7EC405;
-}
-
-.containerArticle {
-    margin: 20px ;
-    background-color: #F5F5F5;
-    box-shadow: 5px 5px 5px grey;
-    width: 15%;
-    border-radius: 10px 10px;
-    padding: 10px;
-}
-
-.containerArticle:hover {
-    box-shadow: 5px 5px 5px lightgray;
-}
-
-.articleImage {
-    width: 75%;
-    margin: auto;
-}
-
-.articleName, .articleDescription {
-    margin: 10px 0;
-}
-
-.articleName {
-    text-align: center;
-    color: #326C2B;
-    font-size: 20px;
     font-weight: bolder;
 }
 
-.addCart {
-    background-color: #3b72bd;
-    color: white;
-    width: 20%;
-    border-radius: 5px 5px;
-    border: none;
-    padding: 8px;
-    margin-left: 25%;
-    box-shadow: 2px 2px 10px grey;
+.blueBorder {
+    border: 2px solid #69A7D4;
 }
 
-.addCart:hover {
-    background-color: #0556B0;
+.products {
+    width: 17%;
+    margin: 10px 30px;
 }
 
-.articleDescription, .articlePrice {
-    color: #595554;
+.productsImage, .blueBorder {
+    width: 100%;
 }
 
-.articlePrice {
-    font-size: 20px;
+.categoryName {
+    color: #3b72bd;
+    text-align: center;
 }
 
-.minusPrice, .addPrice {
-    background-color: #351F1D;
-    color: white;
-    border-radius: 50%;
-    width: 10%;
-    margin: 5px;
-}
-
-.articleNumber {
-    width: 20%;
-}
-
-.articleUnit {
-    font-size: 15px;
-    color: darkgrey;
-}
-
-.number {
-    margin: 10px;
+.allProducts {
+    margin: auto;
+    width: 80%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
-
-h2 {
-    font-size: 40px;
-    color: #595554;
-    margin: 20px 0;
-}
-
