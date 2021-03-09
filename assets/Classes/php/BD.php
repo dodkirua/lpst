@@ -16,7 +16,10 @@ class DB{
         }
 
         /**
-         * @var
+         * @var String $host
+         * @var String $db
+         * @var String $user
+         * @var String $pass
          */
         try {
             self::$dbInstance = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
