@@ -101,6 +101,7 @@ main {
 
 footer {
     background-color: #B38243;
+    box-shadow: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,10 +1,7 @@
 <?php
-$title = "LPST acceuil";
-require_once "Classes/php/BD.php";
+$title = "LPST accueil";
 include "../_partials/header.php";
 include "../_partials/menu.php";
-
-$bd = new DB;
 ?>
 
 <main>
