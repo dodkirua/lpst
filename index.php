@@ -1,10 +1,9 @@
 <?php
-$title = "LPST acceuil";
-require_once "Classes/php/BD.php";
-include "../_partials/header.php";
-include "../_partials/menu.php";
+$title = "LPST accueil";
 
-$bd = new DB;
+include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
 ?>
 
 <main>
@@ -12,4 +11,4 @@ $bd = new DB;
 </main>
 
 <?php
-include "../_partials/footer.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
