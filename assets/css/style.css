@@ -85,7 +85,7 @@ main {
     width: 13%;
     padding: 10px;
     color: white;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px #351F1D;
 }
 
 .contained_scrolling_menu {
@@ -101,7 +101,7 @@ main {
 #scrolling_menu_produits {
     display: none;
     position: absolute;
-    top: 61.5%;
+    top: 510px;
     left: 33%;
 }
 
@@ -131,4 +131,52 @@ h1 {
     color: #3b72bd;
     text-align: center;
     margin: 30px 0;
+}
+
+.menuLink {
+    background-color: #A9C500;
+    border-radius: 15px 15px;
+    box-shadow: 2px 2px 2px grey;
+    color: white;
+    padding: 5px;
+    margin: 10px 15px;
+    font-size: 18px;
+}
+
+.menuLink:hover {
+    background-color: #7EC405;
+}
+
+.containerArticle {
+    margin: 20px ;
+    background-color: #F5F5F5;
+    box-shadow: 5px 5px 5px grey;
+    width: 15%;
+    border-radius: 10px 10px;
+    padding: 10px;
+}
+
+.articleName, .articleDescription {
+    margin: 10px 0;
+}
+
+.articleName {
+    text-align: center;
+    color: #7EC405;
+    font-size: 20px;
+}
+
+.addCart {
+    background-color: #3b72bd;
+    color: white;
+    width: 20%;
+    border-radius: 5px 5px;
+    border: none;
+    padding: 8px;
+    margin: 10px 70%;
+    box-shadow: 2px 2px 10px grey;
+}
+
+.addCart:hover {
+
 }
