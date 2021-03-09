@@ -79,52 +79,12 @@ main {
     padding: 15px;
 }
 
-.scrolling_Menu {
-    background-color: #B38243;
-    border-radius: 10px 10px;
-    width: 13%;
-    padding: 10px;
-    color: white;
-    box-shadow: 5px 5px 5px #351F1D;
-}
-
-.contained_scrolling_menu {
-    color: white;
-    width: 100%;
-    padding: 10px;
-}
-
-.contained_scrolling_menu:hover {
-    background-color: #B36728;
-}
-
-#scrolling_menu_produits {
-    display: none;
-    position: absolute;
-    <!--top: 510px -->;
-    top: 57%;
-    left: 33%;
-}
-
 footer {
     background-color: #B38243;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-}
-
-.network_i {
-    color: #351F1D;
-    font-size: 25px;
-    border-radius: 50%;
-    padding: 10px;
-    margin: 0 10px;
-}
-
-.network_i:hover {
-    background-color: #351F1D;
-    color: white;
 }
 
 h1 {
