@@ -8,4 +8,7 @@ class UserManager{
         $this->db = DB::getInstance();
     }
 
+
+
+
 }
