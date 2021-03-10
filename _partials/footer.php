@@ -1,7 +1,7 @@
 <footer class="flexColumn">
     <div>
-        <a class="network" href="#"><i class="network_i fab fa-facebook"></i></a>
-        <a class="network" href="#"><i class="network_i fas fa-envelope"></i></a>
+        <a class="network" href="https://www.facebook.com/BiomondeFourmies/?ref=page_internal"><i class="network_i fab fa-facebook"></i></a>
+        <a class="network" href="mailto:contact@lpst.fr"><i class="network_i fas fa-envelope"></i></a>
         <a class="network" href="#"><i class="network_i fas fa-phone-square-alt"></i></a>
     </div>
 

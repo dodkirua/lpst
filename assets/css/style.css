@@ -29,6 +29,12 @@ body {
     flex-direction: column;
 }
 
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -57,7 +63,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    font-size: 25px;
+    font-size: 22px;
     width: 20%;
     height: 100px;
 }
@@ -99,7 +105,7 @@ footer {
 
 .network_i:hover {
     background-color: #351F1D;
-    color: white;
+    color: #A9C500;
 }
 
 h1 {
@@ -114,18 +120,22 @@ h1 {
     border: 2px solid #69A7D4;
 }
 
+.blueBorder:hover {
+    box-shadow: 4px 4px 10px lightgray;
+}
+
 .products {
     width: 17%;
     margin: 10px 30px;
+    align-items: center;
 }
 
 .productsImage, .blueBorder {
     width: 100%;
 }
 
-.categoryName {
+.colorBlue {
     color: #3b72bd;
-    text-align: center;
 }
 
 .allProducts {
@@ -141,4 +151,40 @@ h1 {
     font-size: 10px;
     color: white;
     margin: 10px 15px;
+}
+
+.linkFooter:hover {
+    text-decoration: underline white;
+}
+
+#storefront {
+    width: 500px;
+}
+
+.about {
+    margin: 30px 0;
+}
+
+.description {
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #F2F5FA;
+}
+
+.margin15-30 {
+    margin: 15px 30px;
+}
+
+.colorGreen {
+    color: #A9C500;
+}
+
+.descriptionIcon {
+    color: #B38243;
+    margin-right: 10px;
+}
+
+.underlineMail:hover {
+    text-decoration: underline #A9C500;
 }
