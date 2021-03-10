@@ -1,19 +1,16 @@
 <footer class="flexColumn">
     <div>
-        <a class="network" href="https://www.facebook.com/BiomondeFourmies/?ref=page_internal"><i class="network_i fab fa-facebook"></i></a>
-        <a class="network" href="mailto:contact@lpst.fr"><i class="network_i fas fa-envelope"></i></a>
+        <a class="network" href="https://www.facebook.com/BiomondeFourmies/?ref=page_internal"><i class="network_i fab fa-facebook-square"></i></a>
+        <a class="network" href="mailto:contact@lpst.fr"><i class="network_i fas fa-envelope-square"></i></a>
         <a class="network" href="#"><i class="network_i fas fa-phone-square-alt"></i></a>
     </div>
 
     <div class="flexRow">
-        <a class="linkFooter" href="#">Recherche</a>
-        <a class="linkFooter" href="#">Conditions Générales de Vente</a>
-        <a class="linkFooter" href="#">Mention Légales</a>
-        <a class="linkFooter" href="#">Politiques de confidentialité</a>
-        <a class="linkFooter" href="#">Aide</a>
-        <a class="linkFooter" href="#">Contact</a>
-
-
+        <a class="linkFooter underline" href="#">Conditions Générales de Vente</a>
+        <a class="linkFooter underline" href="#">Mention Légales</a>
+        <a class="linkFooter underline" href="#">Politiques de confidentialité</a>
+        <a class="linkFooter underline" href="#">Aide</a>
+        <a class="linkFooter underline" href="../pages/contact.php">Contact</a>
     </div>
 </footer>
 

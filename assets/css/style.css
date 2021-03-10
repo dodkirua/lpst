@@ -12,7 +12,7 @@ html {
 body {
     width: 100%;
     font-family: 'Montserrat', sans-serif;
-    background-color: #A9C500;
+    background-color: #D5DDB3;
 }
 
 #coverPicture {
@@ -41,15 +41,15 @@ a {
 }
 
 #menu {
-    margin: -0.4rem;
-    background-color: #8f5028;
-    height: 120px;
+    margin-top: -0.4rem;
+    background-color: #B38243;
+    height: 100px;
     align-items: center;
     justify-content: center;
 }
 
 #lpstLogo {
-    height: 100px;
+    height: 80px;
     position: absolute;
     left: 25px;
 }
@@ -65,16 +65,15 @@ a {
     padding: 20px;
     font-size: 22px;
     width: 20%;
-    height: 100px;
 }
 
 .containedMenu:hover {
     background-color: #A9C500;
-    height: 100px;
+    height: 80px;
 }
 
 .separatorVertical {
-    border-right: 2px solid #351F1D;
+    border-right: 2px solid #489533;
     height: 80px;
     margin: 0 5px;
 }
@@ -82,17 +81,17 @@ a {
 main {
     background-color: white;
     margin: auto;
-    margin-top: 0.4rem;
-    width: 80%;
+    width: 85%;
     padding: 15px;
 }
 
 footer {
-    background-color: #B38243;
+    background-color: #A9C500;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    margin-bottom: -18px;
 }
 
 .network_i {
@@ -112,7 +111,7 @@ h1 {
     font-size: 35px;
     color: #3b72bd;
     text-align: center;
-    margin: 30px 0;
+    margin: 45px 0;
     font-weight: bolder;
 }
 
@@ -153,23 +152,20 @@ h1 {
     margin: 10px 15px;
 }
 
-.linkFooter:hover {
-    text-decoration: underline white;
-}
-
-#storefront {
-    width: 500px;
+.shop {
+    height: 300px;
 }
 
 .about {
-    margin: 30px 0;
+    margin: 45px 0;
 }
 
 .description {
-    width: 100%;
-    margin: 10px 0;
+    width: 50%;
+    margin: 10px 30px;
     padding: 20px;
     background-color: #F2F5FA;
+    border-radius: 10px 10px;
 }
 
 .margin15-30 {
@@ -185,6 +181,100 @@ h1 {
     margin-right: 10px;
 }
 
-.underlineMail:hover {
-    text-decoration: underline #A9C500;
+.underline:hover {
+    text-decoration: underline;
+}
+
+.log {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    right: 0;
+    margin-top: -43px;
+}
+
+#containerStaff {
+    flex-wrap: wrap;
+}
+
+.staffPhoto {
+    border-radius: 50%;
+    width: 150px;
+    box-shadow: 4px 4px 10px lightgray;
+
+}
+
+.staffPhoto:hover {
+    box-shadow: 4px 4px 10px lightblue;
+}
+
+#ab, #biomonde {
+    width: 100px;
+    position: absolute;
+}
+
+#biomonde {
+    right: 10%;
+}
+
+.nameContact {
+    width: 50%;
+    margin: auto;
+}
+
+input, label, textarea {
+    width: 50%;
+    margin: auto;
+    border: none;
+    font-size: 20px;
+}
+
+.nameContact > div > input, .nameContact > div > label {
+    width: 105%;
+}
+
+input, textarea {
+    background-color: #F2F5FA;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+textarea {
+    height: 150px;
+    box-shadow: 3px 3px 10px lightgray;
+
+}
+
+.contact {
+    margin: 15px;
+}
+
+input, .brownBorder {
+    box-shadow: 3px 3px 10px lightgray;
+}
+
+.send {
+    background-color: #A9C500;
+    color: white;
+    width: 15%;
+}
+.send:hover {
+    box-shadow: 3px 3px 10px #8ABF07;
+}
+
+form {
+    margin: 20px 0 40px 0;
+}
+
+.brownBorder {
+    border-radius: 3px;
+    border: 1px solid #B38243;
+    width: 20%;
+    margin: 20px auto;
+    padding: 10px;
+    color: #B38243;
+}
+
+.brownBorder:hover {
+    box-shadow: 3px 3px 10px #351F1D;
 }

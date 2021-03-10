@@ -1,13 +1,14 @@
 <?php
-$title = "LPST Nos produits";
+$title = "LPST : Nos produits";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
-
 ?>
 
     <main>
-        <h1>NOS PRODUITS</h1>
+        <img id="ab" alt="agriculture biologique" src="https://tse1.mm.bing.net/th?id=OIP.3QWnaffLUCiOBRPJx7wvPgHaI7&pid=Api&P=0&w=300&h=300">
+        <img id="biomonde" src="/assets/img/Logo%20Biomonde-rond-01.png">
+        <h1>NOS <span class="colorGreen">PRODUITS</span></h1>
         <div class="flexRow allProducts">
             <a href="#" class="products flexColumn">
                 <div class="blueBorder">
