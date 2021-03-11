@@ -6,9 +6,9 @@
     </div>
 
     <div class="flexRow">
-        <a class="linkFooter underline" href="#">Conditions Générales de Vente</a>
-        <a class="linkFooter underline" href="#">Mention Légales</a>
-        <a class="linkFooter underline" href="#">Politiques de confidentialité</a>
+        <a class="linkFooter underline" href="../pages/terms_and_conditions.php">Conditions Générales de Vente</a>
+        <a class="linkFooter underline" href="../pages/legal_notice.php">Mention Légales</a>
+        <a class="linkFooter underline" href="../pages/privacy_policies.php">Politiques de confidentialité</a>
         <a class="linkFooter underline" href="#">Aide</a>
         <a class="linkFooter underline" href="../pages/contact.php">Contact</a>
     </div>
