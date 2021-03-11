@@ -1,4 +1,4 @@
-//creation of LPST staff profiles
+//creation of LPST staff profiles.
 let organizationalChart = [
     {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
     {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
@@ -18,15 +18,16 @@ for (let i = 0; i < organizationalChart.length; i++) {
     )
 }
 
-$(".staff").css({
-    "margin" : "10px",
-    "width" : "14%"
+//display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
+let nbClick = 0;
+$("#menuResponsive").click(function () {
+    if (nbClick === 0) {
+        $("#scrollMenu").css("display", "flex");
+        nbClick++;
+    }
+    else {
+        $("#scrollMenu").css("display", "none");
+        nbClick = 0;
+    }
 });
 
-$(".nameStaff").css({
-   "font-size" : "18px"
-});
-
-$(".jobStaff").css({
-    "color" : "#489533",
-});

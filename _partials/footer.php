@@ -1,8 +1,8 @@
 <footer class="flexColumn">
     <div>
-        <a class="network" href="https://www.facebook.com/BiomondeFourmies/?ref=page_internal"><i class="network_i fab fa-facebook-square"></i></a>
+        <a class="network" href="https://www.facebook.com/BiomondeFourmies/?ref=page_internal" target="_blank"><i class="network_i fab fa-facebook-square"></i></a>
         <a class="network" href="mailto:contact@lpst.fr"><i class="network_i fas fa-envelope-square"></i></a>
-        <a class="network" href="#"><i class="network_i fas fa-phone-square-alt"></i></a>
+        <a class="network" href="tel:+0749472008"><i class="network_i fas fa-phone-square-alt"></i></a>
     </div>
 
     <div class="flexRow">

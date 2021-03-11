@@ -48,20 +48,43 @@ a {
     justify-content: center;
 }
 
+#menuResponsive {
+    display: none;
+    margin-top: -0.4rem;
+    background-color: #B38243;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
 #lpstLogo {
     height: 80px;
     position: absolute;
     left: 25px;
 }
 
-#commerce, #products, #local, #account, #shop {
+#lpstLogoResponsive {
+    height: 60px;
+    position: absolute;
+    right: 25px;
+    width: 60px;
+}
+
+#scrollMenu {
+    display: none;
+    width: 100%;
+    background-color: #A9C500;
+}
+
+#commerce, #products, #local, #account, #shop, .fa-bars, #commerce2, .log2, .colorWhite{
     color: white;
 }
 
+.linkLog {
+    font-size: 12px;
+}
+
 .containedMenu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 20px;
     font-size: 22px;
     width: 20%;
@@ -197,15 +220,27 @@ h1 {
     flex-wrap: wrap;
 }
 
+.staff{
+    margin: 10px;
+    width: 14%;
+}
+
 .staffPhoto {
     border-radius: 50%;
     width: 150px;
     box-shadow: 4px 4px 10px lightgray;
-
 }
 
 .staffPhoto:hover {
     box-shadow: 4px 4px 10px lightblue;
+}
+
+.nameStaff {
+    font-size: 18px;
+}
+
+.jobStaff {
+    color: #489533;
 }
 
 #ab, #biomonde {
@@ -258,6 +293,7 @@ input, .brownBorder {
     color: white;
     width: 15%;
 }
+
 .send:hover {
     box-shadow: 3px 3px 10px #8ABF07;
 }
@@ -278,3 +314,169 @@ form {
 .brownBorder:hover {
     box-shadow: 3px 3px 10px #351F1D;
 }
+
+@media screen and (max-width: 1160px) {
+    .staffPhoto {
+        width: 100px;
+    }
+    .shop {
+        height: 200px;
+    }
+    .containedMenu {
+        font-size: 17px;
+    }
+    .nameStaff {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    #containerShop1 {
+        flex-direction: column;
+    }
+
+    #containerShop2 {
+        flex-direction: column-reverse;
+    }
+
+    .description {
+        width: 90%;
+    }
+
+    #lpstLogo {
+        height: 65px;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .containedMenu {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #menu {
+        height: 80px;
+    }
+
+    .containedMenu:hover, .separatorVertical {
+        height: 60px;
+    }
+    #biomonde {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .separatorVertical {
+        display: none;
+    }
+    #commerce {
+        margin-left: 50px;
+    }
+    .containedMenu {
+        width: initial;
+    }
+    .log {
+        margin-top: -42px;
+    }
+    .log > a, .log > span {
+        font-size: 12px;
+    }
+    .staffPhoto {
+        width: 110px;
+    }
+    .staff {
+        width: 20%;
+        margin: 10px 20px;
+    }
+    #containerStaff {
+        display: flex;
+        justify-content: center;
+    }
+    input, label, textarea, .nameContact {
+        width: 80%;
+    }
+    .send {
+        width: 25%;
+    }
+    .brownBorder {
+        width: 30%;
+    }
+    h3 {
+        font-size: 15px;
+    }
+    .information {
+        font-size: 12px;
+    }
+    iframe {
+        height: 350px;
+    }
+    .margin15-30 {
+        margin: 8px 30px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    #commerce {
+        margin-left: 100px;
+    }
+    .log > a, .log > span {
+        font-size: 10px;
+    }
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    iframe {
+        width: 90%;
+    }
+    .informations {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #ab, #biomonde {
+        width: 70px;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+    #menuResponsive {
+        display: flex;
+    }
+    #menu {
+        display: none;
+    }
+    .log {
+        display: none;
+    }
+    .linkFooter {
+        font-size: 8px;
+        margin: 10px 5px;
+    }
+    .nameStaff {
+        font-size: 12px;
+    }
+    .jobStaff {
+        font-size: 10px;
+    }
+    .staffPhoto {
+        width: 80px;
+    }
+    .products {
+        width: 30%;
+    }
+    .allProducts {
+        width: 100%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
+
