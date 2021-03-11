@@ -8,7 +8,9 @@ class UserManager{
         $this->db = DB::getInstance();
     }
 
+    public function addUser($name, $surname, $mail, $pass){
 
+    }
 
 
 }
