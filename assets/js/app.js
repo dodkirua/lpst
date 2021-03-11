@@ -31,3 +31,7 @@ $("#menuResponsive").click(function () {
     }
 });
 
+/**
+import {validate} from "./password.js";
+document.getElementById("passwordRegistration").addEventListener("keypress", validate);
+*/

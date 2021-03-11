@@ -80,6 +80,11 @@ a {
     color: white;
 }
 
+.fa-bars {
+    position: absolute;
+    left: 20px;
+}
+
 .linkLog {
     font-size: 12px;
 }
@@ -439,14 +444,12 @@ form {
         flex-wrap: wrap;
         justify-content: center;
     }
-
     #ab, #biomonde {
         width: 70px;
     }
-
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 530px) {
     #menuResponsive {
         display: flex;
     }
@@ -455,6 +458,14 @@ form {
     }
     .log {
         display: none;
+    }
+    .containedMenu:hover, .linkLog:hover {
+        background-color: #69A7D4;
+        padding: 5px;
+        width: 60%;
+    }
+    .log2 {
+        margin-bottom: 15px;
     }
     .linkFooter {
         font-size: 8px;
@@ -478,5 +489,40 @@ form {
     h1 {
         font-size: 30px;
     }
+    .send {
+        width: 60%;
+    }
+    .brownBorder {
+        width: 65%;
+    }
+    label {
+        font-size: 18px;
+    }
 }
 
+@media screen and (max-width: 460px) {
+    h1 {
+       font-size: 20px;
+    }
+    .shop {
+        height: 150px;
+    }
+    .staff {
+        width: 33%;
+    }
+    iframe {
+        height: 250px;
+    }
+    label {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    #ab, #biomonde {
+        width: 35px;
+    }
+    .products {
+        width: 60%;
+    }
+}
