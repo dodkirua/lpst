@@ -33,14 +33,16 @@ $("#menuResponsive").click(function () {
     }
 });
 
-if (document.getElementById("magasinMobile")){
-    document.getElementById("magasinMobile").addEventListener("click", function () {
+const mag = document.getElementById("magasinMobile");
+if (mag){
+    mag.addEventListener("click", function () {
         document.getElementById("mobile").style.display = "none";
         document.getElementById("computer").style.display = "block";
     });
 }
 
-if (document.getElementById("registration")) {
+const regis = document.getElementById("registration");
+if (regis) {
     document.getElementById("passwordRegistration").addEventListener("keypress", validate);
     document.getElementById("repeatPassword").addEventListener("keypress", compare);
 }
