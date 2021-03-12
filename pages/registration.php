@@ -25,7 +25,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             <div class="flexColumn contact">
                 <div class="flexRow">
                     <label for="passwordRegistration" class="colorBlue">Mot de passe*</label>
-                    <div id="pwMsg"></div>
+                    <div id="pwMsg">test </div>
                 </div>
                 <input type="password" id="passwordRegistration" name="password">
             </div>
