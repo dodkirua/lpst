@@ -338,15 +338,11 @@ p {
     margin: 5px 0;
 }
 
- #pwMsg {
-     position: absolute;
-     right: 400px;
- }
-
- #pwMsgRepeat {
-     position: absolute;
-     right: 280px;
- }
+#pwMsgRepeat, #pwMsg {
+    width: 50%;
+    margin: auto;
+    font-size: 12px;
+}
 
  #mobile {
      display: none;
@@ -448,6 +444,55 @@ p {
  #newPwd, #currentPwd {
      margin: 20px auto;
      background-color: white;
+ }
+
+ #orderedAccount, #baskets_favorite {
+     display: none;
+ }
+
+ table {
+     margin: 20px;
+ }
+
+ .titleTable {
+     background-color: #A9C500;
+ }
+
+ td {
+     border: 1px solid #B38243;
+     padding: 15px;
+     background-color: #E1D3C5;
+ }
+
+ .imgTable {
+     width: 150px;
+     border-radius: 10px;
+ }
+
+ .buttonAjout {
+     border-radius: 50%;
+     background-color: #3b72bd;
+     color: white;
+ }
+ .buttonAjout:hover {
+     box-shadow: 2px 2px 10px darkblue;
+ }
+
+ .center {
+     text-align: center;
+ }
+
+ .width30 {
+     width: 30%;
+ }
+
+ .numberArticle {
+     width: 20%;
+ }
+
+ .wishlist {
+     width: 15%;
+     margin: 15px;
  }
 
 @media screen and (max-width: 1160px) {
