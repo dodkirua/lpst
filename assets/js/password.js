@@ -15,6 +15,9 @@ export function validate() {
     document.getElementById("pwMsg").innerHTML= msg;
 }
 
+/**
+ * compare the password and the password repeat
+ */
 export function compare() {
     let msg;
     let pass1 = document.getElementById("passwordRegistration").value;
