@@ -386,10 +386,9 @@ p {
  #otherInformation {
      width: 60%;
      margin-top: 120px;
-     height: 2000px;
  }
 
- #photoProfil {
+ .photoProfil {
      margin: 10px;
      border-radius: 50%;
      width: 175px;
@@ -403,6 +402,52 @@ p {
  }
  .select:hover {
      background-color: #8ABF07;
+ }
+
+ .subtitle {
+     font-size: 25px;
+     color: #B38243;
+     text-align: center;
+ }
+
+ .whiteBorder {
+     background-color: white;
+     width: 30%;
+     padding: 7px;
+ }
+
+ .modify {
+     text-align: center;
+     border-radius: 5px 5px;
+     margin: 10px 0;
+ }
+
+ .colorGrey {
+     color: grey;
+ }
+
+ button {
+     border: none;
+     padding: 8px;
+ }
+
+ #modifyPorfil {
+     width: initial;
+ }
+
+ .redButton {
+     background-color: #E74A4A;
+     color: white;
+     border-radius: 5px 5px;
+     margin: 40px 0;
+ }
+ .redButton:hover {
+     box-shadow: 5px 5px 10px darkred;
+ }
+
+ #newPwd, #currentPwd {
+     margin: 20px auto;
+     background-color: white;
  }
 
 @media screen and (max-width: 1160px) {
