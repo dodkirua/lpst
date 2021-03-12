@@ -64,5 +64,4 @@ document.getElementById("basketsSave").addEventListener("click", function () {
     document.getElementById("informationAccount").style.display = "none";
     document.getElementById("orderedAccount").style.display = "none";
     document.getElementById("baskets_favorite").style.display = "block";
-
 });

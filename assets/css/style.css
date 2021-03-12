@@ -370,18 +370,12 @@ p {
      margin: 20px;
  }
 
- #hello {
-     position: absolute;
-     left: 900px;
- }
-
  #informationProfil {
      width: 30%;
  }
 
  #otherInformation {
-     width: 60%;
-     margin-top: 120px;
+     width: 100%;
  }
 
  .photoProfil {
@@ -435,7 +429,7 @@ p {
      background-color: #E74A4A;
      color: white;
      border-radius: 5px 5px;
-     margin: 40px 0;
+     margin: 20px 0;
  }
  .redButton:hover {
      box-shadow: 5px 5px 10px darkred;
@@ -462,6 +456,7 @@ p {
      border: 1px solid #B38243;
      padding: 15px;
      background-color: #E1D3C5;
+     font-size: 12px;
  }
 
  .imgTable {
@@ -486,6 +481,10 @@ p {
      width: 30%;
  }
 
+ .width65 {
+     width: 65%;
+ }
+
  .numberArticle {
      width: 20%;
  }
@@ -495,7 +494,56 @@ p {
      margin: 15px;
  }
 
-@media screen and (max-width: 1160px) {
+ .trTable:hover > td {
+     background-color: #F9F9E6;
+ }
+
+ #orderedResponsive {
+     display: none;
+ }
+
+ .containerOrdered {
+     background-color: white;
+     padding: 15px;
+ }
+
+ .infoArticle {
+     border: 1px solid #BFBFBF;
+     padding: 15px;
+ }
+
+ .margin {
+    margin: 0 30px;
+ }
+
+@media screen and (max-width: 1510px) {
+    .imgTable {
+        width: 100px;
+    }
+    .wishlist > p, .wishlist > span {
+        font-size: 12px;
+    }
+    .whiteBorder {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    #informationProfil {
+        width: 15%;
+    }
+    .photoProfil {
+        width: 100px;
+    }
+    .width65 {
+        width: 76%;
+    }
+    #information > p, #ordered > p, #basketsSave > p, #setting > p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1180px) {
     .staffPhoto {
         width: 100px;
     }
@@ -507,6 +555,36 @@ p {
     }
     .nameStaff {
         font-size: 14px;
+    }
+    .account {
+        flex-direction: column;
+    }
+    #informationProfil {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+    }
+    #informationProfil > div.separatorHorizontal {
+        display: none;
+    }
+    .select {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+    }
+    .photoProfil {
+        width: 80px;
+    }
+    #disconnection {
+        font-size: 10px;
+    }
+    .redButton {
+        margin: 5px;
+    }
+    .width65 {
+        width: 95%;
     }
 }
 
@@ -597,6 +675,12 @@ p {
     .margin15-30 {
         margin: 8px 30px;
     }
+    #tableOrdered, #tableBaskets {
+        display: none;
+    }
+    #orderedResponsive {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -622,6 +706,12 @@ p {
     }
     #ab, #biomonde {
         width: 70px;
+    }
+    #profil {
+        display: none;
+    }
+    .select {
+        height: 60px;
     }
 }
 
