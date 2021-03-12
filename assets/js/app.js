@@ -1,3 +1,5 @@
+import {validate} from "./password.js";
+
 //creation of LPST staff profiles.
 let organizationalChart = [
     {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
@@ -31,7 +33,6 @@ $("#menuResponsive").click(function () {
     }
 });
 
-/**
-import {validate} from "./password.js";
 document.getElementById("passwordRegistration").addEventListener("keypress", validate);
-*/
+
+
