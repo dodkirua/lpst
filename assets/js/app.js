@@ -1,4 +1,4 @@
-import {validate, compare} from "./password.js";
+import {validatePass, comparePass} from "./registration.js";
 
 //creation of LPST staff profiles.
 let organizationalChart = [
@@ -43,8 +43,9 @@ if (mag){
 
 const regis = document.getElementById("registration");
 if (regis) {
-    document.getElementById("passwordRegistration").addEventListener("keypress", validate);
-    document.getElementById("repeatPassword").addEventListener("keypress", compare);
+    document.getElementById("passwordRegistration").addEventListener("keyup", validatePass);
+    document.getElementById("repeatPassword").addEventListener("keyup", comparePass);
+    //regis.addEventListener("submit",)
 }
 
 
