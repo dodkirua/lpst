@@ -6,8 +6,14 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
 
-<main>
-    <h1>Bonjour, <span class="colorGreen">.....</span></h1>
+<main class="flexRow">
+    <h1">Bonjour, <span class="colorGreen">.....</span></h1>
+    <section class="innformation">
+
+    </section>
+    <section>
+
+    </section>
 </main>
 
 <?php
