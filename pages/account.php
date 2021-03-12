@@ -1,15 +1,13 @@
 <?php
-$title = "LPST : Nos partenaires locaux";
+
+$title = "LPST : Mon compte";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
 
 <main>
-    <h1>NOS <span class="colorGreen">PARTENAIRES LOCAUX</span></h1>
-    <div class="flexCenter">
-        <img class="shop" src="/assets/img/partenaires.jpg">
-    </div>
+    <h1>Bonjour, <span class="colorGreen">.....</span></h1>
 </main>
 
 <?php

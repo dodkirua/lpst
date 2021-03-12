@@ -337,6 +337,31 @@ p {
      right: 400px;
  }
 
+ #pwMsgRepeat {
+     position: absolute;
+     right: 280px;
+ }
+
+ #mobile {
+     display: none;
+ }
+
+ p{
+     line-height: 23px;
+ }
+
+ .buttonMobile {
+    font-size: 25px;
+     background-color: #A9C500;
+     border-radius: 10px 10px;
+     box-shadow: 5px 5px 10px #489533;
+     padding: 15px;
+     width: 70%;
+    text-align: center;
+     color: white;
+     margin: 15px 0;
+ }
+
 @media screen and (max-width: 1160px) {
     .staffPhoto {
         width: 100px;
@@ -389,6 +414,7 @@ p {
         right: 5%;
     }
 }
+
 
 @media screen and (max-width: 830px) {
     .separatorVertical {
@@ -467,6 +493,12 @@ p {
 }
 
 @media screen and (max-width: 530px) {
+    #mobile {
+        display: flex;
+    }
+    #computer {
+        display: none;
+    }
     #menuResponsive {
         display: flex;
     }
