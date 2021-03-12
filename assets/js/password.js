@@ -3,7 +3,7 @@
  */
 export function validate() {
     let msg;
-    let str = document.getElementById("password").value;
+    let str = document.getElementById("passwordRegistration").value;
     if (str.match( /[0-9]/g) &&
         str.match( /[A-Z]/g) &&
         str.match(/[a-z]/g) &&
