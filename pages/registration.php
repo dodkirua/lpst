@@ -7,7 +7,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 <main>
     <h1>Créer <span class="colorGreen"> un compte</></h1>
-    <form action="../assets/php/addUser.php" method="post" class="flexColumn" name="registration">
+    <form action="../assets/php/addUser.php" method="post" class="flexColumn" name="registration" id = "registration">
         <div class="flexColumn contact">
             <div class="flexRow nameContact">
                 <div class="flexColumn contact">
