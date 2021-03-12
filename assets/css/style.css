@@ -332,6 +332,11 @@ p {
     margin: 5px 0;
 }
 
+ #pwMsg {
+     position: absolute;
+     right: 400px;
+ }
+
 @media screen and (max-width: 1160px) {
     .staffPhoto {
         width: 100px;

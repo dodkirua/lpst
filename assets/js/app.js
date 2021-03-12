@@ -1,4 +1,4 @@
-import {validate} from "./password.js";
+import {validate, compare} from "./password.js";
 
 //creation of LPST staff profiles.
 let organizationalChart = [

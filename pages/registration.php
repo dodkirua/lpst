@@ -23,11 +23,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                 <input id="emailContact" type="email" name="emailContact" required>
             </div>
             <div class="flexColumn contact">
+                <label for="passwordRegistration" class="colorBlue">Mot de passe*</label>
+
                 <div class="flexRow">
-                    <label for="passwordRegistration" class="colorBlue">Mot de passe*</label>
+                    <input type="password" id="passwordRegistration" name="password">
                     <div id="pwMsg"></div>
                 </div>
-                <input type="password" id="passwordRegistration" name="password">
             </div>
             <div class="flexColumn contact">
                 <label for="repeatPassword" class="colorBlue">Répéter le mot de passe*</label>
