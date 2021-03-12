@@ -3,13 +3,18 @@
  */
 export function validate() {
     let msg;
-    let str = document.getElementById("passwordRegistration").value;
+    const elem = document.getElementById("passwordRegistration");
+    let str = elem.value;
     if (str.match( /[0-9]/g) &&
         str.match( /[A-Z]/g) &&
         str.match(/[a-z]/g) &&
         str.match( /[^a-zA-Z\d]/g) &&
-        str.length >= 10)
+        str.length >= 10) {
         msg = "<p style='color:green'>Mot de passe fort.</p>";
+        //elem.setCustomValidity("Mot de passe fort.");
+        console.log(elem);
+    }
+
     else
         msg = "<p style='color:red'>Mot de passe faible.</p>";
     document.getElementById("pwMsg").innerHTML= msg;

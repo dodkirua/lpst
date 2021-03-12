@@ -33,13 +33,16 @@ $("#menuResponsive").click(function () {
     }
 });
 
-document.getElementById("magasinMobile").addEventListener("click", function () {
-    document.getElementById("mobile").style.display = "none";
-    document.getElementById("computer").style.display = "block";
-});
+if (document.getElementById("magasinMobile")){
+    document.getElementById("magasinMobile").addEventListener("click", function () {
+        document.getElementById("mobile").style.display = "none";
+        document.getElementById("computer").style.display = "block";
+    });
+}
 
-document.getElementById("passwordRegistration").addEventListener("keypress", validate);
-document.getElementById("repeatPassword").addEventListener("keypress", compare);
-
+if (document.getElementById("registration")) {
+    document.getElementById("passwordRegistration").addEventListener("keypress", validate);
+    document.getElementById("repeatPassword").addEventListener("keypress", compare);
+}
 
 
