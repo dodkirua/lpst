@@ -12,11 +12,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             <div class="flexRow nameContact">
                 <div class="flexColumn contact">
                     <label for="firstname" class="colorBlue">Prénom</label>
-                    <input id="firstname" type="text" name="firstname">
+                    <input id="firstname" type="text" name="firstname" required>
                 </div>
                 <div class="flexColumn contact">
                     <label for="lastname" class="colorBlue">Nom</label>
-                    <input id="lastname" type="text" name="lastname">
+                    <input id="lastname" type="text" name="lastname" required>
                 </div>
             </div>
             <label for="emailContact" class="colorBlue">Email*</label>
@@ -25,14 +25,14 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
         <div class="flexColumn contact">
             <label for="passwordRegistration" class="colorBlue">Mot de passe*</label>
             <div class="flexRow">
-                <input type="password" id="passwordRegistration" name="password">
+                <input type="password" id="passwordRegistration" name="password" required>
                 <div id="pwMsg"></div>
             </div>
         </div>
         <div class="flexColumn contact">
             <label for="repeatPassword" class="colorBlue">Répéter le mot de passe*</label>
             <div class="flexRow">
-                <input type="password" id="repeatPassword" name="repeatPassword">
+                <input type="password" id="repeatPassword" name="repeatPassword" required>
                 <div id="pwMsgRepeat"></div>
             </div>
         </div>

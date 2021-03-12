@@ -1,7 +1,7 @@
 /**
  * validate the password before validation
  */
-export function validate() {
+export function validatePass() {
     let msg;
     const elem = document.getElementById("passwordRegistration");
     let str = elem.value;
@@ -23,7 +23,7 @@ export function validate() {
 /**
  * compare the password and the password repeat
  */
-export function compare() {
+export function comparePass() {
     let msg;
     let pass1 = document.getElementById("passwordRegistration").value;
     let pass2 = document.getElementById("repeatPassword").value;

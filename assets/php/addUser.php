@@ -10,9 +10,12 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
     $mail = sanitize($_REQUEST['emailContact']);
     $pass = sanitize($_REQUEST['password']);
     $passRepeat = sanitize($_REQUEST['repeatPassword']);
+    if ($pass === $passRepeat){
+        $pass = password_hash($pass,PASSWORD_BCRYPT );
+        $user = new UserManager();
+        $user->addUser($lastname,$firstname,$mail,$pass);
+    }
 
-    $user = new UserManager();
-    $user->addUser($lastname,$firstname,$mail,$pass);
 }
 else {
     echo "erreur lors du formulaire";
