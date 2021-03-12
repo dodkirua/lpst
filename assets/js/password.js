@@ -13,4 +13,18 @@ export function validate() {
     else
         msg = "<p style='color:red'>Mot de passe faible.</p>";
     document.getElementById("pwMsg").innerHTML= msg;
-};
+}
+
+export function compare() {
+    let msg;
+    let pass1 = document.getElementById("passwordRegistration").value;
+    let pass2 = document.getElementById("repeatPassword").value;
+
+    if (pass1 === pass2){
+        msg = "Les mots de passes correspondent";
+    }
+    else {
+        msg = "Les mots de passes sont différents";
+    }
+    document.getElementById("pwMsgRepeat").innerHTML= msg;
+}
