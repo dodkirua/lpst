@@ -1,0 +1,138 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost
+-- Généré le : ven. 12 mars 2021 à 10:11
+-- Version du serveur :  8.0.23-0ubuntu0.20.04.1
+-- Version de PHP : 7.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `lspt`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `adress`
+--
+
+CREATE TABLE `adress` (
+  `id` int UNSIGNED NOT NULL,
+  `street` varchar(255) COLLATE utf8_bin NOT NULL,
+  `number` mediumint UNSIGNED NOT NULL,
+  `zip_code` varchar(45) COLLATE utf8_bin NOT NULL,
+  `city` varchar(100) COLLATE utf8_bin NOT NULL,
+  `country` varchar(100) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `role`
+--
+
+CREATE TABLE `role` (
+  `id` tinyint UNSIGNED NOT NULL,
+  `name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `description` text COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `role`
+--
+
+INSERT INTO `role` (`id`, `name`, `description`) VALUES
+(1, 'admin', 'Gérer le site'),
+(2, 'client', 'utilisateur de base'),
+(3, 'modérateur', 'modifie les données du site');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(100) COLLATE utf8_bin NOT NULL,
+  `surname` varchar(100) COLLATE utf8_bin NOT NULL,
+  `mail` varchar(200) COLLATE utf8_bin NOT NULL,
+  `pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `phone` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `role_id` tinyint UNSIGNED NOT NULL,
+  `adress_id` int UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `adress`
+--
+ALTER TABLE `adress`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mail` (`mail`),
+  ADD KEY `role_fk` (`role_id`),
+  ADD KEY `adress_fk` (`adress_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `adress`
+--
+ALTER TABLE `adress`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `role`
+--
+ALTER TABLE `role`
+  MODIFY `id` tinyint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `adress_fk` FOREIGN KEY (`adress_id`) REFERENCES `adress` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `role_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
