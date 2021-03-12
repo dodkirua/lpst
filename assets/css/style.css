@@ -106,6 +106,12 @@ a {
     margin: 0 5px;
 }
 
+.separatorHorizontal {
+    border-top: 2px solid #BFBFBF;
+    width: 100%;
+    margin: 3px 0;
+}
+
 main {
     background-color: white;
     margin: auto;
@@ -365,6 +371,38 @@ p {
  section {
      background-color: #F2F5FA;
      box-shadow: 5px 5px 10px grey;
+     margin: 20px;
+ }
+
+ #hello {
+     position: absolute;
+     left: 900px;
+ }
+
+ #informationProfil {
+     width: 30%;
+ }
+
+ #otherInformation {
+     width: 60%;
+     margin-top: 120px;
+     height: 2000px;
+ }
+
+ #photoProfil {
+     margin: 10px;
+     border-radius: 50%;
+     width: 175px;
+ }
+
+ .select {
+     background-color: #D5DDB3;
+     padding: 15px;
+     font-size: 20px;
+     text-align: center;
+ }
+ .select:hover {
+     background-color: #8ABF07;
  }
 
 @media screen and (max-width: 1160px) {
