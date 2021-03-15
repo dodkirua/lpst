@@ -446,6 +446,7 @@ p {
 
  table {
      margin: 20px;
+     border-collapse: collapse;
  }
 
  .titleTable {
@@ -453,24 +454,25 @@ p {
  }
 
  td {
-     border: 1px solid #B38243;
+     border: 1px solid #BFBFBF;
      padding: 15px;
-     background-color: #E1D3C5;
+     background-color: white;
      font-size: 12px;
+     margin: -15px;
  }
+
+.trTable:hover > td {
+    background-color: #f3da31;
+}
+
+td, th {
+    width: 300px;
+    text-align: center;
+}
 
  .imgTable {
-     width: 150px;
+     width: 80%;
      border-radius: 10px;
- }
-
- .buttonAjout {
-     border-radius: 50%;
-     background-color: #3b72bd;
-     color: white;
- }
- .buttonAjout:hover {
-     box-shadow: 2px 2px 10px darkblue;
  }
 
  .center {
@@ -490,12 +492,7 @@ p {
  }
 
  .wishlist {
-     width: 15%;
-     margin: 15px;
- }
-
- .trTable:hover > td {
-     background-color: #F9F9E6;
+     width: 20%;
  }
 
  #orderedResponsive {
@@ -503,23 +500,69 @@ p {
  }
 
  .containerOrdered {
-     background-color: white;
      padding: 15px;
+     width: 100%;
  }
 
  .infoArticle {
+     width: 95%;
      border: 1px solid #BFBFBF;
      padding: 15px;
+     background-color: white;
  }
 
  .margin {
     margin: 0 30px;
  }
 
+ #accountResponsive {
+     display: none;
+ }
+
+ #disconnectionResponsive {
+     display: none;
+ }
+
+ #buy1 {
+     margin-left: 50px;
+ }
+ #total1 {
+     margin-left: 10px;
+ }
+
+ .buttonClassic {
+     background-color: transparent;
+     width: initial;
+     font-size: 12px;
+     margin: 10px 1px;
+ }
+ .buttonClassic:hover {
+     box-shadow: 2px 2px 7px #bfbfbf;
+     border-radius: 10px;
+ }
+
+ .buttonClassic:hover > i {
+     color: #ff0b0b;
+ }
+
+ #cartResponsive {
+     display: none;
+ }
+ .cartResponsive {
+     background-color: white;
+     padding: 15px;
+     margin: 10px;
+     width: 100%;
+ }
+ .infoCart {
+     width: 85%;
+     padding: 0 15px;
+ }
+ .favoriteArticleCart {
+     margin-left: 20%;
+ }
+
 @media screen and (max-width: 1510px) {
-    .imgTable {
-        width: 100px;
-    }
     .wishlist > p, .wishlist > span {
         font-size: 12px;
     }
@@ -681,6 +724,9 @@ p {
     #orderedResponsive {
         display: block;
     }
+    #cartResponsive {
+        display: flex;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -713,6 +759,24 @@ p {
     .select {
         height: 60px;
     }
+    #informationProfil, .width65 {
+        width: 100%;
+    }
+    .account {
+        padding: 0;
+    }
+    section {
+        margin: 0;
+    }
+    #disconnectionResponsive {
+        display: flex;
+        align-items: center;
+    }
+    .redButton {
+        margin: 0;
+        border-radius: 0;
+    }
+
 }
 
 @media screen and (max-width: 530px) {
@@ -770,6 +834,23 @@ p {
     label {
         font-size: 18px;
     }
+    .margin {
+        margin: 0 15px;
+    }
+    .selectComputer {
+        display: none;
+    }
+    #accountResponsive {
+        display: flex;
+        width: 100%;
+        font-size: 20px;
+    }
+    #information2 > p, #ordered2 > p, #basketsSave2 > p, #setting2 > p {
+        font-size: 20px;
+    }
+    .wishlist {
+        width: 26%;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -787,6 +868,11 @@ p {
     }
     label {
         font-size: 15px;
+    }
+    .infoArticle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

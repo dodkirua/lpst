@@ -16,21 +16,41 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             </div>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="information" class="select">
+        <div id="information" class="select selectComputer">
             <p class="colorWhite">Mes informations</p>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="ordered" class="select">
+        <div id="ordered" class="select selectComputer">
             <p class="colorWhite">Mes commandes</p>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="basketsSave" class="select">
+        <div id="basketsSave" class="select selectComputer">
             <p class="colorWhite">Mes paniers sauvegardés</p>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="setting" class="select">
+        <div id="setting" class="select selectComputer">
             <p class="colorWhite">Mes paramètres</p>
         </div>
+
+        <!-- Displayed when the screen is at 530px -->
+        <div id="accountResponsive" class="flexRow">
+            <div id="information2" class="select selectMobile">
+                <p class="colorWhite"><i class="fas fa-user-alt"></i></p>
+            </div>
+            <div id="ordered2" class="select selectMobile">
+                <p class="colorWhite"><i class="fas fa-credit-card"></i></p>
+            </div>
+            <div id="basketsSave2" class="select selectMobile">
+                <p class="colorWhite"><i class="fas fa-shopping-basket"></i></p>
+            </div>
+            <div id="setting2" class="select selectMobile">
+                <p class="colorWhite"><i class="fas fa-cog"></i></p>
+            </div>
+        </div>
+
+        <!-- Displayed when the screen is at 680px -->
+        <button id="disconnectionResponsive" class="redButton"><i class="fas fa-power-off"></i></button>
+
 
     </section>
     <div class="flexColumn width65">
@@ -81,28 +101,58 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                         <td> 00/00/0000</td>
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
                         <td>Nom de l'article</td>
-                        <td>Prix €</td>
+                        <td><strong>Prix €</strong></td>
                     </tr>
                     <tr class="trTable">
                         <td> 00/00/0000</td>
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
                         <td>Nom de l'article</td>
-                        <td>Prix €</td>
+                        <td><strong>Prix €</strong></td>
                     </tr>
                     <tr class="trTable">
                         <td> 00/00/0000</td>
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
                         <td>Nom de l'article</td>
-                        <td>Prix €</td>
+                        <td><strong>Prix €</strong></td>
                     </tr>
                 </table>
+
+                <!-- -->
                 <div id="orderedResponsive">
                     <div class="containerOrdered flexColumn">
                         <p>Livraison du 00/00/0000</p>
                         <div class="flexRow infoArticle">
-                            <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                            <p class="margin">Nom de l'article</p>
-                            <p class="margin">Prix €</p>
+                            <div>
+                                <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            </div>
+                            <div class="infoCart">
+                                <p class="margin">Nom de l'article</p>
+                                <p class="margin"><strong>Prix €</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <<div class="containerOrdered flexColumn">
+                        <p>Livraison du 00/00/0000</p>
+                        <div class="flexRow infoArticle">
+                            <div>
+                                <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            </div>
+                            <div class="infoCart">
+                                <p class="margin">Nom de l'article</p>
+                                <p class="margin"><strong>Prix €</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerOrdered flexColumn">
+                        <p>Livraison du 00/00/0000</p>
+                        <div class="flexRow infoArticle">
+                            <div>
+                                <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            </div>
+                            <div class="infoCart">
+                                <p class="margin">Nom de l'article</p>
+                                <p class="margin"><strong>Prix €</strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -117,69 +167,133 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                         <th class="colorWhite">Prix</th>
                         <th class="colorWhite">Quantité</th>
                         <th class="colorWhite">Total</th>
-                        <th class="colorWhite">Supprimer</th>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                        <td>Nom de l'article</td>
-                        <td>Prix €</td>
-                        <td class="center width30">
-                            <button class="buttonAjout">-</button>
-                            <input class="numberArticle" value="1" type="number">
-                            <button class="buttonAjout">+</button>
+                        <td>
+                            <div class="flexColumn">
+                                <p>Nom de l'article</p>
+                                <div class="flexRow">
+                                    <button id="addToWishlist1" class="buttonClassic"><i class="far fa-heart"></i></button>
+                                    <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                                </div>
+                            </div>
                         </td>
-                        <td>Prix €</td>
-                        <td class="center"><button class="redButton"><i class="far fa-trash-alt"></i></button></td>
+                        <td><strong>Prix €</strong></td>
+                        <td class="center width30">
+                            <button class="buttonClassic">-</button>
+                            <input class="numberArticle" value="1" type="number">
+                            <button class="buttonClassic">+</button>
+                        </td>
+                        <td><strong>Prix €</strong></td>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                        <td>Nom de l'article</td>
-                        <td>Prix €</td>
-                        <td class="center width30">
-                            <button class="buttonAjout">-</button>
-                            <input class="numberArticle" value="1" type="number">
-                            <button class="buttonAjout">+</button>
+                        <td>
+                            <div class="flexColumn">
+                                <p>Nom de l'article</p>
+                                <div class="flexRow">
+                                    <button id="addToWishlist2" class="buttonClassic"><i class="far fa-heart"></i></button>
+                                    <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                                </div>
                         </td>
-                        <td>Prix €</td>
-                        <td class="center"><button class="redButton"><i class="far fa-trash-alt"></i></button></td>
+                        <td><strong>Prix €</strong></td>
+                        <td class="center width30">
+                            <button class="buttonClassic">-</button>
+                            <input class="numberArticle" value="1" type="number">
+                            <button class="buttonClassic">+</button>
+                        </td>
+                        <td><strong>Prix €</strong></td>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                        <td>Nom de l'article</td>
-                        <td>Prix €</td>
-                        <td class="center width30">
-                            <button class="buttonAjout">-</button>
-                            <input class="numberArticle" value="1" type="number">
-                            <button class="buttonAjout">+</button>
+                        <td>
+                            <div class="flexColumn">
+                                <p>Nom de l'article</p>
+                                <div class="flexRow">
+                                    <button id="addToWishlist3" class="buttonClassic"><i class="far fa-heart"></i></button>
+                                    <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                                </div>
                         </td>
-                        <td>Prix €</td>
-                        <td class="center"><button class="redButton"><i class="far fa-trash-alt"></i></button></td>
+                        <td><strong>Prix €</strong></td>
+                        <td class="center width30">
+                            <button class="buttonClassic">-</button>
+                            <input class="numberArticle" value="1" type="number">
+                            <button class="buttonClassic">+</button>
+                        </td>
+                        <td><strong>Prix €</strong></td>
                     </tr>
                 </table>
+
+                <div id="cartResponsive">
+                    <div class="flexRow cartResponsive">
+                        <div>
+                            <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                        </div>
+                        <div class="flexColumn infoCart">
+                            <div class="flexRow flexCenter">
+                                <p> Nom de l'article</p>
+                                <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
+                            </div>
+                            <p><strong>Prix €</strong></p>
+                            <div>
+                                <button class="buttonClassic">-</button>
+                                <input class="numberArticle" value="1" type="number">
+                                <button class="buttonClassic">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flexRow flexCenter margin15-30">
+                    <h3 class="colorGreen">Total :</h3>
+                    <span id="total1">Total €</span>
+                    <button id="buy1" class="send">PAYER</button>
+                </div>
+
                 <div class="separatorHorizontal"></div>
                 <h2 class="subtitle">Mes articles favoris</h2>
                 <div class="flexRow">
                     <div class="wishlist flexCenter flexColumn">
                         <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
                         <p class="colorBlue">Nom de l'article</p>
-                        <span>Prix €</span>
+                        <span><strong>Prix €</strong></span>
+                        <div class="flexRow">
+                            <button id="addToCart1" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
+                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
+                        </div>
                     </div>
                     <div class="wishlist flexCenter flexColumn">
                         <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
                         <p class="colorBlue">Nom de l'article</p>
-                        <span>Prix €</span>
+                        <span><strong>Prix €</strong></span>
+                        <div class="flexRow">
+                            <button id="addToCart2" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
+                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
+                        </div>
                     </div>
                     <div class="wishlist flexCenter flexColumn">
                         <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
                         <p class="colorBlue">Nom de l'article</p>
-                        <span>Prix €</span>
+                        <span><strong>Prix €</strong></span>
+                        <div class="flexRow">
+                            <button id="addToCart3" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
+                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
+                        </div>
                     </div>
                     <div class="wishlist flexCenter flexColumn">
                         <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
                         <p class="colorBlue">Nom de l'article</p>
-                        <span>Prix €</span>
+                        <span><strong>Prix €</strong></span>
+                        <div class="flexRow">
+                            <button id="addToCart4" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
+                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
         </section>
     </div>
