@@ -117,27 +117,13 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     </tr>
                 </table>
 
-                <!-- -->
+                <!-- Displayed when the screen is at 830px -->
                 <div id="orderedResponsive">
                     <div class="containerOrdered flexColumn">
                         <p>Livraison du 00/00/0000</p>
                         <div class="flexRow infoArticle">
-                            <div>
-                                <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                            </div>
-                            <div class="infoCart">
-                                <p class="margin">Nom de l'article</p>
-                                <p class="margin"><strong>Prix €</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                    <<div class="containerOrdered flexColumn">
-                        <p>Livraison du 00/00/0000</p>
-                        <div class="flexRow infoArticle">
-                            <div>
-                                <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                            </div>
-                            <div class="infoCart">
+                            <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            <div class="infoCart flexCenter">
                                 <p class="margin">Nom de l'article</p>
                                 <p class="margin"><strong>Prix €</strong></p>
                             </div>
@@ -146,10 +132,18 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <div class="containerOrdered flexColumn">
                         <p>Livraison du 00/00/0000</p>
                         <div class="flexRow infoArticle">
-                            <div>
-                                <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            <div class="infoCart flexCenter">
+                                <p class="margin">Nom de l'article</p>
+                                <p class="margin"><strong>Prix €</strong></p>
                             </div>
-                            <div class="infoCart">
+                        </div>
+                    </div>
+                    <div class="containerOrdered flexColumn">
+                        <p>Livraison du 00/00/0000</p>
+                        <div class="flexRow infoArticle">
+                            <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            <div class="infoCart flexCenter">
                                 <p class="margin">Nom de l'article</p>
                                 <p class="margin"><strong>Prix €</strong></p>
                             </div>
@@ -179,13 +173,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                 </div>
                             </div>
                         </td>
-                        <td><strong>Prix €</strong></td>
-                        <td class="center width30">
-                            <button class="buttonClassic">-</button>
-                            <input class="numberArticle" value="1" type="number">
-                            <button class="buttonClassic">+</button>
+                        <td class="price1"></td>
+                        <td>
+                            <div class="flexRow flexCenter">
+                                <button class="buttonClassic less1">-</button>
+                                <p class="numberArticle numberArticle1">1 </p>
+                                <button class="buttonClassic more1">+</button>
+                            </div>
                         </td>
-                        <td><strong>Prix €</strong></td>
+                        <td class="total1"></td>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
@@ -197,13 +193,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                     <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                                 </div>
                         </td>
-                        <td><strong>Prix €</strong></td>
-                        <td class="center width30">
-                            <button class="buttonClassic">-</button>
-                            <input class="numberArticle" value="1" type="number">
-                            <button class="buttonClassic">+</button>
+                        <td class="price2"></td>
+                        <td>
+                            <div class="flexRow flexCenter">
+                                <button class="buttonClassic less2">-</button>
+                                <p class="numberArticle numberArticle2">1 </p>
+                                <button class="buttonClassic more2">+</button>
+                            </div>
                         </td>
-                        <td><strong>Prix €</strong></td>
+                        <td class="total2"></td>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
@@ -215,17 +213,20 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                     <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                                 </div>
                         </td>
-                        <td><strong>Prix €</strong></td>
-                        <td class="center width30">
-                            <button class="buttonClassic">-</button>
-                            <input class="numberArticle" value="1" type="number">
-                            <button class="buttonClassic">+</button>
+                        <td class="price3"></td>
+                        <td>
+                            <div class="flexRow flexCenter">
+                                <button class="buttonClassic less3">-</button>
+                                <p class="numberArticle numberArticle3">1 </p>
+                                <button class="buttonClassic more3">+</button>
+                            </div>
                         </td>
-                        <td><strong>Prix €</strong></td>
+                        <td class="total3"></td>
                     </tr>
                 </table>
 
-                <div id="cartResponsive">
+                <!-- Displayed when the screen is at 830px -->
+                <div id="cartResponsive" class="flexColumn">
                     <div class="flexRow cartResponsive">
                         <div>
                             <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
@@ -234,21 +235,63 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                             <div class="flexRow flexCenter">
                                 <p> Nom de l'article</p>
                                 <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
+                                <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                             </div>
-                            <p><strong>Prix €</strong></p>
-                            <div>
-                                <button class="buttonClassic">-</button>
-                                <input class="numberArticle" value="1" type="number">
-                                <button class="buttonClassic">+</button>
+                            <p class="price1"></p>
+                            <div class="flexRow flexCenter">
+                                <button class="buttonClassic less1">-</button>
+                                <p class="numberArticle numberArticle1">1 </p>
+                                <button class="buttonClassic more1">+</button>
                             </div>
+                            <p class="total1"></p>
+                        </div>
+                    </div>
+                    <div class="flexRow cartResponsive">
+                        <div>
+                            <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                        </div>
+                        <div class="flexColumn infoCart">
+                            <div class="flexRow flexCenter">
+                                <p> Nom de l'article</p>
+                                <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
+                                <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                            <p class="price2"></p>
+                            <div class="flexRow flexCenter">
+                                <button class="buttonClassic less2">-</button>
+                                <p class="numberArticle numberArticle2">1 </p>
+                                <button class="buttonClassic more2">+</button>
+                            </div>
+                            <p class="total2"></p>
+                        </div>
+                    </div>
+                    <div class="flexRow cartResponsive">
+                        <div>
+                            <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                        </div>
+                        <div class="flexColumn infoCart">
+                            <div class="flexRow flexCenter">
+                                <p> Nom de l'article</p>
+                                <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
+                                <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                            <p class="price3"></p>
+                            <div class="flexRow flexCenter">
+                                <button class="buttonClassic less3">-</button>
+                                <p class="numberArticle numberArticle3">1 </p>
+                                <button class="buttonClassic more3">+</button>
+                            </div>
+                            <p class="total3"></p>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flexRow flexCenter margin15-30">
-                    <h3 class="colorGreen">Total :</h3>
-                    <span id="total1">Total €</span>
+                <div class="total flexRow flexCenter margin15-30">
+                    <div class="flexRow">
+                        <h3 class="colorGreen">Total :</h3>
+                        <span id="total1">Total €</span>
+                    </div>
                     <button id="buy1" class="send">PAYER</button>
                 </div>
 
@@ -290,10 +333,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                             <button id="addToCart4" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
                             <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </section>
     </div>

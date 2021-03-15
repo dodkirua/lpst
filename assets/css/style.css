@@ -489,6 +489,7 @@ td, th {
 
  .numberArticle {
      width: 20%;
+     background-color: #F2F5FA;
  }
 
  .wishlist {
@@ -506,7 +507,6 @@ td, th {
 
  .infoArticle {
      width: 95%;
-     border: 1px solid #BFBFBF;
      padding: 15px;
      background-color: white;
  }
@@ -552,7 +552,10 @@ td, th {
      background-color: white;
      padding: 15px;
      margin: 10px;
-     width: 100%;
+     width: 93%;
+ }
+ .cartResponsive:hover {
+     background-color: #f3da31;
  }
  .infoCart {
      width: 85%;
@@ -635,32 +638,25 @@ td, th {
     #containerShop1 {
         flex-direction: column;
     }
-
     #containerShop2 {
         flex-direction: column-reverse;
     }
-
     .description {
         width: 90%;
     }
-
     #lpstLogo {
         height: 65px;
     }
-
     main {
         width: 100%;
     }
-
     .containedMenu {
         font-size: 14px;
         padding: 10px;
     }
-
     #menu {
         height: 80px;
     }
-
     .containedMenu:hover, .separatorVertical {
         height: 60px;
     }
@@ -726,6 +722,9 @@ td, th {
     }
     #cartResponsive {
         display: flex;
+    }
+    .infoArticle > .imgTable {
+        width: 40%;
     }
 }
 
@@ -857,6 +856,9 @@ td, th {
     h1 {
        font-size: 20px;
     }
+    .subtitle {
+        font-size: 17px;
+    }
     .shop {
         height: 150px;
     }
@@ -869,10 +871,25 @@ td, th {
     label {
         font-size: 15px;
     }
-    .infoArticle{
+    .infoArticle, .imgTable, .total{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+    }
+
+    .infoArticle > .infoCart {
+        display: flex;
+        flex-direction: column;
+    }
+    .infoArticle, .infoArticle > .infoCart {
+        width: 100%;
+    }
+    .infoCart > div > p, .infoCart > p, .inputAddArticle, .wishlist > p, .wishlist > span {
+        font-size: 10px;
+    }
+    .whiteBorder {
+        width: 70%;
     }
 }
 
