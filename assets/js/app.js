@@ -20,6 +20,9 @@ for (let i = 0; i < organizationalChart.length; i++) {
     )
 }
 
+closeModal("error0");
+closeModal("success");
+
 //display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
 let nbClick = 0;
 $("#menuResponsive").click(function () {
@@ -86,10 +89,28 @@ document.getElementById("basketsSave2").addEventListener("click", function () {
     document.getElementById("baskets_favorite").style.display = "block";
 });
 
+document.getElementById("modifyProfil").addEventListener("click", function () {
+    document.getElementById("contactInformation").style.display = "none";
+    document.getElementById("modifyInformation").style.display = "flex";
+});
+
+
+
+
+/**
+ *
+ * @param idModal
+ */
+function closeModal (idModal) {
+    document.getElementById("closeModal").addEventListener("click", function () {
+    document.getElementById(idModal).style.display = "none";
+    });
+}
+
+
 itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
 itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
 itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
-
 
 
 

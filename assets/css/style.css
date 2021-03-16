@@ -421,7 +421,7 @@ p {
      padding: 8px;
  }
 
- #modifyPorfil {
+ .modifyProfil {
      width: initial;
  }
 
@@ -536,6 +536,7 @@ td, th {
      font-size: 12px;
      margin: 10px 1px;
  }
+
  .buttonClassic:hover {
      box-shadow: 2px 2px 7px #bfbfbf;
      border-radius: 10px;
@@ -545,24 +546,50 @@ td, th {
      color: #ff0b0b;
  }
 
- #cartResponsive {
+ #cartResponsive, #modifyInformation{
      display: none;
  }
+
  .cartResponsive {
      background-color: white;
      padding: 15px;
      margin: 10px;
      width: 93%;
  }
- .cartResponsive:hover {
+
+ .cartResponsive:hover, .infoArticle:hover {
      background-color: #f3da31;
  }
+
  .infoCart {
      width: 85%;
      padding: 0 15px;
  }
+
  .favoriteArticleCart {
      margin-left: 20%;
+ }
+
+ .modal {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 80px;
+ }
+
+ #closeModal {
+     position: absolute;
+     top: 5px;
+     right: 30px;
+ }
+
+ #error0 {
+     background-color: #E74A4A;
+ }
+
+ #success {
+     background-color: #8ABF07;
  }
 
 @media screen and (max-width: 1510px) {

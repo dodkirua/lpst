@@ -58,7 +58,19 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
         <section id="otherInformation">
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonées</h2>
-                <div class="flexColumn flexCenter">
+                <div id="contactInformationModify" >
+                    <form id="modifyInformation" action="#" method="post" class="flexColumn flexCenter">
+                        <input type="file" name="profilePicture" id="profilePicture" class="whiteBorder">
+                        <label for="firstnameModify" class="colorBlue center margin15-30">Prénom </label>
+                        <input id="firstnameModify" name="firstnameModify" class="whiteBorder" value="prenom" type="text">
+                        <label for="lastnameModify" class="colorBlue center margin15-30">Nom </label>
+                        <input id="lastnameModify" name="lastnameModify" class="whiteBorder" value="nom" type="text">
+                        <label for="emailModify" class="colorBlue center margin15-30">Email </label>
+                        <input id="emailModify" name="emailModify" class="whiteBorder" value="prenom.nom@mail.com" type="text">
+                        <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer les modifications">
+                    </form>
+                </div>
+                <div id="contactInformation" class="flexColumn flexCenter">
                     <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
                     <p class="colorBlue">Prénom </p>
                     <p class="whiteBorder">Prénom</p>
@@ -66,10 +78,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <p class="whiteBorder">Nom</p>
                     <p class="colorBlue">Email </p>
                     <p class="whiteBorder">prenom.nom@mail.com</p>
-                    <div class="flexCenter">
-                        <button id="modifyPorfil" class="send modify">Modifier le profil</button>
-                    </div>
+                    <button id="modifyProfil" class="send modify modifyProfil">Modifier le profil</button>
                 </div>
+
+
+
+
                 <div class="separatorHorizontal"></div>
                 <h2 class="subtitle"> Mes adresses</h2>
                 <h3 class="colorGrey "> Adresse de facturation</h3>

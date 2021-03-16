@@ -68,5 +68,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 </main>
 
 <?php
+
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
 
