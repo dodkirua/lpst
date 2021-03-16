@@ -1,5 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/assets/Classes/php/BD.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/assets/Classes/php/User.php";
 
 class UserManager{
     private ?PDO $db;
@@ -16,7 +17,7 @@ class UserManager{
      * @param $pass
      * @return bool
      */
-    public function addUser($name, $surname, $mail, $pass){
+    public function addUser($name, $surname, $mail, $pass) : bool{
         $stmt = $this->db->prepare("
                 INSERT INTO  user (name, surname, mail, pass, role_id) VALUES (:name, :surname, :mail, :pass, :role)                
             ");
@@ -53,5 +54,35 @@ class UserManager{
         return $articles;$
     }*/
 
+    /**
+     * test connection if the mail and pass is appearing in the DB
+     * @param string $mail
+     * @param string $pass
+     * @return array|null
+     */
+    public function testConnection(string $mail, string $pass) {
+        $stmt = $this->db->prepare("SELECT '".$mail."' FROM user");
+        $user = null;
+        if ($state = $stmt->execute()){
+
+            foreach ($stmt->fetchAll() as $item) {
+                return $item;
+                /*$user =  new User($item['id']);
+                $user = $user
+                    ->setName($item['name'])
+                    ->setSurname($item['surname'])
+                    ->setMail($item['mail'])
+                    ->setPass($item['pass'])
+                    ->setRole($item['role_id'])
+                    ;*/
+            }
+        }
+      /*  if (password_verify($pass,$user->getPass())){
+            return $user;
+        }
+        else {
+            return null;
+        }*/
+    }
 
 }

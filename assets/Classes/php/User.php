@@ -3,10 +3,10 @@
 
 class User{
     private ?int $id;
-    private ?string $name;
-    private ?string $surname;
-    private ?string $mail;
-    private ?string $pass;
+    private ?string $name = null;
+    private ?string $surname = null;
+    private ?string $mail = null;
+    private ?string $pass = null;
     private ?string $phone = null;
     private bool $verificated = false;
     private ?int $role = null;
@@ -15,17 +15,10 @@ class User{
     /**
      * User constructor.
      * @param int|null $id
-     * @param string|null $name
-     * @param string|null $surname
-     * @param string|null $mail
-     * @param string|null $pass
      */
-    public function __construct(?int $id, ?string $name, ?string $surname, ?string $mail, ?string $pass)    {
+    public function __construct(?int $id)    {
         $this->id = $id;
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->mail = $mail;
-        $this->pass = $pass;
+
     }
 
     /**
@@ -93,15 +86,6 @@ class User{
     }
 
     /**
-     * set the name
-     * @param string|null $name
-     */
-    public function setName(?string $name): void
-    {
-        $this->name = $name;
-    }
-
-    /**
      * get the verificated check
      * @return bool
      */
@@ -111,68 +95,98 @@ class User{
     }
 
     /**
+     * set the name
+     * @param string|null $name
+     * @return User
+     */
+    public function setName(?string $name): User
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
      * set the surname
      * @param string|null $surname
+     * @return User
      */
-    public function setSurname(?string $surname): void
-    {
+    public function setSurname(?string $surname): User    {
         $this->surname = $surname;
+        return $this;
     }
 
     /**
      * set the mail
      * @param string|null $mail
+     * @return User
      */
-    public function setMail(?string $mail): void
-    {
+    public function setMail(?string $mail): User    {
         $this->mail = $mail;
+        return $this;
     }
 
     /**
      * set the pass
      * @param string|null $pass
+     * @return User
      */
-    public function setPass(?string $pass): void
-    {
+    public function setPass(?string $pass): User    {
         $this->pass = $pass;
+        return $this;
     }
 
     /**
      * set the phone
      * @param string|null $phone
+     * @return User
      */
-    public function setPhone(?string $phone): void
-    {
+    public function setPhone(?string $phone): User    {
         $this->phone = $phone;
+        return $this;
     }
 
     /**
      * set the role id
      * @param int|null $role
+     * @return User
      */
-    public function setRole(?int $role): void
-    {
+    public function setRole(?int $role): User    {
         $this->role = $role;
+        return $this;
     }
 
     /**
      * set the adress id
      * @param int|null $adress
+     * @return User
      */
-    public function setAdress(?int $adress): void
-    {
+    public function setAdress(?int $adress): User    {
         $this->adress = $adress;
+        return $this;
     }
 
     /**
      * set the verification statut
      * @param bool $verificated
+     * @return User
      */
-    public function setVerificated(bool $verificated): void
-    {
+    public function setVerificated(bool $verificated): User  {
         $this->verificated = $verificated;
+        return $this;
     }
 
-
+    /**
+     * return the list of data minimal for a user
+     * @return array
+     */
+    public function getBaseData() : array{
+        $userArray['id'] = $this->getId();
+        $userArray['name'] = $this->getName();
+        $userArray['surname'] = $this->getSurname();
+        $userArray['mail'] = $this->getMail();
+        $userArray['pass'] = $this->getPass();
+        $userArray['role'] = $this->getRole();
+        return $userArray;
+    }
 
 }
