@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             <label for="password" class="colorBlue">Mot de passe*</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <a class="flexCenter colorBlue underline margin15-30" href="#">Mot de passe oublié ?</a>
+        <a class="flexCenter colorBlue underline margin15-30" href="../assets/php/forgotPassword.php">Mot de passe oublié ?</a>
         <input class="send" type="submit" value="Se connecter">
         <a href="registration.php" class="flexCenter brownBorder"> Créer un compte</a>
     </form>
