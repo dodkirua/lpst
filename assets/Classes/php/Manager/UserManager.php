@@ -58,31 +58,31 @@ class UserManager{
      * test connection if the mail and pass is appearing in the DB
      * @param string $mail
      * @param string $pass
-     * @return array|null
+     * @return User|null
      */
-    public function testConnection(string $mail, string $pass) {
-        $stmt = $this->db->prepare("SELECT '".$mail."' FROM user");
+    public function testConnection(string $mail, string $pass) :?User {
+        $stmt = $this->db->prepare("SELECT * FROM user WHERE mail='".$mail."'");
         $user = null;
         if ($state = $stmt->execute()){
 
             foreach ($stmt->fetchAll() as $item) {
-                return $item;
-                /*$user =  new User($item['id']);
+
+                $user =  new User($item['id']);
                 $user = $user
                     ->setName($item['name'])
                     ->setSurname($item['surname'])
                     ->setMail($item['mail'])
                     ->setPass($item['pass'])
                     ->setRole($item['role_id'])
-                    ;*/
+                    ;
             }
         }
-      /*  if (password_verify($pass,$user->getPass())){
+       if (password_verify($pass,$user->getPass())){
             return $user;
         }
         else {
             return null;
-        }*/
+        }
     }
 
 }

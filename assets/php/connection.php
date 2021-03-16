@@ -13,8 +13,7 @@ else {
     $pass = sanitize($_POST['password']);
     $userManager = new UserManager();
     $user = $userManager->testConnection($mail, $pass);
-    var_dump($user);
-    /*if (is_null($user)) {
+    if (is_null($user)) {
         header('Location: ' . $root . "/pages/login.php?e=1");
 
     } else {
@@ -23,6 +22,6 @@ else {
             $_SESSION["$key"] = $item;
         }
         header('Location: ' . $root . "/pages/login.php?s=1");
-    }*/
+    }
 }
 

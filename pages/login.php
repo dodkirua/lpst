@@ -1,4 +1,5 @@
 <?php
+session_destroy();
 session_start();
 $title = "LPST : Connexion";
 $return = "";
@@ -18,6 +19,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
 
 <main>
+    <pre>
+        <?= var_dump($_SESSION) ?>
+    </pre>
     <h1>Se <span class="colorGreen">connecter</></h1>
     <div><?= $return?></div>
     <form action="../assets/php/connection.php" method="post" class="flexColumn" name="login">
