@@ -1,8 +1,9 @@
 /**
  * validate the password before validation
  */
-export function validatePass() {
+export function validatePass()  {
     let msg;
+    let token;
     const elem = document.getElementById("passwordRegistration");
     let str = elem.value;
     if (str.match( /[0-9]/g) &&
@@ -11,13 +12,15 @@ export function validatePass() {
         str.match( /[^a-zA-Z\d]/g) &&
         str.length >= 10) {
         msg = "<p style='color:green'>Mot de passe fort.</p>";
-        //elem.setCustomValidity("Mot de passe fort.");
-        console.log(elem);
+        token = true;
     }
 
-    else
+    else {
         msg = "<p style='color:red'>Mot de passe faible.</p>";
+        token = false;
+    }
     document.getElementById("pwMsg").innerHTML= msg;
+    return token;
 }
 
 /**
@@ -25,14 +28,28 @@ export function validatePass() {
  */
 export function comparePass() {
     let msg;
+    let token;
     let pass1 = document.getElementById("passwordRegistration").value;
     let pass2 = document.getElementById("repeatPassword").value;
 
     if (pass1 === pass2){
         msg = "Les mots de passes correspondent";
+        token = true;
     }
     else {
         msg = "Les mots de passes sont différents";
+        token = false;
     }
     document.getElementById("pwMsgRepeat").innerHTML= msg;
+    return token;
 }
+
+export function validate(){
+    if (comparePass() && validatePass()){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
