@@ -16,11 +16,11 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
         $user->addUser($lastname,$firstname,$mail,$pass);
     }
     else {
-        header('Location: ../../pages/registration.php?e=2');
+        header('Location: ../../pages/registration.php?e=1');
     }
     header('Location: ../../pages/registration.php?s=1');
 
 }
 else {
-    header('Location: ../../pages/registration.php?e=1');
+    header('Location: ../../pages/registration.php?e=0');
 }

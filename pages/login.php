@@ -2,16 +2,19 @@
 session_start();
 $title = "LPST : Connexion";
 $return = "";
+$id = "";
  if(isset($_GET['e'])){
+     $id = "error0";
      if ($_GET['e'] = 0){
-         $return = "<div id='error0' class='modal flexCenter colorWhite'>Problème lors du transfert des données <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
+         $return = "Problème lors du transfert des données ";
      }
      elseif ($_GET['e'] = 1){
-         $return = "<div id='error0' class='modal flexCenter colorWhite'>Le mail et le mot de passe ne correspondent pas<button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
+         $return = "Le mail et le mot de passe ne correspondent pas";
      }
  }
  elseif (isset($_GET['s'])){
-     $return = "<div id='success' class='modal flexCenter colorWhite'>connection réussit <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
+     $id = "success";
+     $return = "connection réussit";
  }
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
@@ -20,6 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 <main>
 
     <h1>Se <span class="colorGreen">connecter</></h1>
+    <div id='<?= $id?>' class='modal flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
     <div><?= $return?></div>
     <form action="../assets/php/connection.php" method="post" class="flexColumn" name="login">
         <div class="flexColumn contact">

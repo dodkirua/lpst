@@ -7,10 +7,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 $return = "";
 if (isset($_GET['e'])){
     switch ($_GET['e']){
-        case '1':
+        case '0':
             $return = "Problème lors de l'envoi des données du formulaire";
             break;
-        case '2':
+        case '1':
             $return = "Mot de passe et le mot de passe de vérification ne sont pas identique";
             break;
     }
