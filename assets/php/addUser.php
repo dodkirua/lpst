@@ -15,8 +15,12 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
         $user = new UserManager();
         $user->addUser($lastname,$firstname,$mail,$pass);
     }
+    else {
+        header('Location: ../../pages/registration.php?e=2');
+    }
+    header('Location: ../../pages/registration.php?s=1');
 
 }
 else {
-    echo "erreur lors du formulaire";
+    header('Location: ../../pages/registration.php?e=1');
 }
