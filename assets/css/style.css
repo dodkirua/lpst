@@ -106,6 +106,12 @@ a {
     margin: 0 5px;
 }
 
+.separatorHorizontal {
+    border-top: 2px solid #BFBFBF;
+    width: 100%;
+    margin: 3px 0;
+}
+
 main {
     background-color: white;
     margin: auto;
@@ -332,15 +338,11 @@ p {
     margin: 5px 0;
 }
 
- #pwMsg {
-     position: absolute;
-     right: 400px;
- }
-
- #pwMsgRepeat {
-     position: absolute;
-     right: 280px;
- }
+#pwMsgRepeat, #pwMsg {
+    width: 50%;
+    margin: auto;
+    font-size: 12px;
+}
 
  #mobile {
      display: none;
@@ -362,7 +364,232 @@ p {
      margin: 15px 0;
  }
 
-@media screen and (max-width: 1160px) {
+ section {
+     background-color: #F2F5FA;
+     box-shadow: 5px 5px 10px grey;
+     margin: 20px;
+ }
+
+ #informationProfil {
+     width: 30%;
+ }
+
+ #otherInformation {
+     width: 100%;
+ }
+
+ .photoProfil {
+     margin: 10px;
+     border-radius: 50%;
+     width: 175px;
+ }
+
+ .select {
+     background-color: #D5DDB3;
+     padding: 15px;
+     font-size: 20px;
+     text-align: center;
+ }
+ .select:hover {
+     background-color: #8ABF07;
+ }
+
+ .subtitle {
+     font-size: 25px;
+     color: #B38243;
+     text-align: center;
+ }
+
+ .whiteBorder {
+     background-color: white;
+     width: 30%;
+     padding: 7px;
+ }
+
+ .modify {
+     text-align: center;
+     border-radius: 5px 5px;
+     margin: 10px 0;
+ }
+
+ .colorGrey {
+     color: grey;
+ }
+
+ button {
+     border: none;
+     padding: 8px;
+ }
+
+ #modifyPorfil {
+     width: initial;
+ }
+
+ .redButton {
+     background-color: #E74A4A;
+     color: white;
+     border-radius: 5px 5px;
+     margin: 20px 0;
+ }
+ .redButton:hover {
+     box-shadow: 5px 5px 10px darkred;
+ }
+
+ #newPwd, #currentPwd {
+     margin: 20px auto;
+     background-color: white;
+ }
+
+ #orderedAccount, #baskets_favorite {
+     display: none;
+ }
+
+ table {
+     margin: 20px;
+     border-collapse: collapse;
+ }
+
+ .titleTable {
+     background-color: #A9C500;
+ }
+
+ td {
+     border: 1px solid #BFBFBF;
+     padding: 15px;
+     background-color: white;
+     font-size: 12px;
+     margin: -15px;
+ }
+
+.trTable:hover > td {
+    background-color: #f3da31;
+}
+
+td, th {
+    width: 300px;
+    text-align: center;
+}
+
+ .imgTable {
+     width: 80%;
+     border-radius: 10px;
+ }
+
+ .center {
+     text-align: center;
+ }
+
+ .width30 {
+     width: 30%;
+ }
+
+ .width65 {
+     width: 65%;
+ }
+
+ .numberArticle {
+     width: 20%;
+     background-color: #F2F5FA;
+ }
+
+ .wishlist {
+     width: 20%;
+ }
+
+ #orderedResponsive {
+     display: none;
+ }
+
+ .containerOrdered {
+     padding: 15px;
+     width: 100%;
+ }
+
+ .infoArticle {
+     width: 95%;
+     padding: 15px;
+     background-color: white;
+ }
+
+ .margin {
+    margin: 0 30px;
+ }
+
+ #accountResponsive {
+     display: none;
+ }
+
+ #disconnectionResponsive {
+     display: none;
+ }
+
+ #buy1 {
+     margin-left: 50px;
+ }
+ #total1 {
+     margin-left: 10px;
+ }
+
+ .buttonClassic {
+     background-color: transparent;
+     width: initial;
+     font-size: 12px;
+     margin: 10px 1px;
+ }
+ .buttonClassic:hover {
+     box-shadow: 2px 2px 7px #bfbfbf;
+     border-radius: 10px;
+ }
+
+ .buttonClassic:hover > i {
+     color: #ff0b0b;
+ }
+
+ #cartResponsive {
+     display: none;
+ }
+ .cartResponsive {
+     background-color: white;
+     padding: 15px;
+     margin: 10px;
+     width: 93%;
+ }
+ .cartResponsive:hover {
+     background-color: #f3da31;
+ }
+ .infoCart {
+     width: 85%;
+     padding: 0 15px;
+ }
+ .favoriteArticleCart {
+     margin-left: 20%;
+ }
+
+@media screen and (max-width: 1510px) {
+    .wishlist > p, .wishlist > span {
+        font-size: 12px;
+    }
+    .whiteBorder {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    #informationProfil {
+        width: 15%;
+    }
+    .photoProfil {
+        width: 100px;
+    }
+    .width65 {
+        width: 76%;
+    }
+    #information > p, #ordered > p, #basketsSave > p, #setting > p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1180px) {
     .staffPhoto {
         width: 100px;
     }
@@ -375,38 +602,61 @@ p {
     .nameStaff {
         font-size: 14px;
     }
+    .account {
+        flex-direction: column;
+    }
+    #informationProfil {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+    }
+    #informationProfil > div.separatorHorizontal {
+        display: none;
+    }
+    .select {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+    }
+    .photoProfil {
+        width: 80px;
+    }
+    #disconnection {
+        font-size: 10px;
+    }
+    .redButton {
+        margin: 5px;
+    }
+    .width65 {
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 970px) {
     #containerShop1 {
         flex-direction: column;
     }
-
     #containerShop2 {
         flex-direction: column-reverse;
     }
-
     .description {
         width: 90%;
     }
-
     #lpstLogo {
         height: 65px;
     }
-
     main {
         width: 100%;
     }
-
     .containedMenu {
         font-size: 14px;
         padding: 10px;
     }
-
     #menu {
         height: 80px;
     }
-
     .containedMenu:hover, .separatorVertical {
         height: 60px;
     }
@@ -464,6 +714,18 @@ p {
     .margin15-30 {
         margin: 8px 30px;
     }
+    #tableOrdered, #tableBaskets {
+        display: none;
+    }
+    #orderedResponsive {
+        display: block;
+    }
+    #cartResponsive {
+        display: flex;
+    }
+    .infoArticle > .imgTable {
+        width: 40%;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -490,6 +752,30 @@ p {
     #ab, #biomonde {
         width: 70px;
     }
+    #profil {
+        display: none;
+    }
+    .select {
+        height: 60px;
+    }
+    #informationProfil, .width65 {
+        width: 100%;
+    }
+    .account {
+        padding: 0;
+    }
+    section {
+        margin: 0;
+    }
+    #disconnectionResponsive {
+        display: flex;
+        align-items: center;
+    }
+    .redButton {
+        margin: 0;
+        border-radius: 0;
+    }
+
 }
 
 @media screen and (max-width: 530px) {
@@ -547,11 +833,31 @@ p {
     label {
         font-size: 18px;
     }
+    .margin {
+        margin: 0 15px;
+    }
+    .selectComputer {
+        display: none;
+    }
+    #accountResponsive {
+        display: flex;
+        width: 100%;
+        font-size: 20px;
+    }
+    #information2 > p, #ordered2 > p, #basketsSave2 > p, #setting2 > p {
+        font-size: 20px;
+    }
+    .wishlist {
+        width: 26%;
+    }
 }
 
 @media screen and (max-width: 460px) {
     h1 {
        font-size: 20px;
+    }
+    .subtitle {
+        font-size: 17px;
     }
     .shop {
         height: 150px;
@@ -564,6 +870,26 @@ p {
     }
     label {
         font-size: 15px;
+    }
+    .infoArticle, .imgTable, .total{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infoArticle > .infoCart {
+        display: flex;
+        flex-direction: column;
+    }
+    .infoArticle, .infoArticle > .infoCart {
+        width: 100%;
+    }
+    .infoCart > div > p, .infoCart > p, .inputAddArticle, .wishlist > p, .wishlist > span {
+        font-size: 10px;
+    }
+    .whiteBorder {
+        width: 70%;
     }
 }
 

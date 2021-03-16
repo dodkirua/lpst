@@ -24,17 +24,13 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
         </div>
         <div class="flexColumn contact">
             <label for="passwordRegistration" class="colorBlue">Mot de passe*</label>
-            <div class="flexRow">
-                <input type="password" id="passwordRegistration" name="password" required>
-                <div id="pwMsg"></div>
-            </div>
+            <input type="password" id="passwordRegistration" name="password" required>
+            <div id="pwMsg"></div>
         </div>
         <div class="flexColumn contact">
             <label for="repeatPassword" class="colorBlue">Répéter le mot de passe*</label>
-            <div class="flexRow">
-                <input type="password" id="repeatPassword" name="repeatPassword" required>
-                <div id="pwMsgRepeat"></div>
-            </div>
+            <input type="password" id="repeatPassword" name="repeatPassword" required>
+            <div id="pwMsgRepeat"></div>
         </div>
         <input class="send" type="submit" value="S'enregistrer">
         <a href="login.php" class="flexCenter brownBorder">Déjà un compte ?</a>
