@@ -1,12 +1,28 @@
 <?php
+session_start();
 $title = "LPST : Inscription";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+$return = "";
+if (isset($_GET['e'])){
+    switch ($_GET['e']){
+        case '1':
+            $return = "Problème lors de l'envoi des données du formulaire";
+            break;
+        case '2':
+            $return = "Mot de passe et le mot de passe de vérification ne sont pas identique";
+            break;
+    }
+}
+elseif (isset($_GET['s'])){
+    $return = "Succés de la création du compte";
+}
 ?>
 
 <main>
     <h1>Créer <span class="colorGreen"> un compte</></h1>
+    <div><?= $return?></div>
     <form action="../assets/php/addUser.php" method="post" class="flexColumn" name="registration" id = "registration">
         <div class="flexColumn contact">
             <div class="flexRow nameContact">
