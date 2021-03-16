@@ -5,7 +5,9 @@ $title = "LPST : Inscription";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 $return = "";
+$id = "";
 if (isset($_GET['e'])){
+    $id = "error";
     switch ($_GET['e']){
         case '0':
             $return = "Problème lors de l'envoi des données du formulaire";
@@ -16,13 +18,14 @@ if (isset($_GET['e'])){
     }
 }
 elseif (isset($_GET['s'])){
+    $id = "success";
     $return = "Succés de la création du compte";
 }
 ?>
 
 <main>
     <h1>Créer <span class="colorGreen"> un compte</></h1>
-    <div><?= $return?></div>
+    <div id='<?= $id?>' class='modal flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
     <form action="../assets/php/addUser.php" method="post" class="flexColumn" name="registration" id = "registration">
         <div class="flexColumn contact">
             <div class="flexRow nameContact">
