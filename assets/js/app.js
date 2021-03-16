@@ -102,8 +102,8 @@ if (document.getElementById("modifyInformation")) {
     });
 }
 
-if (document.getElementById("error0")) {
-    closeModal("error0")
+if (document.getElementById("error")) {
+    closeModal("error")
 }
 
 if (document.getElementById("success")) {
