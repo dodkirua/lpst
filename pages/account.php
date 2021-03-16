@@ -28,10 +28,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
         <div id="basketsSave" class="select selectComputer">
             <p class="colorWhite">Mes paniers sauvegardés</p>
         </div>
-        <div class="separatorHorizontal"></div>
-        <div id="setting" class="select selectComputer">
-            <p class="colorWhite">Mes paramètres</p>
-        </div>
 
         <!-- Displayed when the screen is at 530px -->
         <div id="accountResponsive" class="flexRow">
@@ -43,9 +39,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             </div>
             <div id="basketsSave2" class="select selectMobile">
                 <p class="colorWhite"><i class="fas fa-shopping-basket"></i></p>
-            </div>
-            <div id="setting2" class="select selectMobile">
-                <p class="colorWhite"><i class="fas fa-cog"></i></p>
             </div>
         </div>
 

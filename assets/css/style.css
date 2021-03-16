@@ -83,6 +83,7 @@ a {
 .fa-bars {
     position: absolute;
     left: 20px;
+    font-size: 20px;
 }
 
 .linkLog {
@@ -603,6 +604,14 @@ td, th {
      margin: 0;
  }
 
+ .forgotPassword {
+     width: 30%;
+     background-color: white;
+     margin: 50px auto;
+     padding: 15px;
+     border-radius: 30px;
+ }
+
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
         font-size: 12px;
@@ -622,7 +631,7 @@ td, th {
     .width65 {
         width: 76%;
     }
-    #information > p, #ordered > p, #basketsSave > p, #setting > p {
+    #information > p, #ordered > p, #basketsSave > p {
         font-size: 13px;
     }
 }
@@ -652,7 +661,7 @@ td, th {
         display: none;
     }
     .select {
-        width: 30%;
+        width: 45%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -672,6 +681,9 @@ td, th {
     }
     .log4 {
         margin: 0;
+    }
+    .forgotPassword {
+        width: 75%;
     }
 }
 
@@ -885,7 +897,7 @@ td, th {
         width: 100%;
         font-size: 20px;
     }
-    #information2 > p, #ordered2 > p, #basketsSave2 > p, #setting2 > p {
+    #information2 > p, #ordered2 > p, #basketsSave2 > p{
         font-size: 20px;
     }
     .wishlist {

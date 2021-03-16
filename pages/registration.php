@@ -1,5 +1,4 @@
 <?php
-session_start();
 $title = "LPST : Inscription";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";

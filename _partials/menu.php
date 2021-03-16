@@ -50,7 +50,7 @@
             <div class="log2">
                 <a class="containedMenu flexCenter colorWhite" href="../pages/account.php">Mon compte</a>
                 <a class="containedMenu flexCenter colorWhite" href="#">Mon panier</a>
-                <button class="containedMenu flexCenter colorWhite disconnection">Deconnexion</button>
+                <button class="containedMenu flexCenter colorWhite redButton disconnection">Déconnexion</button>
             </div>
             <?php
         }
