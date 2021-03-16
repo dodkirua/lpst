@@ -106,6 +106,10 @@ if (document.getElementById("error0")) {
     closeModal("error0")
 }
 
+if (document.getElementById("success")) {
+    closeModal("success")
+}
+
 
 /**
  *
