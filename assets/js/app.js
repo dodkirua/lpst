@@ -1,5 +1,5 @@
 import {validatePass, comparePass} from "./registration.js";
-
+import {itemQuantity} from "./article.js";
 //creation of LPST staff profiles.
 let organizationalChart = [
     {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
@@ -127,39 +127,3 @@ itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
 
 
 
-/**
- * function which allows to increase or decrease the quantity of the article while decreasing or increasing the total price.
- * @param priceArticle
- * @param idQuantity
- * @param idPrice
- * @param total
- * @param idMore
- * @param idLess
- */
-function itemQuantity (priceArticle, idQuantity, idPrice, total, idMore, idLess) {
-    for (let i = 0; i < 2; i++) {
-        let price = priceArticle;
-        let addArticle = priceArticle;
-        let numberArticle1 = document.getElementsByClassName(idQuantity)[i].innerHTML;
-        let valueArticle1 = Number.parseInt(numberArticle1);
-        let totalPrice = document.getElementsByClassName(total)[i];
-        totalPrice.innerHTML = "<strong>" + price + "€ </strong>";
-        document.getElementsByClassName(idPrice)[i].innerHTML = "<strong>" + price + "€ </strong>";
-
-        document.getElementsByClassName(idMore)[i].addEventListener("click", function () {
-            totalPrice.innerHTML = "<strong>" + (price += addArticle).toFixed(2) + "€ </strong>";
-            document.getElementsByClassName(idQuantity)[i].innerHTML = valueArticle1 += 1;
-        });
-
-        document.getElementsByClassName(idLess)[i].addEventListener("click", function () {
-            if (document.getElementsByClassName(idQuantity)[i].innerHTML === "1" || document.getElementsByClassName(idQuantity)[i].innerHTML <= "1") {
-                totalPrice.innerHTML = "<strong>" + price.toFixed(2) + "€ </strong>";
-                document.getElementsByClassName(idQuantity)[i].innerHTML = 1;
-            }
-            else {
-                document.getElementsByClassName(total)[i].innerHTML = "<strong>" + (price -= addArticle).toFixed(2) + "€ </strong>";
-                document.getElementsByClassName(idQuantity)[i].innerHTML = valueArticle1 -= 1;
-            }
-        });
-    }
-}
