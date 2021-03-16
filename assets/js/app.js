@@ -20,8 +20,7 @@ for (let i = 0; i < organizationalChart.length; i++) {
     )
 }
 
-closeModal("error0");
-closeModal("success");
+
 
 //display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
 let nbClick = 0;
@@ -51,50 +50,61 @@ if (regis) {
 }
 
 // When I click on "my information" then the div with my information is displayed and the others are hidden.
-document.getElementById("information").addEventListener("click", function () {
-    document.getElementById("informationAccount").style.display = "block";
-    document.getElementById("orderedAccount").style.display = "none";
-    document.getElementById("baskets_favorite").style.display = "none";
-});
+if (document.getElementById("informationAccount")) {
+    document.getElementById("information").addEventListener("click", function () {
+        document.getElementById("informationAccount").style.display = "block";
+        document.getElementById("orderedAccount").style.display = "none";
+        document.getElementById("baskets_favorite").style.display = "none";
+    });
 
-document.getElementById("information2").addEventListener("click", function () {
-    document.getElementById("informationAccount").style.display = "block";
-    document.getElementById("orderedAccount").style.display = "none";
-    document.getElementById("baskets_favorite").style.display = "none";
-});
+    document.getElementById("information2").addEventListener("click", function () {
+        document.getElementById("informationAccount").style.display = "block";
+        document.getElementById("orderedAccount").style.display = "none";
+        document.getElementById("baskets_favorite").style.display = "none";
+    });
+}
+
+
 
 // When I click on "my orders" then the div with my orders is displayed and the others are hidden.
-document.getElementById("ordered").addEventListener("click", function () {
-    document.getElementById("informationAccount").style.display = "none";
-    document.getElementById("orderedAccount").style.display = "block";
-    document.getElementById("baskets_favorite").style.display = "none";
-});
+if (document.getElementById("orderedAccount")) {
+    document.getElementById("ordered").addEventListener("click", function () {
+        document.getElementById("informationAccount").style.display = "none";
+        document.getElementById("orderedAccount").style.display = "block";
+        document.getElementById("baskets_favorite").style.display = "none";
+    });
 
-document.getElementById("ordered2").addEventListener("click", function () {
-    document.getElementById("informationAccount").style.display = "none";
-    document.getElementById("orderedAccount").style.display = "block";
-    document.getElementById("baskets_favorite").style.display = "none";
-});
-
+    document.getElementById("ordered2").addEventListener("click", function () {
+        document.getElementById("informationAccount").style.display = "none";
+        document.getElementById("orderedAccount").style.display = "block";
+        document.getElementById("baskets_favorite").style.display = "none";
+    });
+}
 // When I click on "my saved baskets" then the div with my saved baskets is displayed and the others are hidden.
-document.getElementById("basketsSave").addEventListener("click", function () {
-    document.getElementById("informationAccount").style.display = "none";
-    document.getElementById("orderedAccount").style.display = "none";
-    document.getElementById("baskets_favorite").style.display = "block";
-});
+if (document.getElementById("basketsSave")) {
+    document.getElementById("basketsSave").addEventListener("click", function () {
+        document.getElementById("informationAccount").style.display = "none";
+        document.getElementById("orderedAccount").style.display = "none";
+        document.getElementById("baskets_favorite").style.display = "block";
+    });
 
-document.getElementById("basketsSave2").addEventListener("click", function () {
-    document.getElementById("informationAccount").style.display = "none";
-    document.getElementById("orderedAccount").style.display = "none";
-    document.getElementById("baskets_favorite").style.display = "block";
-});
+    document.getElementById("basketsSave2").addEventListener("click", function () {
+        document.getElementById("informationAccount").style.display = "none";
+        document.getElementById("orderedAccount").style.display = "none";
+        document.getElementById("baskets_favorite").style.display = "block";
+    });
+}
 
-document.getElementById("modifyProfil").addEventListener("click", function () {
-    document.getElementById("contactInformation").style.display = "none";
-    document.getElementById("modifyInformation").style.display = "flex";
-});
+if (document.getElementById("modifyInformation")) {
+    document.getElementById("modifyProfil").addEventListener("click", function () {
+        document.getElementById("contactInformation").style.display = "none";
+        document.getElementById("modifyInformation").style.display = "flex";
+    });
+}
 
-
+if (document.getElementById("error0")) {
+    closeModal("error0")
+}
 
 
 /**
