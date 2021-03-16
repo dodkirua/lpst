@@ -5,14 +5,14 @@ $title = "LPST : Connexion";
 $return = "";
  if(isset($_GET['e'])){
      if ($_GET['e'] = 0){
-         $return = "Problème lors du transfert des données";
+         $return = "<div id='error0' class='modal flexCenter colorWhite'>Problème lors du transfert des données <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
      }
      elseif ($_GET['e'] = 1){
-         $return = "Le mail et le mot de passe ne corresponde pas";
+         $return = "<div id='error0' class='modal flexCenter colorWhite'>Le mail et le mot de passe ne correspondent pas<button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
      }
  }
  elseif (isset($_GET['s'])){
-     $return = "connection réussit";
+     $return = "<div id='success' class='modal flexCenter colorWhite'>connection réussit <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
  }
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
