@@ -612,6 +612,16 @@ td, th {
      border-radius: 30px;
  }
 
+ .colorRed2 {
+     color: #E74A4A;
+     text-decoration: line-through black;
+ }
+
+ .colorGreen2 {
+     color: #8ABF07;
+     text-decoration: line-through black;
+ }
+
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
         font-size: 12px;
