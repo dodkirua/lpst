@@ -46,15 +46,14 @@ if (mag){
 
 const regis = document.getElementById("registration");
 if (regis) {
-    document.getElementById("passwordRegistration").addEventListener("change", validatePass);
-    document.getElementById("repeatPassword").addEventListener("change", comparePass);
+    document.getElementById("passwordRegistration").addEventListener("keyup", validatePass);
+    document.getElementById("repeatPassword").addEventListener("keyup", comparePass);
     regis.addEventListener("submit",function (e){
+        e.preventDefault();
         if(validate()){
             regis.submit();
         }
-        else {
-            e.preventDefault();
-        }
+
     });
 }
 
