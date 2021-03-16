@@ -21,7 +21,7 @@ else {
         foreach ($userArray as $key => $item) {
             $_SESSION["$key"] = $item;
         }
-        header('Location: ../../pages/login.php?s=1');
+        header('Location: ../../pages/account.php?s=1');
     }
 }
 

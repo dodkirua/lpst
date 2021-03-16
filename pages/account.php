@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $title = "LPST : Mon compte";
 
@@ -10,9 +11,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
     <section id="informationProfil">
         <div id="profil" class="flexColumn flexCenter">
             <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
-            <p class="nameStaff colorBlue">Prénom NOM</p>
+            <p class="nameStaff colorBlue"><?=$_SESSION["surname"] . " " . $_SESSION["name"] ?></p>
             <div class="flexCenter">
-                <button id="disconnection" class="redButton">Déconnexion</button>
+                <button id="disconnection" class="redButton disconnection">Déconnexion</button>
             </div>
         </div>
         <div class="separatorHorizontal"></div>
@@ -54,7 +55,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
     </section>
     <div class="flexColumn width65">
-        <h1 id="hello">Bonjour, <span class="colorGreen">Prénom NOM !</span></h1>
+        <h1 id="hello">Bonjour, <span class="colorGreen"><?=$_SESSION["surname"] . " " . $_SESSION["name"] ?>!</span></h1>
         <section id="otherInformation">
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonées</h2>
@@ -62,22 +63,22 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <form id="modifyInformation" action="#" method="post" class="flexColumn flexCenter">
                         <input type="file" name="profilePicture" id="profilePicture" class="whiteBorder">
                         <label for="firstnameModify" class="colorBlue center margin15-30">Prénom </label>
-                        <input id="firstnameModify" name="firstnameModify" class="whiteBorder" value="prenom" type="text">
+                        <input id="firstnameModify" name="firstnameModify" class="whiteBorder" value="<?= $_SESSION["surname"] ?>" type="text">
                         <label for="lastnameModify" class="colorBlue center margin15-30">Nom </label>
-                        <input id="lastnameModify" name="lastnameModify" class="whiteBorder" value="nom" type="text">
+                        <input id="lastnameModify" name="lastnameModify" class="whiteBorder" value="<?= $_SESSION["name"] ?>" type="text">
                         <label for="emailModify" class="colorBlue center margin15-30">Email </label>
-                        <input id="emailModify" name="emailModify" class="whiteBorder" value="prenom.nom@mail.com" type="text">
+                        <input id="emailModify" name="emailModify" class="whiteBorder" value="<?= $_SESSION["mail"] ?>" type="text">
                         <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer les modifications">
                     </form>
                 </div>
                 <div id="contactInformation" class="flexColumn flexCenter">
                     <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
                     <p class="colorBlue">Prénom </p>
-                    <p class="whiteBorder">Prénom</p>
+                    <p class="whiteBorder"><?= $_SESSION["surname"] ?></p>
                     <p class="colorBlue">Nom </p>
-                    <p class="whiteBorder">Nom</p>
+                    <p class="whiteBorder"><?= $_SESSION["name"] ?></p>
                     <p class="colorBlue">Email </p>
-                    <p class="whiteBorder">prenom.nom@mail.com</p>
+                    <p class="whiteBorder"><?= $_SESSION["mail"] ?></p>
                     <button id="modifyProfil" class="send modify modifyProfil">Modifier le profil</button>
                 </div>
 

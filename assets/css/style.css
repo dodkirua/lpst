@@ -219,7 +219,7 @@ h1 {
     text-decoration: underline;
 }
 
-.log {
+.log, .log3 {
     position: absolute;
     background-color: white;
     padding: 10px;
@@ -593,6 +593,16 @@ td, th {
      background-color: #8ABF07;
  }
 
+ .log3 {
+     margin-top: -64px;
+ }
+
+ .log4 {
+     font-size: 25px;
+     padding: 6px;
+     margin: 0;
+ }
+
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
         font-size: 12px;
@@ -659,6 +669,9 @@ td, th {
     }
     .width65 {
         width: 95%;
+    }
+    .log4 {
+        margin: 0;
     }
 }
 
@@ -819,7 +832,7 @@ td, th {
     #menu {
         display: none;
     }
-    .log {
+    .log, .log3 {
         display: none;
     }
     .containedMenu:hover, .linkLog:hover {
