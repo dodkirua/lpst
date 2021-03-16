@@ -1,5 +1,7 @@
-import {validatePass, comparePass} from "./registration.js";
+import {validatePass, comparePass, validate} from "./registration.js";
 import {itemQuantity} from "./article.js";
+import {closeModal} from "./function.js";
+
 //creation of LPST staff profiles.
 let organizationalChart = [
     {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
@@ -46,7 +48,13 @@ const regis = document.getElementById("registration");
 if (regis) {
     document.getElementById("passwordRegistration").addEventListener("keyup", validatePass);
     document.getElementById("repeatPassword").addEventListener("keyup", comparePass);
-    //regis.addEventListener("submit",)
+    regis.addEventListener("submit",function (e){
+        e.preventDefault();
+        if(validate()){
+            regis.submit();
+        }
+
+    });
 }
 
 // When I click on "my information" then the div with my information is displayed and the others are hidden.
@@ -110,16 +118,6 @@ if (document.getElementById("success")) {
     closeModal("success")
 }
 
-
-/**
- *
- * @param idModal
- */
-function closeModal (idModal) {
-    document.getElementById("closeModal").addEventListener("click", function () {
-    document.getElementById(idModal).style.display = "none";
-    });
-}
 
 itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
 itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
