@@ -44,7 +44,13 @@ elseif (isset($_GET['s'])){
         <div class="flexColumn contact">
             <label for="passwordRegistration" class="colorBlue">Mot de passe*</label>
             <input type="password" id="passwordRegistration" name="password" required>
-            <div id="pwMsg"></div>
+            <div id="pwMsg">
+                <span id="maj" class="colorRed2">Une majuscule</span>
+                <span id="min" class="colorRed2">Une minuscule</span>
+                <span id="char" class="colorRed2">Un caractère spéciale</span>
+                <span id="number" class="colorRed2">Un chiffre</span>
+                <span id="length" class="colorRed2">10 caractères minimum</span>
+            </div>
         </div>
         <div class="flexColumn contact">
             <label for="repeatPassword" class="colorBlue">Répéter le mot de passe*</label>
