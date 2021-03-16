@@ -4,7 +4,7 @@ $title = "LPST : Connexion";
 $return = "";
 $id = "";
  if(isset($_GET['e'])){
-     $id = "error0";
+     $id = "error";
      if ($_GET['e'] = 0){
          $return = "Problème lors du transfert des données ";
      }
@@ -21,10 +21,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
 
 <main>
-
     <h1>Se <span class="colorGreen">connecter</></h1>
     <div id='<?= $id?>' class='modal flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
-    <div><?= $return?></div>
     <form action="../assets/php/connection.php" method="post" class="flexColumn" name="login">
         <div class="flexColumn contact">
             <label for="emailContact" class="colorBlue">Email*</label>
