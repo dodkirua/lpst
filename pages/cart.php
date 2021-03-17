@@ -7,7 +7,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 ?>
 
 <main>
-    <a id="return" href="#" class="colorBlue underline"> < Retour aux courses</a>
+    <a id="return" href="shopping.php" class="colorBlue underline"> < Retour aux courses</a>
     <img id="lpstLogo2" src="../doc/mockup/lpst.png" alt="Logo LPST">
     <h1>Mon <span class="colorGreen">panier</span></h1>
     <div id="stepBuy" class="flexRow margin15-30">

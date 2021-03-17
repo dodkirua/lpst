@@ -294,6 +294,10 @@ input, .brownBorder {
     box-shadow: 3px 3px 10px lightgray;
 }
 
+.send, .buttonClassic, .redButton {
+    cursor: pointer;
+}
+
 .send {
     width: 15%;
 }

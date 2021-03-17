@@ -30,7 +30,7 @@
         <div class="separatorVertical"></div>
         <a id="local" class="containedMenu flexCenter" href="../pages/local.php"> Nos partenaires locaux</a>
         <div class="separatorVertical"></div>
-        <a id="account" class="containedMenu flexCenter" href="#"> Epicerie en ligne</a>
+        <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Epicerie en ligne</a>
     </div>
 
     <div id="menuResponsive" class="flexRow flexCenter">
@@ -41,7 +41,7 @@
         <a id="commerce" class="containedMenu flexCenter" href="../index.php"> Notre magasin</a>
         <a id="products" class="containedMenu flexCenter" href="../pages/products.php"> Nos produits</a>
         <a id="local" class="containedMenu flexCenter" href="../pages/local.php"> Nos partenaires locaux</a>
-        <a id="account" class="containedMenu flexCenter" href="#"> Epicerie en ligne</a>
+        <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Epicerie en ligne</a>
 
 
         <?php

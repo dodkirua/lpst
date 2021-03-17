@@ -69,4 +69,3 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
-
