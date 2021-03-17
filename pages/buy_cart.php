@@ -11,7 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
     <img id="lpstLogo2" src="../doc/mockup/lpst.png" alt="Logo LPST">
     <h1>Mon <span class="colorGreen">panier</span></h1>
     <div id="stepBuy" class="flexRow margin15-30">
-        <p class="stepBuy center colorBlue">1. Mon panier</p>
+        <p class="stepBuy center colorBlue">1. Panier</p>
         <p class="stepBuy center colorGrey2">2. Validation</p>
         <p class="stepBuy center colorGrey2">3. Payer</p>
         <p class="stepBuy center colorGrey2">4. Confirmation</p>
@@ -150,14 +150,18 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                         <p class="total3"></p>
                     </div>
                 </div>
-
             </div>
+
         </div>
         <div id="buy" class="width30 margin15-30">
             <h2 class="subtitle">Sommaire de commande</h2>
             <div id="separatorTotal" class="separatorHorizontal"></div>
-            <p class="center margin15-30"><strong>total €</strong></p>
-            <button id="buyTotal" class="modify send width_100">PAYER</button>
+            <div class="backgroundBlue containerOrdered">
+                <p class="center margin15-30"><strong>total €</strong></p>
+                <button id="buyTotal" class="modify send width_100">PAYER</button>
+                <a href="buy_checkout.php" class="send width_100">(Payer test)</a>
+                <p class="linkLog">Nous acceptons : (cartes)</p>
+            </div>
         </div>
     </div>
 </main>

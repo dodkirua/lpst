@@ -6,7 +6,7 @@
         ?>
         <div class="log3">
             <a class="buttonClassic log4" href="../pages/account.php"><i class="fas fa-user-circle"></i></a>
-            <a class="buttonClassic log4" href="../pages/cart.php"><i class="fas fa-shopping-basket"></i></a>
+            <a class="buttonClassic log4" href="../pages/buy_cart.php"><i class="fas fa-shopping-basket"></i></a>
             <button class="redButton log4 disconnection"><i class="fas fa-power-off"></i></button>
         </div>
     <?php
@@ -49,7 +49,7 @@
             ?>
             <div class="log2">
                 <a class="containedMenu flexCenter colorWhite" href="../pages/account.php">Mon compte</a>
-                <a class="containedMenu flexCenter colorWhite" href="../pages/cart.php">Mon panier</a>
+                <a class="containedMenu flexCenter colorWhite" href="../pages/buy_cart.php">Mon panier</a>
                 <button class="containedMenu flexCenter colorWhite redButton disconnection">Déconnexion</button>
             </div>
             <?php

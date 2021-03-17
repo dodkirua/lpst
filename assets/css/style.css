@@ -53,7 +53,7 @@ a {
     height: 80px;
 }
 
-#lpstLogo, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal {
+#lpstLogo, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal, .end {
     position: absolute;
 
 }
@@ -86,7 +86,7 @@ a {
     color: white;
 }
 
-.fa-bars, input, label, textarea, .select  {
+.delivery, .fa-bars, input, label, textarea, .select, .size20  {
     font-size: 20px;
 }
 
@@ -294,7 +294,7 @@ input, .brownBorder {
     box-shadow: 3px 3px 10px lightgray;
 }
 
-.send, .buttonClassic, .redButton {
+.send, .buttonClassic, .redButton, .delivery {
     cursor: pointer;
 }
 
@@ -407,7 +407,7 @@ button {
      box-shadow: 5px 5px 10px darkred;
 }
 
-#newPwd, #currentPwd {
+#newPwd, #currentPwd, .margin20 {
      margin: 20px auto;
 }
 
@@ -417,7 +417,8 @@ table {
 }
 
 td {
-     border: 1px solid #BFBFBF;
+     border-bottom: 1px solid #BFBFBF;
+     background-color: #fcfdff;
      padding: 15px;
      margin: -15px;
 }
@@ -540,8 +541,11 @@ td, th {
      border-radius: 30px;
 }
 
+.colorRed, .colorRed2 {
+    color: #E74A4A;
+}
+
 .colorRed2 {
-     color: #E74A4A;
      text-decoration: line-through black;
 }
 
@@ -567,6 +571,41 @@ td, th {
 
 .backgroundBlue {
     background-color: #F2F5FA;
+}
+
+.end {
+    right: 180px;
+}
+
+.delivery {
+    padding: 15px;
+    box-shadow: 5px 5px 10px #bfbfbf;
+    margin-bottom: 20px;
+}
+
+.priceDelivery {
+    margin-left: 30px;
+}
+
+.align {
+    align-items: center;
+}
+
+.delivery:hover {
+    background-color: #69A7D4;
+    color: #fcfdff;
+}
+
+.reverse {
+    position: absolute;
+    right: 40%;
+}
+
+#checkCC {
+    background-color: transparent;
+    width: initial;
+    font-size: 50px;
+    margin: 0 20px 0 0;
 }
 
 @media screen and (max-width: 1510px) {
@@ -640,6 +679,12 @@ td, th {
     .forgotPassword {
         width: 75%;
     }
+    .end {
+        right: 140px;
+    }
+    #buy {
+        width: 38%;
+    }
 }
 
 @media screen and (max-width: 970px) {
@@ -674,6 +719,9 @@ td, th {
     #biomonde {
         right: 5%;
     }
+    .end {
+        right: 50px;
+    }
 }
 
 
@@ -697,7 +745,7 @@ td, th {
         width: 20%;
         margin: 10px 20px;
     }
-    #containerStaff, #buy {
+    #containerStaff {
         display: flex;
         justify-content: center;
     }
@@ -740,6 +788,9 @@ td, th {
     }
     #basket, #buy {
         margin: 0;
+    }
+    .reverse {
+        right: 50px;
     }
 }
 
