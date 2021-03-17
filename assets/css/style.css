@@ -10,12 +10,11 @@ html {
 }
 
 body {
-    width: 100%;
     font-family: 'Montserrat', sans-serif;
     background-color: #D5DDB3;
 }
 
-#coverPicture {
+#coverPicture, body, #scrollMenu, .separatorHorizontal, .productsImage, .blueBorder, #otherInformation, .containerOrdered {
     width: 100%;
 }
 
@@ -40,53 +39,62 @@ a {
     color: black;
 }
 
+#menu, #menuResponsive  {
+    background-color: #B38243;
+}
+
 #menu {
     margin-top: -0.4rem;
-    background-color: #B38243;
     height: 100px;
-    align-items: center;
-    justify-content: center;
 }
 
 #menuResponsive {
-    display: none;
     margin-top: -0.4rem;
-    background-color: #B38243;
     height: 80px;
-    align-items: center;
-    justify-content: center;
+}
+
+#lpstLogo, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal {
+    position: absolute;
+
+}
+
+#lpstLogo, #lpstLogo2 {
+    height: 80px;
 }
 
 #lpstLogo {
-    height: 80px;
-    position: absolute;
     left: 25px;
+}
+
+#lpstLogo2 {
+    top: 0;
+    right: 150px;
+    height: 100px;
 }
 
 #lpstLogoResponsive {
     height: 60px;
-    position: absolute;
     right: 25px;
     width: 60px;
 }
 
-#scrollMenu {
-    display: none;
-    width: 100%;
+#scrollMenu, .containedMenu:hover, footer, .send, .buttonMobile, .titleTable {
     background-color: #A9C500;
 }
 
-#commerce, #products, #local, #account, #shop, .fa-bars, #commerce2, .log2, .colorWhite{
+.send, .buttonMobile, .redButton, #commerce, #products, #local, #account, #shop, .fa-bars, .log2, .colorWhite, .linkFooter  {
     color: white;
 }
 
-.fa-bars {
-    position: absolute;
-    left: 20px;
+.fa-bars, input, label, textarea, .select  {
     font-size: 20px;
 }
 
-.linkLog {
+.fa-bars {
+    left: 20px;
+}
+
+.linkLog, #pwMsgRepeat, #pwMsg, td, .buttonClassic {
     font-size: 12px;
 }
 
@@ -97,7 +105,6 @@ a {
 }
 
 .containedMenu:hover {
-    background-color: #A9C500;
     height: 80px;
 }
 
@@ -109,29 +116,30 @@ a {
 
 .separatorHorizontal {
     border-top: 2px solid #BFBFBF;
-    width: 100%;
     margin: 3px 0;
 }
 
-main {
+main, .log, .log3, .whiteBorder,  #newPwd, #currentPwd, td, .cartResponsive, .infoArticle, .forgotPassword {
     background-color: white;
+}
+
+main {
     margin: auto;
     width: 85%;
     padding: 15px;
 }
 
 footer {
-    background-color: #A9C500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 20px;
     margin-bottom: -18px;
 }
 
+.network_i, .buttonMobile, .subtitle, .log4 {
+    font-size: 25px;
+}
+
 .network_i {
     color: #351F1D;
-    font-size: 25px;
     border-radius: 50%;
     padding: 10px;
     margin: 0 10px;
@@ -139,13 +147,15 @@ footer {
 
 .network_i:hover {
     background-color: #351F1D;
-    color: #A9C500;
+}
+
+h1, .products, .buttonMobile, .select, .subtitle, .modify, td, th, .center  {
+    text-align: center;
 }
 
 h1 {
     font-size: 35px;
     color: #3b72bd;
-    text-align: center;
     margin: 45px 0;
     font-weight: bolder;
 }
@@ -161,29 +171,15 @@ h1 {
 .products {
     width: 17%;
     margin: 10px 30px;
-    align-items: center;
-}
-
-.productsImage, .blueBorder {
-    width: 100%;
-}
-
-.colorBlue {
-    color: #3b72bd;
 }
 
 .allProducts {
     margin: auto;
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 .linkFooter {
     font-size: 10px;
-    color: white;
     margin: 10px 15px;
 }
 
@@ -200,20 +196,23 @@ h1 {
     margin: 10px 30px;
     padding: 20px;
     background-color: #F2F5FA;
-    border-radius: 10px 10px;
+    border-radius: 10px;
 }
 
 .margin15-30 {
     margin: 15px 30px;
 }
 
-.colorGreen {
+.colorGreen, .network_i:hover  {
     color: #A9C500;
 }
 
 .descriptionIcon {
-    color: #B38243;
     margin-right: 10px;
+}
+
+.descriptionIcon, .brownBorder, .subtitle {
+    color: #B38243;
 }
 
 .underline:hover {
@@ -221,14 +220,12 @@ h1 {
 }
 
 .log, .log3 {
-    position: absolute;
-    background-color: white;
     padding: 10px;
     right: 0;
     margin-top: -43px;
 }
 
-#containerStaff {
+#containerStaff, .allProducts {
     flex-wrap: wrap;
 }
 
@@ -257,7 +254,6 @@ h1 {
 
 #ab, #biomonde {
     width: 100px;
-    position: absolute;
 }
 
 #biomonde {
@@ -273,7 +269,6 @@ input, label, textarea {
     width: 50%;
     margin: auto;
     border: none;
-    font-size: 20px;
 }
 
 .nameContact > div > input, .nameContact > div > label {
@@ -289,7 +284,6 @@ input, textarea {
 textarea {
     height: 150px;
     box-shadow: 3px 3px 10px lightgray;
-
 }
 
 .contact {
@@ -301,8 +295,6 @@ input, .brownBorder {
 }
 
 .send {
-    background-color: #A9C500;
-    color: white;
     width: 15%;
 }
 
@@ -320,7 +312,6 @@ form {
     width: 20%;
     margin: 20px auto;
     padding: 10px;
-    color: #B38243;
 }
 
 .brownBorder:hover {
@@ -342,125 +333,90 @@ p {
 #pwMsgRepeat, #pwMsg {
     width: 50%;
     margin: auto;
-    font-size: 12px;
 }
 
- #mobile {
-     display: none;
- }
-
- p{
+p {
      line-height: 23px;
- }
+}
 
- .buttonMobile {
-    font-size: 25px;
-     background-color: #A9C500;
-     border-radius: 10px 10px;
+.buttonMobile {
+     border-radius: 10px;
      box-shadow: 5px 5px 10px #489533;
      padding: 15px;
      width: 70%;
-    text-align: center;
-     color: white;
      margin: 15px 0;
- }
+}
 
- section {
+section {
      background-color: #F2F5FA;
      box-shadow: 5px 5px 10px grey;
      margin: 20px;
- }
+}
 
- #informationProfil {
+#informationProfil {
      width: 30%;
- }
+}
 
- #otherInformation {
-     width: 100%;
- }
-
- .photoProfil {
+.photoProfil {
      margin: 10px;
      border-radius: 50%;
      width: 175px;
- }
+}
 
- .select {
+.select {
      background-color: #D5DDB3;
      padding: 15px;
-     font-size: 20px;
-     text-align: center;
- }
- .select:hover {
+}
+.select:hover {
      background-color: #8ABF07;
- }
+}
 
- .subtitle {
-     font-size: 25px;
-     color: #B38243;
-     text-align: center;
- }
-
- .whiteBorder {
-     background-color: white;
+.whiteBorder {
      width: 30%;
      padding: 7px;
- }
+}
 
- .modify {
-     text-align: center;
-     border-radius: 5px 5px;
+.modify {
+     border-radius: 5px;
      margin: 10px 0;
- }
+}
 
- .colorGrey {
+.colorGrey {
      color: grey;
- }
+}
 
- button {
+button {
      border: none;
      padding: 8px;
- }
+}
 
- .modifyProfil {
+.modifyProfil {
      width: initial;
- }
+}
 
- .redButton {
+.redButton {
      background-color: #E74A4A;
-     color: white;
-     border-radius: 5px 5px;
+     border-radius: 5px;
      margin: 20px 0;
- }
- .redButton:hover {
+}
+.redButton:hover {
      box-shadow: 5px 5px 10px darkred;
- }
+}
 
- #newPwd, #currentPwd {
+#newPwd, #currentPwd {
      margin: 20px auto;
-     background-color: white;
- }
+}
 
- #orderedAccount, #baskets_favorite {
-     display: none;
- }
-
- table {
+table {
      margin: 20px;
      border-collapse: collapse;
- }
+}
 
- .titleTable {
-     background-color: #A9C500;
- }
-
- td {
+td {
      border: 1px solid #BFBFBF;
      padding: 15px;
-     background-color: white;
-     font-size: 12px;
      margin: -15px;
- }
+}
 
 .trTable:hover > td {
     background-color: #f3da31;
@@ -468,159 +424,146 @@ p {
 
 td, th {
     width: 300px;
-    text-align: center;
 }
 
- .imgTable {
+.imgTable {
      width: 80%;
      border-radius: 10px;
- }
+}
 
- .center {
-     text-align: center;
- }
-
- .width30 {
+.width30 {
      width: 30%;
- }
+}
 
- .width65 {
+.width65 {
      width: 65%;
- }
+}
 
- .numberArticle {
+.numberArticle {
      width: 20%;
      background-color: #F2F5FA;
- }
+}
 
- .wishlist {
+.wishlist {
      width: 20%;
- }
+}
 
- #orderedResponsive {
-     display: none;
- }
-
- .containerOrdered {
+.containerOrdered {
      padding: 15px;
-     width: 100%;
- }
+}
 
- .infoArticle {
+.infoArticle {
      width: 95%;
      padding: 15px;
-     background-color: white;
- }
+}
 
- .margin {
+.margin {
     margin: 0 30px;
- }
+}
 
- #accountResponsive {
+#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite {
      display: none;
- }
+}
 
- #disconnectionResponsive {
-     display: none;
- }
-
- #buy1 {
-     margin-left: 50px;
- }
- #total1 {
-     margin-left: 10px;
- }
-
- .buttonClassic {
+.buttonClassic {
      background-color: transparent;
      width: initial;
-     font-size: 12px;
      margin: 10px 1px;
- }
+}
 
- .buttonClassic:hover {
+.buttonClassic:hover {
      box-shadow: 2px 2px 7px #bfbfbf;
      border-radius: 10px;
- }
+}
 
- .buttonClassic:hover > i {
+.buttonClassic:hover > i {
      color: #ff0b0b;
- }
+}
 
- #cartResponsive, #modifyInformation{
-     display: none;
- }
-
- .cartResponsive {
-     background-color: white;
+.cartResponsive {
      padding: 15px;
      margin: 10px;
      width: 93%;
- }
+}
 
- .cartResponsive:hover, .infoArticle:hover {
+.cartResponsive:hover, .infoArticle:hover {
      background-color: #f3da31;
- }
+}
 
- .infoCart {
+.infoCart {
      width: 85%;
      padding: 0 15px;
- }
+}
 
- .favoriteArticleCart {
+.favoriteArticleCart {
      margin-left: 20%;
- }
+}
 
- .modal {
-     position: absolute;
+.modal {
      top: 0;
      left: 0;
      width: 100%;
      height: 80px;
      font-size: 22px;
- }
+}
 
- #closeModal {
-     position: absolute;
+#closeModal {
      top: 5px;
      right: 30px;
- }
+}
 
- #error {
+#error {
      background-color: #E74A4A;
- }
+}
 
- #success {
-     background-color: #8ABF07;
- }
+#success {
+    background-color: #8ABF07;
+}
 
- .log3 {
-     margin-top: -64px;
- }
+.log3 {
+    margin-top: -64px;
+}
 
- .log4 {
-     font-size: 25px;
+.log4 {
      padding: 6px;
      margin: 0;
- }
+}
 
- .forgotPassword {
+.forgotPassword {
      width: 30%;
-     background-color: white;
      margin: 50px auto;
      padding: 15px;
      border-radius: 30px;
- }
+}
 
- .colorRed2 {
+.colorRed2 {
      color: #E74A4A;
      text-decoration: line-through black;
- }
+}
 
- .colorGreen2 {
-     color: #8ABF07;
-     text-decoration: line-through black;
- }
+.colorGreen2 {
+    color: #8ABF07;
+}
+
+.width_100 {
+    width: 100%;
+}
+
+.stepBuy {
+    width: 30%;
+}
+
+.colorGrey2 {
+    color: #bfbfbf;
+}
+
+.colorBlue {
+    color: #3b72bd;
+}
+
+.backgroundBlue {
+    background-color: #F2F5FA;
+}
 
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
@@ -663,7 +606,6 @@ td, th {
         flex-direction: column;
     }
     #informationProfil {
-        width: 95%;
         display: flex;
         flex-direction: row;
     }
@@ -672,7 +614,6 @@ td, th {
     }
     .select {
         width: 45%;
-        display: flex;
         align-items: center;
         justify-content: center;
         height: 130px;
@@ -707,8 +648,11 @@ td, th {
     .description {
         width: 90%;
     }
-    #lpstLogo {
+    #lpstLogo, #lpstLogo2 {
         height: 65px;
+    }
+    #lpstLogo2 {
+        right: 15px;
     }
     main {
         width: 100%;
@@ -730,11 +674,8 @@ td, th {
 
 
 @media screen and (max-width: 830px) {
-    .separatorVertical {
+    .separatorVertical, #tableOrdered, #tableBaskets {
         display: none;
-    }
-    #commerce {
-        margin-left: 50px;
     }
     .containedMenu {
         width: initial;
@@ -752,7 +693,7 @@ td, th {
         width: 20%;
         margin: 10px 20px;
     }
-    #containerStaff {
+    #containerStaff, #buy {
         display: flex;
         justify-content: center;
     }
@@ -777,9 +718,6 @@ td, th {
     .margin15-30 {
         margin: 8px 30px;
     }
-    #tableOrdered, #tableBaskets {
-        display: none;
-    }
     #orderedResponsive {
         display: block;
     }
@@ -789,12 +727,19 @@ td, th {
     .infoArticle > .imgTable {
         width: 40%;
     }
+    #buy, #buyTotal, #basket {
+        width: 100%;
+    }
+    #cart, #buy {
+        display: flex;
+        flex-direction: column;
+    }
+    #basket, #buy {
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 680px) {
-    #commerce {
-        margin-left: 100px;
-    }
     .log > a, .log > span {
         font-size: 10px;
     }
@@ -815,7 +760,7 @@ td, th {
     #ab, #biomonde {
         width: 70px;
     }
-    #profil {
+    #profil, #stepBuy {
         display: none;
     }
     .select {
@@ -838,29 +783,22 @@ td, th {
         margin: 0;
         border-radius: 0;
     }
-
+    #return {
+        font-size: 8px;
+    }
 }
 
 @media screen and (max-width: 530px) {
-    #mobile {
+    #menuResponsive, #mobile {
         display: flex;
     }
-    #computer {
-        display: none;
-    }
-    #menuResponsive {
-        display: flex;
-    }
-    #menu {
-        display: none;
-    }
-    .log, .log3 {
+    .log, .log3, #computer, #menu, .selectComputer {
         display: none;
     }
     .containedMenu:hover, .linkLog:hover {
         background-color: #69A7D4;
         padding: 5px;
-        width: 60%;
+        width: 100%;
     }
     .log2 {
         margin-bottom: 15px;
@@ -881,7 +819,7 @@ td, th {
     .products {
         width: 30%;
     }
-    .allProducts {
+    .allProducts, .forgotPassword > form > input#email, #accountResponsive, .forgotPassword {
         width: 100%;
     }
     h1 {
@@ -899,19 +837,19 @@ td, th {
     .margin {
         margin: 0 15px;
     }
-    .selectComputer {
-        display: none;
-    }
     #accountResponsive {
         display: flex;
-        width: 100%;
-        font-size: 20px;
     }
-    #information2 > p, #ordered2 > p, #basketsSave2 > p{
+    #accountResponsive, #information2 > p, #ordered2 > p, #basketsSave2 > p{
         font-size: 20px;
     }
     .wishlist {
         width: 26%;
+    }
+    .forgotPassword {
+        margin: 0;
+        border-radius: 0;
+        padding: 60px;
     }
 }
 
@@ -934,17 +872,15 @@ td, th {
     label {
         font-size: 15px;
     }
-    .infoArticle, .imgTable, .total{
+    .infoArticle > .infoCart, .infoArticle, .imgTable {
         display: flex;
         flex-direction: column;
+    }
+    .infoArticle, .imgTable{
         align-items: center;
         justify-content: center;
     }
 
-    .infoArticle > .infoCart {
-        display: flex;
-        flex-direction: column;
-    }
     .infoArticle, .infoArticle > .infoCart {
         width: 100%;
     }

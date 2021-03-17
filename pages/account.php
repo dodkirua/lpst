@@ -166,8 +166,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                         <th class="colorWhite">Article</th>
                         <th class="colorWhite">Nom de l'article</th>
                         <th class="colorWhite">Prix</th>
-                        <th class="colorWhite">Quantité</th>
-                        <th class="colorWhite">Total</th>
+                        <th class="colorWhite">Ajouter au panier</th>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
@@ -180,15 +179,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                 </div>
                             </div>
                         </td>
-                        <td class="price1"></td>
+                        <td><strong>Prix €</strong></td>
                         <td>
-                            <div class="flexRow flexCenter">
-                                <button class="buttonClassic less1">-</button>
-                                <p class="numberArticle numberArticle1">1 </p>
-                                <button class="buttonClassic more1">+</button>
-                            </div>
+                            <button class="send width65"><i class="fas fa-shopping-basket"></i></button>
                         </td>
-                        <td class="total1"></td>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
@@ -200,15 +194,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                     <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                                 </div>
                         </td>
-                        <td class="price2"></td>
+                        <td><strong>Prix €</strong></td>
                         <td>
-                            <div class="flexRow flexCenter">
-                                <button class="buttonClassic less2">-</button>
-                                <p class="numberArticle numberArticle2">1 </p>
-                                <button class="buttonClassic more2">+</button>
-                            </div>
+                            <button class="send width65"><i class="fas fa-shopping-basket"></i></button>
                         </td>
-                        <td class="total2"></td>
                     </tr>
                     <tr class="trTable">
                         <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
@@ -220,15 +209,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                     <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                                 </div>
                         </td>
-                        <td class="price3"></td>
+                        <td><strong>Prix €</strong></td>
                         <td>
-                            <div class="flexRow flexCenter">
-                                <button class="buttonClassic less3">-</button>
-                                <p class="numberArticle numberArticle3">1 </p>
-                                <button class="buttonClassic more3">+</button>
-                            </div>
+                            <button class="send width65"><i class="fas fa-shopping-basket"></i></button>
                         </td>
-                        <td class="total3"></td>
                     </tr>
                 </table>
 
@@ -244,13 +228,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                 <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
                                 <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                             </div>
-                            <p class="price1"></p>
-                            <div class="flexRow flexCenter">
-                                <button class="buttonClassic less1">-</button>
-                                <p class="numberArticle numberArticle1">1 </p>
-                                <button class="buttonClassic more1">+</button>
+                            <p>Prix €</p>
+                            <div class=" flexCenter">
+                                <button class="send"><i class="fas fa-shopping-basket"></i></button>
                             </div>
-                            <p class="total1"></p>
                         </div>
                     </div>
                     <div class="flexRow cartResponsive">
@@ -263,13 +244,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                 <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
                                 <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                             </div>
-                            <p class="price2"></p>
-                            <div class="flexRow flexCenter">
-                                <button class="buttonClassic less2">-</button>
-                                <p class="numberArticle numberArticle2">1 </p>
-                                <button class="buttonClassic more2">+</button>
+                            <p>Prix €</p>
+                            <div class=" flexCenter">
+                                <button class="send"><i class="fas fa-shopping-basket"></i></button>
                             </div>
-                            <p class="total2"></p>
                         </div>
                     </div>
                     <div class="flexRow cartResponsive">
@@ -282,24 +260,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                                 <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
                                 <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
                             </div>
-                            <p class="price3"></p>
-                            <div class="flexRow flexCenter">
-                                <button class="buttonClassic less3">-</button>
-                                <p class="numberArticle numberArticle3">1 </p>
-                                <button class="buttonClassic more3">+</button>
+                            <p>Prix €</p>
+                            <div class=" flexCenter">
+                                <button class="send"><i class="fas fa-shopping-basket"></i></button>
                             </div>
-                            <p class="total3"></p>
                         </div>
                     </div>
-
-                </div>
-
-                <div class="total flexRow flexCenter margin15-30">
-                    <div class="flexRow">
-                        <h3 class="colorGreen">Total :</h3>
-                        <span id="total1">Total €</span>
-                    </div>
-                    <button id="buy1" class="send">PAYER</button>
                 </div>
 
                 <div class="separatorHorizontal"></div>

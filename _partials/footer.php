@@ -1,4 +1,4 @@
-<footer class="flexColumn">
+<footer class="flexColumn flexCenter">
     <div>
         <a class="network" href="https://www.facebook.com/BiomondeFourmies/?ref=page_internal" target="_blank"><i class="network_i fab fa-facebook-square"></i></a>
         <a class="network" href="mailto:contact@lpst.fr"><i class="network_i fas fa-envelope-square"></i></a>
