@@ -45,7 +45,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
         <!-- Displayed when the screen is at 680px -->
         <button id="disconnectionResponsive" class="redButton"><i class="fas fa-power-off"></i></button>
 
-
     </section>
     <div class="flexColumn width65">
         <h1 id="hello">Bonjour, <span class="colorGreen"><?=$_SESSION["surname"] . " " . $_SESSION["name"] ?>!</span></h1>
