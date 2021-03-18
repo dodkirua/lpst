@@ -29,6 +29,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             <p class="colorWhite">Mes paniers sauvegardés</p>
         </div>
 
+
         <!-- Displayed when the screen is at 530px -->
         <div id="accountResponsive" class="flexRow">
             <div id="information2" class="select selectMobile">

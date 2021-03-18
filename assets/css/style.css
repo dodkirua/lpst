@@ -53,9 +53,8 @@ a {
     height: 80px;
 }
 
-#lpstLogo, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal, .end {
+#lpstLogo, .reverse, .placePrice, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal, .end {
     position: absolute;
-
 }
 
 #lpstLogo, #lpstLogo2 {
@@ -94,7 +93,7 @@ a {
     left: 20px;
 }
 
-.linkLog, #pwMsgRepeat, #pwMsg, td, .buttonClassic {
+.linkLog, #pwMsgRepeat, #pwMsg, td, .buttonClassic, #condition {
     font-size: 12px;
 }
 
@@ -294,7 +293,7 @@ input, .brownBorder {
     box-shadow: 3px 3px 10px lightgray;
 }
 
-.send, .buttonClassic, .redButton, .delivery {
+.send, .buttonClassic, .redButton, .delivery, .select {
     cursor: pointer;
 }
 
@@ -466,7 +465,7 @@ td, th {
     margin: 0 30px;
 }
 
-#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite {
+#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #address2 {
      display: none;
 }
 
@@ -597,15 +596,26 @@ td, th {
 }
 
 .reverse {
-    position: absolute;
     right: 40%;
 }
 
-#checkCC {
+#checkCC, #checkCC2, #checkDelivery, #checkStandard, #checkchronopost, #checkcourier, #checkCondition {
     background-color: transparent;
     width: initial;
-    font-size: 50px;
     margin: 0 20px 0 0;
+    box-shadow: 0 0 0 transparent;
+}
+
+.inputBuy, #standardDelivery, #chronopostDelivery, #courierDelivery {
+    margin-bottom: 20px;
+}
+
+.placePrice {
+    right: 42%;
+}
+
+.sub {
+    padding: 10px 40px;
 }
 
 @media screen and (max-width: 1510px) {
@@ -684,6 +694,9 @@ td, th {
     }
     #buy {
         width: 38%;
+    }
+    .title {
+        font-size: 16px;
     }
 }
 
@@ -792,6 +805,12 @@ td, th {
     .reverse {
         right: 50px;
     }
+    .placePrice {
+        right: 70px;
+    }
+    .title {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -841,13 +860,22 @@ td, th {
     #return {
         font-size: 8px;
     }
+    .title {
+        font-size: 15px;
+    }
+    .placePrice {
+        font-size: 18px;
+    }
+    #validation {
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 530px) {
     #menuResponsive, #mobile {
         display: flex;
     }
-    .log, .log3, #computer, #menu, .selectComputer {
+    .log, .log3, #computer, #menu, .selectComputer, .reverse {
         display: none;
     }
     .containedMenu:hover, .linkLog:hover {
@@ -905,6 +933,13 @@ td, th {
         margin: 0;
         border-radius: 0;
         padding: 60px;
+    }
+    .title {
+        font-size: 15px;
+    }
+    .placePrice {
+        margin-top: 37px;
+        font-size: 15px;
     }
 }
 

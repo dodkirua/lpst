@@ -36,6 +36,7 @@ $("#menuResponsive").click(function () {
         nbClick = 0;
     }
 });
+
 const mag = document.getElementById("magasinMobile");
 if (mag){
     mag.addEventListener("click", function () {
@@ -118,10 +119,90 @@ if (document.getElementById("success")) {
     closeModal("success")
 }
 
+let choice_delivery = $("#choice_delivery");
+let choice_CC = $("#choice_CC");
+
+let nbClick2 = 0;
+$("#click_Collect").click(function () {
+    if ($("#checkCC").is(':checked')) {
+        if (nbClick2 === 0) {
+            choice_CC.css("display", "flex");
+            nbClick2++;
+            if (choice_delivery.css("display", "block")) {
+                choice_delivery.css("display", "none");
+                $("#arrow1").html("<i class=\"fas fa-angle-up reverse\"></i>");
+                $("#arrow2").html("<i class=\"fas fa-angle-down reverse\"></i>");
+                nbClick2 = 0;
+            }
+        }
+        else {
+            choice_CC.css("display", "none");
+            nbClick2 = 0;
+        }
+    }
+});
+
+let nbClick3 = 0;
+$("#choiceDelivery").click(function () {
+    if ($("#checkDelivery").is(':checked')) {
+        if (nbClick3 === 0) {
+            choice_delivery.css("display", "block")
+            nbClick3++;
+            if (choice_CC.css("display", "flex")) {
+                choice_CC.css("display", "none");
+                $("#arrow2").html("<i class=\"fas fa-angle-up reverse\"></i>");
+                $("#arrow1").html("<i class=\"fas fa-angle-down reverse\"></i>");
+                nbClick3 = 0;
+            }
+        }
+        else {
+            choice_delivery.css("display", "none");
+            nbClick3 = 0;
+        }
+    }
+});
+
+let address1 = $("#address1");
+let address2 = $("#address2");
+
+if ($("#standardDelivery")) {
+    let nbClick = 0;
+    $("#standardDelivery").click(function () {
+        if ($("#checkStandard").is(':checked')) {
+            if (nbClick === 0) {
+                address1.css("display", "block")
+                nbClick++;
+                if (address2.css("display", "flex")) {
+                    address2.css("display", "none");
+                    nbClick = 0;
+                }
+            }
+        }
+    });
+}
+
+
+if ($("#chronopostDelivery")) {
+    let nbClick = 0;
+    $("#chronopostDelivery").click(function () {
+        if ($("#checkchronopost").is(':checked')) {
+            if (nbClick === 0) {
+                address2.css("display", "block")
+                nbClick++;
+                if (address1.css("display", "flex")) {
+                    address1.css("display", "none");
+                    nbClick = 0;
+                }
+            }
+        }
+    });
+}
 
 itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
 itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
 itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
+
+
 
 
 
