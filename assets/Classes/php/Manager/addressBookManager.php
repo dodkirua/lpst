@@ -10,4 +10,12 @@ class addressBookManager{
         $this->db = DB::getInstance();
     }
 
+    public function add($name,$idUser,$idAddress) {
+        $stmt = $this->db->prepare("INSERT INTO address_book (name, user_id, address_id) 
+                VALUES ('".$name."','".$idUser."','".$idAddress."')
+                ");
+        if ($stmt->execute()){
+
+        }
+    }
 }

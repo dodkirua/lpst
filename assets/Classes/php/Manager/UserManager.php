@@ -31,28 +31,21 @@ class UserManager{
         return $stmt->execute();
     }
 
-   /**
+    /**
      * search a mail in DB
      * @param $mail
-     * @return array
+     * @return int|null
      */
-   /* public function searchMail($mail){
-        $stmt = $this->db->prepare("SELECT $mail FROM user");
-        $state = $stmt->execute();
+   public function searchMail($mail) : ?int{
+        $stmt = $this->db->prepare("SELECT id FROM user WHERE mail = '$mail'");
         if($stmt->execute()) {
-            foreach ($stmt->fetch) {
-                //on crée nos objets de type article
-                //$articles[] = new Article($item['id'],$item['title'],$item['content'], $item['date_add']);
-                $article = new Article($item['id']);
-                $articles[] = $article
-                    ->setTitle($item['title'])
-                    ->setContent($item['content'])
-                    ->setDateAdd($item['date_add'])
-                ;
-            }
+            $id = $stmt->fetch;
+             return intval($id) ;
         }
-        return $articles;$
-    }*/
+        else {
+            return null;
+        }
+    }
 
     /**
      * test connection if the mail and pass is appearing in the DB
