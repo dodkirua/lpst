@@ -218,10 +218,14 @@ h1 {
     text-decoration: underline;
 }
 
+.linkFooter:hover {
+    color: white;
+}
+
 .log, .log3 {
     padding: 10px;
     right: 0;
-    margin-top: -43px;
+    margin-top: -41px;
 }
 
 #containerStaff, .allProducts {
@@ -529,7 +533,7 @@ td, th {
 }
 
 .log3 {
-    margin-top: -64px;
+    margin-top: -68px;
 }
 
 .log4 {

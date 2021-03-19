@@ -75,7 +75,13 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <button id="modifyProfil" class="send modify modifyProfil">Modifier le profil</button>
                 </div>
 
+                <div class="separatorHorizontal"></div>
+                <div class="flexColumn">
+                    <h2 class="subtitle"> Mes informations personnelles</h2>
+                    <div class="padding30">
 
+                    </div>
+                </div>
 
 
                 <div class="separatorHorizontal"></div>
