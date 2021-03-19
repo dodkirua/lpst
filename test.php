@@ -1,16 +1,11 @@
 <?php
-require "./assets/Classes/php/Manager/addressManager.php";
+require "./assets/Classes/php/Manager/UserManager.php";
 
-$adress = new addressManager();
+$user = new UserManager();
 
-$test = $adress->searchAddress("rue de paris",13,"59186","anor","france",null);
 
-echo "<pre>";
-var_dump($test);
-echo "</pre>";
 
-$test = $adress->searchAddress("venise beach",45,"59782","miami","france","ter");
 
-echo "<pre>";
-var_dump($test);
-echo "</pre>";
+$test2 = $user->searchMail("toto@laville.fr");
+
+echo $test2;
