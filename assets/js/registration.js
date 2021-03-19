@@ -69,5 +69,5 @@ export function validate(){
 }
 
 function colorGreen($id){
-    document.getElementById($id).className = "colorGreen2";
+    document.getElementById("$id").className = "colorGreen2";
 }
