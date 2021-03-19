@@ -85,6 +85,20 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
             <p class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100">Total : <span class="end"><strong>145 €</strong></span></p>
             <button id="buyTotal" class="modify send width_100">VALIDATION</button>
             <a  class="send modify width_100" href="buy_buy.php">(validation test)</a>
+
+            <div id="billingAddress" class="delivery flexColumn backgroundBlue colorBlue">
+                <div class="flexRow width_100 align">
+                    <p class="title2">Adresse de facturation </p>
+                    <span class="arrow" id="arrow3"><i class="fas fa-angle-down reverse2"></i></span>
+                </div>
+            </div>
+            <div class="flexColumn sub backgroundBlue" id="billingAddress2">
+                <span class="linkLog">PRENOM NOM</span>
+                <span class="linkLog">Numero + rue</span>
+                <span class="linkLog">code postale + ville</span>
+                <span class="linkLog">pays</span>
+                <span class="linkLog colorBlue underline">Modifier</span>
+            </div>
         </div>
     </div>
 </main>

@@ -62,8 +62,14 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                     </div>
                 </div>
                 <div class="sub" id="choice_delivery">
-                    <div class="flexRow colorBlue align" id="standardDelivery">
-
+                    <div class="flexRow colorBlue align flexCenter" id="standardDelivery">
+                        <form action="#" method="post" class="flexColumn width65">
+                            <div class="flexRow align inputBuy">
+                                <input type="checkbox" id="checkCondition">
+                                <p id="condition">J'accepte <a href="terms_and_conditions.php" class="colorBlue underline"> les conditions générales de ventes</a> du magasin les pieds sur terre.</p>
+                            </div>
+                            <button id="buyPaypal" class="modify send width_100 size20">PAYER AVEC PAYPAL</button>
+                        </form>
                     </div>
 
                 </div>
