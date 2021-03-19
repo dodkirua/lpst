@@ -79,20 +79,50 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 
                 <div class="separatorHorizontal"></div>
-                <h2 class="subtitle"> Mes adresses</h2>
-                <h3 class="colorGrey "> Adresse de facturation</h3>
-                <h3 class="colorGrey"> Adresse de livraison</h3>
+                <div class="flexColumn">
+                    <h2 class="subtitle"> Mes adresses</h2>
+                    <div class="padding30">
+                        <h3 class="colorGrey inputBuy"> Adresse de facturation</h3>
+                        <div class="whiteBorder flexColumn inputBuy">
+                            <div class="flexRow align">
+                                <p class="linkLog"><strong>PRENOM NOM</strong></p>
+                                <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
+                            </div>
+                            <span class="linkLog">Numero + rue</span>
+                            <span class="linkLog">code postale + ville</span>
+                            <span class="linkLog">pays</span>
+                        </div>
+                        <div class="flexCenter">
+                            <button id="addBillingAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une nouvelle adresse de facturation</button>
+                        </div>
+                        <h3 class="colorGrey inputBuy"> Adresse de livraison</h3>
+                        <div class="whiteBorder flexColumn inputBuy">
+                            <div class="flexRow align">
+                                <p class="linkLog"><strong>PRENOM NOM</strong></p>
+                                <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
+                            </div>
+                            <span class="linkLog">Numero + rue</span>
+                            <span class="linkLog">code postale + ville</span>
+                            <span class="linkLog">pays</span>
+                        </div>
+                        <div class="flexCenter">
+                            <button id="addDeliveryAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#modalDeliveryAddress"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une nouvelle adresse de livraison</button>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="separatorHorizontal"></div>
                 <div class="flexColumn">
                     <h2 class="subtitle"> Changer mon mot de passe</h2>
-                    <label class="colorBlue" for="currentPwd">Mon mot de passe actuel</label>
-                    <input id="currentPwd" name="currentPwd" type="password">
-                    <label class="colorBlue" for="newPwd">Mon nouveau mot de passe</label>
-                    <input name="newPwd" id="newPwd" type="password">
-                    <div class="flexCenter">
-                        <button id="modifypwd" class="send modify">Valider</button>
-                    </div>
+                    <form action="#" method="post" class="flexCenter flexColumn">
+                        <label class="colorBlue" for="currentPwd">Mon mot de passe actuel</label>
+                        <input id="currentPwd" name="currentPwd" type="password">
+                        <label class="colorBlue" for="newPwd">Mon nouveau mot de passe</label>
+                        <input name="newPwd" id="newPwd" type="password">
+                            <button id="modifypwd" class="send modify">Valider</button>
+                    </form>
+
                 </div>
             </div>
 
@@ -312,8 +342,93 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             </div>
         </section>
     </div>
-
 </main>
+
+    <!-- Modal billing address -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title subtitle" id="staticBackdropLabel">Ajout d'une adresse de facturation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form  action="#" method="post" class="flexColumn flexCenter width_100">
+                        <label for="firstname" class="colorBlue center margin15-30">Prénom </label>
+                        <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
+                        <label for="lastname" class="colorBlue center margin15-30">Nom </label>
+                        <input id="lastname" name="lastname" class="whiteBorder width_100" type="text">
+                        <label for="emailModify" class="colorBlue center margin15-30" >N° et nom de la voie </label>
+                        <input id="emailModify" name="num_street" class="whiteBorder width_100" type="text" placeholder="10 rue des blés">
+                        <p id="complements" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
+                        <div id="input_complements">
+                            <input name="floor" class="whiteBorder width_100" type="text" placeholder="4e étage">
+                            <input name="num_door" class="whiteBorder width_100" type="text" placeholder="porte 24">
+                            <input name="complements" class="whiteBorder width_100" type="text" placeholder="compléments">
+                        </div>
+
+
+                        <label for="country" class="colorBlue center margin15-30">Pays </label>
+                        <input id="country" name="firstname" class="whiteBorder width_100" type="text">
+                        <label for="postalCode" class="colorBlue center margin15-30">Code postal </label>
+                        <input id="postalCode" name="postalCode" class="whiteBorder width_100" type="text">
+                        <label for="city" class="colorBlue center margin15-30">Ville </label>
+                        <input id="city" name="city" class="whiteBorder width_100" type="text">
+                        <label for="phone" class="colorBlue center margin15-30">Téléphone </label>
+                        <input id="phone" name="phone" class="whiteBorder width_100" type="tel">
+                        <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="redButton" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="send">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal delivery address -->
+    <div class="modal fade" id="modalDeliveryAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title subtitle" id="staticBackdropLabel">Ajout d'une adresse de livraison</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form  action="#" method="post" class="flexColumn flexCenter width_100">
+                        <label for="firstname" class="colorBlue center margin15-30">Prénom </label>
+                        <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
+                        <label for="lastname" class="colorBlue center margin15-30">Nom </label>
+                        <input id="lastname" name="lastname" class="whiteBorder width_100" type="text">
+                        <label for="emailModify" class="colorBlue center margin15-30" >N° et nom de la voie </label>
+                        <input id="emailModify" name="num_street" class="whiteBorder width_100" type="text" placeholder="10 rue des blés">
+                        <p id="complements2" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
+                        <div id="input_complements2">
+                            <input name="floor" class="whiteBorder width_100" type="text" placeholder="4e étage">
+                            <input name="num_door" class="whiteBorder width_100" type="text" placeholder="porte 24">
+                            <input name="complements" class="whiteBorder width_100" type="text" placeholder="compléments">
+                        </div>
+
+
+                        <label for="country" class="colorBlue center margin15-30">Pays </label>
+                        <input id="country" name="firstname" class="whiteBorder width_100" type="text">
+                        <label for="postalCode" class="colorBlue center margin15-30">Code postal </label>
+                        <input id="postalCode" name="postalCode" class="whiteBorder width_100" type="text">
+                        <label for="city" class="colorBlue center margin15-30">Ville </label>
+                        <input id="city" name="city" class="whiteBorder width_100" type="text">
+                        <label for="phone" class="colorBlue center margin15-30">Téléphone </label>
+                        <input id="phone" name="phone" class="whiteBorder width_100" type="tel">
+                        <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="redButton" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="send">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";

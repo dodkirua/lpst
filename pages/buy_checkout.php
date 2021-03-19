@@ -33,7 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                 <div class="flexRow colorBlue align">
                     <input type="radio" id="checkCC2" name="CCdelivery">
                     <div class="flexColumn">
-                        <p>Click & Collect au magasin Les pieds sur terre à Fourmies</p>
+                        <p>Click & Collect au <strong>magasin Les pieds sur terre à Fourmies</strong></p>
                         <p class="colorGrey linkLog">Disponible dans ..h pendant ..j</p>
                     </div>
                     <p class="colorRed priceDelivery placePrice"><strong>GRATUIT</strong></p>
@@ -89,15 +89,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
             <div id="billingAddress" class="delivery flexColumn backgroundBlue colorBlue">
                 <div class="flexRow width_100 align">
                     <p class="title2">Adresse de facturation </p>
-                    <span class="arrow" id="arrow3"><i class="fas fa-angle-down reverse2"></i></span>
+                    <span id="arrow3"><i class="fas fa-angle-down reverse2"></i></span>
                 </div>
             </div>
-            <div class="flexColumn sub backgroundBlue" id="billingAddress2">
-                <span class="linkLog">PRENOM NOM</span>
+            <div class="flexColumn sub backgroundBlue flexCenter" id="billingAddress2">
+                <span class="linkLog"><strong>PRENOM NOM</strong></span>
                 <span class="linkLog">Numero + rue</span>
                 <span class="linkLog">code postale + ville</span>
                 <span class="linkLog">pays</span>
-                <span class="linkLog colorBlue underline">Modifier</span>
+                <span class="linkLog colorBlue underline" id="modifybillingAddress">Modifier</span>
             </div>
         </div>
     </div>

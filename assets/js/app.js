@@ -197,11 +197,75 @@ if ($("#chronopostDelivery")) {
         }
     });
 }
+
+
+if ($("#buyCards")) {
+    let nbClick = 0;
+    $("#buyCards").click(function () {
+        if ($("#checkAllCards").is(':checked')) {
+            if (nbClick === 0) {
+                $("#choice_Cards").css("display", "flex")
+                nbClick++;
+                if ($("#choice_paypal").css("display", "flex")) {
+                    $("#choice_paypal").css("display", "none");
+                    nbClick = 0;
+                }
+            }
+        }
+    });
+}
+
+if ($("#paypalBuy")) {
+    let nbClick = 0;
+    $("#paypalBuy").click(function () {
+        if ($("#checkPaypal").is(':checked')) {
+            if (nbClick === 0) {
+                $("#choice_paypal").css("display", "flex")
+                nbClick++;
+                if ($("#choice_Cards").css("display", "flex")) {
+                    $("#choice_Cards").css("display", "none");
+                    nbClick = 0;
+                }
+            }
+        }
+    });
+}
+
+let nbClick4 = 0;
+$("#billingAddress").click(function () {
+    if (nbClick4 === 0) {
+        $("#billingAddress2").css("display", "flex");
+        nbClick4++;
+        $("#arrow3").html("<i class=\"fas fa-angle-up reverse2\"></i>");
+    }
+    else {
+        $("#billingAddress2").css("display", "none");
+        $("#arrow3").html("<i class=\"fas fa-angle-down reverse2\"></i>");
+        nbClick4 = 0;
+    }
+});
+
+if (document.getElementById("complements")) {
+    document.getElementById("complements").addEventListener("click", function () {
+        document.getElementById("input_complements").style.display = "block";
+        document.getElementById("complements").style.display = "none";
+    });
+}
+
+if (document.getElementById("complements2")) {
+    document.getElementById("complements2").addEventListener("click", function () {
+        document.getElementById("input_complements2").style.display = "block";
+        document.getElementById("complements2").style.display = "none";
+    });
+}
+
+
 if (document.getElementsByClassName("numberArticle")){
     itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
     itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
     itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
 }
+
 
 
 

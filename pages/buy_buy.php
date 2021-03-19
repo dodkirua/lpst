@@ -20,16 +20,16 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
             <div id="validation" class="width65 margin15-30">
                 <h2 class="subtitle">Mode de livraison</h2>
                 <div class="separatorHorizontal"></div>
-                <div id="click_Collect" class="delivery flexColumn backgroundBlue colorBlue">
+                <div id="buyCards" class="delivery flexColumn backgroundBlue colorBlue">
                     <div class="flexRow width_100 align">
-                        <input type="radio" id="checkCC" name="delivery">
+                        <input type="radio" id="checkAllCards" name="delivery">
                         <p>Carte de crédit </p>
-                        <p class="colorRed priceDelivery placePrice">images des CARTES</p>
+                        <p id="allCards" class="colorRed priceDelivery placePrice2">images des CARTES</p>
                         <span class="arrow" id="arrow1"><i class="fas fa-angle-down reverse"></i></span>
                     </div>
                 </div>
                 <!--CHANGER LES ID !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                <div class="sub colorBlue flexCenter" id="choice_CC">
+                <div class="sub colorBlue flexCenter" id="choice_Cards">
                     <form action="#" method="post" class="flexColumn width65">
                         <label class="width_100">Type de carte </label>
                         <label for="firstname" class="width_100">Prénom</label>
@@ -43,32 +43,32 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                         <label for="cvc" class="width_100">CVC</label>
                         <input id="cvc" name="cvc" class="whiteBorder width_100 inputBuy" type="number" placeholder="000" required>
                         <div class="flexRow align inputBuy">
-                            <input type="checkbox" id="checkCondition">
+                            <input type="checkbox" id="checkCards">
                             <p id="condition">J'accepte <a href="terms_and_conditions.php" class="colorBlue underline"> les conditions générales de ventes</a> du magasin les pieds sur terre.</p>
                         </div>
-                        <button id="buyTotal" class="modify send width_100 size20">PAYER TOTAL€</button>
+                        <button id="buyCards2" class="modify send width_100 size20">PAYER TOTAL€</button>
                     </form>
 
 
                 </div>
 
 
-                <div id="click_Collect" class="delivery flexColumn backgroundBlue colorBlue">
-                    <div class="flexRow width_100 align" id="choiceDelivery">
-                        <input type="radio" id="checkDelivery" name="delivery">
+                <div id="paypalBuy" class="delivery flexColumn backgroundBlue colorBlue">
+                    <div class="flexRow width_100 align" id="choicePaypal">
+                        <input type="radio" id="checkPaypal" name="delivery">
                         <p>PayPal </p>
-                        <p class="colorRed priceDelivery placePrice">Paypal image</p>
+                        <img src="https://o.remove.bg/downloads/795845ab-97f8-449d-b253-6024844a1c43/emblem-Paypal-500x500-removebg-preview.png" class="widthLogo placePrice2">
                         <span class="arrow" id="arrow2"><i class="fas fa-angle-down reverse"></i></span>
                     </div>
                 </div>
-                <div class="sub" id="choice_delivery">
-                    <div class="flexRow colorBlue align flexCenter" id="standardDelivery">
-                        <form action="#" method="post" class="flexColumn width65">
+                <div class="sub flexCenter" id="choice_paypal">
+                    <div class="flexRow colorBlue align flexCenter" id="buyPaypal">
+                        <form action="#" method="post" class="flexColumn width100">
                             <div class="flexRow align inputBuy">
-                                <input type="checkbox" id="checkCondition">
+                                <input type="checkbox" id="checkPaypal2">
                                 <p id="condition">J'accepte <a href="terms_and_conditions.php" class="colorBlue underline"> les conditions générales de ventes</a> du magasin les pieds sur terre.</p>
                             </div>
-                            <button id="buyPaypal" class="modify send width_100 size20">PAYER AVEC PAYPAL</button>
+                            <button id="buyPaypal2" class="modify send width_100 size20">PAYER AVEC PAYPAL</button>
                         </form>
                     </div>
 
@@ -81,9 +81,23 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                 <p class="margin20 flexRow flexInitial width_100">Sous-total : <span class="end"><strong>143 €</strong></span></p>
                 <p class="margin20 flexRow flexInitial width_100">Livraison : <span class="end"><strong>2 €</strong></span></p>
                 <p class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100">Total : <span class="end"><strong>145 €</strong></span></p>
+                <div id="billingAddress" class="delivery flexColumn backgroundBlue colorBlue">
+                    <div class="flexRow width_100 align">
+                        <p class="title2">Adresse de facturation</p>
+                        <span id="arrow3"><i class="fas fa-angle-down reverse2"></i></span>
+                    </div>
+                </div>
+                <div class="flexColumn sub backgroundBlue flexCenter" id="billingAddress2">
+                    <span class="linkLog"><strong>PRENOM NOM</strong></span>
+                    <span class="linkLog">Numero + rue</span>
+                    <span class="linkLog">code postale + ville</span>
+                    <span class="linkLog">pays</span>
+                    <span class="linkLog colorBlue underline" id="modifybillingAddress">Modifier</span>
+                </div>
             </div>
         </div>
     </main>
+
 
 <?php
 

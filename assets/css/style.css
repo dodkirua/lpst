@@ -53,7 +53,7 @@ a {
     height: 80px;
 }
 
-#lpstLogo, .reverse, .placePrice, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal, .end {
+#lpstLogo, .reverse, .reverse2, .placePrice, .placePrice2, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
     position: absolute;
 }
 
@@ -206,7 +206,7 @@ h1 {
     color: #A9C500;
 }
 
-.descriptionIcon {
+.descriptionIcon, .leftIcon {
     margin-right: 10px;
 }
 
@@ -293,7 +293,7 @@ input, .brownBorder {
     box-shadow: 3px 3px 10px lightgray;
 }
 
-.send, .buttonClassic, .redButton, .delivery, .select {
+.send, .buttonClassic, .redButton, .delivery, .select, .underline {
     cursor: pointer;
 }
 
@@ -465,7 +465,7 @@ td, th {
     margin: 0 30px;
 }
 
-#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #address2 {
+#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #address2, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements, #input_complements2 {
      display: none;
 }
 
@@ -503,7 +503,11 @@ td, th {
      margin-left: 20%;
 }
 
-.modal {
+.edit {
+    margin-left: 50%;
+}
+
+.modal2 {
      top: 0;
      left: 0;
      width: 100%;
@@ -599,7 +603,11 @@ td, th {
     right: 40%;
 }
 
-#checkCC, #checkCC2, #checkDelivery, #checkStandard, #checkchronopost, #checkcourier, #checkCondition {
+.reverse2 {
+    right: 11.5%;
+}
+
+#checkCC, #checkCC2, #checkDelivery, #checkStandard, #checkchronopost, #checkcourier, #checkCondition, #checkAllCards, #checkCards, #checkPaypal, #checkPaypal2  {
     background-color: transparent;
     width: initial;
     margin: 0 20px 0 0;
@@ -610,12 +618,16 @@ td, th {
     margin-bottom: 20px;
 }
 
-.placePrice {
+.placePrice, .placePrice2 {
     right: 42%;
 }
 
 .sub {
     padding: 10px 40px;
+}
+
+.widthLogo {
+    width: 40px;
 }
 
 @media screen and (max-width: 1510px) {
@@ -639,6 +651,9 @@ td, th {
     }
     #information > p, #ordered > p, #basketsSave > p {
         font-size: 13px;
+    }
+    .title2 {
+        font-size: 15px;
     }
 }
 
@@ -680,8 +695,13 @@ td, th {
     .redButton {
         margin: 5px;
     }
-    .width65 {
+    .width65, #informationProfil {
         width: 95%;
+    }
+    .select{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .log4 {
         margin: 0;
@@ -734,6 +754,12 @@ td, th {
     }
     .end {
         right: 50px;
+    }
+    .reverse2 {
+        right: 50px;
+    }
+    .title2 {
+        font-size: 12px;
     }
 }
 
@@ -802,14 +828,19 @@ td, th {
     #basket, #buy {
         margin: 0;
     }
-    .reverse {
+    .reverse, .reverse2 {
         right: 50px;
     }
-    .placePrice {
+    .placePrice, .placePrice2 {
         right: 70px;
     }
-    .title {
+    .title, .title2 {
         font-size: 20px;
+    }
+    #addDeliveryAddress, #addBillingAddress, #saveAddress1, #buyPaypal2, #buyCards2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -875,7 +906,7 @@ td, th {
     #menuResponsive, #mobile {
         display: flex;
     }
-    .log, .log3, #computer, #menu, .selectComputer, .reverse {
+    .log, .log3, #computer, #menu, .selectComputer, .reverse, .reverse2 {
         display: none;
     }
     .containedMenu:hover, .linkLog:hover {
@@ -940,6 +971,12 @@ td, th {
     .placePrice {
         margin-top: 37px;
         font-size: 15px;
+    }
+    #allCards {
+        margin-top: 50px;
+    }
+    #buyCards{
+        padding-bottom: 40px;
     }
 }
 

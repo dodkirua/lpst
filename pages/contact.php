@@ -5,10 +5,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 if (isset($_GET['e'])) {
-    echo "<div id='error0' class='modal flexCenter colorWhite'> Il y a eu une erreur lors de l'envoie du mail ! <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
+    echo "<div id='error0' class='modal2 flexCenter colorWhite'> Il y a eu une erreur lors de l'envoie du mail ! <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
 }
 elseif (isset($_GET["s"])) {
-    echo "<div id='success' class='modal flexCenter colorWhite'> Le mail a été envoyé avec succés ! <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
+    echo "<div id='success' class='modal2 flexCenter colorWhite'> Le mail a été envoyé avec succés ! <button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>";
 }
 ?>
 

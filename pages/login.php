@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 <main>
     <h1>Se <span class="colorGreen">connecter</></h1>
-    <div id='<?= $id?>' class='modal flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
+    <div id='<?= $id?>' class='modal2 flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
     <form action="../assets/php/connection.php" method="post" class="flexColumn" name="login">
         <div class="flexColumn contact">
             <label for="emailContact" class="colorBlue">Email*</label>

@@ -8,7 +8,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 <main>
     <div id="mobile" class="flexCenter flexColumn">
         <p id="magasinMobile" class="buttonMobile flexColumn"><i class="fas fa-store"></i> Notre magasin</p>
-        <a class="buttonMobile flexColumn" href=""><i class="fas fa-shopping-basket"></i>Epicerie en ligne</a>
+        <a class="buttonMobile flexColumn" href="/pages/shopping.php"><i class="fas fa-shopping-basket"></i>Epicerie en ligne</a>
     </div>
 
     <div id="computer">
