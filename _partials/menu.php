@@ -31,6 +31,8 @@
         <a id="local" class="containedMenu flexCenter" href="../pages/local.php"> Nos partenaires locaux</a>
         <div class="separatorVertical"></div>
         <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Epicerie en ligne</a>
+        <div class="separatorVertical"></div>
+        <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Réserver notre pain</a>
     </div>
 
     <div id="menuResponsive" class="flexRow flexCenter">

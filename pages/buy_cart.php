@@ -18,7 +18,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
     </div>
     <div id="cart" class="flexRow">
         <div id="basket" class="width65 margin15-30">
-            <h2 class="subtitle">Mon panier</h2>
+            <div id="basket2" class="flexRow flexCenter">
+                <h2 class="subtitle">Mon panier</h2>
+                <button class="buttonClassic favoriteArticleCart"><i class="fas fa-cart-plus leftIcon"></i>Sauvegarder le panier</button>
+            </div>
             <div class="separatorHorizontal"></div>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
@@ -160,7 +163,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                 <p class="center margin15-30"><strong>total €</strong></p>
                 <button id="buyTotal" class="modify send width_100">PAYER</button>
                 <a href="buy_checkout.php" class="send width_100">(Payer test)</a>
-                <p class="linkLog">Nous acceptons : (cartes)</p>
+                <p class="linkLog">Nous acceptons : <i class="fab fa-cc-visa leftIcon size20"></i><i class="fab fa-cc-amex leftIcon size20"></i><i class="fab fa-cc-mastercard leftIcon size20"></i><i class="fab fa-cc-paypal leftIcon size20"> CB</i></p>
             </div>
         </div>
     </div>

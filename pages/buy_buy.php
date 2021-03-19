@@ -24,7 +24,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                     <div class="flexRow width_100 align">
                         <input type="radio" id="checkAllCards" name="delivery">
                         <p>Carte de crédit </p>
-                        <p id="allCards" class="colorRed priceDelivery placePrice2">images des CARTES</p>
+                        <div class="widthLogo placePrice3 flexRow"><i class="fab fa-cc-visa leftIcon"></i><i class="fab fa-cc-amex leftIcon"></i><i class="fab fa-cc-mastercard leftIcon"></i>CB</div>
                         <span class="arrow" id="arrow1"><i class="fas fa-angle-down reverse"></i></span>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                     <div class="flexRow width_100 align" id="choicePaypal">
                         <input type="radio" id="checkPaypal" name="delivery">
                         <p>PayPal </p>
-                        <img src="https://o.remove.bg/downloads/795845ab-97f8-449d-b253-6024844a1c43/emblem-Paypal-500x500-removebg-preview.png" class="widthLogo placePrice2">
+                        <span class="widthLogo placePrice2"><i class="fab fa-paypal"></i></span>
                         <span class="arrow" id="arrow2"><i class="fas fa-angle-down reverse"></i></span>
                     </div>
                 </div>
