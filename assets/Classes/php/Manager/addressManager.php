@@ -26,7 +26,7 @@ class addressManager{
         $country = strtolower($country);
         if (!is_null($compl)) {
             $compl = strtolower($compl);
-            $stmt = $this->db->prepare("SELECT * FROM adress
+            $stmt = $this->db->prepare("SELECT * FROM address
                 WHERE street='" . $street . "' 
                 AND number=" . $number . " 
                 AND zip_code='" . $zipCode . "' 
@@ -36,7 +36,7 @@ class addressManager{
                 ");
         }
         else {
-            $stmt = $this->db->prepare("SELECT * FROM adress
+            $stmt = $this->db->prepare("SELECT * FROM address
                 WHERE street='" . $street . "' 
                 AND number=" . $number . " 
                 AND zip_code='" . $zipCode . "' 
@@ -91,18 +91,18 @@ class addressManager{
         $country = strtolower($country);
         if (!is_null($compl)) {
             $compl = strtolower($compl);
-            $stmt = $this->db->prepare("INSERT INTO adress (street, number, complement, zip_code, city, country) 
+            $stmt = $this->db->prepare("INSERT INTO address (street, number, complement, zip_code, city, country) 
                 VALUES ('".$street."','".$number."','".$compl."','".$zipCode."','".$city."','".$country."');
                 ");
         }
         else {
-            $stmt = $this->db->prepare("INSERT INTO adress (street, number, complement, zip_code, city, country) 
+            $stmt = $this->db->prepare("INSERT INTO address (street, number, complement, zip_code, city, country) 
                 VALUES ('".$street."','".$number."',NULL,'".$zipCode."','".$city."','".$country."');
                 ");
         }
 
         if ($stmt->execute()){
-            $stmt2 = $this->db->prepare("SELECT max(id) FROM adress");
+            $stmt2 = $this->db->prepare("SELECT max(id) FROM address");
             if ($stmt2->execute()){
              $id = $stmt2->fetch();
              return intval($id["max(id)"]);
