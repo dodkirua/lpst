@@ -32,7 +32,7 @@
         <div class="separatorVertical"></div>
         <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Epicerie en ligne</a>
         <div class="separatorVertical"></div>
-        <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Réserver notre pain</a>
+        <a id="reserveBread" class="containedMenu flexCenter" href="../pages/reserveBread.php"> Réserver notre pain</a>
     </div>
 
     <div id="menuResponsive" class="flexRow flexCenter">
@@ -44,6 +44,7 @@
         <a id="products" class="containedMenu flexCenter" href="../pages/products.php"> Nos produits</a>
         <a id="local" class="containedMenu flexCenter" href="../pages/local.php"> Nos partenaires locaux</a>
         <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Epicerie en ligne</a>
+        <a id="reserveBread" class="containedMenu flexCenter" href="../pages/reserveBread.php"> Réserver notre pain</a>
 
 
         <?php
@@ -52,7 +53,9 @@
             <div class="log2">
                 <a class="containedMenu flexCenter colorWhite" href="../pages/account.php">Mon compte</a>
                 <a class="containedMenu flexCenter colorWhite" href="../pages/buy_cart.php">Mon panier</a>
-                <button class="containedMenu flexCenter colorWhite redButton disconnection">Déconnexion</button>
+                <div class="flexCenter">
+                    <button class="containedMenu flexCenter colorWhite redButton disconnection">Déconnexion</button>
+                </div>
             </div>
             <?php
         }

@@ -8,7 +8,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
 
 <main>
-    <h1>Epicerie <span class="colorGreen">en ligne</span></h1>
+    <h1>EPICERIE <span class="colorGreen">EN LIGNE</span></h1>
 </main>
 
 <?php

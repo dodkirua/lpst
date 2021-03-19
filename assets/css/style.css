@@ -81,7 +81,7 @@ a {
     background-color: #A9C500;
 }
 
-.send, .buttonMobile, .redButton, #commerce, #products, #local, #account, #shop, .fa-bars, .log2, .colorWhite, .linkFooter  {
+.send, .buttonMobile, .redButton, #commerce, #products, #local, #account, #shop, .fa-bars, .log2, .colorWhite, .linkFooter, #reserveBread  {
     color: white;
 }
 
@@ -950,7 +950,7 @@ td, th {
     .products {
         width: 30%;
     }
-    .allProducts, .forgotPassword > form > input#email, #accountResponsive, .forgotPassword {
+    .allProducts, .forgotPassword > form > input#email, #accountResponsive, .forgotPassword, .log2 {
         width: 100%;
     }
     h1 {
