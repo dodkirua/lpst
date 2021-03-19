@@ -36,7 +36,7 @@ class UserManager{
      * @param $mail
      * @return int|null
      */
-   public function searchMail($mail) {
+   public function searchMail($mail) : ?int{
         $stmt = $this->db->prepare("SELECT id FROM user WHERE mail = '$mail'");
         if($stmt->execute()) {
             return intval($stmt->fetch()['id']);

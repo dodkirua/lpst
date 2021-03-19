@@ -1,11 +1,11 @@
 <?php
-require "./assets/Classes/php/Manager/UserManager.php";
-
-$user = new UserManager();
+require "./assets/Classes/php/Manager/AddressBookManager.php";
 
 
+$manager = new AddressBookManager();
 
 
-$test2 = $user->searchMail("toto@laville.fr");
 
-echo $test2;
+
+$test2 = $manager->add("test",1,8);
+
