@@ -53,7 +53,7 @@ a {
     height: 80px;
 }
 
-#lpstLogo, .reverse, .reverse2, .placePrice, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal, .end {
+#lpstLogo, .reverse, .placePrice, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal, #closeModal, .end {
     position: absolute;
 }
 
@@ -293,7 +293,7 @@ input, .brownBorder {
     box-shadow: 3px 3px 10px lightgray;
 }
 
-.send, .buttonClassic, .redButton, .delivery, .select, .underline:hover {
+.send, .buttonClassic, .redButton, .delivery, .select {
     cursor: pointer;
 }
 
@@ -465,7 +465,7 @@ td, th {
     margin: 0 30px;
 }
 
-#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #address2, #billingAddress2 {
+#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #address2 {
      display: none;
 }
 
@@ -599,14 +599,6 @@ td, th {
     right: 40%;
 }
 
-.reverse2 {
-    right: 12%;
-}
-
-.title2 {
-    font-size: 15px;
-}
-
 #checkCC, #checkCC2, #checkDelivery, #checkStandard, #checkchronopost, #checkcourier, #checkCondition {
     background-color: transparent;
     width: initial;
@@ -706,9 +698,6 @@ td, th {
     .title {
         font-size: 16px;
     }
-    .title2 {
-        font-size: 13px;
-    }
 }
 
 @media screen and (max-width: 970px) {
@@ -746,10 +735,8 @@ td, th {
     .end {
         right: 50px;
     }
-    .reverse2 {
-        right: 60px;
-    }
 }
+
 
 @media screen and (max-width: 830px) {
     .separatorVertical, #tableOrdered, #tableBaskets {
