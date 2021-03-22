@@ -22,7 +22,7 @@ class UserManager{
         $surname = strtolower($surname);
         $mail = strtolower($mail);
         $stmt = $this->db->prepare("
-                INSERT INTO  user (lastname, firstname, mail, pass, role_id) VALUES (:name, :surname, :mail, :pass, :role)                
+                INSERT INTO  user (lastname, firstname, mail, pass, role_id) VALUES (:lastname, :firstname, :mail, :pass, :role)                
             ");
 
         $stmt->bindValue(':lastname',$name);
