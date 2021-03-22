@@ -3,8 +3,8 @@
 
 class User{
     private ?int $id;
-    private ?string $name = null;
-    private ?string $surname = null;
+    private ?string $lastname = null;
+    private ?string $firstname = null;
     private ?string $mail = null;
     private ?string $pass = null;
     private ?string $phone = null;
@@ -30,19 +30,19 @@ class User{
     }
 
     /**
-     * get the name
+     * get the lastname
      * @return string|null
      */
-    public function getName(): ?string    {
-        return $this->name;
+    public function getLastame(): ?string    {
+        return $this->lastname;
     }
 
     /**
-     * get the surname
+     * get the firstname
      * @return string|null
      */
-    public function getSurname(): ?string    {
-        return $this->surname;
+    public function getFirstname(): ?string    {
+        return $this->firstname;
     }
 
     /**
@@ -95,23 +95,23 @@ class User{
     }
 
     /**
-     * set the name
-     * @param string|null $name
+     * set the lastname
+     * @param string|null $lastname
      * @return User
      */
-    public function setName(?string $name): User
+    public function setLastname(?string $lastname): User
     {
-        $this->name = $name;
+        $this->lastname = $lastname;
         return $this;
     }
 
     /**
-     * set the surname
-     * @param string|null $surname
+     * set the firstname
+     * @param string|null $firstname
      * @return User
      */
-    public function setSurname(?string $surname): User    {
-        $this->surname = $surname;
+    public function setFirstname(?string $firstname): User    {
+        $this->firstname = $firstname;
         return $this;
     }
 
@@ -181,8 +181,8 @@ class User{
      */
     public function getBaseData() : array{
         $userArray['id'] = $this->getId();
-        $userArray['lastname'] = $this->getName();
-        $userArray['firstname'] = $this->getSurname();
+        $userArray['lastname'] = $this->getLastame();
+        $userArray['firstname'] = $this->getFirstname();
         $userArray['mail'] = $this->getMail();
         $userArray['pass'] = $this->getPass();
         $userArray['role'] = $this->getRole();

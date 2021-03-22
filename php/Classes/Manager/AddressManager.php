@@ -117,8 +117,27 @@ class AddressManager{
         }
     }
 
-    public function getAddress(int $id){
+    /**
+     * return a Address object
+     * @param int $id
+     * @return Address|null
+     */
+    public function getAddress(int $id) : ?Address{
         $stmt = $this->db->prepare("SELECT * FROM address WHERE id='".$id."'");
+        if ($state = $stmt->execute()){
+            $item = $stmt->fetch();
+            $address = new Address($id);
+            $address = $address
+                ->setStreet($item['street'])
+                ->setComplement($item['complement'])
+                ->setNumber($item["number"])
+                ->setZip($item["zip_code"])
+                ->setCity($item['city'])
+                ->setCountry($item["country"])
+                ;
+            return $address;
+        }
+        return null;
 
     }
 }

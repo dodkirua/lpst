@@ -64,8 +64,8 @@ class UserManager{
 
                 $user =  new User($item['id']);
                 $user = $user
-                    ->setName($item['lastname'])
-                    ->setSurname($item['firstname'])
+                    ->setLastname($item['lastname'])
+                    ->setFirstname($item['firstname'])
                     ->setMail($item['mail'])
                     ->setPass($item['pass'])
                     ->setRole($item['role_id'])
