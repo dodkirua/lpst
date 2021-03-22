@@ -9,6 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
     <main>
         <h1>RESERVER <span class="colorGreen">NOTRE PAIN</span></h1>
+
     </main>
 
 <?php
