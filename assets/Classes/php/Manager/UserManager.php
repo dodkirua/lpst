@@ -29,7 +29,7 @@ class UserManager{
         $stmt->bindValue(':firstname',$surname);
         $stmt->bindValue(':mail',$mail);
         $stmt->bindValue(':pass',$pass);
-        $stmt->bindValue(":role","2");
+        $stmt->bindValue(":role",2);
 
         return $stmt->execute();
     }
