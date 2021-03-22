@@ -1,11 +1,7 @@
 <?php
-require "./assets/Classes/php/Manager/AddressBookManager.php";
+require "./php/Classes/Manager/AddressManager.php";
 
 
-$manager = new AddressBookManager();
+$manager = new AddressManager();
 
-
-
-
-$test2 = $manager->add("test",1,8);
-
+$manager->getAddress(1);
