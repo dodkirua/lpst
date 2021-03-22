@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/assets/Classes/php/BD.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/assets/Classes/php/User.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/BD.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/User.php";
 
 
 class AddressBookManager{

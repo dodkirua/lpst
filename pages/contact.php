@@ -15,7 +15,7 @@ elseif (isset($_GET["s"])) {
 
 <main>
     <h1>Nous <span class="colorGreen">Contacter</span></h1>
-    <form action="../assets/php/sendMail.php" method="post" class="flexColumn" name="Contact">
+    <form action="../php/sendMail.php" method="post" class="flexColumn" name="Contact">
         <div class="flexRow nameContact">
             <div class="flexColumn contact">
                 <label for="firstname" class="colorBlue">Prénom</label>

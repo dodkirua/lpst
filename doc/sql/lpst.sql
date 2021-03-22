@@ -107,17 +107,6 @@ CREATE TABLE `user` (
   `role_id` tinyint UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Déchargement des données de la table `user`
---
-
-INSERT INTO `user` (`id`, `lastname`, `firstname`, `mail`, `pass`, `phone`, `image`, `checked`, `role_id`) VALUES
-(2, 'bouttefeux', 'pierre-yves', 'tot@great.fr', '$2y$10$RmRXzYzz5fxrrUS5EqN1kuqnZAD0jQ21ZjOTkqAgIGB9iakC3uh3G', NULL, NULL, 0, 2),
-(3, 'laville', 'tata', 'tata@laville.fr', '$2y$10$0QyytG5MYrJgkc0AJbKSTeH.zD6DxmrnQGtQHyj8ad5PRjuBfwymW', NULL, NULL, 0, 2);
-
---
--- Index pour les tables déchargées
---
 
 --
 -- Index pour la table `address`

@@ -25,7 +25,7 @@ elseif (isset($_GET['s'])){
 <main>
     <h1>Créer <span class="colorGreen"> un compte</></h1>
     <div id='<?= $id?>' class='modal2 flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
-    <form action="../assets/php/addUser.php" method="post" class="flexColumn" name="registration" id = "registration">
+    <form action="../php/addUser.php" method="post" class="flexColumn" name="registration" id = "registration">
         <div class="flexColumn contact">
             <div class="flexRow nameContact">
                 <div class="flexColumn contact">

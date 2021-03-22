@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/assets/Classes/php/BD.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/assets/Classes/php/User.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/BD.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/User.php";
 
 class UserManager{
     private ?PDO $db;
@@ -29,7 +29,7 @@ class UserManager{
         $stmt->bindValue(':firstname',$surname, PDO::PARAM_STR);
         $stmt->bindValue(':mail',$mail);
         $stmt->bindValue(':pass',$pass);
-        $stmt->bindValue(":role","2");
+        $stmt->bindValue(":role",2);
 
         return $stmt->execute();
     }
