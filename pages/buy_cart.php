@@ -165,6 +165,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                 <a href="buy_checkout.php" class="send width_100">(Payer test)</a>
                 <p class="linkLog">Nous acceptons : <i class="fab fa-cc-visa leftIcon size20"></i><i class="fab fa-cc-amex leftIcon size20"></i><i class="fab fa-cc-mastercard leftIcon size20"></i><i class="fab fa-cc-paypal leftIcon size20"> CB</i></p>
             </div>
+            <div class="flexColumn">
+                <p class="colorBlue"> Click & Collect : </p>
+                <span class="linkLog colorGrey">Commandé avant 11h, disponible à 15h.</span>
+                <span class="linkLog colorGrey">Commandé après 11h, disponible le lendemain après-midi.</span>
+                <p class="colorBlue"> Livraison disponible : </p>
+                <span class="linkLog colorGrey">A partir de 50€ d'achat, 5€ de frais de port.</span>
+                <span class="linkLog colorGrey">A partir de 100€ d'achat, frais de port gratuit.</span>
+            </div>
+
         </div>
     </div>
 </main>

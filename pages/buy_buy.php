@@ -69,6 +69,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                                 <p id="condition">J'accepte <a href="terms_and_conditions.php" class="colorBlue underline"> les conditions générales de ventes</a> du magasin les pieds sur terre.</p>
                             </div>
                             <button id="buyPaypal2" class="modify send width_100 size20">PAYER AVEC PAYPAL</button>
+                            <p class="linkLog colorGrey">Vous allez être redirigé vers une autre page.</p>
                         </form>
                     </div>
 

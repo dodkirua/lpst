@@ -176,10 +176,6 @@ if ($("#standardDelivery")) {
     });
 }
 
-
-
-
-
 if ($("#buyCards")) {
     let nbClick = 0;
     $("#buyCards").click(function () {
@@ -226,6 +222,24 @@ $("#billingAddress").click(function () {
     }
 });
 
+//Condition for the total of the articles, if the total is below 50 then there is no delivery,
+//if it is between 50 and 100 then it is 5 € and if it is equal to or greater than 100 € then it is free.
+let totalBuy = document.getElementById("totalBuy").innerHTML = 145;
+if (totalBuy < 50) {
+    document.getElementById("delivery2").style.display = "none";
+}
+if (50 <= totalBuy < 100) {
+    document.getElementById("buyDelivery").innerHTML = "A partir de " +  5 + "€";
+    document.getElementById("buyDelivery2").innerHTML = 5 + "€";
+
+}
+if (totalBuy >= 100) {
+    document.getElementById("buyDelivery").innerHTML = "<strong>GRATUIT </strong>";
+    document.getElementById("buyDelivery2").innerHTML = "<strong>GRATUIT </strong>";
+}
+
+
+
 if (document.getElementById("complements")) {
     document.getElementById("complements").addEventListener("click", function () {
         document.getElementById("input_complements").style.display = "block";
@@ -239,7 +253,6 @@ if (document.getElementById("complements2")) {
         document.getElementById("complements2").style.display = "none";
     });
 }
-
 
 if (document.getElementsByClassName("numberArticle")){
     itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
