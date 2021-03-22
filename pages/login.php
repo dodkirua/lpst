@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 <main>
     <h1>Se <span class="colorGreen">connecter</></h1>
     <div id='<?= $id?>' class='modal2 flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
-    <form action="../assets/php/connection.php" method="post" class="flexColumn" name="login">
+    <form action="../php/connection.php" method="post" class="flexColumn" name="login">
         <div class="flexColumn contact">
             <label for="emailContact" class="colorBlue">Email*</label>
             <input id="emailContact" type="email" name="emailContact" required>
@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             <label for="password" class="colorBlue">Mot de passe*</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <a class="flexCenter colorBlue underline margin15-30" href="../assets/php/forgotPassword.php">Mot de passe oublié ?</a>
+        <a class="flexCenter colorBlue underline margin15-30" href="../php/forgotPassword.php">Mot de passe oublié ?</a>
         <input class="send" type="submit" value="Se connecter">
         <a href="registration.php" class="flexCenter brownBorder"> Créer un compte</a>
     </form>

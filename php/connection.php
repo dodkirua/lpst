@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . "/assets/Classes/php/Manager/UserManager.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/assets/php/function.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 
 
 if (!isset($_POST['emailContact']) || !isset($_POST['password'])) {
