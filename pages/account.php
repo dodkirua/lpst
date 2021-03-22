@@ -1,10 +1,11 @@
 <?php
 session_start();
-$title = "LPST : Mon compte";
 
-include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
-?>
+if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
+    $title = "LPST : Mon compte";
+    include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+    ?>
 
 <main class="flexRow account">
     <section id="informationProfil">
@@ -437,3 +438,4 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
+}

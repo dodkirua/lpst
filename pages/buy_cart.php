@@ -2,7 +2,9 @@
 session_start();
 $title = "LPST : Mon panier";
 
-include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
+if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
+    $title = "LPST : Mon panier";
+    include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 ?>
 
 <main>
@@ -178,5 +180,5 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 </main>
 
 <?php
-
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
+}

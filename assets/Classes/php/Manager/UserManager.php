@@ -25,8 +25,8 @@ class UserManager{
                 INSERT INTO  user (lastname, firstname, mail, pass, role_id) VALUES (:lastname, :firstname, :mail, :pass, :role)                
             ");
 
-        $stmt->bindValue(':lastname',$name);
-        $stmt->bindValue(':firstname',$surname);
+        $stmt->bindValue(':lastname',$name, PDO::PARAM_STR);
+        $stmt->bindValue(':firstname',$surname, PDO::PARAM_STR);
         $stmt->bindValue(':mail',$mail);
         $stmt->bindValue(':pass',$pass);
         $stmt->bindValue(":role","2");
