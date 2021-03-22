@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 22 mars 2021 à 10:24
+-- Généré le : lun. 22 mars 2021 à 10:27
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -60,6 +60,7 @@ CREATE TABLE `address_book` (
 
 CREATE TABLE `information` (
   `id` int UNSIGNED NOT NULL,
+  `title` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `description` text COLLATE utf8_bin NOT NULL,
   `picture` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `location` varchar(200) COLLATE utf8_bin NOT NULL,
