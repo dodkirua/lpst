@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 16 mars 2021 à 11:47
+-- Généré le : lun. 22 mars 2021 à 10:24
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `adress`
+-- Structure de la table `address`
 --
 
-CREATE TABLE `adress` (
+CREATE TABLE `address` (
   `id` int UNSIGNED NOT NULL,
   `street` varchar(255) COLLATE utf8_bin NOT NULL,
   `number` mediumint UNSIGNED NOT NULL,
@@ -39,14 +39,31 @@ CREATE TABLE `adress` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `adress_book`
+-- Structure de la table `address_book`
 --
 
-CREATE TABLE `adress_book` (
+CREATE TABLE `address_book` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(50) COLLATE utf8_bin NOT NULL,
+  `firstname` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `lastname` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `phone` varchar(15) COLLATE utf8_bin DEFAULT NULL,
   `user_id` int UNSIGNED NOT NULL,
-  `adress_id` int UNSIGNED NOT NULL
+  `address_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `information`
+--
+
+CREATE TABLE `information` (
+  `id` int UNSIGNED NOT NULL,
+  `description` text COLLATE utf8_bin NOT NULL,
+  `picture` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `location` varchar(200) COLLATE utf8_bin NOT NULL,
+  `user_id` int UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -58,7 +75,7 @@ CREATE TABLE `adress_book` (
 CREATE TABLE `role` (
   `id` tinyint UNSIGNED NOT NULL,
   `name` varchar(45) COLLATE utf8_bin NOT NULL,
-  `description` text COLLATE utf8_bin NOT NULL
+  `description` text COLLATE utf8_bin
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -66,9 +83,9 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`id`, `name`, `description`) VALUES
-(1, 'admin', 'Gérer le site'),
-(2, 'client', 'utilisateur de base'),
-(3, 'modérateur', 'modifie les données du site');
+(1, 'admin', NULL),
+(2, 'client', NULL),
+(3, 'modérateur', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,34 +98,36 @@ CREATE TABLE `user` (
   `name` varchar(100) COLLATE utf8_bin NOT NULL,
   `surname` varchar(100) COLLATE utf8_bin NOT NULL,
   `mail` varchar(200) COLLATE utf8_bin NOT NULL,
-  `pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `phone` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `phone` varchar(15) COLLATE utf8_bin NOT NULL,
+  `picture` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `checked` tinyint NOT NULL DEFAULT '0',
   `role_id` tinyint UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Déchargement des données de la table `user`
---
-
-INSERT INTO `user` (`id`, `name`, `surname`, `mail`, `pass`, `phone`, `role_id`) VALUES
-(1, 'Bouttefeux', 'Pierre-Yves', 'tot@great.fr', '$2y$10$4APe6R6P.VLTacLVZ5zo0OwHrXEgAZkmSNnQbKYBgIiVaoTAHyogi', NULL, 2);
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `adress`
+-- Index pour la table `address`
 --
-ALTER TABLE `adress`
+ALTER TABLE `address`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `adress_book`
+-- Index pour la table `address_book`
 --
-ALTER TABLE `adress_book`
+ALTER TABLE `address_book`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_fk` (`user_id`);
+  ADD KEY `adress_fk_idx` (`address_id`),
+  ADD KEY `user_fk_idx` (`user_id`);
+
+--
+-- Index pour la table `information`
+--
+ALTER TABLE `information`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_fk_idx` (`user_id`);
 
 --
 -- Index pour la table `role`
@@ -121,52 +140,53 @@ ALTER TABLE `role`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `mail` (`mail`),
-  ADD KEY `role_fk` (`role_id`);
+  ADD UNIQUE KEY `mail_UNIQUE` (`mail`),
+  ADD KEY `role_fk_idx` (`role_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT pour la table `adress`
+-- AUTO_INCREMENT pour la table `address`
 --
-ALTER TABLE `adress`
+ALTER TABLE `address`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `adress_book`
+-- AUTO_INCREMENT pour la table `address_book`
 --
-ALTER TABLE `adress_book`
+ALTER TABLE `address_book`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` tinyint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT pour la table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` tinyint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
--- Contraintes pour la table `adress_book`
+-- Contraintes pour la table `address_book`
 --
-ALTER TABLE `adress_book`
-  ADD CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `address_book`
+  ADD CONSTRAINT `adress_addressB_fk` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `user_addressB_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Contraintes pour la table `information`
+--
+ALTER TABLE `information`
+  ADD CONSTRAINT `information_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `role_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `role_user_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
