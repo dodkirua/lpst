@@ -22,11 +22,11 @@ class UserManager{
         $surname = strtolower($surname);
         $mail = strtolower($mail);
         $stmt = $this->db->prepare("
-                INSERT INTO  user (name, surname, mail, pass, role_id) VALUES (:name, :surname, :mail, :pass, :role)                
+                INSERT INTO  user (lastname, firstname, mail, pass, role_id) VALUES (:name, :surname, :mail, :pass, :role)                
             ");
 
-        $stmt->bindValue(':name',$name);
-        $stmt->bindValue(':surname',$surname);
+        $stmt->bindValue(':lastname',$name);
+        $stmt->bindValue(':firstname',$surname);
         $stmt->bindValue(':mail',$mail);
         $stmt->bindValue(':pass',$pass);
         $stmt->bindValue(":role","2");
@@ -65,8 +65,8 @@ class UserManager{
 
                 $user =  new User($item['id']);
                 $user = $user
-                    ->setName($item['name'])
-                    ->setSurname($item['surname'])
+                    ->setName($item['lastname'])
+                    ->setSurname($item['firstname'])
                     ->setMail($item['mail'])
                     ->setPass($item['pass'])
                     ->setRole($item['role_id'])

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 22 mars 2021 à 11:11
+-- Généré le : lun. 22 mars 2021 à 11:28
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -97,8 +97,8 @@ INSERT INTO `role` (`id`, `name`, `description`) VALUES
 
 CREATE TABLE `user` (
   `id` int UNSIGNED NOT NULL,
-  `name` varchar(100) COLLATE utf8_bin NOT NULL,
-  `surname` varchar(100) COLLATE utf8_bin NOT NULL,
+  `lastname` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `firstname` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `mail` varchar(200) COLLATE utf8_bin NOT NULL,
   `pass` varchar(200) COLLATE utf8_bin NOT NULL,
   `phone` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
@@ -111,8 +111,9 @@ CREATE TABLE `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `surname`, `mail`, `pass`, `phone`, `image`, `checked`, `role_id`) VALUES
-(2, 'bouttefeux', 'pierre-yves', 'tot@great.fr', '$2y$10$RmRXzYzz5fxrrUS5EqN1kuqnZAD0jQ21ZjOTkqAgIGB9iakC3uh3G', NULL, NULL, 0, 2);
+INSERT INTO `user` (`id`, `lastname`, `firstname`, `mail`, `pass`, `phone`, `image`, `checked`, `role_id`) VALUES
+(2, 'bouttefeux', 'pierre-yves', 'tot@great.fr', '$2y$10$RmRXzYzz5fxrrUS5EqN1kuqnZAD0jQ21ZjOTkqAgIGB9iakC3uh3G', NULL, NULL, 0, 2),
+(3, 'laville', 'tata', 'tata@laville.fr', '$2y$10$0QyytG5MYrJgkc0AJbKSTeH.zD6DxmrnQGtQHyj8ad5PRjuBfwymW', NULL, NULL, 0, 2);
 
 --
 -- Index pour les tables déchargées
@@ -179,7 +180,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées

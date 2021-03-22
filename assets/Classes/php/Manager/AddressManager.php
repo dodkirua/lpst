@@ -118,4 +118,8 @@ class AddressManager{
         }
     }
 
+    public function getAddress(int $id){
+        $stmt = $this->db->prepare("SELECT * FROM address WHERE id='".$id."'");
+
+    }
 }

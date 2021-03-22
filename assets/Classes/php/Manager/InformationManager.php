@@ -9,5 +9,7 @@ class InformationManager{
         $this->db = DB::getInstance();
     }
 
+    public function addInformation(?string $title,string $desc, ?string $img, string $location, int $user){
 
+    }
 }
