@@ -18,9 +18,9 @@ class UserManager{
      * @return bool
      */
     public function addUser($name, $surname, $mail, $pass) : bool{
-        $name = strtolower($name);
-        $surname = strtolower($surname);
-        $mail = strtolower($mail);
+        $name = mb_strtolower($name);
+        $surname = mb_strtolower($surname);
+        $mail = mb_strtolower($mail);
         $stmt = $this->db->prepare("
                 INSERT INTO  user (lastname, firstname, mail, pass, role_id) VALUES (:lastname, :firstname, :mail, :pass, :role)                
             ");
