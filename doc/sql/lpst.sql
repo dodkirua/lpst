@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 22 mars 2021 à 10:27
+-- Généré le : lun. 22 mars 2021 à 10:34
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -62,7 +62,7 @@ CREATE TABLE `information` (
   `id` int UNSIGNED NOT NULL,
   `title` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `description` text COLLATE utf8_bin NOT NULL,
-  `picture` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `image` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `location` varchar(200) COLLATE utf8_bin NOT NULL,
   `user_id` int UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -100,7 +100,7 @@ CREATE TABLE `user` (
   `surname` varchar(100) COLLATE utf8_bin NOT NULL,
   `mail` varchar(200) COLLATE utf8_bin NOT NULL,
   `phone` varchar(15) COLLATE utf8_bin NOT NULL,
-  `picture` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `image` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `checked` tinyint NOT NULL DEFAULT '0',
   `role_id` tinyint UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
