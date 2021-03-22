@@ -15,11 +15,37 @@ class AddressBookManager{
      * @param string $name
      * @param int $idUser
      * @param int $idAddress
+     * @param string|null $firstname
+     * @param string|null $lastname
+     * @param string|null $phone
      */
-    public function add(string $name, int $idUser, int $idAddress) {
-        $stmt = $this->db->prepare("INSERT INTO address_book (name, user_id, address_id) 
-                VALUES ('".$name."','".$idUser."','".$idAddress."')
+    public function add(string $name, int $idUser, int $idAddress, ?string $firstname, ?string $lastname, ?string $phone) {
+        $stmt = $this->db->prepare("INSERT INTO address_book (name, user_id, address_id, firstname, lastname, phone) 
+                VALUES (:name,:user,:address,:firstname, :lastname, :phone)
                 ");
+
+        $stmt->bindValue(':name',$name);
+        $stmt->bindValue(':user',$idUser);
+        $stmt->bindValue(':address',$idAddress);
+        if (is_null($firstname)){
+            $stmt->bindValue(':firstname',null);
+        }
+        else {
+            $stmt->bindValue(':firstname',$firstname);
+        }
+        if (is_null($lastname)){
+            $stmt->bindValue(':lastname',null);
+        }
+        else {
+            $stmt->bindValue(':lastname',$lastname);
+        }
+        if (is_null($phone)){
+            $stmt->bindValue(':phone',null);
+        }
+        else {
+            $stmt->bindValue(':phone',$phone);
+        }
+
         $stmt->execute();
     }
 }
