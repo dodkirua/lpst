@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 22 mars 2021 à 10:34
+-- Généré le : lun. 22 mars 2021 à 10:42
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -99,6 +99,7 @@ CREATE TABLE `user` (
   `name` varchar(100) COLLATE utf8_bin NOT NULL,
   `surname` varchar(100) COLLATE utf8_bin NOT NULL,
   `mail` varchar(200) COLLATE utf8_bin NOT NULL,
+  `pass` varchar(200) COLLATE utf8_bin NOT NULL,
   `phone` varchar(15) COLLATE utf8_bin NOT NULL,
   `image` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `checked` tinyint NOT NULL DEFAULT '0',
