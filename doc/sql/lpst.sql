@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 22 mars 2021 à 10:42
+-- Généré le : lun. 22 mars 2021 à 11:11
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `address` (
   `id` int UNSIGNED NOT NULL,
   `street` varchar(255) COLLATE utf8_bin NOT NULL,
+  `complement` varchar(50) COLLATE utf8_bin DEFAULT NULL,
   `number` mediumint UNSIGNED NOT NULL,
   `zip_code` varchar(45) COLLATE utf8_bin NOT NULL,
   `city` varchar(100) COLLATE utf8_bin NOT NULL,
@@ -62,9 +63,9 @@ CREATE TABLE `information` (
   `id` int UNSIGNED NOT NULL,
   `title` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `description` text COLLATE utf8_bin NOT NULL,
-  `image` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `image` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `location` varchar(200) COLLATE utf8_bin NOT NULL,
-  `user_id` int UNSIGNED DEFAULT NULL
+  `user_id` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -100,11 +101,18 @@ CREATE TABLE `user` (
   `surname` varchar(100) COLLATE utf8_bin NOT NULL,
   `mail` varchar(200) COLLATE utf8_bin NOT NULL,
   `pass` varchar(200) COLLATE utf8_bin NOT NULL,
-  `phone` varchar(15) COLLATE utf8_bin NOT NULL,
-  `image` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `phone` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `image` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `checked` tinyint NOT NULL DEFAULT '0',
   `role_id` tinyint UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `surname`, `mail`, `pass`, `phone`, `image`, `checked`, `role_id`) VALUES
+(2, 'bouttefeux', 'pierre-yves', 'tot@great.fr', '$2y$10$RmRXzYzz5fxrrUS5EqN1kuqnZAD0jQ21ZjOTkqAgIGB9iakC3uh3G', NULL, NULL, 0, 2);
 
 --
 -- Index pour les tables déchargées
@@ -166,6 +174,12 @@ ALTER TABLE `address_book`
 --
 ALTER TABLE `role`
   MODIFY `id` tinyint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
