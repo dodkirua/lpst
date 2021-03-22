@@ -50,12 +50,12 @@ const regis = document.getElementById("registration");
 if (regis) {
     document.getElementById("passwordRegistration").addEventListener("keyup", validatePass);
     document.getElementById("repeatPassword").addEventListener("keyup", comparePass);
-    /*regis.addEventListener("submit",function (e){
+    regis.addEventListener("submit",function (e){
         e.preventDefault();
         if(validate()){
             regis.submit();
         }
-    });*/
+    });
 }
 
 // When I click on "my information" then the div with my information is displayed and the others are hidden.
@@ -260,8 +260,6 @@ if (document.getElementsByClassName("numberArticle")){
     itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
     itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
 }
-
-
 
 
 

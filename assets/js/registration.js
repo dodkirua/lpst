@@ -6,21 +6,38 @@ export function validatePass()  {
     let token = 0;
     const elem = document.getElementById("passwordRegistration");
     let str = elem.value;
-    console.log(document.getElementById("number"));
+
     if (str.match( /[0-9]/g)){
         document.getElementById("number").className = "colorGreen2";
     }
-    else if (str.match( /[A-Z]/g)){
-        colorGreen("maj");
+    else {
+        document.getElementById("number").className = "colorRed2";
     }
-    else if (str.match(/[a-z]/g)){
-        colorGreen("min");
+
+    if (str.match( /[A-Z]/g)){
+        document.getElementById("maj").className = "colorGreen2";
     }
-    else if (str.match( /[^a-zA-Z\d]/g)){
-        colorGreen('char');
+    else {
+        document.getElementById("maj").className = "colorRed2";
     }
-    else if (str.length >= 10) {
-        colorGreen("length");
+    if (str.match(/[a-z]/g)){
+        document.getElementById("min").className = "colorGreen2";
+    }
+    else{
+        document.getElementById("min").className = "colorRed2";
+    }
+    if (str.match( /[^a-zA-Z\d]/g)){
+        document.getElementById("char").className = "colorGreen2";
+    }
+    else {
+        document.getElementById("char").className = "colorRed2";
+    }
+
+    if (str.length >= 10) {
+        document.getElementById("length").className = "colorGreen2";
+    }
+    else {
+        document.getElementById("length").className = "colorRed2";
     }
 
     if (str.match( /[0-9]/g) &&
@@ -35,7 +52,6 @@ export function validatePass()  {
     else {
         token = false;
     }
-    document.getElementById("pwMsg").innerHTML= msg;
     return token;
 }
 
@@ -61,14 +77,5 @@ export function comparePass() {
 }
 
 export function validate(){
-    if (comparePass() && validatePass()){
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-function colorGreen($id){
-    document.getElementById("$id").className = "colorGreen2";
+    return !!(comparePass() && validatePass());
 }
