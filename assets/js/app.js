@@ -171,32 +171,13 @@ if ($("#standardDelivery")) {
         if ($("#checkStandard").is(':checked')) {
             if (nbClick === 0) {
                 address1.css("display", "block")
-                nbClick++;
-                if (address2.css("display", "flex")) {
-                    address2.css("display", "none");
-                    nbClick = 0;
-                }
             }
         }
     });
 }
 
 
-if ($("#chronopostDelivery")) {
-    let nbClick = 0;
-    $("#chronopostDelivery").click(function () {
-        if ($("#checkchronopost").is(':checked')) {
-            if (nbClick === 0) {
-                address2.css("display", "block")
-                nbClick++;
-                if (address1.css("display", "flex")) {
-                    address1.css("display", "none");
-                    nbClick = 0;
-                }
-            }
-        }
-    });
-}
+
 
 
 if ($("#buyCards")) {

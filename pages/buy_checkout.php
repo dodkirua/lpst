@@ -62,18 +62,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
                 <div class="flexRow colorBlue flexCenter sub" id="address1">
                     <button id="saveAddress1" class="modify send width65">Enregistrer une adresse de livraison</button>
                 </div>
-
-                <div class="flexRow colorBlue align" id="chronopostDelivery">
-                    <input type="radio" id="checkchronopost" name="delivery2">
-                    <div class="flexColumn">
-                        <p>Livraison Chronopost</p>
-                        <p class="colorGrey linkLog">Entre le ../.. et le ../..</p>
-                    </div>
-                    <p class="colorRed priceDelivery placePrice"><strong>... €</strong></p>
-                </div>
-                <div class="flexRow colorBlue flexCenter sub" id="address2">
-                    <button id="saveAddress1" class="modify send width65">Enregistrer une adresse de livraison</button>
-                </div>
             </div>
         </div>
 
