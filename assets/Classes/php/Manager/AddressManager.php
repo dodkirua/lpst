@@ -89,16 +89,21 @@ class AddressManager{
         $zipCode = strtolower($zipCode);
         $city = strtolower($city);
         $country = strtolower($country);
+        $stmt = $this->db->prepare("INSERT INTO address (street, number, complement, zip_code, city, country) 
+                VALUES (:street, :number, :complement, :zip, :city, :country);
+                ");
+        $stmt->bindValue(':street',$street);
+        $stmt->bindValue(':number',$number);
+        $stmt->bindValue(':zip',$zipCode);
+        $stmt->bindValue(':city',$city);
+        $stmt->bindValue(':country',$country);
         if (!is_null($compl)) {
             $compl = strtolower($compl);
-            $stmt = $this->db->prepare("INSERT INTO address (street, number, complement, zip_code, city, country) 
-                VALUES ('".$street."','".$number."','".$compl."','".$zipCode."','".$city."','".$country."');
-                ");
+            $stmt->bindValue(':complement',$compl);
+
         }
         else {
-            $stmt = $this->db->prepare("INSERT INTO address (street, number, complement, zip_code, city, country) 
-                VALUES ('".$street."','".$number."',NULL,'".$zipCode."','".$city."','".$country."');
-                ");
+            $stmt->bindValue(':complement',null);
         }
 
         if ($stmt->execute()){
