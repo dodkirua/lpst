@@ -470,7 +470,7 @@ td, th {
     margin: 0 30px;
 }
 
-#menuResponsive, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements, #input_complements2 {
+#menuResponsive, #choiceBread, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements, #input_complements2 {
      display: none;
 }
 
