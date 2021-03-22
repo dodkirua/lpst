@@ -16,7 +16,8 @@ else {
     if (is_null($user)) {
         header('Location: ../../pages/login.php?e=1');
 
-    } else {
+    }
+    else {
         $userArray = $user->getBaseData();
         foreach ($userArray as $key => $item) {
             $_SESSION["$key"] = $item;

@@ -45,6 +45,7 @@ if (mag){
     });
 }
 
+/**
 const regis = document.getElementById("registration");
 if (regis) {
     document.getElementById("passwordRegistration").addEventListener("keyup", validatePass);
@@ -57,6 +58,7 @@ if (regis) {
 
     });
 }
+*/
 
 // When I click on "my information" then the div with my information is displayed and the others are hidden.
 if (document.getElementById("informationAccount")) {

@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $title = "LPST : Réserver notre pain";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
