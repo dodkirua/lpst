@@ -18,6 +18,9 @@ class UserManager{
      * @return bool
      */
     public function addUser($name, $surname, $mail, $pass) : bool{
+        $name = strtolower($name);
+        $surname = strtolower($surname);
+        $mail = strtolower($mail);
         $stmt = $this->db->prepare("
                 INSERT INTO  user (name, surname, mail, pass, role_id) VALUES (:name, :surname, :mail, :pass, :role)                
             ");
@@ -53,6 +56,7 @@ class UserManager{
      * @return User|null
      */
     public function testConnection(string $mail, string $pass) :?User {
+        $mail = strtolower($mail);
         $stmt = $this->db->prepare("SELECT * FROM user WHERE mail='".$mail."'");
         $user = null;
         if ($state = $stmt->execute()){
