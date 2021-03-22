@@ -181,8 +181,8 @@ class User{
      */
     public function getBaseData() : array{
         $userArray['id'] = $this->getId();
-        $userArray['name'] = $this->getName();
-        $userArray['surname'] = $this->getSurname();
+        $userArray['lastname'] = $this->getName();
+        $userArray['firstname'] = $this->getSurname();
         $userArray['mail'] = $this->getMail();
         $userArray['pass'] = $this->getPass();
         $userArray['role'] = $this->getRole();

@@ -6,8 +6,9 @@ export function validatePass()  {
     let token = 0;
     const elem = document.getElementById("passwordRegistration");
     let str = elem.value;
+    console.log(document.getElementById("number"));
     if (str.match( /[0-9]/g)){
-        colorGreen("number");
+        document.getElementById("number").className = "colorGreen2";
     }
     else if (str.match( /[A-Z]/g)){
         colorGreen("maj");
