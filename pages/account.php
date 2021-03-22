@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-$surname
+$firstname = ucfirst($_SESSION["firstname"]);
+$lastname = ucfirst($_SESSION["lastname"]);
 
 if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
     $title = "LPST : Mon compte";
@@ -13,7 +14,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
     <section id="informationProfil">
         <div id="profil" class="flexColumn flexCenter">
             <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
-            <p class="nameStaff colorBlue"><?= ucfirst($_SESSION["firstname"]) . " " . ucfirst($_SESSION["lastname"]) ?></p>
+            <p class="nameStaff colorBlue"><?= $firstname . " " . $lastname ?></p>
             <div class="flexCenter">
                 <button id="disconnection" class="redButton disconnection">Déconnexion</button>
             </div>
@@ -50,7 +51,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
 
     </section>
     <div class="flexColumn width65">
-        <h1 id="hello">Bonjour, <span class="colorGreen"><?=$_SESSION["surname"] . " " . $_SESSION["name"] ?>!</span></h1>
+        <h1 id="hello">Bonjour, <span class="colorGreen"><?=$firstname . " " . $lastname ?>!</span></h1>
         <section id="otherInformation">
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonées</h2>
@@ -58,9 +59,9 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                     <form id="modifyInformation" action="#" method="post" class="flexColumn flexCenter">
                         <input type="file" name="profilePicture" id="profilePicture" class="whiteBorder">
                         <label for="firstnameModify" class="colorBlue center margin15-30">Prénom </label>
-                        <input id="firstnameModify" name="firstnameModify" class="whiteBorder" value="<?= $_SESSION["surname"] ?>" type="text">
+                        <input id="firstnameModify" name="firstnameModify" class="whiteBorder" value="<?= $firstname ?>" type="text">
                         <label for="lastnameModify" class="colorBlue center margin15-30">Nom </label>
-                        <input id="lastnameModify" name="lastnameModify" class="whiteBorder" value="<?= $_SESSION["name"] ?>" type="text">
+                        <input id="lastnameModify" name="lastnameModify" class="whiteBorder" value="<?= $lastname ?>" type="text">
                         <label for="emailModify" class="colorBlue center margin15-30">Email </label>
                         <input id="emailModify" name="emailModify" class="whiteBorder" value="<?= $_SESSION["mail"] ?>" type="text">
                         <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer les modifications">
@@ -69,9 +70,9 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                 <div id="contactInformation" class="flexColumn flexCenter">
                     <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
                     <p class="colorBlue">Prénom </p>
-                    <p class="whiteBorder"><?= $_SESSION["surname"] ?></p>
+                    <p class="whiteBorder"><?= $firstname ?></p>
                     <p class="colorBlue">Nom </p>
-                    <p class="whiteBorder"><?= $_SESSION["name"] ?></p>
+                    <p class="whiteBorder"><?= $lastname ?></p>
                     <p class="colorBlue">Email </p>
                     <p class="whiteBorder"><?= $_SESSION["mail"] ?></p>
                     <button id="modifyProfil" class="send modify modifyProfil">Modifier le profil</button>

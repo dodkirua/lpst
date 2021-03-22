@@ -39,7 +39,7 @@ a {
     color: black;
 }
 
-#menu, #menuResponsive  {
+#menu, #menuResponsive, .brownBorder:hover {
     background-color: #B38243;
 }
 
@@ -77,11 +77,11 @@ a {
     width: 60px;
 }
 
-#scrollMenu, .containedMenu:hover, footer, .send, .buttonMobile, .titleTable {
+#scrollMenu, .containedMenu:hover, select, footer, .send, .buttonMobile, .titleTable {
     background-color: #A9C500;
 }
 
-.send, .buttonMobile, .redButton, #commerce, #products, #local, #account, #shop, .fa-bars, .log2, .colorWhite, .linkFooter, #reserveBread  {
+.send, select,.brownBorder:hover, .buttonMobile, .redButton, #commerce, #products, #local, #account, #shop, .fa-bars, .log2, .colorWhite, .linkFooter, #reserveBread  {
     color: white;
 }
 
@@ -134,7 +134,7 @@ footer {
     margin-bottom: -18px;
 }
 
-.network_i, .buttonMobile, .subtitle, .log4 {
+.network_i, .buttonMobile, .subtitle, .log4, select {
     font-size: 25px;
 }
 
@@ -269,7 +269,7 @@ h1 {
     margin: auto;
 }
 
-input, label, textarea {
+input, label, textarea, select {
     width: 50%;
     margin: auto;
     border: none;
