@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $title = "LPST : Conditions générales de vente";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "LPST : Politiques de confidentialité";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";

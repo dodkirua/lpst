@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $title = "LPST : Mon compte";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";

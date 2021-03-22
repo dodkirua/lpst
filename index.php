@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "LPST : Notre magasin";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
