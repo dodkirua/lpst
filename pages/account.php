@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$surname
+
 if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
     $title = "LPST : Mon compte";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
@@ -11,7 +13,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
     <section id="informationProfil">
         <div id="profil" class="flexColumn flexCenter">
             <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
-            <p class="nameStaff colorBlue"><?=$_SESSION["surname"] . " " . $_SESSION["name"] ?></p>
+            <p class="nameStaff colorBlue"><?= ucfirst($_SESSION["firstname"]) . " " . ucfirst($_SESSION["lastname"]) ?></p>
             <div class="flexCenter">
                 <button id="disconnection" class="redButton disconnection">Déconnexion</button>
             </div>
