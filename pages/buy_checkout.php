@@ -1,11 +1,11 @@
 <?php
 session_start();
-$title = "LPST : Mon panier";
-
 $date = date("H:i:s");
 $date11 = "11:00:00";
 
-include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
+if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
+    $title = "LPST : Validation";
+    include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 ?>
 
 <main>
@@ -119,3 +119,4 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
+}
