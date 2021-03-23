@@ -471,7 +471,7 @@ td, th {
     margin: 0 30px;
 }
 
-#menuResponsive, #profilImageModify, #modifyPhone, #deliveryAddress2, #choiceBread, #choiceBread2,#choiceBread3, #choiceBread4, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements, #input_complements2 {
+#menuResponsive, #profilImageModify, #modifyPhone, #deliveryAddress2, #choiceBread, #choiceBread2,#choiceBread3, #choiceBread4, #choiceBreadResponsive1, #choiceBreadResponsive2, #choiceBreadResponsive3, #choiceBreadResponsive4, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements, #input_complements2 {
      display: none;
 }
 
@@ -795,12 +795,11 @@ select, option {
     }
     .containedMenu {
         width: initial;
-        font-size: 12px;
     }
     .log {
         margin-top: -42px;
     }
-    .log > a, .log > span {
+    .log > a, .log > span, .information, .containedMenu {
         font-size: 12px;
     }
     .staffPhoto {
@@ -824,11 +823,11 @@ select, option {
     .brownBorder {
         width: 30%;
     }
-    h3 {
+    h3, select {
         font-size: 15px;
     }
-    .information {
-        font-size: 12px;
+    select {
+        width: 100%;
     }
     iframe {
         height: 350px;

@@ -168,6 +168,111 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             </table>
         </div>
 
+        <!-- Displayed when the screen is at 830px -->
+        <div id="cartResponsive" class="flexColumn backgroundBlue">
+            <div id="choiceBreadResponsive1">
+                <?php
+                for ($i = 0; $i < 3; $i++) {
+                    echo "<div class='flexRow cartResponsive'>
+                    <div>
+                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
+                    </div>
+                    <div class='flexColumn infoCart'>
+                        <div class='flexRow flexCenter'>
+                            <p> Nom de l'article</p>
+                            <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
+                            <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
+                        </div>
+                        <p>1.58 €</p>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
+                        </div>
+                        <p>1.58€</p>
+                    </div>
+                </div>";
+                }
+                ?>
+            </div>
+                <div id="choiceBreadResponsive2">
+                    <?php
+                    for ($i = 0; $i < 6; $i++) {
+                        echo "<div class='flexRow cartResponsive'>
+                    <div>
+                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
+                    </div>
+                    <div class='flexColumn infoCart'>
+                        <div class='flexRow flexCenter'>
+                            <p> Nom de l'article</p>
+                            <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
+                            <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
+                        </div>
+                        <p>1.58 €</p>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
+                        </div>
+                        <p>1.58€</p>
+                    </div>
+                </div>";
+                    }
+                    ?>
+                </div>
+                    <div id="choiceBreadResponsive3">
+                        <?php
+                        for ($i = 0; $i < 4; $i++) {
+                            echo "<div class='flexRow cartResponsive'>
+                    <div>
+                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
+                    </div>
+                    <div class='flexColumn infoCart'>
+                        <div class='flexRow flexCenter'>
+                            <p> Nom de l'article</p>
+                            <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
+                            <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
+                        </div>
+                        <p>1.58 €</p>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
+                        </div>
+                        <p>1.58€</p>
+                    </div>
+                </div>";
+                        }
+                        ?>
+                    </div>
+                        <div id="choiceBreadResponsive4">
+                            <?php
+                            for ($i = 0; $i < 10; $i++) {
+                                echo "<div class='flexRow cartResponsive'>
+                    <div>
+                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
+                    </div>
+                    <div class='flexColumn infoCart'>
+                        <div class='flexRow flexCenter'>
+                            <p> Nom de l'article</p>
+                            <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
+                            <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
+                        </div>
+                        <p>1.58 €</p>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
+                        </div>
+                        <p>1.58€</p>
+                    </div>
+                </div>";
+                            }
+                            ?>
+            </div>
+
+        </div>
+
 
         <div class="flexColumn">
             <div class="flexRow">

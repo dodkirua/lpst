@@ -43,16 +43,11 @@ $users = $managerUser->getStaff();
                 $firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $user["firstname"])));
                 staff($user["image"],$firstname);
             }
-
-
-
-
             ?>
         </div>
 
         <div class="flexRow about">
-            <iframe width="50%" height="450px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_580437?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
-            <div class="flexColumn informations">
+            <iframe width="50%" height="450px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_582445?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>            <div class="flexColumn informations">
                 <div class="margin15-30 colorGreen">
                     <h3><i class="fas fa-map-marker-alt descriptionIcon"></i>La Boutique Les Pieds sur Terre</h3>
                     <p class="information">23 rue Jean Pierre Dupont, 59610 FOURMIES</p>
