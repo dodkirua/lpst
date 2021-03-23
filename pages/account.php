@@ -96,13 +96,10 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             else {
                                 echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>";
                             }
-
                             pre($_SESSION["user"]);
                             ?>
                     </div>
                 </div>
-
-
 
 
                 <div class="separatorHorizontal"></div>
