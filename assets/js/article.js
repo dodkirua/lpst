@@ -11,7 +11,9 @@ export function itemQuantity (priceArticle, idQuantity, idPrice, total, idMore, 
     for (let i = 0; i < 2; i++) {
         let price = priceArticle;
         let addArticle = priceArticle;
-        let numberArticle1 = document.getElementsByClassName(idQuantity)[i].innerHTML;
+        const idQuantity = document.getElementsByClassName(idQuantity);
+        let numberArticle1 =
+        numberArticle1 = numberArticle1[i].innerHTML;
         let valueArticle1 = Number.parseInt(numberArticle1);
         let totalPrice = document.getElementsByClassName(total)[i];
         totalPrice.innerHTML = "<strong>" + price + "€ </strong>";

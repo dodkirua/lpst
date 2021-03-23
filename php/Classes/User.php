@@ -11,7 +11,7 @@ class User{
     private bool $checked = false;
     private ?int $role = null;
     private ?int $address = null;
-    private ?string $image;
+    private ?string $image = null;
 
     /**
      * User constructor.
