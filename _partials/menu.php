@@ -2,7 +2,7 @@
     <img id="coverPicture" src="../doc/mockup/fond.png" alt="Les pieds sur terre">
 
     <?php
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION["user"]['id'])) {
         ?>
         <div class="log3">
             <a class="buttonClassic log4" href="../pages/account.php"><i class="fas fa-user-circle"></i></a>
