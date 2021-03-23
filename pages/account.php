@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$firstname = ucfirst($_SESSION["user"]["firstname"]);
-$lastname = ucfirst($_SESSION["user"]["lastname"]);
+$firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["firstname"])));
+$lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["lastname"])));
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
@@ -91,13 +91,15 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <p class="colorBlue">Téléphone</p>
                             <?php
                             if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
-                                echo "<p class='whiteBorder'></p>";
+                                echo "<p class='whiteBorder padding30'></p>";
+                                echo "<button class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>";
                             }
                             else {
                                 echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>";
+                                echo "<button class='send flexCenter modify modifyProfil'>Modifier </button>";
                             }
-                            pre($_SESSION["user"]);
                             ?>
+
                     </div>
                 </div>
 
