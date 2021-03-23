@@ -222,30 +222,54 @@ if (baker) {
             document.getElementById("choiceBread2").style.display = "none";
             document.getElementById("choiceBread3").style.display = "none";
             document.getElementById("choiceBread4").style.display = "none";
+
+            document.getElementById("choiceBreadResponsive1").style.display = "block";
+            document.getElementById("choiceBreadResponsive2").style.display = "none";
+            document.getElementById("choiceBreadResponsive3").style.display = "none";
+            document.getElementById("choiceBreadResponsive4").style.display = "none";
         }
         else if (baker.value === "Boulangerie 2") {
             document.getElementById("choiceBread").style.display = "none";
             document.getElementById("choiceBread2").style.display = "flex";
             document.getElementById("choiceBread3").style.display = "none";
             document.getElementById("choiceBread4").style.display = "none";
+
+            document.getElementById("choiceBreadResponsive1").style.display = "none";
+            document.getElementById("choiceBreadResponsive2").style.display = "block";
+            document.getElementById("choiceBreadResponsive3").style.display = "none";
+            document.getElementById("choiceBreadResponsive4").style.display = "none";
         }
         else if (baker.value === "Boulangerie 3") {
             document.getElementById("choiceBread").style.display = "none";
             document.getElementById("choiceBread2").style.display = "none";
             document.getElementById("choiceBread3").style.display = "flex";
             document.getElementById("choiceBread4").style.display = "none";
+
+            document.getElementById("choiceBreadResponsive1").style.display = "none";
+            document.getElementById("choiceBreadResponsive2").style.display = "none";
+            document.getElementById("choiceBreadResponsive3").style.display = "block";
+            document.getElementById("choiceBreadResponsive4").style.display = "none";
         }
         else if (baker.value === "Boulangerie 4") {
             document.getElementById("choiceBread").style.display = "none";
             document.getElementById("choiceBread2").style.display = "none";
             document.getElementById("choiceBread3").style.display = "none";
             document.getElementById("choiceBread4").style.display = "flex";
+
+            document.getElementById("choiceBreadResponsive1").style.display = "none";
+            document.getElementById("choiceBreadResponsive2").style.display = "none";
+            document.getElementById("choiceBreadResponsive3").style.display = "none";
+            document.getElementById("choiceBreadResponsive4").style.display = "block";
         }
         else {
-            document.getElementById("choiceBread").style.display = "none";
-            document.getElementById("choiceBread2").style.display = "none";
+            document.getElementById("choiceBread", "choiceBread2").style.display = "none";
             document.getElementById("choiceBread3").style.display = "none";
             document.getElementById("choiceBread4").style.display = "none";
+
+            document.getElementById("choiceBreadResponsive1").style.display = "none";
+            document.getElementById("choiceBreadResponsive2").style.display = "none";
+            document.getElementById("choiceBreadResponsive3").style.display = "none";
+            document.getElementById("choiceBreadResponsive4").style.display = "none";
         }
     });
 }

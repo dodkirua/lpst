@@ -97,63 +97,29 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
 
             <!-- Displayed when the screen is at 830px -->
             <div id="cartResponsive" class="flexColumn backgroundBlue">
-                <div class="flexRow cartResponsive">
+                <?php
+                    for ($i = 0; $i < 3; $i++) {
+                        echo "<div class='flexRow cartResponsive'>
                     <div>
-                        <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
                     </div>
-                    <div class="flexColumn infoCart">
-                        <div class="flexRow flexCenter">
+                    <div class='flexColumn infoCart'>
+                        <div class='flexRow flexCenter'>
                             <p> Nom de l'article</p>
-                            <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
-                            <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                            <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
+                            <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
                         </div>
-                        <p class="price1"></p>
-                        <div class="flexRow flexCenter">
-                            <button class="buttonClassic less1">-</button>
-                            <p class="numberArticle numberArticle1">1 </p>
-                            <button class="buttonClassic more1">+</button>
+                        <p>1.58 €</p>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
                         </div>
-                        <p class="total1"></p>
+                        <p>1.58€</p>
                     </div>
-                </div>
-                <div class="flexRow cartResponsive">
-                    <div>
-                        <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                    </div>
-                    <div class="flexColumn infoCart">
-                        <div class="flexRow flexCenter">
-                            <p> Nom de l'article</p>
-                            <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
-                            <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                        <p class="price2"></p>
-                        <div class="flexRow flexCenter">
-                            <button class="buttonClassic less2">-</button>
-                            <p class="numberArticle numberArticle2">1 </p>
-                            <button class="buttonClassic more2">+</button>
-                        </div>
-                        <p class="total2"></p>
-                    </div>
-                </div>
-                <div class="flexRow cartResponsive">
-                    <div>
-                        <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                    </div>
-                    <div class="flexColumn infoCart">
-                        <div class="flexRow flexCenter">
-                            <p> Nom de l'article</p>
-                            <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
-                            <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                        <p class="price3"></p>
-                        <div class="flexRow flexCenter">
-                            <button class="buttonClassic less3">-</button>
-                            <p class="numberArticle numberArticle3">1 </p>
-                            <button class="buttonClassic more3">+</button>
-                        </div>
-                        <p class="total3"></p>
-                    </div>
-                </div>
+                </div>";
+                    }
+                    ?>
             </div>
 
         </div>
@@ -168,11 +134,11 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
             </div>
             <div class="flexColumn">
                 <p class="colorBlue"> Click & Collect : </p>
-                <span class="linkLog colorGrey">Commandé avant 11h, disponible à 15h.</span>
+                <span class="linkLog colorGrey">Commandé avant 11h, disponible le jour même à 15h.</span>
                 <span class="linkLog colorGrey">Commandé après 11h, disponible le lendemain après-midi.</span>
                 <p class="colorBlue"> Livraison disponible : </p>
                 <span class="linkLog colorGrey">A partir de 50€ d'achat, 5€ de frais de port.</span>
-                <span class="linkLog colorGrey">A partir de 100€ d'achat, frais de port gratuit.</span>
+                <span class="linkLog colorGrey">A partir de 100€ d'achat, les frais de port sont gratuit.</span>
             </div>
 
         </div>

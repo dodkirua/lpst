@@ -411,16 +411,16 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
                         <label for="lastname" class="colorBlue center margin15-30">Nom </label>
                         <input id="lastname" name="lastname" class="whiteBorder width_100" type="text">
-                        <label for="emailModify" class="colorBlue center margin15-30" >N° et nom de la voie </label>
-                        <input id="emailModify" name="num_street" class="whiteBorder width_100" type="text" placeholder="10 rue des blés">
-                        <p id="complements" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
+                        <label for="num_street" class="colorBlue center margin15-30" >N° et nom de la voie </label>
+                        <div class="flexRow">
+                            <input id="num_street" name="num" class="whiteBorder width30" type="text" placeholder="10">
+                            <input id="num_street" name="street" class="whiteBorder width65" type="text" placeholder="rue des blés">
+                        </div>                        <p id="complements" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
                         <div id="input_complements">
                             <input name="floor" class="whiteBorder width_100" type="text" placeholder="4e étage">
                             <input name="num_door" class="whiteBorder width_100" type="text" placeholder="porte 24">
                             <input name="complements" class="whiteBorder width_100" type="text" placeholder="compléments">
                         </div>
-
-
                         <label for="country" class="colorBlue center margin15-30">Pays </label>
                         <input id="country" name="firstname" class="whiteBorder width_100" type="text">
                         <label for="postalCode" class="colorBlue center margin15-30">Code postal </label>
@@ -456,16 +456,17 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
                         <label for="lastname" class="colorBlue center margin15-30">Nom </label>
                         <input id="lastname" name="lastname" class="whiteBorder width_100" type="text">
-                        <label for="emailModify" class="colorBlue center margin15-30" >N° et nom de la voie </label>
-                        <input id="emailModify" name="num_street" class="whiteBorder width_100" type="text" placeholder="10 rue des blés">
+                        <label for="num_street" class="colorBlue center margin15-30" >N° et nom de la voie </label>
+                        <div class="flexRow">
+                            <input id="num_street" name="num" class="whiteBorder width30" type="text" placeholder="10">
+                            <input id="num_street" name="street" class="whiteBorder width65" type="text" placeholder="rue des blés">
+                        </div>
                         <p id="complements2" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
                         <div id="input_complements2">
                             <input name="floor" class="whiteBorder width_100" type="text" placeholder="4e étage">
                             <input name="num_door" class="whiteBorder width_100" type="text" placeholder="porte 24">
                             <input name="complements" class="whiteBorder width_100" type="text" placeholder="compléments">
                         </div>
-
-
                         <label for="country" class="colorBlue center margin15-30">Pays </label>
                         <input id="country" name="firstname" class="whiteBorder width_100" type="text">
                         <label for="postalCode" class="colorBlue center margin15-30">Code postal </label>
