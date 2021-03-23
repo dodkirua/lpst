@@ -40,8 +40,8 @@ $users = $managerUser->getStaff();
             <?php
             foreach ($users as $item) {
                 $user = $item->getData();
-                staff($user["image"],ucfirst($user["firstname"]));
-                pre($user);
+                $firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $user["firstname"])));
+                staff($user["image"],$firstname);
             }
             ?>
         </div>

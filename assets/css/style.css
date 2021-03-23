@@ -241,6 +241,7 @@ h1 {
 .staffPhoto {
     border-radius: 50%;
     width: 150px;
+    height: 150px;
     box-shadow: 4px 4px 10px lightgray;
 }
 
@@ -675,6 +676,7 @@ select, option {
 @media screen and (max-width: 1180px) {
     .staffPhoto {
         width: 100px;
+        height: 100px;
     }
     .shop {
         height: 200px;
@@ -803,6 +805,7 @@ select, option {
     }
     .staffPhoto {
         width: 110px;
+        height: 110px;
     }
     .staff {
         width: 20%;
@@ -956,6 +959,7 @@ select, option {
     }
     .staffPhoto {
         width: 80px;
+        height: 80px;
     }
     .products {
         width: 30%;
