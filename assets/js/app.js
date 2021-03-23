@@ -262,7 +262,8 @@ if (baker) {
             document.getElementById("choiceBreadResponsive4").style.display = "block";
         }
         else {
-            document.getElementById("choiceBread", "choiceBread2").style.display = "none";
+            document.getElementById("choiceBread").style.display = "none";
+            document.getElementById("choiceBread2").style.display = "none";
             document.getElementById("choiceBread3").style.display = "none";
             document.getElementById("choiceBread4").style.display = "none";
 
@@ -284,4 +285,3 @@ if (document.getElementById("tableBaskets") && document.getElementById("cartResp
     itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
 }
 
-if ()

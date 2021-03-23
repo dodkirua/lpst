@@ -112,10 +112,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             else {
                                 echo " <div id='phone' class='flexCenter flexColumn'>
                                         <p class='colorBlue'>Téléphone</p>
-                                    <p class='whiteBorder width_100'>" . $_SESSION['user']['phone'] . "</p>
-                                    <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
-                                    </div>
+                                    <p id='containerPhone' class='whiteBorder width_100'>" . $_SESSION['user']['phone'] . "</p>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
+                                    </div>
                                     <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
                                             <label class='colorBlue'>Téléphone</label>
                                             <input class='whiteBorder width_100' type='tel' value='" . $_SESSION['user']['phone'] . "'>
@@ -123,7 +122,6 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                        </form>";
                             }
                             ?>
-
                     </div>
                 </div>
 
