@@ -93,7 +93,7 @@ class InformationManager{
         $informations =[];
         if ($state = $stmt->execute()) {
             foreach ($stmt->fetchAll() as $item){
-                $information = new Information($id);
+                $information = new Information($item['id']);
                 $information = $information
                     ->setTitle($item['title'])
                     ->setDescription($item['description'])

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 22 mars 2021 à 11:28
+-- Généré le : mar. 23 mars 2021 à 10:40
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `lpst`
 --
+CREATE DATABASE IF NOT EXISTS `lpst` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `lpst`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `address`
 --
 
+DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `id` int UNSIGNED NOT NULL,
   `street` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -43,6 +46,7 @@ CREATE TABLE `address` (
 -- Structure de la table `address_book`
 --
 
+DROP TABLE IF EXISTS `address_book`;
 CREATE TABLE `address_book` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -59,6 +63,7 @@ CREATE TABLE `address_book` (
 -- Structure de la table `information`
 --
 
+DROP TABLE IF EXISTS `information`;
 CREATE TABLE `information` (
   `id` int UNSIGNED NOT NULL,
   `title` varchar(45) COLLATE utf8_bin DEFAULT NULL,
@@ -74,6 +79,7 @@ CREATE TABLE `information` (
 -- Structure de la table `role`
 --
 
+DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
   `id` tinyint UNSIGNED NOT NULL,
   `name` varchar(45) COLLATE utf8_bin NOT NULL,
@@ -95,6 +101,7 @@ INSERT INTO `role` (`id`, `name`, `description`) VALUES
 -- Structure de la table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int UNSIGNED NOT NULL,
   `lastname` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -107,6 +114,9 @@ CREATE TABLE `user` (
   `role_id` tinyint UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Index pour les tables déchargées
+--
 
 --
 -- Index pour la table `address`
@@ -160,6 +170,12 @@ ALTER TABLE `address_book`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `information`
+--
+ALTER TABLE `information`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `role`
 --
 ALTER TABLE `role`
@@ -169,7 +185,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées
