@@ -90,9 +90,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <div class="padding30 flexCenter flexColumn">
                             <?php
                             if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
-                                echo " <div>
+                                echo " <div id='phone' class='flexCenter flexColumn'>
                                         <p class='colorBlue'>Téléphone</p>
-                                    <p class='whiteBorder padding30'></p>
+                                    <p class='whiteBorder padding30 width_100'></p>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
                                     </div>
                                     <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
@@ -102,8 +102,11 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                        </form>";
                             }
                             else {
-                                echo " <p class='colorBlue'>Téléphone</p>
+                                echo " <div id='phone' class='flexCenter flexColumn'>
+                                        <p class='colorBlue'>Téléphone</p>
                                     <p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>
+                                    <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
+                                    </div>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
                                     <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
                                             <label class='colorBlue'>Téléphone</label>

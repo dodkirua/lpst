@@ -247,8 +247,7 @@ if (baker) {
 }
 
 if (document.getElementById("clickPhone")) {
-    clickDisplay("clickPhone", "modifyPhone", "", "baskets_favorite", "none", "none", "block");
-    clickDisplay("basketsSave2", "informationAccount", "orderedAccount", "baskets_favorite", "none", "none", "block");
+    clickDisplay("clickPhone", "modifyPhone", "phone", "", "flex", "none", "");
 }
 
 if (document.getElementById("tableBaskets") && document.getElementById("cartResponsive")){
