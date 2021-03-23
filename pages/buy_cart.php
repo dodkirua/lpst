@@ -2,7 +2,7 @@
 session_start();
 $title = "LPST : Mon panier";
 
-if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
+if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon panier";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 ?>
