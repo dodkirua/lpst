@@ -5,6 +5,9 @@ $title = "LPST : Notre magasin";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/InformationManager.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
+$manager = new InformationManager();
+$informations = $manager->getInformationByLocation("index.php");
 ?>
 
 <main>
