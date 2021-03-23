@@ -4,10 +4,16 @@ session_start();
 $firstname = ucfirst($_SESSION["user"]["firstname"]);
 $lastname = ucfirst($_SESSION["user"]["lastname"]);
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
+
 if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon compte";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
+    $managerUser = new UserManager();
+    $users = $managerUser->getStaff();
     ?>
 
 <main class="flexRow account">
@@ -81,8 +87,18 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 <div class="separatorHorizontal"></div>
                 <div class="flexColumn">
                     <h2 class="subtitle"> Mes informations personnelles</h2>
-                    <div class="padding30">
+                    <div class="padding30 flexCenter flexColumn">
+                        <p class="colorBlue">Téléphone</p>
+                            <?php
+                            if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
+                                echo "<p class='whiteBorder'></p>";
+                            }
+                            else {
+                                echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>";
+                            }
 
+                            pre($_SESSION["user"]);
+                            ?>
                     </div>
                 </div>
 
@@ -363,6 +379,8 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 </div>
                 <div class="modal-body">
                     <form  action="#" method="post" class="flexColumn flexCenter width_100">
+                        <label for="addressName" class="colorBlue center margin15-30">Nom de l'adresse </label>
+                        <input id="addressName" name="addressName" class="whiteBorder width_100" type="text">
                         <label for="firstname" class="colorBlue center margin15-30">Prénom </label>
                         <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
                         <label for="lastname" class="colorBlue center margin15-30">Nom </label>
@@ -405,6 +423,8 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 </div>
                 <div class="modal-body">
                     <form  action="#" method="post" class="flexColumn flexCenter width_100">
+                        <label for="addressName" class="colorBlue center margin15-30">Nom de l'adresse </label>
+                        <input id="addressName" name="addressName" class="whiteBorder width_100" type="text">
                         <label for="firstname" class="colorBlue center margin15-30">Prénom </label>
                         <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
                         <label for="lastname" class="colorBlue center margin15-30">Nom </label>

@@ -43,6 +43,10 @@ $users = $managerUser->getStaff();
                 $firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $user["firstname"])));
                 staff($user["image"],$firstname);
             }
+
+
+
+
             ?>
         </div>
 
