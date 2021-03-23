@@ -81,4 +81,26 @@ class UserManager{
         }
     }
 
+    public function getStaff() : array{
+        $stmt = $this->db->prepare("SELECT * FROM user WHERE role_id != 2");
+        $staff =[];
+        if ($state = $stmt->execute()) {
+            foreach ($stmt->fetchAll() as $item){
+                $user = new User($item['id']);
+                $user = $user
+                    ->setLastname($item['lastname'])
+                    ->setFirstname($item['firstname'])
+                    ->setImage($item['image'])
+                    ->setMail($item['mail'])
+                    ->setPass($item['pass'])
+                    ->setPhone($item['phone'])
+                    ->setChecked($item['checked'])
+                    ->setRole($item['role_id'])
+                ;
+                $staff[]=$user;
+            }
+        }
+        return $staff;
+    }
+
 }
