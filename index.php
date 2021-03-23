@@ -2,6 +2,7 @@
 session_start();
 $title = "LPST : Notre magasin";
 
+require $_SERVER['DOCUMENT_ROOT'] . "/php/import/import.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
