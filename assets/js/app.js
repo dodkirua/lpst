@@ -1,6 +1,7 @@
 import {comparePass, validate, validatePass} from "./registration.js";
 import {itemQuantity} from "./article.js";
 import {closeModal} from "./function.js";
+import {clickDisplay} from "./account.js";
 
 //display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
 let nbClick = 0;
@@ -33,14 +34,6 @@ if (regis) {
         if(validate()){
             regis.submit();
         }
-    });
-}
-
-function clickDisplay (idClick, id1, id2, id3, display1, display2, display3) {
-    document.getElementById(idClick).addEventListener("click", function () {
-        document.getElementById(id1).style.display = display1;
-        document.getElementById(id2).style.display = display2;
-        document.getElementById(id3).style.display = display3;
     });
 }
 
