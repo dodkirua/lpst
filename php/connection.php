@@ -20,7 +20,7 @@ else {
     else {
         $userArray = $user->getBaseData();
         foreach ($userArray as $key => $item) {
-            $_SESSION["$key"] = $item;
+            $_SESSION["user"]["$key"] = $item;
         }
         header('Location: ../../pages/account.php?s=1');
     }
