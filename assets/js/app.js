@@ -1,4 +1,4 @@
-import {validatePass, comparePass, validate} from "./registration.js";
+import {comparePass, validate, validatePass} from "./registration.js";
 import {itemQuantity} from "./article.js";
 import {closeModal} from "./function.js";
 
@@ -72,8 +72,6 @@ if (document.getElementById("informationAccount")) {
         document.getElementById("baskets_favorite").style.display = "none";
     });
 }
-
-
 
 // When I click on "my orders" then the div with my orders is displayed and the others are hidden.
 if (document.getElementById("orderedAccount")) {
@@ -240,7 +238,6 @@ if (document.getElementById("totalBuy")){
     }
 }
 
-
 if (document.getElementById("complements")) {
     document.getElementById("complements").addEventListener("click", function () {
         document.getElementById("input_complements").style.display = "block";
@@ -255,11 +252,22 @@ if (document.getElementById("complements2")) {
     });
 }
 
+//When we choose an option in reserveBread.php, we click on 'validate' and the value of the option is put in the title.
+let baker = document.getElementById("baker");
+if (baker) {
+    baker.addEventListener("change",function (){
+            document.getElementById("nameBakery").innerHTML = baker.value;
+            if (baker.value === "Boulangerie 1" || baker.value === "Boulangerie 2" || baker.value === "Boulangerie 3" || baker.value === "Boulangerie 4") {
+                document.getElementById("choiceBread").style.display = "flex";
+            }
+            else {
+            document.getElementById("choiceBread").style.display = "none";
+            }
+    });
+}
+
 if (document.getElementById("tableBaskets")){
     itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
     itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
     itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
 }
-
-
-

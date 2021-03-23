@@ -390,7 +390,6 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="redButton" data-bs-dismiss="modal">Fermer</button>
-                    <button type="button" class="send">Ajouter</button>
                 </div>
             </div>
         </div>
@@ -433,7 +432,6 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="redButton" data-bs-dismiss="modal">Fermer</button>
-                    <button type="button" class="send">Ajouter</button>
                 </div>
             </div>
         </div>

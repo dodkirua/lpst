@@ -9,15 +9,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
     <main>
         <h1>RESERVER <span class="colorGreen">NOTRE PAIN</span></h1>
 
-        <select id="baker" class="flexCenter">
-            <option value="choice">Choisissez votre boulangerie</option>
-            <option value="bakery1">Boulangerie 1</option>
-            <option value="bakery2">Boulangerie 2</option>
-            <option value="bakery3">Boulangerie 3</option>
-            <option value="bakery4">Boulangerie 4</option>
-            <option value="bakery5">Boulangerie 5</option>
-        </select>
+            <select id="baker" class="flexCenter">
+                <option class="optionBaker" value="">Choisissez votre boulangerie</option>
+                <option class="optionBaker" value="Boulangerie 1">Boulangerie 1</option>
+                <option class="optionBaker" value="Boulangerie 2">Boulangerie 2</option>
+                <option class="optionBaker" value="Boulangerie 3">Boulangerie 3</option>
+                <option class="optionBaker" value="Boulangerie 4">Boulangerie 4</option>
+            </select>
 
+        <h2 class="subtitle" id="nameBakery"></h2>
         <div id="choiceBread">
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
@@ -92,12 +92,26 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             </table>
         </div>
         <div class="flexColumn">
-            <div>
-                <p>Pain1</p>
-                <p>x3</p>
-                <p>3,55€</p>
+            <div class="flexRow">
+                <p class="margin">Pain1</p>
+                <p class="margin">x3</p>
+                <p class="margin">3,55€</p>
             </div>
-            <button class="brownBorder flexCenter"> Valider </button>
+            <div class="flexRow">
+                <p class="margin">Pain2</p>
+                <p class="margin">x1</p>
+                <p class="margin">0,95€</p>
+            </div>
+            <div class="flexRow">
+                <p class="margin">Pain3</p>
+                <p class="margin">x4</p>
+                <p class="margin">6€</p>
+            </div>
+            <div class="flexRow backgroundBlue flexCenter">
+                <p class="margin colorRed size20"><strong>TOTAL :</strong></p>
+                <p class="margin colorRed size20"><strong>10.5 €</strong></p>
+            </div>
+            <button class="brownBorder flexCenter"> Valider la réservation</button>
         </div>
 
     </main>
