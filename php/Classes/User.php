@@ -216,7 +216,9 @@ class User{
      * @return array
      */
     public function getData() : array {
-        $userArray[]=$this->getBaseData();
+        foreach ($this->getBaseData() as $key => $item){
+            $userArray[$key]=$item;
+        }
         $userArray['phone'] = $this->getPhone();
         $userArray['image'] = $this->getImage();
         $userArray['checked'] = $this->isChecked();
