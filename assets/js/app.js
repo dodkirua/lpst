@@ -184,7 +184,7 @@ $("#deliveryAddressBuy").click(function () {
 //Condition for the total of the articles, if the total is below 50 then there is no delivery,
 //if it is between 50 and 100 then it is 5 € and if it is equal to or greater than 100 € then it is free.
 if (document.getElementById("totalBuy")){
-    let totalBuy = document.getElementById("totalBuy").innerHTML = 145;
+    let totalBuy = document.getElementById("totalBuy").innerHTML = "145";
     if (totalBuy < 50) {
         document.getElementById("delivery2").style.display = "none";
     }
@@ -246,7 +246,7 @@ if (baker) {
     });
 }
 
-if (document.getElementById("tableBaskets")){
+if (document.getElementById("tableBaskets") && document.getElementById("cartResponsive")){
     itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
     itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
     itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
