@@ -103,6 +103,8 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 </div>
 
 
+
+
                 <div class="separatorHorizontal"></div>
                 <div class="flexColumn">
                     <h2 class="subtitle"> Mes adresses</h2>
