@@ -4,7 +4,7 @@ session_start();
 $firstname = ucfirst($_SESSION["user"]["firstname"]);
 $lastname = ucfirst($_SESSION["user"]["lastname"]);
 
-if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
+if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon compte";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
@@ -63,7 +63,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                         <label for="lastnameModify" class="colorBlue center margin15-30">Nom </label>
                         <input id="lastnameModify" name="lastnameModify" class="whiteBorder" value="<?= $lastname ?>" type="text">
                         <label for="emailModify" class="colorBlue center margin15-30">Email </label>
-                        <input id="emailModify" name="emailModify" class="whiteBorder" value="<?= $_SESSION["mail"] ?>" type="text">
+                        <input id="emailModify" name="emailModify" class="whiteBorder" value="<?= $_SESSION["user"]["mail"] ?>" type="text">
                         <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer les modifications">
                     </form>
                 </div>
