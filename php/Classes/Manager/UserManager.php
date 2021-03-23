@@ -70,6 +70,9 @@ class UserManager{
                     ->setMail($item['mail'])
                     ->setPass($item['pass'])
                     ->setRole($item['role_id'])
+                    ->setChecked($item["checked"])
+                    ->setPhone($item["phone"])
+                    ->setImage($item["image"])
                     ;
             }
         }
