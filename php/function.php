@@ -22,3 +22,24 @@ function pre($text){
     var_dump($text);
     echo "<pre>";
 }
+
+function containerShop1 (string $image, string $alt, string $text) {
+    echo "<div class='flexCenter'  id='containerShop1'>
+<img class='shop' alt='". $alt . "' src='". $image . "'>
+<p class='description colorBlue'>$text</p>
+</div>";
+}
+
+function containerShop2 (string $image, string $alt, string $text) {
+    echo "<div class='flexCenter'  id='containerShop2'>
+<p class='description colorBlue'>$text</p>
+<img class='shop' alt='". $alt . "' src='". $image . "'>
+</div>";
+}
+
+function staff (string $alt, string $image, string $firsntame, string $job) {
+    echo "<div class='staff flexColumn flexCenter'>
+        <img alt='". $alt . "' class='staffPhoto' src='" . $image ."'>
+        <p class='nameStaff colorBlue'>" . $firsntame ." </p>
+        </div>";
+}

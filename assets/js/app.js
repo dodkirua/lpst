@@ -2,26 +2,6 @@ import {comparePass, validate, validatePass} from "./registration.js";
 import {itemQuantity} from "./article.js";
 import {closeModal} from "./function.js";
 
-//creation of LPST staff profiles.
-let organizationalChart = [
-    {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
-    {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
-    {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
-    {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
-    {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
-    {"photo" : "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png", "fisrtname" : "Prénom", "lastname" : "Nom", "job" : "Travail"},
-];
-
-for (let i = 0; i < organizationalChart.length; i++) {
-    $("#containerStaff").append(
-        "<div class='staff flexColumn flexCenter'>" +
-            "<img class='staffPhoto' src='" + organizationalChart[i].photo +"'>" +
-            "<p class='nameStaff colorBlue'>" + organizationalChart[i].fisrtname + " " + organizationalChart[i].lastname.toUpperCase()  + " </p>" +
-            "<p class='jobStaff'> " + organizationalChart[i].job + "</p>" +
-        "</div>"
-    )
-}
-
 //display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
 let nbClick = 0;
 $("#menuResponsive").click(function () {
