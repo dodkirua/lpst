@@ -60,7 +60,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
         <h1 id="hello">Bonjour, <span class="colorGreen"><?=$firstname . " " . $lastname ?>!</span></h1>
         <section id="otherInformation">
             <div id="informationAccount">
-                <h2 class="subtitle"> Mes coordonées</h2>
+                <h2 class="subtitle"> Mes coordonnées</h2>
                 <div id="contactInformationModify" >
                     <form id="modifyInformation" action="#" method="post" class="flexColumn flexCenter">
                         <input type="file" name="profilePicture" id="profilePicture" class="whiteBorder">
@@ -127,7 +127,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                 <p class="linkLog"><strong>PRENOM NOM</strong></p>
                                 <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
                             </div>
-                            <span class="linkLog">Numero + rue</span>
+                            <span class="linkLog">Numéro + rue</span>
                             <span class="linkLog">code postale + ville</span>
                             <span class="linkLog">pays</span>
                         </div>
@@ -140,7 +140,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                 <p class="linkLog"><strong>PRENOM NOM</strong></p>
                                 <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
                             </div>
-                            <span class="linkLog">Numero + rue</span>
+                            <span class="linkLog">Numéro + rue</span>
                             <span class="linkLog">code postale + ville</span>
                             <span class="linkLog">pays</span>
                         </div>
