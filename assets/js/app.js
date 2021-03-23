@@ -58,6 +58,10 @@ if (document.getElementById("modifyInformation")) {
     clickDisplay("modifyProfil", "contactInformation", "modifyInformation", "", "none", "flex", "");
 }
 
+if (document.getElementById("pdp")) {
+    clickDisplay("clickModifyPdp", "pdp", "profilImageModify", "", "none", "flex", "");
+}
+
 if (document.getElementById("error")) {
     closeModal("error")
 }
