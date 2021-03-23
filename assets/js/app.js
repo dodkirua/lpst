@@ -246,6 +246,11 @@ if (baker) {
     });
 }
 
+if (document.getElementById("clickPhone")) {
+    clickDisplay("clickPhone", "modifyPhone", "", "baskets_favorite", "none", "none", "block");
+    clickDisplay("basketsSave2", "informationAccount", "orderedAccount", "baskets_favorite", "none", "none", "block");
+}
+
 if (document.getElementById("tableBaskets") && document.getElementById("cartResponsive")){
     itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
     itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");

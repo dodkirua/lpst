@@ -88,23 +88,28 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 <div class="flexColumn">
                     <h2 class="subtitle"> Mes informations personnelles</h2>
                     <div class="padding30 flexCenter flexColumn">
-                        <p class="colorBlue">Téléphone</p>
                             <?php
                             if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
-                                echo "<p class='whiteBorder padding30'></p>
+                                echo " <div>
+                                        <p class='colorBlue'>Téléphone</p>
+                                    <p class='whiteBorder padding30'></p>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
-                                    <div id='modifyPhone' class='flexColumn flexCenter'>
+                                    </div>
+                                    <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
                                             <label class='colorBlue'>Téléphone</label>
                                             <input class='whiteBorder width_100' type='tel' value=''>
-                                       </div>";
+                                            <input id='validatePhone' class='send modify modifyProfil' type='submit' value='Valider'>
+                                       </form>";
                             }
                             else {
-                                echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>
+                                echo " <p class='colorBlue'>Téléphone</p>
+                                    <p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
-                                    <div id='modifyPhone' class='flexColumn flexCenter'>
+                                    <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
                                             <label class='colorBlue'>Téléphone</label>
                                             <input class='whiteBorder width_100' type='tel' value='" . $_SESSION['user']['phone'] . "'>
-                                       </div>";
+                                            <input id='validatePhone' class='send modify modifyProfil' type='submit' value='Valider'>
+                                       </form>";
                             }
                             ?>
 
