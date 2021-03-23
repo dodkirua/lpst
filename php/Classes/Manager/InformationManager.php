@@ -82,4 +82,28 @@ class InformationManager{
         }
         return null;
     }
+
+    /**
+     * returns a list of Information objects following the information in the location column
+     * @param string $location
+     * @return array
+     */
+    public function getInformationByLocation (string $location) : array{
+        $stmt = $this->db->prepare("SELECT * FROM information WHERE location='".$location."'");
+        $informations =[];
+        if ($state = $stmt->execute()) {
+            foreach ($stmt->fetchAll() as $item){
+                $information = new Information($id);
+                $information = $information
+                    ->setTitle($item['title'])
+                    ->setDescription($item['description'])
+                    ->setImage($item['image'])
+                    ->setLocation($item['location'])
+                    ->setUser($item['user_id'])
+                ;
+                $informations[]=$information;
+            }
+        }
+        return $informations;
+    }
 }
