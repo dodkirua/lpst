@@ -3,7 +3,7 @@ session_start();
 $date = date("H:i:s");
 $date11 = "11:00:00";
 
-if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
+if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Validation";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 ?>

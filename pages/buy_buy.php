@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
+if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Payer";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 ?>
