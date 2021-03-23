@@ -1,5 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . "/php/import/importManager.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 
 class InformationManager{
     private ?PDO $db;
@@ -21,6 +22,11 @@ class InformationManager{
      * @return int
      */
     public function addInformation(?string $title,string $desc, ?string $img, string $location, int $user): int{
+        $title = mb_strtolower($title);
+        $desc = mb_strtolower($desc);
+        $img = mb_strtolower($img);
+        $location = mb_strtolower($location);
+
         $stmt = $this->db->prepare("INSERT INTO information (title, description, image, location, user_id) 
                 VALUES (:title, :description, :image, :location, :user_id)
                 ");
