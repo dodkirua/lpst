@@ -229,7 +229,7 @@ h1 {
     margin-top: -41px;
 }
 
-#containerStaff, .allProducts {
+#containerStaff, .allProducts, #containerFavorite {
     flex-wrap: wrap;
 }
 
@@ -796,7 +796,7 @@ select, option {
     #menu > #commerce {
         margin-left: 83px;
     }
-    .containedMenu {
+    .containedMenu, #clickPhone {
         width: initial;
     }
     .log {
@@ -991,7 +991,7 @@ select, option {
         font-size: 20px;
     }
     .wishlist {
-        width: 26%;
+        width: 24%;
     }
     .forgotPassword {
         margin: 0;
