@@ -2,11 +2,9 @@
 session_start();
 $title = "LPST : Notre magasin";
 
-include $_SERVER["DOCUMENT_ROOT"]. "/php/import/import.php";
+include $_SERVER["DOCUMENT_ROOT"] . "/php/import/import.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
-
-$information = new Information(1);
 ?>
 
 <main>
@@ -20,7 +18,7 @@ $information = new Information(1);
         <div class="flexCenter " id="containerShop1">
             <img class="shop" alt="Deventure du magasin" src="/assets/img/devanture_magasin.png">
 
-            <p class="description colorBlue"><?php $information ?></p>
+            <p class="description colorBlue"></p>
         </div>
         <div class="flexCenter" id="containerShop2">
             <p class="description colorBlue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, animi architecto asperiores
