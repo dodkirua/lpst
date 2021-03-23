@@ -12,3 +12,13 @@ function sanitize(string $data) : String {
     $data = addslashes($data);
     return $data;
 }
+
+/**
+ * for preformat array in test
+ * @param $text
+ */
+function pre($text){
+    echo "<pre>";
+    var_dump($text);
+    echo "<pre>";
+}
