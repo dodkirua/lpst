@@ -91,18 +91,23 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <p class="colorBlue">Téléphone</p>
                             <?php
                             if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
-                                echo "<p class='whiteBorder padding30'></p>";
-                                echo "<button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>";
+                                echo "<p class='whiteBorder padding30'></p>
+                                    <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
+                                    <div id='modifyPhone' class='flexColumn flexCenter'>
+                                            <label class='colorBlue'>Téléphone</label>
+                                            <input class='whiteBorder width_100' type='tel' value=''>
+                                       </div>";
                             }
                             else {
-                                echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>";
-                                echo "<button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>";
+                                echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>
+                                    <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
+                                    <div id='modifyPhone' class='flexColumn flexCenter'>
+                                            <label class='colorBlue'>Téléphone</label>
+                                            <input class='whiteBorder width_100' type='tel' value='" . $_SESSION['user']['phone'] . "'>
+                                       </div>";
                             }
                             ?>
-                            <div>
-                                <label>Téléphone</label>
-                                <input $>
-                            </div>
+
                     </div>
                 </div>
 
