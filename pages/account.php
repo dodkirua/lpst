@@ -392,7 +392,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form  action="#" method="post" class="flexColumn flexCenter width_100">
+                    <form  action="../php/addAddress.php" method="post" class="flexColumn flexCenter width_100">
                         <label for="addressName" class="colorBlue center margin15-30">Nom de l'adresse </label>
                         <input id="addressName" name="addressName" class="whiteBorder width_100" type="text">
                         <label for="firstname" class="colorBlue center margin15-30">Prénom </label>
