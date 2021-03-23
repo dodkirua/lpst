@@ -2,11 +2,13 @@
 session_start();
 $title = "LPST : Notre magasin";
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/InformationManager.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 $manager = new InformationManager();
+$managerUser = new UserManager();
 $informations = $manager->getInformationByLocation("index.php");
 ?>
 
@@ -18,26 +20,29 @@ $informations = $manager->getInformationByLocation("index.php");
 
     <div id="computer">
         <h1>NOTRE <span class="colorGreen">MAGASIN</span></h1>
-        <div class="flexCenter " id="containerShop1">
-            <img class="shop" alt="Devanture du magasin" src="/assets/img/devanture_magasin.png">
-
-            <p class="description colorBlue">Les Pieds Sur Terre est un commerce de proximité. Vous y retrouverez l’essentiel en alimentation, beauté & bien-être, hygiène, maison.
-                Pour préserver sa santé, protéger l’environnement, et améliorer sa qualité de vie. Ab amet animi consequuntur cupiditate eos,
-                fugiat, fugit impedit in nam quasi recusandae saepe suscipit temporibus. Aliquam eius laboriosam mollitia quam vitae.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus asperiores aspernatur, assumenda dolor eaque esse,
-                facilis harum laborum minus modi nulla provident quisquam quod repellat repellendus soluta voluptatibus voluptatum.</p>
-        </div>
-        <div class="flexCenter" id="containerShop2">
-            <p class="description colorBlue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, animi architecto asperiores
-                blanditiis consectetur doloremque facilis fugiat molestias nihil nostrum optio quas quisquam quo recusandae rerum sint sunt
-                suscipit, voluptatem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet animi consequuntur cupiditate eos,
-                fugiat, fugit impedit in nam quasi recusandae saepe suscipit temporibus. Aliquam eius laboriosam mollitia quam vitae.</p>
-
-            <img class="shop" alt="jardin LPST" src="/assets/img/jardin_les_pieds_sur_terre.png">
-        </div>
+        <?php
+                $token = true;
+                foreach ($informations as $item) {
+                    $information = $item->getData();
+                    if ($token) {
+                        containerShop1($information["image"], $information["title"], $information["description"]);
+                    }
+                    else {
+                        containerShop2($information["image"], $information["title"], $information["description"]);
+                    }
+                    $token = !$token;
+                }
+            ?>
 
         <h1>NOTRE <span class="colorGreen">PERSONNEL</span></h1>
-        <div id="containerStaff" class="flexRow"></div>
+        <div id="containerStaff" class="flexRow">
+            <?php
+            foreach ($staffs as $item) {
+                $staff = $item->;
+                staff()
+            }
+            ?>
+        </div>
 
         <div class="flexRow about">
             <iframe width="50%" height="450px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_580437?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
