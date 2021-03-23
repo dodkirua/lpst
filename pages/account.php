@@ -92,11 +92,11 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             <?php
                             if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
                                 echo "<p class='whiteBorder padding30'></p>";
-                                echo "<button class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>";
+                                echo "<button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>";
                             }
                             else {
                                 echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>";
-                                echo "<button class='send flexCenter modify modifyProfil'>Modifier </button>";
+                                echo "<button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>";
                             }
                             ?>
 
