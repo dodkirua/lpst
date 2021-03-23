@@ -20,9 +20,9 @@ class AddressBookManager{
      * @param string|null $phone
      * @return int
      */
-    public function add(string $name, int $idUser, int $idAddress, ?string $firstname, ?string $lastname, ?string $phone) : int {
-        $stmt = $this->db->prepare("INSERT INTO address_book (name, user_id, address_id, firstname, lastname, phone) 
-                VALUES (:name,:user,:address,:firstname, :lastname, :phone)
+    public function add(string $name, int $idUser, int $idAddress, ?string $firstname, ?string $lastname, ?string $phone ,?string $delivery) : int {
+        $stmt = $this->db->prepare("INSERT INTO address_book (name, user_id, address_id, firstname, lastname, phone, delivery) 
+                VALUES (:name,:user,:address,:firstname, :lastname, :phone, :delivery)
                 ");
 
         $stmt->bindValue(':name',$name);
@@ -46,7 +46,12 @@ class AddressBookManager{
         else {
             $stmt->bindValue(':phone',$phone);
         }
-
+        if (is_null($delivery)){
+            $stmt->bindValue(':delivery',null);
+        }
+        else {
+            $stmt->bindValue(':delivery',$delivery);
+        }
         if ($stmt->execute()){
             $stmt2 = $this->db->prepare("SELECT max(id) FROM address_book");
             if ($stmt2->execute()){
@@ -74,6 +79,7 @@ class AddressBookManager{
                 ->setFirstname($item['firstname'])
                 ->setLastname($item["lastname"])
                 ->setPhone($item["phone"])
+                ->setDelivery($item['delivery'])
                 ->setUserId($item['user_id'])
                 ->setAddressId($item["address_id"])
             ;

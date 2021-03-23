@@ -7,6 +7,7 @@ class AddressBook{
         private ?string $firstname;
         private ?string $lastname;
         private ?string $phone;
+        private ?int $delivery;
         private ?int $userId;
         private ?int $addressId;
 
@@ -14,8 +15,7 @@ class AddressBook{
      * AddressBook constructor.
      * @param int|null $id
      */
-    public function __construct(?int $id)
-    {
+    public function __construct(?int $id)    {
         $this->id = $id;
     }
 
@@ -23,8 +23,7 @@ class AddressBook{
      * get id
      * @return int|null
      */
-    public function getId(): ?int
-    {
+    public function getId(): ?int    {
         return $this->id;
     }
 
@@ -32,8 +31,7 @@ class AddressBook{
      * get name
      * @return string|null
      */
-    public function getName(): ?string
-    {
+    public function getName(): ?string    {
         return $this->name;
     }
 
@@ -41,8 +39,7 @@ class AddressBook{
      * get firstname
      * @return string|null
      */
-    public function getFirstname(): ?string
-    {
+    public function getFirstname(): ?string    {
         return $this->firstname;
     }
 
@@ -50,8 +47,7 @@ class AddressBook{
      * get lastname
      * @return string|null
      */
-    public function getLastname(): ?string
-    {
+    public function getLastname(): ?string    {
         return $this->lastname;
     }
 
@@ -59,8 +55,7 @@ class AddressBook{
      * get the phone number
      * @return string|null
      */
-    public function getPhone(): ?string
-    {
+    public function getPhone(): ?string    {
         return $this->phone;
     }
 
@@ -68,8 +63,7 @@ class AddressBook{
      * get the user id
      * @return int|null
      */
-    public function getUserId(): ?int
-    {
+    public function getUserId(): ?int    {
         return $this->userId;
     }
 
@@ -77,9 +71,16 @@ class AddressBook{
      * get the address id
      * @return int|null
      */
-    public function getAddressId(): ?int
-    {
+    public function getAddressId(): ?int    {
         return $this->addressId;
+    }
+
+    /**
+     * get delivery
+     * @return int|null
+     */
+    public function getDelivery(): ?int    {
+        return $this->delivery;
     }
 
     /**
@@ -87,8 +88,7 @@ class AddressBook{
      * @param string|null $name
      * @return AddressBook
      */
-    public function setName(?string $name): AddressBook
-    {
+    public function setName(?string $name): AddressBook    {
         $this->name = $name;
         return $this;
     }
@@ -98,8 +98,7 @@ class AddressBook{
      * @param string|null $firstname
      * @return AddressBook
      */
-    public function setFirstname(?string $firstname): AddressBook
-    {
+    public function setFirstname(?string $firstname): AddressBook    {
         $this->firstname = $firstname;
         return $this;
     }
@@ -109,8 +108,7 @@ class AddressBook{
      * @param string|null $lastname
      * @return AddressBook
      */
-    public function setLastname(?string $lastname): AddressBook
-    {
+    public function setLastname(?string $lastname): AddressBook    {
         $this->lastname = $lastname;
         return $this;
     }
@@ -120,8 +118,7 @@ class AddressBook{
      * @param string|null $phone
      * @return AddressBook
      */
-    public function setPhone(?string $phone): AddressBook
-    {
+    public function setPhone(?string $phone): AddressBook    {
         $this->phone = $phone;
         return $this;
     }
@@ -131,8 +128,7 @@ class AddressBook{
      * @param int|null $userId
      * @return AddressBook
      */
-    public function setUserId(?int $userId): AddressBook
-    {
+    public function setUserId(?int $userId): AddressBook    {
         $this->userId = $userId;
         return $this;
     }
@@ -142,11 +138,22 @@ class AddressBook{
      * @param int|null $addressId
      * @return AddressBook
      */
-    public function setAddressId(?int $addressId): AddressBook
-    {
+    public function setAddressId(?int $addressId): AddressBook    {
         $this->addressId = $addressId;
         return $this;
     }
+
+    /**
+     * set the delivery
+     * @param int|null $delivery
+     * @return AddressBook
+     */
+    public function setDelivery(?int $delivery): AddressBook    {
+        $this->delivery = $delivery;
+        return $this;
+    }
+
+
 
     /**
      * return the list of data minimal for an AddressBook
@@ -160,6 +167,7 @@ class AddressBook{
         $AddressBookArray['phone'] = $this->getPhone();
         $AddressBookArray['userId'] = $this->getUserId();
         $AddressBookArray['addressId'] = $this->getAddressId();
+        $AddressBookArray['delivery'] = $this->getDelivery();
         return $AddressBookArray;
     }
 
