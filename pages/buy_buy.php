@@ -38,11 +38,11 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                         <label for="lastname" class="width_100">Nom</label>
                         <input id="lastname" name="lastname" class="whiteBorder width_100 inputBuy" type="text" required>
                         <label for="numCards" class="width_100">Numéro de la carte</label>
-                        <input id="numCards" name="numCards" class="whiteBorder width_100 inputBuy" type="number" placeholder="0000 0000 0000 0000" required>
+                        <input id="numCards" name="numCards" class="whiteBorder width_100 inputBuy" type="text" placeholder="0000 0000 0000 0000" required>
                         <label for="dateCards" class="width_100">Date d'expiration</label>
-                        <input id="dateCards" name="dateCards" class="whiteBorder width_100 inputBuy" type="number" placeholder="00/00" required>
+                        <input id="dateCards" name="dateCards" class="whiteBorder width_100 inputBuy" type="text" placeholder="00/00" required>
                         <label for="cvc" class="width_100">CVC</label>
-                        <input id="cvc" name="cvc" class="whiteBorder width_100 inputBuy" type="number" placeholder="000" required>
+                        <input id="cvc" name="cvc" class="whiteBorder width_100 inputBuy" type="text" placeholder="000" required>
                         <div class="flexRow align inputBuy">
                             <input type="checkbox" id="checkCards">
                             <p id="condition">J'accepte <a href="terms_and_conditions.php" class="colorBlue underline"> les conditions générales de ventes</a> du magasin les pieds sur terre.</p>
@@ -82,7 +82,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                 <div id="separatorTotal" class="separatorHorizontal"></div>
                 <p class="margin20 flexRow flexInitial width_100">Sous-total : <span class="end"><strong>143 €</strong></span></p>
                 <p class="margin20 flexRow flexInitial width_100">Livraison : <span class="end"><strong>2 €</strong></span></p>
-                <p class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100">Total : <span class="end"><strong>145 €</strong></span></p>
+                <p class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100">Total : <span class="end" id="totalBuy"></span></p>
                 <div id="billingAddress" class="delivery flexColumn backgroundBlue colorBlue">
                     <div class="flexRow width_100 align">
                         <p class="title2">Adresse de facturation</p>
@@ -90,6 +90,20 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                     </div>
                 </div>
                 <div class="flexColumn sub backgroundBlue flexCenter" id="billingAddress2">
+                    <span class="linkLog"><strong>PRENOM NOM</strong></span>
+                    <span class="linkLog">Numero + rue</span>
+                    <span class="linkLog">code postale + ville</span>
+                    <span class="linkLog">pays</span>
+                    <span class="linkLog colorBlue underline" id="modifybillingAddress">Modifier</span>
+                </div>
+
+                <div id="deliveryAddressBuy" class="delivery flexColumn backgroundBlue colorBlue">
+                    <div class="flexRow width_100 align">
+                        <p class="title2">Adresse de livraison</p>
+                        <span id="arrow3"><i class="fas fa-angle-down reverse2"></i></span>
+                    </div>
+                </div>
+                <div class="flexColumn sub backgroundBlue flexCenter" id="deliveryAddress2">
                     <span class="linkLog"><strong>PRENOM NOM</strong></span>
                     <span class="linkLog">Numero + rue</span>
                     <span class="linkLog">code postale + ville</span>

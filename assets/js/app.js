@@ -22,8 +22,6 @@ for (let i = 0; i < organizationalChart.length; i++) {
     )
 }
 
-
-
 //display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
 let nbClick = 0;
 $("#menuResponsive").click(function () {
@@ -58,55 +56,33 @@ if (regis) {
     });
 }
 
+function clickDisplay (idClick, id1, id2, id3, display1, display2, display3) {
+    document.getElementById(idClick).addEventListener("click", function () {
+        document.getElementById(id1).style.display = display1;
+        document.getElementById(id2).style.display = display2;
+        document.getElementById(id3).style.display = display3;
+    });
+}
+
 // When I click on "my information" then the div with my information is displayed and the others are hidden.
 if (document.getElementById("informationAccount")) {
-    document.getElementById("information").addEventListener("click", function () {
-        document.getElementById("informationAccount").style.display = "block";
-        document.getElementById("orderedAccount").style.display = "none";
-        document.getElementById("baskets_favorite").style.display = "none";
-    });
-
-    document.getElementById("information2").addEventListener("click", function () {
-        document.getElementById("informationAccount").style.display = "block";
-        document.getElementById("orderedAccount").style.display = "none";
-        document.getElementById("baskets_favorite").style.display = "none";
-    });
+    clickDisplay("information", "informationAccount", "orderedAccount", "baskets_favorite", "block", "none", "none");
+    clickDisplay("information2", "informationAccount", "orderedAccount", "baskets_favorite", "block", "none", "none");
 }
 
 // When I click on "my orders" then the div with my orders is displayed and the others are hidden.
 if (document.getElementById("orderedAccount")) {
-    document.getElementById("ordered").addEventListener("click", function () {
-        document.getElementById("informationAccount").style.display = "none";
-        document.getElementById("orderedAccount").style.display = "block";
-        document.getElementById("baskets_favorite").style.display = "none";
-    });
-
-    document.getElementById("ordered2").addEventListener("click", function () {
-        document.getElementById("informationAccount").style.display = "none";
-        document.getElementById("orderedAccount").style.display = "block";
-        document.getElementById("baskets_favorite").style.display = "none";
-    });
+    clickDisplay("ordered", "informationAccount", "orderedAccount", "baskets_favorite", "none", "block", "none");
+    clickDisplay("ordered2", "informationAccount", "orderedAccount", "baskets_favorite", "none", "block", "none");
 }
 // When I click on "my saved baskets" then the div with my saved baskets is displayed and the others are hidden.
 if (document.getElementById("basketsSave")) {
-    document.getElementById("basketsSave").addEventListener("click", function () {
-        document.getElementById("informationAccount").style.display = "none";
-        document.getElementById("orderedAccount").style.display = "none";
-        document.getElementById("baskets_favorite").style.display = "block";
-    });
-
-    document.getElementById("basketsSave2").addEventListener("click", function () {
-        document.getElementById("informationAccount").style.display = "none";
-        document.getElementById("orderedAccount").style.display = "none";
-        document.getElementById("baskets_favorite").style.display = "block";
-    });
+    clickDisplay("basketsSave", "informationAccount", "orderedAccount", "baskets_favorite", "none", "none", "block");
+    clickDisplay("basketsSave2", "informationAccount", "orderedAccount", "baskets_favorite", "none", "none", "block");
 }
 
 if (document.getElementById("modifyInformation")) {
-    document.getElementById("modifyProfil").addEventListener("click", function () {
-        document.getElementById("contactInformation").style.display = "none";
-        document.getElementById("modifyInformation").style.display = "flex";
-    });
+    clickDisplay("modifyProfil", "contactInformation", "modifyInformation", "", "none", "flex", "");
 }
 
 if (document.getElementById("error")) {
@@ -161,7 +137,6 @@ $("#choiceDelivery").click(function () {
 });
 
 let address1 = $("#address1");
-let address2 = $("#address2");
 
 if ($("#standardDelivery")) {
     let nbClick = 0;
@@ -220,6 +195,19 @@ $("#billingAddress").click(function () {
     }
 });
 
+let nbClick5 = 0;
+$("#deliveryAddressBuy").click(function () {
+    if (nbClick5 === 0) {
+        $("#deliveryAddress2").css("display", "flex");
+        nbClick5++;
+        $("#arrow3").html("<i class=\"fas fa-angle-up reverse2\"></i>");
+    }
+    else {
+        $("#deliveryAddress2").css("display", "none");
+        $("#arrow3").html("<i class=\"fas fa-angle-down reverse2\"></i>");
+        nbClick5 = 0;
+    }
+});
 //Condition for the total of the articles, if the total is below 50 then there is no delivery,
 //if it is between 50 and 100 then it is 5 € and if it is equal to or greater than 100 € then it is free.
 if (document.getElementById("totalBuy")){
@@ -237,32 +225,51 @@ if (document.getElementById("totalBuy")){
         document.getElementById("buyDelivery2").innerHTML = "<strong>GRATUIT </strong>";
     }
 }
-
+//When filling out the form for the billing address, you can display other inputs to add information if you live in an apartment or building, by clicking on "Complements".
 if (document.getElementById("complements")) {
-    document.getElementById("complements").addEventListener("click", function () {
-        document.getElementById("input_complements").style.display = "block";
-        document.getElementById("complements").style.display = "none";
-    });
+    clickDisplay("complements", "input_complements", "complements", "", "block", "none", "");
 }
 
+//When filling out the form for the delivery address, you can display other inputs to add information if you live in an apartment or building, by clicking on "Complements".
 if (document.getElementById("complements2")) {
-    document.getElementById("complements2").addEventListener("click", function () {
-        document.getElementById("input_complements2").style.display = "block";
-        document.getElementById("complements2").style.display = "none";
-    });
+    clickDisplay("complements2", "input_complements2", "complements2", "", "block", "none", "");
 }
 
 //When we choose an option in reserveBread.php, we click on 'validate' and the value of the option is put in the title.
 let baker = document.getElementById("baker");
 if (baker) {
     baker.addEventListener("change",function (){
-            document.getElementById("nameBakery").innerHTML = baker.value;
-            if (baker.value === "Boulangerie 1" || baker.value === "Boulangerie 2" || baker.value === "Boulangerie 3" || baker.value === "Boulangerie 4") {
-                document.getElementById("choiceBread").style.display = "flex";
-            }
-            else {
+        document.getElementById("nameBakery").innerHTML = baker.value;
+        if (baker.value === "Boulangerie 1") {
+            document.getElementById("choiceBread").style.display = "flex";
+            document.getElementById("choiceBread2").style.display = "none";
+            document.getElementById("choiceBread3").style.display = "none";
+            document.getElementById("choiceBread4").style.display = "none";
+        }
+        else if (baker.value === "Boulangerie 2") {
             document.getElementById("choiceBread").style.display = "none";
-            }
+            document.getElementById("choiceBread2").style.display = "flex";
+            document.getElementById("choiceBread3").style.display = "none";
+            document.getElementById("choiceBread4").style.display = "none";
+        }
+        else if (baker.value === "Boulangerie 3") {
+            document.getElementById("choiceBread").style.display = "none";
+            document.getElementById("choiceBread2").style.display = "none";
+            document.getElementById("choiceBread3").style.display = "flex";
+            document.getElementById("choiceBread4").style.display = "none";
+        }
+        else if (baker.value === "Boulangerie 4") {
+            document.getElementById("choiceBread").style.display = "none";
+            document.getElementById("choiceBread2").style.display = "none";
+            document.getElementById("choiceBread3").style.display = "none";
+            document.getElementById("choiceBread4").style.display = "flex";
+        }
+        else {
+            document.getElementById("choiceBread").style.display = "none";
+            document.getElementById("choiceBread2").style.display = "none";
+            document.getElementById("choiceBread3").style.display = "none";
+            document.getElementById("choiceBread4").style.display = "none";
+        }
     });
 }
 

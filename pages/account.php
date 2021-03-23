@@ -102,7 +102,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                             <span class="linkLog">pays</span>
                         </div>
                         <div class="flexCenter">
-                            <button id="addBillingAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une nouvelle adresse de facturation</button>
+                            <button id="addBillingAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une adresse de facturation</button>
                         </div>
                         <h3 class="colorGrey inputBuy"> Adresse de livraison</h3>
                         <div class="whiteBorder flexColumn inputBuy">
@@ -115,7 +115,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                             <span class="linkLog">pays</span>
                         </div>
                         <div class="flexCenter">
-                            <button id="addDeliveryAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#modalDeliveryAddress"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une nouvelle adresse de livraison</button>
+                            <button id="addDeliveryAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#modalDeliveryAddress"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une adresse de livraison</button>
                         </div>
                     </div>
                 </div>
