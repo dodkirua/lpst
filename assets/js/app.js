@@ -284,4 +284,9 @@ if (document.getElementById("tableBaskets") && document.getElementById("cartResp
     itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
 }
 
-if ()
+if (document.getElementsByClassName("redButton")){
+    let red
+    for (let i = 0 ; i < document.getElementsByClassName("redButton").length ; i++){
+
+    }
+}
