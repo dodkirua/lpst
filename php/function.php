@@ -37,12 +37,12 @@ function containerShop2 (string $image, string $alt, string $text) {
 </div>";
 }
 
-function staff (string $alt, string $image, string $firsntame) {
+function staff (?string $image, string $firstname) {
     if ($image === "" || $image === null) {
         $image = "http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png";
     }
-        echo "<div class='staff flexColumn flexCenter'>
-        <img alt='" . $alt . "' class='staffPhoto' src='" . $image . "'>
-        <p class='nameStaff colorBlue'>" . $firsntame . " </p>
-        </div>";
+    echo "<div class='staff flexColumn flexCenter'>
+    <img alt='" . $firstname . "' class='staffPhoto' src='" . $image . "'>
+    <p class='nameStaff colorBlue'>" . $firstname . " </p>
+    </div>";
 }

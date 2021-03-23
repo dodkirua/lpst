@@ -10,6 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 $manager = new InformationManager();
 $managerUser = new UserManager();
 $informations = $manager->getInformationByLocation("index.php");
+$users = $managerUser->getStaff();
 ?>
 
 <main>
@@ -37,9 +38,10 @@ $informations = $manager->getInformationByLocation("index.php");
         <h1>NOTRE <span class="colorGreen">PERSONNEL</span></h1>
         <div id="containerStaff" class="flexRow">
             <?php
-            foreach ($staffs as $item) {
-                $staff = $item->;
-                staff()
+            foreach ($users as $item) {
+                $user = $item->getData();
+                staff($user["image"],ucfirst($user["firstname"]));
+                pre($user);
             }
             ?>
         </div>
