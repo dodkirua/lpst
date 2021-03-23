@@ -61,9 +61,14 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
         <section id="otherInformation">
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonnées</h2>
+                <div id="profilImageModify">
+                    <form method="post" action="#" class="flexCenter flexColumn">
+                        <input type="file" name="profilePicture" id="profilePicture" class="whiteBorder">
+                        <input class="send modifyProfil modify" type="submit" value="Modifier">
+                    </form>
+                </div>
                 <div id="contactInformationModify" >
                     <form id="modifyInformation" action="#" method="post" class="flexColumn flexCenter">
-                        <input type="file" name="profilePicture" id="profilePicture" class="whiteBorder">
                         <label for="firstnameModify" class="colorBlue center margin15-30">Prénom </label>
                         <input id="firstnameModify" name="firstnameModify" class="whiteBorder" value="<?= $firstname ?>" type="text">
                         <label for="lastnameModify" class="colorBlue center margin15-30">Nom </label>
@@ -74,6 +79,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     </form>
                 </div>
                 <div id="contactInformation" class="flexColumn flexCenter">
+                    <div>
+
+                    </div>
                     <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
                     <p class="colorBlue">Prénom </p>
                     <p class="whiteBorder"><?= $firstname ?></p>
