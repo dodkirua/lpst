@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-$firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["firstname"])));
-$lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["lastname"])));
-
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 
@@ -11,6 +8,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon compte";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
+    $firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["firstname"])));
+    $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["lastname"])));
 
     $managerUser = new UserManager();
     $users = $managerUser->getStaff();
@@ -53,7 +53,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
         </div>
 
         <!-- Displayed when the screen is at 680px -->
-        <button id="disconnectionResponsive" class="redButton"><i class="fas fa-power-off"></i></button>
+        <button id="disconnectionResponsive" class="redButton disconnection"><i class="fas fa-power-off"></i></button>
 
     </section>
     <div class="flexColumn width65">
