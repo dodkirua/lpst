@@ -2,7 +2,7 @@
 session_start();
 $title = "LPST : Notre magasin";
 
-require $_SERVER['DOCUMENT_ROOT'] . "/php/import/import.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/InformationManager.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
@@ -16,7 +16,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
     <div id="computer">
         <h1>NOTRE <span class="colorGreen">MAGASIN</span></h1>
         <div class="flexCenter " id="containerShop1">
-            <img class="shop" alt="Deventure du magasin" src="/assets/img/devanture_magasin.png">
+            <img class="shop" alt="Devanture du magasin" src="/assets/img/devanture_magasin.png">
 
             <p class="description colorBlue">Les Pieds Sur Terre est un commerce de proximité. Vous y retrouverez l’essentiel en alimentation, beauté & bien-être, hygiène, maison.
                 Pour préserver sa santé, protéger l’environnement, et améliorer sa qualité de vie. Ab amet animi consequuntur cupiditate eos,

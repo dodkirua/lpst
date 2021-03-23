@@ -1,5 +1,6 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/php/import/importManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/DB.php";
+
 
 class RoleManager{
     private ?PDO $db;

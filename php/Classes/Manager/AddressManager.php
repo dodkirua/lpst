@@ -1,5 +1,6 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/php/import/importManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/DB.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Address.php";
 
 class AddressManager{
     private ?PDO $db;
