@@ -28,69 +28,147 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <th class="colorWhite">Total</th>
                     <th class="colorWhite">Ajouter</th>
                 </tr>
-                <tr class="trTable">
-                    <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
+                <?php
+                for ($i = 0; $i < 3; $i++) {
+                    echo "<tr class='trTable'>
+                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
                     <td>
-                        <div class="flexColumn">
+                        <div class='flexColumn'>
                             <p>Nom de l'article</p>
-                            <div class="flexRow">
-                                <button class="buttonClassic"><i class="far fa-heart"></i></button>
+                            <div class='flexRow'>
+                                <button class='buttonClassic'><i class='far fa-heart'></i></button>
                             </div>
                         </div>
                     </td>
-                    <td class="price1"></td>
+                    <td class='price1'></td>
                     <td>
-                        <div class="flexRow flexCenter">
-                            <button class="buttonClassic less1">-</button>
-                            <p class="numberArticle numberArticle1">1 </p>
-                            <button class="buttonClassic more1">+</button>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
                         </div>
                     </td>
-                    <td class="total1"></td>
-                    <td><button class="send width65"><i class="fas fa-plus"></i></button></td>
-                </tr>
-                <tr class="trTable">
-                    <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                    <td>
-                        <div class="flexColumn">
-                            <p>Nom de l'article</p>
-                            <div class="flexRow">
-                                <button class="buttonClassic"><i class="far fa-heart"></i></button>
-                            </div>
-                    </td>
-                    <td class="price2"></td>
-                    <td>
-                        <div class="flexRow flexCenter">
-                            <button class="buttonClassic less2">-</button>
-                            <p class="numberArticle numberArticle2">1 </p>
-                            <button class="buttonClassic more2">+</button>
-                        </div>
-                    </td>
-                    <td class="total2"></td>
-                    <td><button class="send width65"><i class="fas fa-plus"></i></button></td>
-                </tr>
-                <tr class="trTable">
-                    <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                    <td>
-                        <div class="flexColumn">
-                            <p>Nom de l'article</p>
-                            <div class="flexRow">
-                                <button class="buttonClassic"><i class="far fa-heart"></i></button>
-                            </div>
-                    </td>
-                    <td class="price3"></td>
-                    <td>
-                        <div class="flexRow flexCenter">
-                            <button class="buttonClassic less3">-</button>
-                            <p class="numberArticle numberArticle3">1 </p>
-                            <button class="buttonClassic more3">+</button>
-                        </div>
-                    </td>
-                    <td class="total3"></td>
-                    <td><button class="send width65"><i class="fas fa-plus"></i></button></td>
-                </tr>
+                    <td class='total1'></td>
+                    <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
+                </tr>";
+                }
+                ?>
             </table>
         </div>
+        <div id="choiceBread2">
+            <table id="tableBaskets" class="flexCenter">
+                <tr class="titleTable">
+                    <th class="colorWhite">Article</th>
+                    <th class="colorWhite">Nom de l'article</th>
+                    <th class="colorWhite">Prix</th>
+                    <th class="colorWhite">Quantité</th>
+                    <th class="colorWhite">Total</th>
+                    <th class="colorWhite">Ajouter</th>
+                </tr>
+
+                <?php
+                for ($i = 0; $i < 6; $i++) {
+                    echo "<tr class='trTable'>
+                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
+                    <td>
+                        <div class='flexColumn'>
+                            <p>Nom de l'article</p>
+                            <div class='flexRow'>
+                                <button class='buttonClassic'><i class='far fa-heart'></i></button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>0.99€</td>
+                    <td>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
+                        </div>
+                    </td>
+                    <td>0.99€</td>
+                    <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
+                </tr>";
+                }
+                ?>
+            </table>
+        </div>
+        <div id="choiceBread3">
+            <table id="tableBaskets" class="flexCenter">
+                <tr class="titleTable">
+                    <th class="colorWhite">Article</th>
+                    <th class="colorWhite">Nom de l'article</th>
+                    <th class="colorWhite">Prix</th>
+                    <th class="colorWhite">Quantité</th>
+                    <th class="colorWhite">Total</th>
+                    <th class="colorWhite">Ajouter</th>
+                </tr>
+                <?php
+                for ($i = 0; $i < 4; $i++) {
+                    echo "<tr class='trTable'>
+                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
+                    <td>
+                        <div class='flexColumn'>
+                            <p>Nom de l'article</p>
+                            <div class='flexRow'>
+                                <button class='buttonClassic'><i class='far fa-heart'></i></button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>1.35€</td>
+                    <td>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
+                        </div>
+                    </td>
+                    <td>1.35€</td>
+                    <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
+                </tr>";
+                }
+                ?>
+            </table>
+        </div>
+        <div id="choiceBread4">
+            <table id="tableBaskets" class="flexCenter">
+                <tr class="titleTable">
+                    <th class="colorWhite">Article</th>
+                    <th class="colorWhite">Nom de l'article</th>
+                    <th class="colorWhite">Prix</th>
+                    <th class="colorWhite">Quantité</th>
+                    <th class="colorWhite">Total</th>
+                    <th class="colorWhite">Ajouter</th>
+                </tr>
+                <?php
+                for ($i = 0; $i < 10; $i++) {
+                    echo "<tr class='trTable'>
+                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
+                    <td>
+                        <div class='flexColumn'>
+                            <p>Nom de l'article</p>
+                            <div class='flexRow'>
+                                <button class='buttonClassic'><i class='far fa-heart'></i></button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>0.99€</td>
+                    <td>
+                        <div class='flexRow flexCenter'>
+                            <button class='buttonClassic less1'>-</button>
+                            <p class='numberArticle numberArticle1'>1 </p>
+                            <button class='buttonClassic more1'>+</button>
+                        </div>
+                    </td>
+                    <td>0.99€</td>
+                    <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
+                </tr>";
+                }
+                ?>
+            </table>
+        </div>
+
+
         <div class="flexColumn">
             <div class="flexRow">
                 <p class="margin">Pain1</p>

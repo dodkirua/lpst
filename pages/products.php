@@ -8,7 +8,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 <main>
     <img id="ab" alt="agriculture biologique" src="https://tse1.mm.bing.net/th?id=OIP.3QWnaffLUCiOBRPJx7wvPgHaI7&pid=Api&P=0&w=300&h=300">
-    <img id="biomonde" src="/assets/img/Logo%20Biomonde-rond-01.png">
+    <img id="biomonde" src="/assets/img/logo_biomonde-rond-01.png">
     <h1>NOS <span class="colorGreen">PRODUITS</span></h1>
     <div class="flexRow flexCenter allProducts">
         <a href="#" class="products flexColumn">

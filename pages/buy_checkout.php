@@ -33,7 +33,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                 <?php
                 if ($date < $date11) {
                     ?>
-                    <p class="colorGrey linkLog">Disponible à 15h.</p>
+                    <p class="colorGrey linkLog">Disponible aujourd'hui à 15h.</p>
                     <?php
                 }
                 else {
@@ -51,7 +51,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                         <?php
                         if ($date < $date11) {
                             ?>
-                            <p class="colorGrey linkLog">Disponible à 15h.</p>
+                            <p class="colorGrey linkLog">Disponible aujourd'hui à 15h.</p>
                         <?php
                         }
                         else {
