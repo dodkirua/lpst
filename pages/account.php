@@ -112,10 +112,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             else {
                                 echo " <div id='phone' class='flexCenter flexColumn'>
                                         <p class='colorBlue'>Téléphone</p>
-                                    <p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>
-                                    <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
-                                    </div>
+                                    <p id='containerPhone' class='whiteBorder width_100'>" . $_SESSION['user']['phone'] . "</p>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
+                                    </div>
                                     <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
                                             <label class='colorBlue'>Téléphone</label>
                                             <input class='whiteBorder width_100' type='tel' value='" . $_SESSION['user']['phone'] . "'>
@@ -123,7 +122,6 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                        </form>";
                             }
                             ?>
-
                     </div>
                 </div>
 
@@ -415,7 +413,8 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <div class="flexRow">
                             <input id="num_street" name="num" class="whiteBorder width30" type="text" placeholder="10">
                             <input id="num_street" name="street" class="whiteBorder width65" type="text" placeholder="rue des blés">
-                        </div>                        <p id="complements" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
+                        </div>
+                        <p id="complements" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
                         <div id="input_complements">
                             <input name="floor" class="whiteBorder width_100" type="text" placeholder="4e étage">
                             <input name="num_door" class="whiteBorder width_100" type="text" placeholder="porte 24">
