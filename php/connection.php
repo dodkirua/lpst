@@ -18,7 +18,7 @@ else {
 
     }
     else {
-        $userArray = $user->getBaseData();
+        $userArray = $user->getData();
         foreach ($userArray as $key => $item) {
             $_SESSION["user"]["$key"] = $item;
         }
