@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 23 mars 2021 à 14:54
+-- Généré le : mar. 23 mars 2021 à 15:16
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -32,7 +32,7 @@ USE `lpst`;
 CREATE TABLE `address` (
   `id` int UNSIGNED NOT NULL,
   `street` varchar(255) COLLATE utf8_bin NOT NULL,
-  `complement` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `complement` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `number` mediumint UNSIGNED NOT NULL,
   `zip_code` varchar(45) COLLATE utf8_bin NOT NULL,
   `city` varchar(100) COLLATE utf8_bin NOT NULL,
