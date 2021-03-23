@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$firstname = ucfirst($_SESSION["firstname"]);
-$lastname = ucfirst($_SESSION["lastname"]);
+$firstname = ucfirst($_SESSION["user"]["firstname"]);
+$lastname = ucfirst($_SESSION["user"]["lastname"]);
 
 if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
     $title = "LPST : Mon compte";
@@ -74,7 +74,7 @@ if (isset($_SESSION['mail']) && isset($_SESSION['pass'])) {
                     <p class="colorBlue">Nom </p>
                     <p class="whiteBorder"><?= $lastname ?></p>
                     <p class="colorBlue">Email </p>
-                    <p class="whiteBorder"><?= $_SESSION["mail"] ?></p>
+                    <p class="whiteBorder"><?= $_SESSION["user"]["mail"] ?></p>
                     <button id="modifyProfil" class="send modify modifyProfil">Modifier le profil</button>
                 </div>
 
