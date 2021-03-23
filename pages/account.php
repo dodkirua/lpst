@@ -99,7 +99,10 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                 echo "<button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>";
                             }
                             ?>
-
+                            <div>
+                                <label>Téléphone</label>
+                                <input $>
+                            </div>
                     </div>
                 </div>
 
