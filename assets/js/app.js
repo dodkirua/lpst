@@ -279,9 +279,11 @@ if (document.getElementById("clickPhone")) {
     clickDisplay("clickPhone", "modifyPhone", "phone", "", "flex", "none", "");
 }
 
-if (document.getElementById("tableBaskets") && document.getElementById("cartResponsive")){
+
+
+/*if (document.getElementById("tableBaskets") && document.getElementById("cartResponsive")){
     itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
     itemQuantity(2.36, "numberArticle2", "price2", "total2", "more2", "less2");
     itemQuantity(4.99, "numberArticle3", "price3", "total3", "more3", "less3");
-}
+}*/
 
