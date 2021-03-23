@@ -48,7 +48,7 @@
 
 
         <?php
-        if (session_id() != "") {
+        if (isset($_SESSION["user"]['id'])) {
             ?>
             <div class="log2">
                 <a class="containedMenu flexCenter colorWhite" href="../pages/account.php">Mon compte</a>

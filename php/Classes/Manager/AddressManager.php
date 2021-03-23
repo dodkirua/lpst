@@ -19,7 +19,7 @@ class AddressManager{
      * @param string|null $compl
      * @return int|null
      */
-    private function searchAddress(string $street, int $number, string $zipCode, string $city, string $country, ?string $compl) : ?int{
+    public function searchAddress(string $street, int $number, string $zipCode, string $city, string $country, ?string $compl) : ?int{
         $street = strtolower($street);
         $zipCode = strtolower($zipCode);
         $city = strtolower($city);
