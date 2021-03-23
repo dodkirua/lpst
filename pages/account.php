@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
-
 $firstname = ucfirst($_SESSION["user"]["firstname"]);
 $lastname = ucfirst($_SESSION["user"]["lastname"]);
+
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 
 if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon compte";
@@ -90,16 +90,14 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <div class="padding30 flexCenter flexColumn">
                         <p class="colorBlue">Téléphone</p>
                             <?php
-                            foreach ($users as $item) {
-                                $user = $item->getData();
-                                pre($_SESSION["user"]);
-//                                if ($user["phone"] === null || $user["phone"] === "") {
-//                                    echo "<p class='whiteBorder'>bouh</p>";
-//                                }
-//                                else {
-//                                    echo "<p class='whiteBorder'>" . $user['phone'] . "</p>";
-//                                }
+                            if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
+                                echo "<p class='whiteBorder'></p>";
                             }
+                            else {
+                                echo "<p class='whiteBorder'>" . $_SESSION['user']['phone'] . "</p>";
+                            }
+
+                            pre($_SESSION["user"]);
                             ?>
                     </div>
                 </div>
