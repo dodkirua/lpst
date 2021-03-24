@@ -83,7 +83,6 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             <p class="linkLog colorGrey">Vous allez être redirigé vers une autre page.</p>
                         </form>
                     </div>
-
                 </div>
             </div>
 
@@ -120,6 +119,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <span class="linkLog">pays</span>
                     <span class="linkLog colorBlue underline" id="modifybillingAddress">Modifier</span>
                 </div>
+
             </div>
         </div>
     </main>

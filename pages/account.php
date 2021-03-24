@@ -130,29 +130,15 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <h2 class="subtitle"> Mes adresses</h2>
                     <div class="padding30">
                         <h3 class="colorGrey inputBuy"> Adresse de facturation</h3>
-                        <div class="whiteBorder flexColumn inputBuy">
-                            <div class="flexRow align">
-                                <p class="linkLog"><strong>PRENOM NOM</strong></p>
-                                <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
-                                <button class='buttonClassic favoriteDelete colorBlue'><i class='far fa-trash-alt'></i></button>
-                            </div>
-                            <span class="linkLog">Numéro + rue</span>
-                            <span class="linkLog">code postale + ville</span>
-                            <span class="linkLog">pays</span>
+                        <div id="containerBillingAddress" class="width_100 flexRow">
+
                         </div>
                         <div class="flexCenter">
                             <button id="addBillingAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une adresse de facturation</button>
                         </div>
                         <h3 class="colorGrey inputBuy"> Adresse de livraison</h3>
-                        <div class="whiteBorder flexColumn inputBuy">
-                            <div class="flexRow align">
-                                <p class="linkLog"><strong>PRENOM NOM</strong></p>
-                                <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
-                                <button class='buttonClassic favoriteDelete colorBlue'><i class='far fa-trash-alt'></i></button>
-                            </div>
-                            <span class="linkLog">Numéro + rue</span>
-                            <span class="linkLog">code postale + ville</span>
-                            <span class="linkLog">pays</span>
+                        <div id="containerDeliveryAddress" class="width_100 flexRow">
+
                         </div>
                         <div class="flexCenter">
                             <button id="addDeliveryAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#modalDeliveryAddress"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une adresse de livraison</button>

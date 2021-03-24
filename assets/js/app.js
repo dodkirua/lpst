@@ -316,6 +316,48 @@ if (document.getElementById("clickPhone")) {
 }
 
 
+//When we click on save in the modal window of "add a billing address", the values of the input are added in the containerBillingAddress.
+//A modifier pour que ca soit grace au formulaire et que la donnée reste stocker grace a la BDD!!!!!!!!!!!!!
+if ($("#staticBackdrop")) {
+    $("#addBillingAddress").click(function () {
+        $("#containerBillingAddress").append(
+            "<div class=\"whiteBorder flexColumn inputBuy\">\n" +
+                "<div class=\"flexRow align\">\n" +
+                    "<p class=\"linkLog\"><strong>Nom de l'adresse</strong></p>\n" +
+                    "<button id=\"modifyBillingAddressInformation\" class=\"favoriteDelete buttonClassic colorBlue edit\"><i class=\"fas fa-edit\"></i></button>\n" +
+                    "<button class='buttonClassic favoriteDelete colorBlue'><i class='far fa-trash-alt'></i></button>\n" +
+                "</div>\n" +
+                "<span class=\"linkLog\"><strong>PRENOM NOM</strong></span>\n" +
+                "<span class=\"linkLog\">Numéro + rue</span>\n" +
+                "<span class=\"linkLog\">code postale + ville</span>\n" +
+                "<span class=\"linkLog\">pays</span>\n" +
+                "<span class=\"linkLog\">Téléphone</span>\n" +
+            "</div>"
+        );
+    });
+}
+
+//When we click on save in the modal window of "add a delivery address", the values of the input are added in the containerBillingAddress.
+//A modifier pour que ca soit grace au formulaire et que la donnée reste stocker grace a la BDD!!!!!!!!!!!!!
+if ($("#modalDeliveryAddress")) {
+    $("#addDeliveryAddress").click(function () {
+        $("#containerDeliveryAddress").append(
+            "<div class=\"whiteBorder flexColumn inputBuy\">\n" +
+            "<div class=\"flexRow align\">\n" +
+            "<p class=\"linkLog\"><strong>Nom de l'adresse</strong></p>\n" +
+            "<button id=\"modifyBillingAddressInformation\" class=\"favoriteDelete buttonClassic colorBlue edit\"><i class=\"fas fa-edit\"></i></button>\n" +
+            "<button class='buttonClassic favoriteDelete colorBlue'><i class='far fa-trash-alt'></i></button>\n" +
+            "</div>\n" +
+            "<span class=\"linkLog\"><strong>PRENOM NOM</strong></span>\n" +
+            "<span class=\"linkLog\">Numéro + rue</span>\n" +
+            "<span class=\"linkLog\">code postale + ville</span>\n" +
+            "<span class=\"linkLog\">pays</span>\n" +
+            "<span class=\"linkLog\">Téléphone</span>\n" +
+            "</div>"
+        );
+    });
+}
+
 
 /*if (document.getElementById("tableBaskets") && document.getElementById("cartResponsive")){
     itemQuantity(1, "numberArticle1", "price1", "total1", "more1", "less1");
