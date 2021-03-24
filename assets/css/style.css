@@ -299,7 +299,7 @@ input, .brownBorder {
     box-shadow: 3px 3px 10px lightgray;
 }
 
-.send, .buttonClassic, .redButton, .delivery, .select, .underline {
+.send, select, .buttonClassic, .redButton, .delivery, .select, .underline {
     cursor: pointer;
 }
 
