@@ -90,9 +90,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
             <div id="buy" class="width30 margin15-30">
                 <h2 class="subtitle">Sommaire de commande</h2>
                 <div id="separatorTotal" class="separatorHorizontal"></div>
-                <p class="margin20 flexRow flexInitial width_100">Sous-total : <span class="end"><strong>143 €</strong></span></p>
-                <p class="margin20 flexRow flexInitial width_100">Livraison : <span class="end"><strong>2 €</strong></span></p>
-                <p class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100">Total : <span class="end" id="totalBuy"></span></p>
+                <p id="subTotal" class="margin20 flexRow flexInitial width_100"></p>
+                <p id="totalDelivery" class="margin20 flexRow flexInitial width_100"></p>
+                <p id="totalBuy" class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100"></p>
                 <div id="billingAddress" class="delivery flexColumn backgroundBlue colorBlue">
                     <div class="flexRow width_100 align">
                         <p class="title2">Adresse de facturation</p>
@@ -123,7 +123,6 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
             </div>
         </div>
     </main>
-
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";

@@ -134,6 +134,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             <div class="flexRow align">
                                 <p class="linkLog"><strong>PRENOM NOM</strong></p>
                                 <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
+                                <button class='buttonClassic favoriteDelete colorBlue'><i class='far fa-trash-alt'></i></button>
                             </div>
                             <span class="linkLog">Numéro + rue</span>
                             <span class="linkLog">code postale + ville</span>
@@ -147,6 +148,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             <div class="flexRow align">
                                 <p class="linkLog"><strong>PRENOM NOM</strong></p>
                                 <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
+                                <button class='buttonClassic favoriteDelete colorBlue'><i class='far fa-trash-alt'></i></button>
                             </div>
                             <span class="linkLog">Numéro + rue</span>
                             <span class="linkLog">code postale + ville</span>

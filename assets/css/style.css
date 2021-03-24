@@ -428,7 +428,7 @@ td {
      margin: -15px;
 }
 
-.trTable:hover > td {
+.trTable:hover > td, .articleProduct:hover {
     background-color: #f3da31;
 }
 
@@ -510,7 +510,7 @@ td, th {
 }
 
 .edit {
-    margin-left: 50%;
+    margin-left: 20%;
 }
 
 .modal2 {

@@ -187,21 +187,57 @@ $("#deliveryAddressBuy").click(function () {
 });
 //Condition for the total of the articles, if the total is below 50 then there is no delivery,
 //if it is between 50 and 100 then it is 5 € and if it is equal to or greater than 100 € then it is free.
-if (document.getElementById("totalBuy")){
-    let totalBuy = document.getElementById("totalBuy").innerHTML = "145";
-    if (totalBuy < 50) {
+const subTotal = 95;
+const priceDelivery = 5;
+let total = subTotal;
+
+if (document.getElementById("cart")) {
+    $("#subTotal").html("Sous-total : <span class='end'><strong>" + subTotal + " €</strong></span>");
+    $("#totalBuy").html("Total : <span class='end'><strong>" + total + " €</strong></span>");
+    $("#choiceDelivery").click(function () {
+        if ($("#checkDelivery").is(':checked')) {
+            $("#standardDelivery").click(function () {
+                if ($("#checkStandard").is(':checked')) {
+                    if (50 <= total < 100) {
+                        total = subTotal + priceDelivery;
+                        $("#totalDelivery").html("Livraison : <span class=\"end\"><strong>" + priceDelivery + " €</strong></span>");
+                        $("#totalBuy").html("Total : <span class='end'><strong>" + total + " €</strong></span>");
+                    }
+                    if (total >= 100 && subTotal >=100) {
+                        total = subTotal;
+                        $("#totalDelivery").html("Livraison : <span class=\"end\"><strong>Gratuit</strong></span>");
+                        $("#totalBuy").html("Total : <span class='end'><strong>" + total + " €</strong></span>");
+                    }
+                }
+            });
+        }
+    });
+    $("#click_Collect").click(function () {
+        if ($("#checkCC").is(':checked')) {
+            $("#choice_CC").click(function () {
+                if ($("#checkCC2").is(':checked')) {
+                    $("#totalDelivery").html("Livraison : <span class=\"end\"><strong>Gratuit</strong></span>");
+                    total = subTotal;
+                    $("#totalBuy").html("Total : <span class='end'><strong>" + total + " €</strong></span>");
+                }
+            });
+        }
+    });
+
+    if (total < 50) {
         document.getElementById("delivery2").style.display = "none";
     }
-    if (50 <= totalBuy < 100) {
-        document.getElementById("buyDelivery").innerHTML = "A partir de " +  5 + "€";
-        document.getElementById("buyDelivery2").innerHTML = 5 + "€";
-
+    if (50 <= total < 100) {
+        document.getElementById("buyDelivery").innerHTML = "A partir de " +  priceDelivery + "€";
+        document.getElementById("buyDelivery2").innerHTML = priceDelivery + "€"
     }
-    if (totalBuy >= 100) {
-        document.getElementById("buyDelivery").innerHTML = "<strong>GRATUIT </strong>";
-        document.getElementById("buyDelivery2").innerHTML = "<strong>GRATUIT </strong>";
+    if (total >= 100) {
+        document.getElementById("buyDelivery").innerHTML = "<strong>GRATUIT</strong>";
+        document.getElementById("buyDelivery2").innerHTML = "<strong>GRATUIT</strong>";
     }
 }
+
+
 //When filling out the form for the billing address, you can display other inputs to add information if you live in an apartment or building, by clicking on "Complements".
 if (document.getElementById("complements")) {
     clickDisplay("complements", "input_complements", "complements", "", "block", "none", "");
