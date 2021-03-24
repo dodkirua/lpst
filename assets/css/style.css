@@ -164,7 +164,7 @@ h1 {
     border: 2px solid #69A7D4;
 }
 
-.blueBorder:hover {
+.blueBorder:hover, .articleProduct {
     box-shadow: 4px 4px 10px lightgray;
 }
 
@@ -229,7 +229,7 @@ h1 {
     margin-top: -41px;
 }
 
-#containerStaff, .allProducts, #containerFavorite {
+#containerStaff, .allProducts, #containerFavorite, #shopProducts {
     flex-wrap: wrap;
 }
 
@@ -335,7 +335,7 @@ h2 {
     margin: 20px 0;
 }
 
-p {
+p, .margin5-0 {
     margin: 5px 0;
 }
 
@@ -609,11 +609,12 @@ td, th {
     right: 11.5%;
 }
 
-#checkCC, #checkCC2, #checkDelivery, #checkStandard, #checkcourier, #checkCondition, #checkAllCards, #checkCards, #checkPaypal, #checkPaypal2  {
+input[type="radio"], input[type="checkbox"] {
     background-color: transparent;
-    width: initial;
     margin: 0 20px 0 0;
     box-shadow: 0 0 0 transparent;
+    width: 18px;
+    height: 18px;
 }
 
 .inputBuy, #standardDelivery, #courierDelivery {
@@ -640,6 +641,17 @@ select, option {
     text-align-last: center;
 }
 
+.articleProduct {
+    background-color: #F5F5F5;
+    padding: 15px;
+}
+
+.buttonBlue {
+    background-color: #69A7D4;
+    padding: 5px 10%;
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
         font-size: 12px;
@@ -652,6 +664,12 @@ select, option {
     }
     #containerPhone {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1510px) {
+    .articleProduct {
+        width: 19%;
     }
 }
 
@@ -673,6 +691,13 @@ select, option {
     }
     .placePrice3 {
         right: 52%;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .articleProduct {
+        width: 21%;
+        margin: 15px;
     }
 }
 
@@ -743,6 +768,11 @@ select, option {
     }
 }
 
+@media screen and (max-width: 1050px) {
+    .articleProduct {
+        width: 19%;
+    }
+}
 @media screen and (max-width: 970px) {
     #containerShop1 {
         flex-direction: column;
@@ -874,6 +904,10 @@ select, option {
         display: flex;
         justify-content: center;
     }
+    .articleProduct {
+        width: 22%;
+        margin: 15px 10px;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -931,6 +965,10 @@ select, option {
     }
     #validation {
         margin: 0;
+    }
+    .articleProduct {
+        width: 27%;
+        margin: 15px;
     }
 }
 
@@ -1014,6 +1052,10 @@ select, option {
     #buyCards{
         padding-bottom: 40px;
     }
+    .articleProduct {
+        width: 28%;
+        margin: 15px 10px;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -1053,6 +1095,10 @@ select, option {
     .whiteBorder {
         width: 70%;
     }
+    .articleProduct {
+        width: 40%;
+        margin: 15px;
+    }
 }
 
 @media screen and (max-width: 340px) {
@@ -1061,5 +1107,9 @@ select, option {
     }
     .products {
         width: 60%;
+    }
+    .articleProduct {
+        width: 40%;
+        margin: 15px 10px;
     }
 }

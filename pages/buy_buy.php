@@ -33,6 +33,16 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 <div class="sub colorBlue flexCenter" id="choice_Cards">
                     <form action="#" method="post" class="flexColumn width65">
                         <label class="width_100">Type de carte </label>
+                        <div class="flexRow">
+                            <input id="visa" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20"><i class="fab fa-cc-visa leftIcon"></i></p>
+                            <input id="amex" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20"><i class="fab fa-cc-amex leftIcon"></i></p>
+                            <input id="mastercard" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20"><i class="fab fa-cc-mastercard leftIcon"></i></p>
+                            <input id="cb" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20">CB</p>
+                        </div>
                         <label for="firstname" class="width_100">Prénom</label>
                         <input id="firstname" name="firstname" class="whiteBorder width_100 inputBuy" type="text" required>
                         <label for="lastname" class="width_100">Nom</label>
