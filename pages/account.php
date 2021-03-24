@@ -57,7 +57,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
 
     </section>
     <div class="flexColumn width65">
-        <h1 id="hello">Bonjour, <span class="colorGreen"><?=$firstname . " " . $lastname ?>!</span></h1>
+        <h1 id="hello">Bonjour, <span class="colorGreen"><?=$firstname . " " . $lastname ?> !</span></h1>
         <section id="otherInformation">
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonnées</h2>
