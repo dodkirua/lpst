@@ -275,26 +275,41 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 
         <div class="flexColumn">
-            <div class="flexRow">
+            <div class="flexRow colorGrey">
                 <p class="margin">Pain1</p>
                 <p class="margin">x3</p>
                 <p class="margin">3,55€</p>
             </div>
-            <div class="flexRow">
+            <div class="flexRow colorGrey">
                 <p class="margin">Pain2</p>
                 <p class="margin">x1</p>
                 <p class="margin">0,95€</p>
             </div>
-            <div class="flexRow">
+            <div class="flexRow colorGrey">
                 <p class="margin">Pain3</p>
                 <p class="margin">x4</p>
                 <p class="margin">6€</p>
             </div>
-            <div class="flexRow backgroundBlue flexCenter">
+            <div class="flexRow backgroundBlue flexCenter margin15-30">
                 <p class="margin colorRed size20"><strong>TOTAL :</strong></p>
                 <p class="margin colorRed size20"><strong>10.5 €</strong></p>
             </div>
-            <button class="brownBorder flexCenter"> Valider la réservation</button>
+        </div>
+
+        <div id="formReserved" class="flexCenter flexColumn">
+            <h2 class="center colorWhite">Réservation</h2>
+            <form action="#" method="post" class="whiteBorder width65">
+                <div class="flexRow width_100 padding30 reserved">
+                    <input name="name" class="width30" type="text" placeholder="Nom">
+                    <input name="email" class="width30" type="text" placeholder="E-mail">
+                    <input name="phone" class="width30" type="text" placeholder="Téléphone">
+                </div>
+                <div class="flexRow width_100 padding30 reserved">
+                    <input name="date" class="width30" type="date">
+                    <input name="time" class="width30" type="time">
+                </div>
+                <input id="validateReservedBread" type="submit" class="brownBorder flexCenter modifyProfil" value="Valider la réservation">
+            </form>
         </div>
 
     </main>

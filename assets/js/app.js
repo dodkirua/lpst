@@ -1,20 +1,23 @@
 import {comparePass, validate, validatePass} from "./registration.js";
 import {itemQuantity} from "./article.js";
-import {closeModal} from "./function.js";
+import {closeModal, numberOfClick} from "./function.js";
 import {clickDisplay} from "./account.js";
 
+
+
 //display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
-let nbClick = 0;
-$("#menuResponsive").click(function () {
-    if (nbClick === 0) {
-        $("#scrollMenu").css("display", "flex");
-        nbClick++;
-    }
-    else {
-        $("#scrollMenu").css("display", "none");
-        nbClick = 0;
-    }
-});
+numberOfClick("#menuResponsive", "#scrollMenu");
+
+//display a drop-down menu for each category of departments and disappear by clicking on the arrow.
+numberOfClick("#clickArrow1", "#menu_fruits_vegetables");
+numberOfClick("#clickArrow2", "#menu_salty_groceries");
+numberOfClick("#clickArrow3", "#menu_sweet_groceries");
+numberOfClick("#clickArrow4", "#menu_fresh_section");
+numberOfClick("#clickArrow5", "#menu_cosmetic");
+numberOfClick("#clickArrow6", "#menu_hygiene");
+numberOfClick("#clickArrow7", "#menu_well-being");
+numberOfClick("#clickArrow8", "#menu_house_maintenance");
+
 
 const mag = document.getElementById("magasinMobile");
 if (mag){
