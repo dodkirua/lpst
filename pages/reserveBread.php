@@ -311,10 +311,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                 <input id="validateReservedBread" type="submit" class="brownBorder flexCenter modifyProfil" value="Valider la réservation">
             </form>
         </div>
-
     </main>
 
-
 <?php
-
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
