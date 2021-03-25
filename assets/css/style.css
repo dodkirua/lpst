@@ -39,7 +39,7 @@ a {
     color: black;
 }
 
-#menu, #menuResponsive, .brownBorder:hover {
+#menu, #menuResponsive, .brownBorder:hover, select {
     background-color: #B38243;
 }
 
@@ -53,7 +53,7 @@ a {
     height: 80px;
 }
 
-#lpstLogo, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
+#lpstLogo, .arrowRight, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
     position: absolute;
 }
 
@@ -77,7 +77,7 @@ a {
     width: 60px;
 }
 
-#scrollMenu, .containedMenu:hover, select, footer, .send, .buttonMobile, .titleTable {
+#scrollMenu, .containedMenu:hover, footer, .send, .buttonMobile, .titleTable {
     background-color: #A9C500;
 }
 
@@ -471,7 +471,12 @@ td, th {
     margin: 0 30px;
 }
 
-#menuResponsive, #profilImageModify, #modifyPhone, #deliveryAddress2, #choiceBread, #choiceBread2,#choiceBread3, #choiceBread4, #choiceBreadResponsive1, #choiceBreadResponsive2, #choiceBreadResponsive3, #choiceBreadResponsive4, #scrollMenu, #mobile, #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount, #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements, #input_complements2 {
+#menuResponsive, #profilImageModify, #modifyPhone, #deliveryAddress2, #choiceBread, #choiceBread2,#choiceBread3, #choiceBread4,
+#choiceBreadResponsive1, #choiceBreadResponsive2, #choiceBreadResponsive3, #choiceBreadResponsive4, #scrollMenu, #mobile,
+#disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount,
+#baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements,
+#input_complements2, #menu_fruits_vegetables, #menu_salty_groceries, #menu_well-being, #menu_sweet_groceries, #menu_hygiene,
+#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance {
      display: none;
 }
 
@@ -653,7 +658,6 @@ select, option {
 }
 
 .arrowRight {
-    position: absolute;
     left: 30%;
 }
 
@@ -663,6 +667,12 @@ select, option {
 
 .width_70 {
     width: 70%;
+}
+
+#formReserved {
+    background-image: url("https://media.istockphoto.com/photos/freshly-baked-bread-on-wooden-table-picture-id617603536?k=6&m=617603536&s=612x612&w=0&h=WfKeflraZVemNe7CM-YJAfhXrrIXA8S863JJqpPyw7w=");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1510px) {
@@ -680,6 +690,9 @@ select, option {
     }
     .articleProduct {
         width: 25%;
+    }
+    .articleProduct > p {
+        font-size: 18px;
     }
 }
 
@@ -703,7 +716,8 @@ select, option {
         right: 52%;
     }
     .articleProduct {
-        width: 24%;
+        margin: 15px;
+        width: 28%;
     }
 }
 
@@ -774,7 +788,6 @@ select, option {
     }
     .articleProduct {
         width: 28%;
-        margin: 15px;
     }
 }
 
@@ -832,6 +845,9 @@ select, option {
     .articleProduct {
         width: 40%;
         margin: 15px;
+    }
+    .arrowRight {
+        left: 25%;
     }
 }
 
@@ -924,18 +940,27 @@ select, option {
         width: 38%;
         margin: 15px;
     }
+    #formReserved {
+        background-image: none;
+    }
+    #validateReservedBread {
+        width: initial;
+    }
 }
 
 @media screen and (max-width: 681px) {
     .log > a, .log > span {
         font-size: 10px;
     }
-    .about, #basket2 {
+    .about, #basket2, .reserved {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    iframe {
+    .reserved > input {
+        margin: 30px;
+    }
+    iframe, .reserved > input, #validateReservedBread {
         width: 90%;
     }
     .informations {
@@ -956,7 +981,7 @@ select, option {
     #informationProfil, .width65 {
         width: 100%;
     }
-    .account {
+    .account, .reserved {
         padding: 0;
     }
     section {
@@ -1006,7 +1031,7 @@ select, option {
         font-size: 8px;
         margin: 10px 5px;
     }
-    .nameStaff {
+    .nameStaff, #validateReservedBread {
         font-size: 12px;
     }
     .jobStaff {
@@ -1088,9 +1113,7 @@ select, option {
     iframe {
         height: 250px;
     }
-    label {
-        font-size: 15px;
-    }
+
     .infoArticle > .infoCart, .infoArticle, .imgTable {
         display: flex;
         flex-direction: column;
@@ -1107,6 +1130,9 @@ select, option {
     }
     .whiteBorder {
         width: 70%;
+    }
+    label, .articleProduct > p {
+        font-size: 15px;
     }
 }
 
