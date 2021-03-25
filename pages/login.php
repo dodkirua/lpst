@@ -1,4 +1,7 @@
 <?php
+session_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
+
 $title = "LPST : Connexion";
 $return = "";
 $id = "";
@@ -17,6 +20,7 @@ $id = "";
  }
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
 ?>
 
 <main>
