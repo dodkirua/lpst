@@ -7,7 +7,7 @@
         <div class="log3">
             <a class="buttonClassic log4" href="../pages/account.php"><i class="fas fa-user-circle"></i></a>
             <a class="buttonClassic log4" href="../pages/buy_cart.php"><i class="fas fa-shopping-basket"></i></a>
-            <a href="/php/disconnect.php" class="redButton log4 disconnection"><i class="fas fa-power-off"></i></button>
+            <a href="/php/disconnect.php" class="redButton log4 disconnection"><i class="fas fa-power-off"></i></a>
         </div>
     <?php
     }

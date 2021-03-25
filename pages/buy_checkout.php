@@ -105,10 +105,12 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 </div>
             </div>
             <div class="flexColumn sub backgroundBlue flexCenter" id="billingAddress2">
+                <p class="size20"><strong>Nom de l'adresse</strong></p>
                 <span class="linkLog"><strong>PRENOM NOM</strong></span>
-                <span class="linkLog">Numero + rue</span>
+                <span class="linkLog">Numéro + rue</span>
                 <span class="linkLog">code postale + ville</span>
                 <span class="linkLog">pays</span>
+                <span class="linkLog">Téléphone</span>
                 <span class="linkLog colorBlue underline" id="modifybillingAddress">Modifier</span>
             </div>
         </div>

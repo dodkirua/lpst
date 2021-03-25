@@ -229,7 +229,7 @@ h1 {
     margin-top: -41px;
 }
 
-#containerStaff, .allProducts, #containerFavorite, #shopProducts, #containerBillingAddress {
+#containerStaff, .allProducts, #containerFavorite, #shopProducts, #containerBillingAddress, #buyArticle {
     flex-wrap: wrap;
 }
 
@@ -445,7 +445,7 @@ td, th {
      width: 30%;
 }
 
-.width65 {
+.width65, .width_65 {
      width: 65%;
 }
 
@@ -535,7 +535,7 @@ td, th {
 }
 
 .log3 {
-    margin-top: -68px;
+    margin-top: -57px;
 }
 
 .log4 {
@@ -652,6 +652,19 @@ select, option {
     border-radius: 10px;
 }
 
+.arrowRight {
+    position: absolute;
+    left: 30%;
+}
+
+.articleProduct {
+    width: 26%;
+}
+
+.width_70 {
+    width: 70%;
+}
+
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
         font-size: 12px;
@@ -665,11 +678,8 @@ select, option {
     #containerPhone {
         width: 100%;
     }
-}
-
-@media screen and (max-width: 1510px) {
     .articleProduct {
-        width: 19%;
+        width: 25%;
     }
 }
 
@@ -692,16 +702,12 @@ select, option {
     .placePrice3 {
         right: 52%;
     }
-}
-
-@media screen and (max-width: 1220px) {
     .articleProduct {
-        width: 21%;
-        margin: 15px;
+        width: 24%;
     }
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1200px) {
     .staffPhoto {
         width: 100px;
         height: 100px;
@@ -766,13 +772,19 @@ select, option {
     .title {
         font-size: 16px;
     }
-}
-
-@media screen and (max-width: 1050px) {
     .articleProduct {
-        width: 19%;
+        width: 28%;
+        margin: 15px;
     }
 }
+
+@media screen and (max-width: 1055px) {
+    .articleProduct {
+        width: 35%;
+        margin: 15px;
+    }
+}
+
 @media screen and (max-width: 970px) {
     #containerShop1 {
         flex-direction: column;
@@ -816,6 +828,10 @@ select, option {
     }
     #menu > #commerce {
         margin-left: 50px;
+    }
+    .articleProduct {
+        width: 40%;
+        margin: 15px;
     }
 }
 
@@ -905,12 +921,12 @@ select, option {
         justify-content: center;
     }
     .articleProduct {
-        width: 22%;
-        margin: 15px 10px;
+        width: 38%;
+        margin: 15px;
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 681px) {
     .log > a, .log > span {
         font-size: 10px;
     }
@@ -967,8 +983,7 @@ select, option {
         margin: 0;
     }
     .articleProduct {
-        width: 27%;
-        margin: 15px;
+        width: 70%;
     }
 }
 
@@ -976,7 +991,7 @@ select, option {
     #menuResponsive, #mobile {
         display: flex;
     }
-    .log, .log3, #computer, #menu, .selectComputer, .reverse, .reverse2 {
+    .log, .log3, #computer, #shopProducts, #menu, .selectComputer, .reverse, .reverse2 {
         display: none;
     }
     .containedMenu:hover, .linkLog:hover {
@@ -1004,7 +1019,7 @@ select, option {
     .products {
         width: 30%;
     }
-    .allProducts, .forgotPassword > form > input#email, #accountResponsive, .forgotPassword, .log2 {
+    .allProducts, #buyArticle, .forgotPassword > form > input#email, #accountResponsive, .forgotPassword, .log2 {
         width: 100%;
     }
     h1 {
@@ -1053,8 +1068,7 @@ select, option {
         padding-bottom: 40px;
     }
     .articleProduct {
-        width: 28%;
-        margin: 15px 10px;
+        width: 40%;
     }
 }
 
@@ -1085,7 +1099,6 @@ select, option {
         align-items: center;
         justify-content: center;
     }
-
     .infoArticle, .infoArticle > .infoCart {
         width: 100%;
     }
@@ -1095,9 +1108,11 @@ select, option {
     .whiteBorder {
         width: 70%;
     }
+}
+
+@media screen and (max-width: 380px) {
     .articleProduct {
-        width: 40%;
-        margin: 15px;
+        width: 80%;
     }
 }
 
@@ -1107,9 +1122,5 @@ select, option {
     }
     .products {
         width: 60%;
-    }
-    .articleProduct {
-        width: 40%;
-        margin: 15px 10px;
     }
 }
