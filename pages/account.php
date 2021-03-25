@@ -57,7 +57,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
 
     </section>
     <div class="flexColumn width65">
-        <h1 id="hello">Bonjour, <span class="colorGreen"><?=$firstname . " " . $lastname ?>!</span></h1>
+        <h1 id="hello">Bonjour, <span class="colorGreen"><?=$firstname . " " . $lastname ?> !</span></h1>
         <section id="otherInformation">
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonnées</h2>
@@ -125,40 +125,26 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     </div>
                 </div>
 
-
                 <div class="separatorHorizontal"></div>
                 <div class="flexColumn">
                     <h2 class="subtitle"> Mes adresses</h2>
                     <div class="padding30">
                         <h3 class="colorGrey inputBuy"> Adresse de facturation</h3>
-                        <div class="whiteBorder flexColumn inputBuy">
-                            <div class="flexRow align">
-                                <p class="linkLog"><strong>PRENOM NOM</strong></p>
-                                <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
-                            </div>
-                            <span class="linkLog">Numéro + rue</span>
-                            <span class="linkLog">code postale + ville</span>
-                            <span class="linkLog">pays</span>
+                        <div id="containerBillingAddress" class="width_100 flexRow">
+
                         </div>
                         <div class="flexCenter">
                             <button id="addBillingAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une adresse de facturation</button>
                         </div>
                         <h3 class="colorGrey inputBuy"> Adresse de livraison</h3>
-                        <div class="whiteBorder flexColumn inputBuy">
-                            <div class="flexRow align">
-                                <p class="linkLog"><strong>PRENOM NOM</strong></p>
-                                <button id="modifyBillingAddressInformation" class="favoriteDelete buttonClassic colorBlue edit"><i class="fas fa-edit"></i></button>
-                            </div>
-                            <span class="linkLog">Numéro + rue</span>
-                            <span class="linkLog">code postale + ville</span>
-                            <span class="linkLog">pays</span>
+                        <div id="containerDeliveryAddress" class="width_100 flexRow">
+
                         </div>
                         <div class="flexCenter">
                             <button id="addDeliveryAddress" class="send modify modifyProfil flexRow align" data-bs-toggle="modal" data-bs-target="#modalDeliveryAddress"><i class="fas fa-plus-circle size20 leftIcon"></i>Ajouter une adresse de livraison</button>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="separatorHorizontal"></div>
                 <div class="flexColumn">
@@ -183,58 +169,34 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <th class="colorWhite">Nom de l'article</th>
                         <th class="colorWhite">Prix</th>
                     </tr>
-                    <tr class="trTable">
+                    <?php
+                    for ($i = 0; $i < 3; $i++) {
+                        echo "<tr class='trTable'>
                         <td> 00/00/0000</td>
-                        <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
+                        <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
                         <td>Nom de l'article</td>
                         <td><strong>Prix €</strong></td>
-                    </tr>
-                    <tr class="trTable">
-                        <td> 00/00/0000</td>
-                        <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                        <td>Nom de l'article</td>
-                        <td><strong>Prix €</strong></td>
-                    </tr>
-                    <tr class="trTable">
-                        <td> 00/00/0000</td>
-                        <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                        <td>Nom de l'article</td>
-                        <td><strong>Prix €</strong></td>
-                    </tr>
+                    </tr>";
+                    }
+                    ?>
                 </table>
 
                 <!-- Displayed when the screen is at 830px -->
                 <div id="orderedResponsive">
-                    <div class="containerOrdered flexColumn">
+                    <?php
+                    for ($i = 0; $i < 3; $i++) {
+                        echo "<div class='containerOrdered flexColumn'>
                         <p>Livraison du 00/00/0000</p>
-                        <div class="flexRow infoArticle">
-                            <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                            <div class="infoCart flexCenter">
-                                <p class="margin">Nom de l'article</p>
-                                <p class="margin"><strong>Prix €</strong></p>
+                        <div class='flexRow infoArticle'>
+                            <img class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
+                            <div class='infoCart flexCenter'>
+                                <p class='margin'>Nom de l'article</p>
+                                <p class='margin'><strong>Prix €</strong></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="containerOrdered flexColumn">
-                        <p>Livraison du 00/00/0000</p>
-                        <div class="flexRow infoArticle">
-                            <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                            <div class="infoCart flexCenter">
-                                <p class="margin">Nom de l'article</p>
-                                <p class="margin"><strong>Prix €</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="containerOrdered flexColumn">
-                        <p>Livraison du 00/00/0000</p>
-                        <div class="flexRow infoArticle">
-                            <img class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                            <div class="infoCart flexCenter">
-                                <p class="margin">Nom de l'article</p>
-                                <p class="margin"><strong>Prix €</strong></p>
-                            </div>
-                        </div>
-                    </div>
+                    </div>";
+                    }
+                    ?>
                 </div>
             </div>
 
@@ -247,145 +209,68 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <th class="colorWhite">Prix</th>
                         <th class="colorWhite">Ajouter au panier</th>
                     </tr>
-                    <tr class="trTable">
-                        <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
+                    <?php
+                    for ($i = 0; $i < 3; $i++) {
+                        echo "<tr class='trTable'>
+                        <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
                         <td>
-                            <div class="flexColumn">
+                            <div class='flexColumn'>
                                 <p>Nom de l'article</p>
-                                <div class="flexRow">
-                                    <button id="addToWishlist1" class="buttonClassic"><i class="far fa-heart"></i></button>
-                                    <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                                <div class='flexRow'>
+                                    <button id='addToWishlist1' class='buttonClassic'><i class='far fa-heart'></i></button>
+                                    <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
                                 </div>
                             </div>
                         </td>
                         <td><strong>Prix €</strong></td>
                         <td>
-                            <button class="send width65"><i class="fas fa-shopping-basket"></i></button>
+                            <button class='send width65'><i class='fas fa-shopping-basket'></i></button>
                         </td>
-                    </tr>
-                    <tr class="trTable">
-                        <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                        <td>
-                            <div class="flexColumn">
-                                <p>Nom de l'article</p>
-                                <div class="flexRow">
-                                    <button id="addToWishlist2" class="buttonClassic"><i class="far fa-heart"></i></button>
-                                    <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
-                                </div>
-                        </td>
-                        <td><strong>Prix €</strong></td>
-                        <td>
-                            <button class="send width65"><i class="fas fa-shopping-basket"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="trTable">
-                        <td><img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164"></td>
-                        <td>
-                            <div class="flexColumn">
-                                <p>Nom de l'article</p>
-                                <div class="flexRow">
-                                    <button id="addToWishlist3" class="buttonClassic"><i class="far fa-heart"></i></button>
-                                    <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
-                                </div>
-                        </td>
-                        <td><strong>Prix €</strong></td>
-                        <td>
-                            <button class="send width65"><i class="fas fa-shopping-basket"></i></button>
-                        </td>
-                    </tr>
+                    </tr>";
+                    }
+                    ?>
                 </table>
 
                 <!-- Displayed when the screen is at 830px -->
                 <div id="cartResponsive" class="flexColumn">
-                    <div class="flexRow cartResponsive">
+                    <?php
+                    for ($i = 0; $i < 3; $i++) {
+                        echo "<div class='flexRow cartResponsive'>
                         <div>
-                            <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
+                            <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
                         </div>
-                        <div class="flexColumn infoCart">
-                            <div class="flexRow flexCenter">
+                        <div class='flexColumn infoCart'>
+                            <div class='flexRow flexCenter'>
                                 <p> Nom de l'article</p>
-                                <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
-                                <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
+                                <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
+                                <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
                             </div>
                             <p>Prix €</p>
-                            <div class=" flexCenter">
-                                <button class="send"><i class="fas fa-shopping-basket"></i></button>
+                            <div class='flexCenter'>
+                                <button class='send'><i class='fas fa-shopping-basket'></i></button>
                             </div>
                         </div>
-                    </div>
-                    <div class="flexRow cartResponsive">
-                        <div>
-                            <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                        </div>
-                        <div class="flexColumn infoCart">
-                            <div class="flexRow flexCenter">
-                                <p> Nom de l'article</p>
-                                <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
-                                <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
-                            </div>
-                            <p>Prix €</p>
-                            <div class=" flexCenter">
-                                <button class="send"><i class="fas fa-shopping-basket"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexRow cartResponsive">
-                        <div>
-                            <img alt="articlePhoto" class="imgTable" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                        </div>
-                        <div class="flexColumn infoCart">
-                            <div class="flexRow flexCenter">
-                                <p> Nom de l'article</p>
-                                <button class="buttonClassic favoriteArticleCart"><i class="far fa-heart"></i></button>
-                                <button class="favoriteDelete buttonClassic"><i class="far fa-trash-alt"></i></button>
-                            </div>
-                            <p>Prix €</p>
-                            <div class=" flexCenter">
-                                <button class="send"><i class="fas fa-shopping-basket"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                    </div>";
+                    }
+                    ?>
                 </div>
 
                 <div class="separatorHorizontal"></div>
                 <h2 class="subtitle">Mes articles favoris</h2>
-                <div class="flexRow">
-                    <div class="wishlist flexCenter flexColumn">
-                        <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                        <p class="colorBlue">Nom de l'article</p>
+                <div class="flexRow" id="containerFavorite">
+                    <?php
+                    for ($i = 0; $i < 5; $i++) {
+                        echo "<div class='wishlist flexCenter flexColumn'>
+                        <img class='imgTable' alt='wishlistPhoto' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
+                        <p class='colorBlue'>Nom de l'article</p>
                         <span><strong>Prix €</strong></span>
-                        <div class="flexRow">
-                            <button id="addToCart1" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
-                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
+                        <div class='flexRow'>
+                            <button id='addToCart1' class='buttonClassic'><i class='fas fa-shopping-basket'></i></button>
+                            <button class='buttonClassic favoriteDelete'><i class='far fa-trash-alt'></i></button>
                         </div>
-                    </div>
-                    <div class="wishlist flexCenter flexColumn">
-                        <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                        <p class="colorBlue">Nom de l'article</p>
-                        <span><strong>Prix €</strong></span>
-                        <div class="flexRow">
-                            <button id="addToCart2" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
-                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="wishlist flexCenter flexColumn">
-                        <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                        <p class="colorBlue">Nom de l'article</p>
-                        <span><strong>Prix €</strong></span>
-                        <div class="flexRow">
-                            <button id="addToCart3" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
-                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="wishlist flexCenter flexColumn">
-                        <img class="imgTable" alt="wishlistPhoto" src="https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164">
-                        <p class="colorBlue">Nom de l'article</p>
-                        <span><strong>Prix €</strong></span>
-                        <div class="flexRow">
-                            <button id="addToCart4" class="buttonClassic"><i class="fas fa-shopping-basket"></i></button>
-                            <button class="buttonClassic favoriteDelete"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                    </div>
+                    </div>";
+                    }
+                    ?>
                 </div>
             </div>
         </section>

@@ -33,6 +33,16 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 <div class="sub colorBlue flexCenter" id="choice_Cards">
                     <form action="#" method="post" class="flexColumn width65">
                         <label class="width_100">Type de carte </label>
+                        <div class="flexRow">
+                            <input id="visa" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20"><i class="fab fa-cc-visa leftIcon"></i></p>
+                            <input id="amex" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20"><i class="fab fa-cc-amex leftIcon"></i></p>
+                            <input id="mastercard" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20"><i class="fab fa-cc-mastercard leftIcon"></i></p>
+                            <input id="cb" name="card" class="whiteBorder width_100 inputBuy" type="radio" required>
+                            <p class="size20">CB</p>
+                        </div>
                         <label for="firstname" class="width_100">Prénom</label>
                         <input id="firstname" name="firstname" class="whiteBorder width_100 inputBuy" type="text" required>
                         <label for="lastname" class="width_100">Nom</label>
@@ -73,16 +83,15 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             <p class="linkLog colorGrey">Vous allez être redirigé vers une autre page.</p>
                         </form>
                     </div>
-
                 </div>
             </div>
 
             <div id="buy" class="width30 margin15-30">
                 <h2 class="subtitle">Sommaire de commande</h2>
                 <div id="separatorTotal" class="separatorHorizontal"></div>
-                <p class="margin20 flexRow flexInitial width_100">Sous-total : <span class="end"><strong>143 €</strong></span></p>
-                <p class="margin20 flexRow flexInitial width_100">Livraison : <span class="end"><strong>2 €</strong></span></p>
-                <p class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100">Total : <span class="end" id="totalBuy"></span></p>
+                <p id="subTotal" class="margin20 flexRow flexInitial width_100"></p>
+                <p id="totalDelivery" class="margin20 flexRow flexInitial width_100"></p>
+                <p id="totalBuy" class="margin20 backgroundBlue containerOrdered flexRow size20 colorRed width_100"></p>
                 <div id="billingAddress" class="delivery flexColumn backgroundBlue colorBlue">
                     <div class="flexRow width_100 align">
                         <p class="title2">Adresse de facturation</p>
@@ -90,10 +99,12 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     </div>
                 </div>
                 <div class="flexColumn sub backgroundBlue flexCenter" id="billingAddress2">
+                    <p class="size20"><strong>Nom de l'adresse</strong></p>
                     <span class="linkLog"><strong>PRENOM NOM</strong></span>
-                    <span class="linkLog">Numero + rue</span>
+                    <span class="linkLog">Numéro + rue</span>
                     <span class="linkLog">code postale + ville</span>
                     <span class="linkLog">pays</span>
+                    <span class="linkLog">Téléphone</span>
                     <span class="linkLog colorBlue underline" id="modifybillingAddress">Modifier</span>
                 </div>
 
@@ -104,16 +115,18 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     </div>
                 </div>
                 <div class="flexColumn sub backgroundBlue flexCenter" id="deliveryAddress2">
+                    <p class="size20"><strong>Nom de l'adresse</strong></p>
                     <span class="linkLog"><strong>PRENOM NOM</strong></span>
-                    <span class="linkLog">Numero + rue</span>
+                    <span class="linkLog">Numéro + rue</span>
                     <span class="linkLog">code postale + ville</span>
                     <span class="linkLog">pays</span>
+                    <span class="linkLog">Téléphone</span>
                     <span class="linkLog colorBlue underline" id="modifybillingAddress">Modifier</span>
                 </div>
+
             </div>
         </div>
     </main>
-
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
