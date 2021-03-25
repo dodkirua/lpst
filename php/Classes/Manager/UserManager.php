@@ -57,31 +57,36 @@ class UserManager{
      */
     public function testConnection(string $mail, string $pass) :?User {
         $mail = strtolower($mail);
-        $stmt = $this->db->prepare("SELECT * FROM user WHERE mail='".$mail."'");
-        $user = null;
-        if ($state = $stmt->execute()){
-
-            foreach ($stmt->fetchAll() as $item) {
-
-                $user =  new User($item['id']);
+        $id = $this->searchMail($mail);
+        if (!is_null($id)){
+            $stmt = $this->db->prepare("SELECT * FROM user WHERE id='".$id."'");
+            $user = null;
+            if ($state = $stmt->execute()){
+                $item = $stmt->fetch();
+                $user = new User($id);
                 $user = $user
                     ->setLastname($item['lastname'])
                     ->setFirstname($item['firstname'])
                     ->setMail($item['mail'])
                     ->setPass($item['pass'])
                     ->setRole($item['role_id'])
-                    ->setChecked($item["checked"])
+                    ->setChecked(boolval($item["checked"]))
                     ->setPhone($item["phone"])
-                    ->setImage($item["image"])
-                    ;
+                    ->setImage($item["image"]);
+                if (password_verify($pass,$user->getPass())){
+                    return $user;
+                }
+                else {
+                    return null;
+
+                }
             }
-        }
-       if (password_verify($pass,$user->getPass())){
-            return $user;
         }
         else {
             return null;
+
         }
+
     }
 
     public function getStaff() : array{
