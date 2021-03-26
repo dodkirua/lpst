@@ -230,7 +230,7 @@ class UserManager{
      */
     public function delUser($id){
         $user = $this->getUserById($id);
-        if ($user->)
+       // if ($user->)
         $stmt = $this->db->prepare("DELETE FROM user WHERE id = :id");
         $stmt->bindValue(':id',$id);
         $stmt->execute();
