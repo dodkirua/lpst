@@ -29,8 +29,11 @@ else {
                 </div>";
         }
         else{
-            header("");
+            header($_SERVER['DOCUMENT_ROOT'] . "forgotPassword.php?e=0");
         }
+    }
+    else {
+        header($_SERVER['DOCUMENT_ROOT'] . "forgotPassword.php?e=0");
     }
 
 
