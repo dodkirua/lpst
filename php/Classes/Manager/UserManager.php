@@ -26,7 +26,7 @@ class UserManager{
             ");
 
         $stmt->bindValue(':lastname',$name);
-        $stmt->bindValue(':firstname',$surname, PDO::PARAM_STR);
+        $stmt->bindValue(':firstname',$surname);
         $stmt->bindValue(':mail',$mail);
         $stmt->bindValue(':pass',$pass);
         $stmt->bindValue(":role",2);
