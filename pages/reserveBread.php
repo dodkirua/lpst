@@ -302,10 +302,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                 <div class="flexRow width_100 padding30 reserved">
                     <input name="name" class="width30" type="text" placeholder="Nom">
                     <input name="email" class="width30" type="text" placeholder="E-mail">
-                    <input name="phone" class="width30" type="text" placeholder="Téléphone">
                 </div>
-                <div class="flexRow width_100 padding30 reserved">
-                    <input name="date" class="width30" type="date">
+                <div class="flexColumn flexCenter">
+                    <input name="phone" class="width65 margin20" type="text" placeholder="Téléphone">
+                    <input id="dateInput" name="date" class="width65 margin20" type="date">
                 </div>
                 <input id="validateReservedBread" type="submit" class="brownBorder flexCenter modifyProfil" value="Valider la réservation">
             </form>

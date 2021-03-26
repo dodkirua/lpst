@@ -370,6 +370,18 @@ if (disconnect){
     }
 }
 
+let today = new Date();
+let date = today.toLocaleDateString();
+
+document.getElementById("validateReservedBread").addEventListener("click", function () {
+    let valueDate = new Date(document.getElementById('dateInput').value);
+    let date2 = valueDate.toLocaleDateString();
+    if ( date > date2) {
+        alert("Hors délai");
+        document.getElementById('dateInput').value = "";
+    }
+})
+
 
 
 if (document.getElementById("tableBaskets") && document.getElementById("cartResponsive")){

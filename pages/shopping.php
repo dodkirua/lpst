@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 <main>
     <h1>EPICERIE <span class="colorGreen">EN LIGNE</span></h1>
-    <div class="flexRow colorBlue size20">
+    <div id="shopping" class="flexRow colorBlue size20">
         <div class="width30" id="shopProducts">
             <p class="subtitle">Rayons</p>
             <div class="separatorHorizontal"></div>
@@ -144,8 +144,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     ?>
                 </div>
             </div>
+            <div id="displayMobile" class="separatorHorizontal"></div>
         </div>
-        <div class="width_70 flexRow" id="buyArticle">
+        <div class="width_70 flexColumn" id="buyArticle">
+            <h2 class="subtitle">Tous les produits</h2>
+            <div id="positionMobile" class="flexRow">
             <?php
             for ($i = 0; $i < 40; $i++) {
                 echo "<div class='wishlist flexColumn backgroundBlue margin15-30 articleProduct'>
@@ -159,6 +162,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                       </div>";
             }
             ?>
+            </div>
         </div>
     </div>
 </main>

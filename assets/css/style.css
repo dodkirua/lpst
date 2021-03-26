@@ -53,7 +53,7 @@ a {
     height: 80px;
 }
 
-#lpstLogo, .arrowRight, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
+#lpstLogo, .arrowRight, #scrollMenu, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
     position: absolute;
 }
 
@@ -229,7 +229,7 @@ h1 {
     margin-top: -41px;
 }
 
-#containerStaff, .allProducts, #containerFavorite, #shopProducts, #containerBillingAddress, #buyArticle {
+#containerStaff, #positionMobile, .allProducts, #containerFavorite, #shopProducts, #containerBillingAddress, #buyArticle {
     flex-wrap: wrap;
 }
 
@@ -353,7 +353,7 @@ p {
      box-shadow: 5px 5px 10px #489533;
      padding: 15px;
      width: 70%;
-     margin: 15px 0;
+     margin: 20% 0;
 }
 
 section {
@@ -476,7 +476,7 @@ td, th {
 #disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount,
 #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements,
 #input_complements2, #menu_fruits_vegetables, #menu_salty_groceries, #menu_well-being, #menu_sweet_groceries, #menu_hygiene,
-#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance {
+#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance, #displayMobile {
      display: none;
 }
 
@@ -540,7 +540,7 @@ td, th {
 }
 
 .log3 {
-    margin-top: -57px;
+    margin-top: -68px;
 }
 
 .log4 {
@@ -928,7 +928,7 @@ select, option {
     .placePrice3 {
         right: 160px;
     }
-    .title, .title2 {
+    .title, .title2{
         font-size: 20px;
     }
     #addDeliveryAddress, #addBillingAddress, #buyPaypal2, #buyCards2 {
@@ -1013,10 +1013,10 @@ select, option {
 }
 
 @media screen and (max-width: 530px) {
-    #menuResponsive, #mobile {
+    #menuResponsive, #mobile, #displayMobile {
         display: flex;
     }
-    .log, .log3, #computer, #shopProducts, #menu, .selectComputer, .reverse, .reverse2 {
+    .log, .log3, #computer, #menu, .selectComputer, .reverse, .reverse2 {
         display: none;
     }
     .containedMenu:hover, .linkLog:hover {
@@ -1094,6 +1094,16 @@ select, option {
     }
     .articleProduct {
         width: 40%;
+    }
+    #shopping {
+        flex-direction: column;
+    }
+    #shopProducts {
+        width: 100%;
+    }
+    .arrowRight {
+        left: initial;
+        right: 10%;
     }
 }
 
