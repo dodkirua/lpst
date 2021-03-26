@@ -9,14 +9,18 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
     $mail = sanitize($_REQUEST['emailContact']);
     $pass = sanitize($_REQUEST['password']);
     $passRepeat = sanitize($_REQUEST['repeatPassword']);
-
+    // verify that the password and verification password are the same
     if ($pass === $passRepeat){
         $pass = password_hash($pass,PASSWORD_BCRYPT );
+
+        //verify pattern of the pass
         if (checkPass($pass)){
             $user = new UserManager();
+
             $id = $user->searchMail($mail);
-            if (is_null($id)){
+            if (is_null($id) || $id === 0){
                 $user->addUser($lastname,$firstname,$mail,$pass);
+                header('Location: ../../pages/registration.php?s=1');
             }
             else {
                 header('Location: ../../pages/registration.php?e=2');
@@ -29,7 +33,7 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
     else {
         header('Location: ../../pages/registration.php?e=1');
     }
-    header('Location: ../../pages/registration.php?s=1');
+
 
 }
 else {
