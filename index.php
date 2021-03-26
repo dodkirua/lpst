@@ -58,7 +58,7 @@ $users = $managerUser->getStaff();
                 </div>
                 <div class="margin15-30 colorGreen">
                     <h3><i class="fas fa-envelope descriptionIcon"></i>Mail</h3>
-                    <a class="colorGreen underline information" href="mailto:contact@lpst.fr">contact@lpst.fr</a>
+                    <a class="colorGreen underline information" href="./pages/contact.php">Nous contacter</a>
                 </div>
                 <div class="margin15-30 colorGreen">
                     <h3><i class="fas fa-truck descriptionIcon"></i>Horaires de livraison</h3>
