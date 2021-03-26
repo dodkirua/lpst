@@ -38,11 +38,13 @@ else {
                 </div>";
         }
         else{
-            header($_SERVER['DOCUMENT_ROOT'] . "index.php?e=0");
+            $userManager->delUser($id);
+            header($_SERVER['DOCUMENT_ROOT'] . "/pages/registration.php?e=4");
         }
     }
     else {
-        header($_SERVER['DOCUMENT_ROOT'] . "index.php?e=0");
+        $userManager->delUser($id);
+        header($_SERVER['DOCUMENT_ROOT'] . "index.php?e=4");
     }
 
 
