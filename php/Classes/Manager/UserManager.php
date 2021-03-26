@@ -223,4 +223,29 @@ class UserManager{
         }
         return $staff;
     }
+
+    /**
+     * del a user
+     * @param $id
+     */
+    public function delUser($id){
+        $stmt = $this->db->prepare("DELETE FROM user WHERE id = :id");
+        $stmt->bindValue(':id',$id);
+        $stmt->execute();
+    }
+
+    public function delInfoUser($id){
+        $stmt = $this->db->prepare("UPDATE user SET
+                                mail = null,
+                                pass = null,
+                                phone = null,
+                                image = null,
+                                checked = 0,               
+                                key_verification = null,
+                                date_token = null
+                                WHERE id = :id
+                                ");
+        $stmt->bindValue(':id',$id);
+        $stmt->execute();
+    }
 }

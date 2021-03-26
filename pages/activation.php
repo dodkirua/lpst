@@ -8,6 +8,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 $userManager = new UserManager();
+if (isset($_GET['e'])){
+    $id = "error";
+    switch ($_GET['e']){
+        case '0':
+            $return = "Problème .";
+            break;
+
+    }
+}
 if (!isset($_GET['log']) || !isset($_GET['key'])) {
     header('Location: ../../pages/login.php?e=2');
 }
@@ -23,17 +32,17 @@ else {
             $user->setKey(null);
             $user->setDate(null);
             echo "<div class='forgotPassword'>
-                <h2 class='subtitle'>Vous êtes bien déconnecté</h2>
+                <h2 class='subtitle'>Vous mail est bien validé</h2>
             
-                <a href='../index.php' class='colorBlue underline'>< Retour</a>
+                <a href='./login.php' class='colorBlue underline'>< Retour</a>
                 </div>";
         }
         else{
-            header($_SERVER['DOCUMENT_ROOT'] . "forgotPassword.php?e=0");
+            header($_SERVER['DOCUMENT_ROOT'] . "index.php?e=0");
         }
     }
     else {
-        header($_SERVER['DOCUMENT_ROOT'] . "forgotPassword.php?e=0");
+        header($_SERVER['DOCUMENT_ROOT'] . "index.php?e=0");
     }
 
 
