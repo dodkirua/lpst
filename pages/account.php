@@ -13,7 +13,14 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["lastname"])));
 
     $managerUser = new UserManager();
-    $users = $managerUser->getAll();
+    $users = $managerUser->getAllUser();
+    $count = count($users);
+    if (isset($_GET["page"])) {
+        $page = $_GET["page"];
+    }
+    else {
+        $page = 1;
+    }
     ?>
 
 <main class="flexRow account">
@@ -309,8 +316,13 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                         <th class="colorWhite">Options</th>
                     </tr>
                     <?php
-                    foreach ($users as $item) {
-                        $user = $item->getData();
+                    $first = ($page - 1) * 20;
+                    $last = ($page * 20) - 1;
+                    if ($last > $count) {
+                        $last = $count;
+                    }
+                    for ($i = $first; $i < $last; $i++) {
+                        $user = $users[$i]->getData();
                         $firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $user["firstname"])));
                         $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $user["lastname"])));
                         echo "<tr class='trTable'>
@@ -327,6 +339,23 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     }
                         ?>
                 </table>
+                <?php
+                if ($count > 19) {
+                    if ($page < 2) {
+                    $prev = 1;
+                    }
+                    $max = ceil($count / 19);
+                    if ($page > ($max - 1)) {
+                        $next = $max;
+                    }
+                    echo "<div>
+                    <a href='/account.php?page=$prev'>Page précédente</a>
+                    <a href='/account.php?page=$next'>Page suivante</a>
+
+                       </div>";
+                }
+                ?>
+
             </div>
 
             <div id="containerStoreManagement"></div>

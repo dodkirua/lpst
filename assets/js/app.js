@@ -59,9 +59,6 @@ if (document.getElementById("containerUserManagement")) {
     clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "block", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
 }
 
-if (document.getElementById("containerStoreManagement")) {
-    clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "block", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
-}
 
 if (document.getElementById("containerProductManagement")) {
     clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "block", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");

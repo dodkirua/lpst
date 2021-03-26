@@ -480,7 +480,7 @@ td, th {
 #disconnectionResponsive,  #cartResponsive, #modifyInformation, #orderedResponsive, #orderedAccount,
 #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements,
 #input_complements2, #menu_fruits_vegetables, #menu_salty_groceries, #menu_well-being, #menu_sweet_groceries, #menu_hygiene,
-#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance, #displayMobile, #containerUserManagement, #containerStoreManagement,
+#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance, #displayMobile, #containerStoreManagement,
 #containerProductManagement, #containerLocalManagement, #containerShopManagement, #containerBreadManagement{
      display: none;
 }
