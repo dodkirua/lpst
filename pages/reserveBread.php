@@ -306,7 +306,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                 </div>
                 <div class="flexRow width_100 padding30 reserved">
                     <input name="date" class="width30" type="date">
-                    <input name="time" class="width30" type="time">
                 </div>
                 <input id="validateReservedBread" type="submit" class="brownBorder flexCenter modifyProfil" value="Valider la réservation">
             </form>
