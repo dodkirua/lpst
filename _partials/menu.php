@@ -32,11 +32,11 @@
         <div class="separatorVertical"></div>
         <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Epicerie en ligne</a>
         <div class="separatorVertical"></div>
-        <a id="reserveBread" class="containedMenu flexCenter" href="../pages/reserveBread.php"> Réserver notre pain</a>
+        <a id="reserveBread" class="containedMenu flexCenter" href="../pages/reserveBread.php"> Réservation de pain</a>
     </div>
 
     <div id="menuResponsive" class="flexRow flexCenter">
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a id="bars" href="#"><i class="fas fa-bars"></i></a>
         <img id="lpstLogoResponsive" src="../doc/mockup/lpst.png" alt="Logo LPST">
     </div>
     <div id="scrollMenu" class="flexCenter flexColumn">
@@ -44,7 +44,7 @@
         <a id="products" class="containedMenu flexCenter" href="../pages/products.php"> Nos produits</a>
         <a id="local" class="containedMenu flexCenter" href="../pages/local.php"> Nos partenaires locaux</a>
         <a id="account" class="containedMenu flexCenter" href="../pages/shopping.php"> Epicerie en ligne</a>
-        <a id="reserveBread" class="containedMenu flexCenter" href="../pages/reserveBread.php"> Réserver notre pain</a>
+        <a id="reserveBread" class="containedMenu flexCenter" href="../pages/reserveBread.php"> Réservation de pain</a>
 
 
         <?php

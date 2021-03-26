@@ -1,24 +1,25 @@
 import {comparePass, validate, validatePass} from "./registration.js";
 import {itemQuantity} from "./article.js";
-import {closeModal, numberOfClick} from "./function.js";
-import {clickDisplay} from "./account.js";
+import {closeModal, numberOfClick, clickToggle} from "./function.js";
+import {clickDisplay, clickDisplay9} from "./account.js";
 
 
+//When we click on "bars" we unfold or replicate the drop-down menu.
+$("#bars").click(function () {
+    $("#scrollMenu").slideToggle();
+});
 
-//display the drop-down menu by clicking on the menu icon and disappear by also clicking on the menu icon.
-numberOfClick("#menuResponsive", "#scrollMenu");
+//When we click on the arrow to the right of each ray we unfold or fold the sub-rays.
+clickToggle("#clickArrow1", "#menu_fruits_vegetables");
+clickToggle("#clickArrow2", "#menu_salty_groceries");
+clickToggle("#clickArrow3", "#menu_sweet_groceries");
+clickToggle("#clickArrow4", "#menu_fresh_section");
+clickToggle("#clickArrow5", "#menu_cosmetic");
+clickToggle("#clickArrow6", "#menu_hygiene");
+clickToggle("#clickArrow7", "#menu_well-being");
+clickToggle("#clickArrow8", "#menu_house_maintenance");
 
-//display a drop-down menu for each category of departments and disappear by clicking on the arrow.
-numberOfClick("#clickArrow1", "#menu_fruits_vegetables");
-numberOfClick("#clickArrow2", "#menu_salty_groceries");
-numberOfClick("#clickArrow3", "#menu_sweet_groceries");
-numberOfClick("#clickArrow4", "#menu_fresh_section");
-numberOfClick("#clickArrow5", "#menu_cosmetic");
-numberOfClick("#clickArrow6", "#menu_hygiene");
-numberOfClick("#clickArrow7", "#menu_well-being");
-numberOfClick("#clickArrow8", "#menu_house_maintenance");
-
-
+// When we are on mobile, there is the button "Our store", when we click on it it shows the computer content of the store and disappears the buttons seen on mobile.
 const mag = document.getElementById("magasinMobile");
 if (mag){
     mag.addEventListener("click", function () {
@@ -42,20 +43,30 @@ if (regis) {
 
 // When I click on "my information" then the div with my information is displayed and the others are hidden.
 if (document.getElementById("informationAccount")) {
-    clickDisplay("information", "informationAccount", "orderedAccount", "baskets_favorite", "block", "none", "none");
-    clickDisplay("information2", "informationAccount", "orderedAccount", "baskets_favorite", "block", "none", "none");
+    clickDisplay9("information", "informationAccount", "block", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
 }
 
 // When I click on "my orders" then the div with my orders is displayed and the others are hidden.
 if (document.getElementById("orderedAccount")) {
-    clickDisplay("ordered", "informationAccount", "orderedAccount", "baskets_favorite", "none", "block", "none");
-    clickDisplay("ordered2", "informationAccount", "orderedAccount", "baskets_favorite", "none", "block", "none");
+    clickDisplay9("ordered", "informationAccount", "none", "orderedAccount", " block", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
 }
 // When I click on "my saved baskets" then the div with my saved baskets is displayed and the others are hidden.
 if (document.getElementById("basketsSave")) {
-    clickDisplay("basketsSave", "informationAccount", "orderedAccount", "baskets_favorite", "none", "none", "block");
-    clickDisplay("basketsSave2", "informationAccount", "orderedAccount", "baskets_favorite", "none", "none", "block");
+    clickDisplay9("basketsSave", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "block", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
 }
+
+if (document.getElementById("containerUserManagement")) {
+    clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "block", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
+}
+
+if (document.getElementById("containerStoreManagement")) {
+    clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "block", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
+}
+
+if (document.getElementById("containerProductManagement")) {
+    clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "block", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
+}
+
 
 if (document.getElementById("modifyInformation")) {
     clickDisplay("modifyProfil", "contactInformation", "modifyInformation", "", "none", "flex", "");
@@ -66,16 +77,18 @@ if (document.getElementById("pdp")) {
 }
 
 if (document.getElementById("error")) {
-    closeModal("error")
+    closeModal("error");
 }
 
 if (document.getElementById("success")) {
-    closeModal("success")
+    closeModal("success");
 }
 
 let choice_delivery = $("#choice_delivery");
 let choice_CC = $("#choice_CC");
 
+// If input [type: radio] is checked, then it shows the click & collect of LPST.
+// If the other suggestion is checked then, the click & collect of LPST disappears and gives the arrow correctly and modifies that of the other.
 let nbClick2 = 0;
 $("#click_Collect").click(function () {
     if ($("#checkCC").is(':checked')) {
@@ -89,13 +102,11 @@ $("#click_Collect").click(function () {
                 nbClick2 = 0;
             }
         }
-        else {
-            choice_CC.css("display", "none");
-            nbClick2 = 0;
-        }
     }
 });
 
+// If input [type: radio] is checked, then it shows the standard delivery.
+// If the other suggestion is checked then, the cstandard delivery disappears and gives the arrow correctly and modifies that of the other.
 let nbClick3 = 0;
 $("#choiceDelivery").click(function () {
     if ($("#checkDelivery").is(':checked')) {
@@ -109,15 +120,11 @@ $("#choiceDelivery").click(function () {
                 nbClick3 = 0;
             }
         }
-        else {
-            choice_delivery.css("display", "none");
-            nbClick3 = 0;
-        }
     }
 });
 
+// if standard delivery is checked, then a button appears allowing you to enter a delivery address.
 let address1 = $("#address1");
-
 if ($("#standardDelivery")) {
     let nbClick = 0;
     $("#standardDelivery").click(function () {
@@ -129,6 +136,8 @@ if ($("#standardDelivery")) {
     });
 }
 
+// If input [type: radio] is checked, then it shows the form for buy with card.
+// If the other suggestion is checked then, the form disappears.
 if ($("#buyCards")) {
     let nbClick = 0;
     $("#buyCards").click(function () {
@@ -145,6 +154,8 @@ if ($("#buyCards")) {
     });
 }
 
+// If input [type: radio] is checked, then it shows the button for buy with paypal.
+// If the other suggestion is checked then, the button for buy with paypal disappears.
 if ($("#paypalBuy")) {
     let nbClick = 0;
     $("#paypalBuy").click(function () {
@@ -161,33 +172,44 @@ if ($("#paypalBuy")) {
     });
 }
 
+//Allows you to fold or unfold the content of the billing address by clicking on "billing address".
 let nbClick4 = 0;
 $("#billingAddress").click(function () {
     if (nbClick4 === 0) {
-        $("#billingAddress2").css("display", "flex");
+        $("#billingAddress2").slideDown();
+        $("#billingAddress2").css({
+            "display" : "flex",
+            "flex-direction" : "column"
+        });
         nbClick4++;
         $("#arrow3").html("<i class=\"fas fa-angle-up reverse2\"></i>");
     }
     else {
-        $("#billingAddress2").css("display", "none");
+        $("#billingAddress2").slideUp();
         $("#arrow3").html("<i class=\"fas fa-angle-down reverse2\"></i>");
         nbClick4 = 0;
     }
 });
 
+//Allows you to fold or unfold the content of the delivery address by clicking on "delivery address"
 let nbClick5 = 0;
 $("#deliveryAddressBuy").click(function () {
     if (nbClick5 === 0) {
-        $("#deliveryAddress2").css("display", "flex");
+        $("#deliveryAddress2").slideDown();
+        $("#deliveryAddress2").css({
+            "display" : "flex",
+            "flex-direction" : "column"
+        });
         nbClick5++;
         $("#arrow3").html("<i class=\"fas fa-angle-up reverse2\"></i>");
     }
     else {
-        $("#deliveryAddress2").css("display", "none");
+        $("#deliveryAddress2").slideUp();
         $("#arrow3").html("<i class=\"fas fa-angle-down reverse2\"></i>");
         nbClick5 = 0;
     }
 });
+
 //Condition for the total of the articles, if the total is below 50 then there is no delivery,
 //if it is between 50 and 100 then it is 5 € and if it is equal to or greater than 100 € then it is free.
 const subTotal = 95;
@@ -361,15 +383,17 @@ if ($("#modalDeliveryAddress")) {
     });
 }
 
+// When we click on a disconnect button, the button returns us to the disconnect.php page.
 let disconnect = document.getElementsByClassName("disconnection");
 if (disconnect){
     for (let i= 0 ; i < disconnect.length ; i++){
         disconnect[i].addEventListener('click',function (){
             window.location.href ="../../php/disconnect.php";
-        })
+        });
     }
 }
 
+//If a customer puts a date lower than today then it sends back an alert and the value of the input becomes empty.
 let today = new Date();
 let date = today.toLocaleDateString();
 
@@ -380,7 +404,7 @@ document.getElementById("validateReservedBread").addEventListener("click", funct
         alert("Hors délai");
         document.getElementById('dateInput').value = "";
     }
-})
+});
 
 
 

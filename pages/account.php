@@ -13,7 +13,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"]["lastname"])));
 
     $managerUser = new UserManager();
-    $users = $managerUser->getStaff();
+    $users = $managerUser->getAll();
     ?>
 
 <main class="flexRow account">
@@ -25,34 +25,52 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 <button id="disconnection" class="redButton disconnection">Déconnexion</button>
             </div>
         </div>
-        <div class="separatorHorizontal"></div>
-        <div id="information" class="select selectComputer">
-            <p class="colorWhite">Mes informations</p>
-        </div>
-        <div class="separatorHorizontal"></div>
-        <div id="ordered" class="select selectComputer">
-            <p class="colorWhite">Mes commandes</p>
-        </div>
-        <div class="separatorHorizontal"></div>
-        <div id="basketsSave" class="select selectComputer">
-            <p class="colorWhite">Mes paniers sauvegardés</p>
+        <div id="informationProfil2">
+            <div class="separatorHorizontal"></div>
+            <div id="information" class="select selectComputer">
+                <p class="colorWhite">Mes informations</p>
+            </div>
+            <div class="separatorHorizontal"></div>
+            <div id="ordered" class="select selectComputer">
+                <p class="colorWhite">Mes commandes</p>
+            </div>
+            <div class="separatorHorizontal"></div>
+            <div id="basketsSave" class="select selectComputer">
+                <p class="colorWhite">Mes paniers sauvegardés</p>
+            </div>
+            <?php
+            if ($_SESSION["user"]["role"] === 1) {
+                ?>
+                <div class="separatorHorizontal"></div>
+                <div id="userManagement" class="select selectComputer backgroundBlue2">
+                    <p class="colorWhite">Gestion des utilisateurs</p>
+                </div>
+                <div class="separatorHorizontal"></div>
+                <div id="storeManagement" class="select selectComputer backgroundBlue2">
+                    <p class="colorWhite">Gestion de notre magasin</p>
+                </div>
+                <div class="separatorHorizontal"></div>
+                <div id="productManagement" class="select selectComputer backgroundBlue2">
+                    <p class="colorWhite">Gestion de nos produits</p>
+                </div>
+                <div class="separatorHorizontal"></div>
+                <div id="localManagement" class="select selectComputer backgroundBlue2">
+                    <p class="colorWhite">Gestion de nos partenaires locaux</p>
+                </div>
+                <div class="separatorHorizontal"></div>
+                <div id="shopManagement" class="select selectComputer backgroundBlue2">
+                    <p class="colorWhite">Gestion de l'epicerie en ligne</p>
+                </div>
+                <div class="separatorHorizontal"></div>
+                <div id="breadManagement" class="select selectComputer backgroundBlue2">
+                    <p class="colorWhite">Gestion de réservation de pain</p>
+                </div>
+                <?php
+            }
+            ?>
         </div>
 
-
-        <!-- Displayed when the screen is at 530px -->
-        <div id="accountResponsive" class="flexRow">
-            <div id="information2" class="select selectMobile">
-                <p class="colorWhite"><i class="fas fa-user-alt"></i></p>
-            </div>
-            <div id="ordered2" class="select selectMobile">
-                <p class="colorWhite"><i class="fas fa-credit-card"></i></p>
-            </div>
-            <div id="basketsSave2" class="select selectMobile">
-                <p class="colorWhite"><i class="fas fa-shopping-basket"></i></p>
-            </div>
-        </div>
-
-        <!-- Displayed when the screen is at 680px -->
+        <!-- Displayed when the screen is at 681px -->
         <button id="disconnectionResponsive" class="redButton disconnection"><i class="fas fa-power-off"></i></button>
 
     </section>
@@ -273,6 +291,53 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     ?>
                 </div>
             </div>
+
+            <div id="containerUserManagement">
+                <h2 class="subtitle">Gestion des utilisateurs</h2>
+                <form action="#" method="post" class="flexCenter">
+                    <input class="width30 whiteBorder" type="text" placeholder="Nom">
+                    <input class="width30 whiteBorder" type="text" placeholder="Prénom">
+                    <input class="send modifyProfil modify margin20" type="submit" value="Chercher">
+                </form>
+                <table id="tableOrdered" class="flexCenter">
+                    <tr class="titleTable">
+                        <th class="colorWhite">Nom</th>
+                        <th class="colorWhite">Prénom</th>
+                        <th class="colorWhite">E-mail</th>
+                        <th class="colorWhite">Phone</th>
+                        <th class="colorWhite">role</th>
+                        <th class="colorWhite">Options</th>
+                    </tr>
+                    <?php
+                    foreach ($users as $item) {
+                        $user = $item->getData();
+                        $firstname = str_replace(" ", "-", ucwords(str_replace("-", " ", $user["firstname"])));
+                        $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $user["lastname"])));
+                        echo "<tr class='trTable'>
+                        <td>" . $lastname . "</td>
+                        <td>" . $firstname . "</td>
+                        <td>" . $user['mail'] . "</td>
+                        <td>" . $user['phone'] . "</td>
+                        <td>" . $user['role'] . "</td>
+                        <td>
+                            <button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
+                            <button class='buttonClassic'><i class='fas fa-edit'></i></button>
+                        </td>
+                    </tr>";
+                    }
+                        ?>
+                </table>
+            </div>
+
+            <div id="containerStoreManagement"></div>
+
+            <div id="containerProductManagement"></div>
+
+            <div id="containerLocalManagement"></div>
+
+            <div id="containerShopManagement"></div>
+
+            <div id="containerBreadManagement"></div>
         </section>
     </div>
 </main>

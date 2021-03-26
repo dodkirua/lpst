@@ -164,8 +164,12 @@ h1 {
     border: 2px solid #69A7D4;
 }
 
-.blueBorder:hover, .articleProduct {
+.blueBorder:hover, .articleProduct{
     box-shadow: 4px 4px 10px lightgray;
+}
+#scrollMenu {
+    box-shadow: 4px 4px 10px #8ABF07;
+    z-index: 99;
 }
 
 .products {
@@ -473,10 +477,11 @@ td, th {
 
 #menuResponsive, #profilImageModify, #modifyPhone, #deliveryAddress2, #choiceBread, #choiceBread2,#choiceBread3, #choiceBread4,
 #choiceBreadResponsive1, #choiceBreadResponsive2, #choiceBreadResponsive3, #choiceBreadResponsive4, #scrollMenu, #mobile,
-#disconnectionResponsive,  #cartResponsive, #modifyInformation, #accountResponsive, #orderedResponsive, #orderedAccount,
+#disconnectionResponsive,  #cartResponsive, #modifyInformation, #orderedResponsive, #orderedAccount,
 #baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements,
 #input_complements2, #menu_fruits_vegetables, #menu_salty_groceries, #menu_well-being, #menu_sweet_groceries, #menu_hygiene,
-#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance, #displayMobile {
+#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance, #displayMobile, #containerUserManagement, #containerStoreManagement,
+#containerProductManagement, #containerLocalManagement, #containerShopManagement, #containerBreadManagement{
      display: none;
 }
 
@@ -675,6 +680,14 @@ select, option {
     background-repeat: no-repeat;
 }
 
+.backgroundBlue2 {
+    background-color: #69A7D4;
+}
+
+.backgroundBlue2:hover {
+    background-color: #3b72bd;
+}
+
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
         font-size: 12px;
@@ -741,18 +754,19 @@ select, option {
     .account {
         flex-direction: column;
     }
-    #informationProfil {
+    #informationProfil2 {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
-    #informationProfil > div.separatorHorizontal {
+    #informationProfil2 > div.separatorHorizontal {
         display: none;
     }
     .select {
-        width: 45%;
+        width: 100%;
         align-items: center;
         justify-content: center;
-        height: 130px;
+        height: 40px;
     }
     .photoProfil {
         width: 80px;
@@ -975,9 +989,6 @@ select, option {
     #profil, #stepBuy {
         display: none;
     }
-    .select {
-        height: 60px;
-    }
     #informationProfil, .width65 {
         width: 100%;
     }
@@ -989,7 +1000,8 @@ select, option {
     }
     #disconnectionResponsive {
         display: flex;
-        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
     .redButton {
         margin: 0;
@@ -1016,7 +1028,7 @@ select, option {
     #menuResponsive, #mobile, #displayMobile {
         display: flex;
     }
-    .log, .log3, #computer, #menu, .selectComputer, .reverse, .reverse2 {
+    .log, .log3, #computer, #menu, .reverse, .reverse2 {
         display: none;
     }
     .containedMenu:hover, .linkLog:hover {
@@ -1044,7 +1056,7 @@ select, option {
     .products {
         width: 30%;
     }
-    .allProducts, #buyArticle, .forgotPassword > form > input#email, #accountResponsive, .forgotPassword, .log2 {
+    .allProducts, #buyArticle, .forgotPassword > form > input#email, .forgotPassword, .log2 {
         width: 100%;
     }
     h1 {
@@ -1061,12 +1073,6 @@ select, option {
     }
     .margin {
         margin: 0 15px;
-    }
-    #accountResponsive {
-        display: flex;
-    }
-    #accountResponsive, #information2 > p, #ordered2 > p, #basketsSave2 > p{
-        font-size: 20px;
     }
     .wishlist {
         width: 24%;

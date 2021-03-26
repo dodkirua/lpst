@@ -26,3 +26,13 @@ export function numberOfClick (idClick, id1) {
         }
     });
 }
+
+export function clickToggle (idClick, id1) {
+    $(idClick).click(function () {
+        $(id1).slideToggle();
+        $(id1).css({
+            "display" : "flex",
+            "flex-direction" : "column"
+        })
+    });
+}
