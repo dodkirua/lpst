@@ -16,7 +16,7 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
         //verify pattern of the pass
         if (checkPass($pass)){
             $user = new UserManager();
-
+            // test if mail exist in DB
             $id = $user->searchMail($mail);
             if (is_null($id) || $id === 0){
                 $user->addUser($lastname,$firstname,$mail,$pass);
@@ -33,8 +33,6 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
     else {
         header('Location: ../../pages/registration.php?e=1');
     }
-
-
 }
 else {
     header('Location: ../../pages/registration.php?e=0');

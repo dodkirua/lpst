@@ -7,11 +7,16 @@ $return = "";
 $id = "";
  if(isset($_GET['e'])){
      $id = "error";
-     if ($_GET['e'] = 0){
+     switch ($_GET['e']){
+         case '0':
          $return = "Problème lors du transfert des données ";
-     }
-     elseif ($_GET['e'] = 1){
+         break;
+         case '1':
          $return = "Le mail et le mot de passe ne correspondent pas";
+         break;
+         case '2':
+         $return = "Problème sur le lien verifier votre mail d'activation";
+         break;
      }
  }
  elseif (isset($_GET['s'])){
@@ -35,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             <label for="password" class="colorBlue">Mot de passe*</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <a class="flexCenter colorBlue underline margin15-30" href="../php/forgotPassword.php">Mot de passe oublié ?</a>
+        <a class="flexCenter colorBlue underline margin15-30" href="forgotPassword.php">Mot de passe oublié ?</a>
         <input class="send" type="submit" value="Se connecter">
         <a href="registration.php" class="flexCenter brownBorder"> Créer un compte</a>
     </form>

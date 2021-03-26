@@ -12,6 +12,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
         <input id="email" type="email" name="email" required>
         <input type="submit" value="Envoyer" class="send margin15-30 modifyProfil">
     </form>
-    <a href="../pages/login.php" class="colorBlue underline">< Retour</a>
+    <a href="login.php" class="colorBlue underline">< Retour</a>
 </div>
 
