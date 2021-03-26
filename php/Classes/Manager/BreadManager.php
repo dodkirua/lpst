@@ -1,7 +1,6 @@
 <?php
 
 
-class BreadManager
-{
+class BreadManager{
 
 }
