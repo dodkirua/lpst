@@ -27,7 +27,7 @@ if (isset($_GET['e'])){
 }
 elseif (isset($_GET['s'])){
     $id = "success";
-    $return = "Succés de la création du compte";
+    $return = "Merci pour votre inscription, veuillez valider votre mail";
 }
 ?>
 
