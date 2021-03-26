@@ -20,11 +20,14 @@ if (isset($_GET['e'])){
         case '3':
             $return = "Le mot de passe ne suis pas les spécifications demandées.";
             break;
+        case '4':
+            $return = "Veuillez recommencer la procédure d'inscription erreur lors de la validation du mail";
+            break;
     }
 }
 elseif (isset($_GET['s'])){
     $id = "success";
-    $return = "Succés de la création du compte";
+    $return = "Merci pour votre inscription, veuillez valider votre mail";
 }
 ?>
 
