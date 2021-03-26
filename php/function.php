@@ -46,3 +46,20 @@ function staff (?string $image, string $firstname) {
     <p class='nameStaff colorBlue'>" . $firstname . " </p>
     </div>";
 }
+
+function checkPass($pass)
+{
+    $maj = preg_match('@[A-Z]@', $pass);
+    $min = preg_match('@[a-z]@', $pass);
+    $number = preg_match('@[0-9]@', $pass);
+    $char = preg_match('@[^a-zA-Z\d]@', $pass);
+
+    if(!$maj|| !$min || !$number || !$char ||strlen($pass) < 10)    {
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+

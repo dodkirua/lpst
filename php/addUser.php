@@ -12,8 +12,19 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
 
     if ($pass === $passRepeat){
         $pass = password_hash($pass,PASSWORD_BCRYPT );
-        $user = new UserManager();
-        $user->addUser($lastname,$firstname,$mail,$pass);
+        if (checkPass($pass)){
+            $user = new UserManager();
+            $id = $user->searchMail($mail);
+            if (is_null($id)){
+                $user->addUser($lastname,$firstname,$mail,$pass);
+            }
+            else {
+                header('Location: ../../pages/registration.php?e=2');
+            }
+        }
+        else {
+            header('Location: ../../pages/registration.php?e=3');
+        }
     }
     else {
         header('Location: ../../pages/registration.php?e=1');
