@@ -477,11 +477,9 @@ td, th {
 
 #menuResponsive, #profilImageModify, #modifyPhone, #deliveryAddress2, #choiceBread, #choiceBread2,#choiceBread3, #choiceBread4,
 #choiceBreadResponsive1, #choiceBreadResponsive2, #choiceBreadResponsive3, #choiceBreadResponsive4, #scrollMenu, #mobile,
-#disconnectionResponsive,  #cartResponsive, #modifyInformation, #orderedResponsive, #orderedAccount,
-#baskets_favorite, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements,
+#disconnectionResponsive,  #cartResponsive, #modifyInformation, #orderedResponsive, #choice_delivery, #choice_CC, #address1, #billingAddress2, #choice_paypal, #choice_Cards, #input_complements,
 #input_complements2, #menu_fruits_vegetables, #menu_salty_groceries, #menu_well-being, #menu_sweet_groceries, #menu_hygiene,
-#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance, #displayMobile, #containerStoreManagement,
-#containerProductManagement, #containerLocalManagement, #containerShopManagement, #containerBreadManagement{
+#menu_cosmetic, #menu_fresh_section, #menu_house_maintenance, #displayMobile{
      display: none;
 }
 
