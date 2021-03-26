@@ -1,7 +1,7 @@
 import {comparePass, validate, validatePass} from "./registration.js";
 import {itemQuantity} from "./article.js";
 import {closeModal, numberOfClick, clickToggle} from "./function.js";
-import {clickDisplay, clickDisplay9} from "./account.js";
+import {clickDisplay} from "./account.js";
 
 
 //When we click on "bars" we unfold or replicate the drop-down menu.
@@ -40,30 +40,6 @@ if (regis) {
         }
     });
 }
-
-// When I click on "my information" then the div with my information is displayed and the others are hidden.
-if (document.getElementById("informationAccount")) {
-    clickDisplay9("information", "informationAccount", "block", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
-}
-
-// When I click on "my orders" then the div with my orders is displayed and the others are hidden.
-if (document.getElementById("orderedAccount")) {
-    clickDisplay9("ordered", "informationAccount", "none", "orderedAccount", " block", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
-}
-// When I click on "my saved baskets" then the div with my saved baskets is displayed and the others are hidden.
-if (document.getElementById("basketsSave")) {
-    clickDisplay9("basketsSave", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "block", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
-}
-
-if (document.getElementById("containerUserManagement")) {
-    clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "block", "containerStoreManagement", "none", "containerProductManagement", "none", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
-}
-
-
-if (document.getElementById("containerProductManagement")) {
-    clickDisplay9("userManagement", "informationAccount", "none", "orderedAccount", "none", "baskets_favorite", "none", "containerUserManagement", "none", "containerStoreManagement", "none", "containerProductManagement", "block", "containerLocalManagement", "none", "containerShopManagement", "none", "containerBreadManagement", "none");
-}
-
 
 if (document.getElementById("modifyInformation")) {
     clickDisplay("modifyProfil", "contactInformation", "modifyInformation", "", "none", "flex", "");
