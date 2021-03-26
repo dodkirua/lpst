@@ -8,10 +8,11 @@ class User{
     private ?string $mail = null;
     private ?string $pass = null;
     private ?string $phone = null;
-    private bool $checked = false;
+    private int $checked = 0;
     private ?int $role = null;
-    private ?int $address = null;
     private ?string $image = null;
+    private ?string $key = null;
+    private ?int $date = null;
 
     /**
      * User constructor.
@@ -79,18 +80,10 @@ class User{
     }
 
     /**
-     * get the  address id
-     * @return int|null
-     */
-    public function getAddress(): ?int    {
-        return $this->address;
-    }
-
-    /**
      * get the  check
-     * @return bool
+     * @return int
      */
-    public function isChecked(): bool
+    public function getChecked(): int
     {
         return $this->checked;
     }
@@ -103,6 +96,23 @@ class User{
     {
         return $this->image;
     }
+
+    /**
+     * get the validation key
+     * @return string|null
+     */
+    public function getKey(): ?string    {
+        return $this->key;
+    }
+
+    /**
+     * get the date
+     * @return int|null
+     */
+    public function getDate(): ?int    {
+        return $this->date;
+    }
+
 
 
     /**
@@ -167,21 +177,11 @@ class User{
     }
 
     /**
-     * set the address id
-     * @param int|null $adress
-     * @return User
-     */
-    public function setAddress(?int $adress): User    {
-        $this->address = $adress;
-        return $this;
-    }
-
-    /**
      * set the verification statut
-     * @param bool $check
+     * @param int $check
      * @return User
      */
-    public function setChecked(bool $check): User  {
+    public function setChecked(int $check): User  {
         $this->checked = $check;
         return $this;
     }
@@ -196,6 +196,29 @@ class User{
         $this->image = $image;
         return $this;
     }
+
+    /**
+     * set the validation key
+     * @param string|null $key
+     * @return User
+     */
+    public function setKey(?string $key): User
+    {
+        $this->key = $key;
+        return $this;
+    }
+
+    /**
+     * set the date
+     * @param int|null $date
+     * @return User
+     */
+    public function setDate(?int $date): User    {
+        $this->date = $date;
+        return $this;
+    }
+
+
 
     /**
      * return the list of data minimal for a user
@@ -221,7 +244,9 @@ class User{
         }
         $userArray['phone'] = $this->getPhone();
         $userArray['image'] = $this->getImage();
-        $userArray['checked'] = $this->isChecked();
+        $userArray['checked'] = $this->getChecked();
+        $userArray['key_verification'] = $this->getKey();
+        $userArray['date_token'] = $this->getDate();
         return $userArray;
     }
 }

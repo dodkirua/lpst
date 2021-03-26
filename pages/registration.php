@@ -9,10 +9,16 @@ if (isset($_GET['e'])){
     $id = "error";
     switch ($_GET['e']){
         case '0':
-            $return = "Problème lors de l'envoi des données du formulaire";
+            $return = "Problème lors de l'envoi des données du formulaire.";
             break;
         case '1':
-            $return = "Mot de passe et le mot de passe de vérification ne sont pas identique";
+            $return = "Mot de passe et le mot de passe de vérification ne sont pas identique.";
+            break;
+        case '2':
+            $return = "L'adresse mail est deja dans la base de donnée.";
+            break;
+        case '3':
+            $return = "Le mot de passe ne suis pas les spécifications demandées.";
             break;
     }
 }

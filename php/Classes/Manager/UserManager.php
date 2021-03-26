@@ -25,7 +25,7 @@ class UserManager{
                 INSERT INTO  user (lastname, firstname, mail, pass, role_id) VALUES (:lastname, :firstname, :mail, :pass, :role)                
             ");
 
-        $stmt->bindValue(':lastname',$name, PDO::PARAM_STR);
+        $stmt->bindValue(':lastname',$name);
         $stmt->bindValue(':firstname',$surname, PDO::PARAM_STR);
         $stmt->bindValue(':mail',$mail);
         $stmt->bindValue(':pass',$pass);
@@ -59,38 +59,151 @@ class UserManager{
         $mail = strtolower($mail);
         $id = $this->searchMail($mail);
         if (!is_null($id)){
-            $stmt = $this->db->prepare("SELECT * FROM user WHERE id='".$id."'");
-            $user = null;
-            if ($state = $stmt->execute()){
-                $item = $stmt->fetch();
-                $user = new User($id);
-                $user = $user
-                    ->setLastname($item['lastname'])
-                    ->setFirstname($item['firstname'])
-                    ->setMail($item['mail'])
-                    ->setPass($item['pass'])
-                    ->setRole($item['role_id'])
-                    ->setChecked(boolval($item["checked"]))
-                    ->setPhone($item["phone"])
-                    ->setImage($item["image"]);
-                if (password_verify($pass,$user->getPass())){
+            $user = $this->getUserById($id);
+            if (!is_null($user)) {
+                if (password_verify($pass, $user->getPass())) {
                     return $user;
-                }
-                else {
+                } else {
                     return null;
-
                 }
+            }
+            else {
+                return null;
             }
         }
         else {
             return null;
-
         }
-
     }
 
+    /**
+     * get the Staff
+     * @return array
+     */
     public function getStaff() : array{
         $stmt = $this->db->prepare("SELECT * FROM user WHERE role_id != 2");
+        return $this->getUser($stmt);
+    }
+
+    /**
+     * get the Staff
+     * @return array
+     */
+    public function getAllUser() : array{
+        $stmt = $this->db->prepare("SELECT * FROM user");
+        return $this->getUser($stmt);
+    }
+
+    public function validateMail($mail,$id): bool
+    {
+        //generate token
+        $key = md5(time() . uniqid());
+        $date = new DateTime();
+        $date = $date->modify('+1 day');
+        $date =  $date->getTimestamp();
+
+        // modify DB
+        $stmt = $this->db->prepare("UPDATE user SET 
+                key_verification = :key ,
+                date_token = :date
+                WHERE id = :id");
+        $stmt->bindValue(':key',$key);
+        $stmt->bindValue(':date',$date);
+        $stmt->bindValue(':id',$id);
+
+        $stmt->execute();
+
+        // Preparation of the email containing the activation link
+        $recipient = $mail;
+        $subject = "Activer votre compte" ;
+        $from = "contact@lspt.fr" ;
+        $header = array(
+            "from" => $from,
+            "X-Mailer" => 'PHP/' . phpversion(),
+            'Content-type' => 'text/html; charset=iso-8859-1',
+            'MIME-Version' => '1.0'
+        );
+        // The activation link is composed of the id and the key
+                $message = 'Bienvenue sur VotreSite,
+         
+        Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
+        ou copier/coller dans votre navigateur Internet.
+         
+        http://localhost:8000/activation.php?log='.urlencode($id).'&key='.urlencode($key).'
+         
+         
+        ---------------
+        Ceci est un mail automatique, Merci de ne pas y répondre.';
+
+
+        return mail($recipient, $subject, $message, $header) ;
+    }
+
+    /**
+     * return User by a id search
+     * @param int $id
+     * @return User|null
+     */
+    public function getUserById(int $id) : ?User{
+        $stmt = $this->db->prepare("SELECT * FROM user WHERE id='".$id."'");
+        $user = null;
+        if ($state = $stmt->execute()) {
+            $item = $stmt->fetch();
+            $user = new User($id);
+            $user = $user
+                ->setLastname($item['lastname'])
+                ->setFirstname($item['firstname'])
+                ->setMail($item['mail'])
+                ->setPass($item['pass'])
+                ->setRole($item['role_id'])
+                ->setChecked(boolval($item["checked"]))
+                ->setPhone($item["phone"])
+                ->setImage($item["image"]);
+            return $user;
+        }
+        else {
+            return null;
+        }
+    }
+
+    /**
+     * modify the values in DB by a User
+     * @param User $user
+     * @return bool
+     */
+    public function modifyUser(User $user): bool    {
+        $stmt = $this->db->prepare("UPDATE user SET 
+                lastname = :last,
+                firstname = :first,
+                mail = :mail,
+                pass = :pass,
+                phone = :phone,
+                image = :img,
+                checked = :check,
+                key_verification = :key,
+                date_token = :date
+                WHERE id= :id");
+        $stmt->bindValue(':id',$user->getId());
+        $stmt->bindValue(':last',$user->getLastname());
+        $stmt->bindValue(':first',$user->getFirstname());
+        $stmt->bindValue(':mail',$user->getMail());
+        $stmt->bindValue(':pass',$user->getPass());
+        $stmt->bindValue(':phone',$user->getPhone());
+        $stmt->bindValue(':img',$user->getImage());
+        $stmt->bindValue(':check',$user->getChecked());
+        $stmt->bindValue(':key',$user->getKey());
+        $stmt->bindValue(':date',$user->getDate());
+
+        return $stmt->execute();
+    }
+
+    /**
+     *  search User with a prepared request
+     * @param $stmt //prepared request
+     * @return array
+     */
+    private function getUser($stmt): array
+    {
         $staff =[];
         if ($state = $stmt->execute()) {
             foreach ($stmt->fetchAll() as $item){
@@ -110,5 +223,4 @@ class UserManager{
         }
         return $staff;
     }
-
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 25 mars 2021 à 23:32
+-- Généré le : ven. 26 mars 2021 à 13:22
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -71,6 +71,18 @@ CREATE TABLE `baker` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `baker_delivery`
+--
+
+CREATE TABLE `baker_delivery` (
+  `id` int UNSIGNED NOT NULL,
+  `baker_id` int UNSIGNED DEFAULT NULL,
+  `delivery_date_id` int UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `bread`
 --
 
@@ -91,10 +103,21 @@ CREATE TABLE `bread` (
 
 CREATE TABLE `bread_reservation` (
   `id` bigint UNSIGNED NOT NULL,
-  `date_reservation` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `delivery` datetime NOT NULL,
-  `bread_id` int UNSIGNED DEFAULT NULL,
-  `user_id` int UNSIGNED DEFAULT NULL
+  `amount` float NOT NULL,
+  `bread_id` int UNSIGNED NOT NULL,
+  `reservation_id` bigint UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `delivery_date`
+--
+
+CREATE TABLE `delivery_date` (
+  `id` int UNSIGNED NOT NULL,
+  `day` varchar(10) COLLATE utf8_bin NOT NULL,
+  `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -109,6 +132,21 @@ CREATE TABLE `information` (
   `description` text COLLATE utf8_bin NOT NULL,
   `image` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `location` varchar(200) COLLATE utf8_bin NOT NULL,
+  `user_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `id` bigint UNSIGNED NOT NULL,
+  `date` datetime NOT NULL,
+  `delivery` datetime NOT NULL,
+  `reservation_num` varchar(45) COLLATE utf8_bin NOT NULL,
+  `validated` tinyint NOT NULL DEFAULT '0',
   `user_id` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -148,6 +186,8 @@ CREATE TABLE `user` (
   `phone` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `image` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `checked` tinyint NOT NULL DEFAULT '0',
+  `key_verification` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `date_token` datetime DEFAULT NULL,
   `role_id` tinyint UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -177,6 +217,14 @@ ALTER TABLE `baker`
   ADD KEY `baker_address_fk_idx` (`address_id`);
 
 --
+-- Index pour la table `baker_delivery`
+--
+ALTER TABLE `baker_delivery`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `baker_delivery_baker_fk_idx` (`baker_id`),
+  ADD KEY `baker_delivery_date_fk_idx` (`delivery_date_id`);
+
+--
 -- Index pour la table `bread`
 --
 ALTER TABLE `bread`
@@ -188,8 +236,14 @@ ALTER TABLE `bread`
 --
 ALTER TABLE `bread_reservation`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `bread_reservbread_fkation__idx` (`bread_id`),
-  ADD KEY `bread_reservation_user_fk_idx` (`user_id`);
+  ADD KEY `bread_reservation_reservation_fk` (`reservation_id`),
+  ADD KEY `bread_reservation_bread_fk` (`bread_id`);
+
+--
+-- Index pour la table `delivery_date`
+--
+ALTER TABLE `delivery_date`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `information`
@@ -197,6 +251,13 @@ ALTER TABLE `bread_reservation`
 ALTER TABLE `information`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_fk_idx` (`user_id`);
+
+--
+-- Index pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `reservation_user_fk_idx` (`user_id`);
 
 --
 -- Index pour la table `role`
@@ -235,6 +296,12 @@ ALTER TABLE `baker`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `baker_delivery`
+--
+ALTER TABLE `baker_delivery`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `bread`
 --
 ALTER TABLE `bread`
@@ -247,10 +314,22 @@ ALTER TABLE `bread_reservation`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `delivery_date`
+--
+ALTER TABLE `delivery_date`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `information`
 --
 ALTER TABLE `information`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `role`
@@ -282,6 +361,13 @@ ALTER TABLE `baker`
   ADD CONSTRAINT `baker_address_fk` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
+-- Contraintes pour la table `baker_delivery`
+--
+ALTER TABLE `baker_delivery`
+  ADD CONSTRAINT `baker_delivery_baker_fk` FOREIGN KEY (`baker_id`) REFERENCES `baker` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `baker_delivery_date_fk` FOREIGN KEY (`delivery_date_id`) REFERENCES `delivery_date` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Contraintes pour la table `bread`
 --
 ALTER TABLE `bread`
@@ -291,14 +377,20 @@ ALTER TABLE `bread`
 -- Contraintes pour la table `bread_reservation`
 --
 ALTER TABLE `bread_reservation`
-  ADD CONSTRAINT `bread_reservation_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `bread_reservbread_fkation_` FOREIGN KEY (`bread_id`) REFERENCES `bread` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `bread_reservation_bread_fk` FOREIGN KEY (`bread_id`) REFERENCES `bread` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `bread_reservation_reservation_fk` FOREIGN KEY (`reservation_id`) REFERENCES `reservation` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `information`
 --
 ALTER TABLE `information`
   ADD CONSTRAINT `information_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Contraintes pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD CONSTRAINT `reservation_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `user`

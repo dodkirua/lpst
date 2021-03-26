@@ -9,17 +9,30 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
     $mail = sanitize($_REQUEST['emailContact']);
     $pass = sanitize($_REQUEST['password']);
     $passRepeat = sanitize($_REQUEST['repeatPassword']);
-
+    // verify that the password and verification password are the same
     if ($pass === $passRepeat){
         $pass = password_hash($pass,PASSWORD_BCRYPT );
-        $user = new UserManager();
-        $user->addUser($lastname,$firstname,$mail,$pass);
+
+        //verify pattern of the pass
+        if (checkPass($pass)){
+            $user = new UserManager();
+            // test if mail exist in DB
+            $id = $user->searchMail($mail);
+            if (is_null($id) || $id === 0){
+                $user->addUser($lastname,$firstname,$mail,$pass);
+                header('Location: ../../pages/registration.php?s=1');
+            }
+            else {
+                header('Location: ../../pages/registration.php?e=2');
+            }
+        }
+        else {
+            header('Location: ../../pages/registration.php?e=3');
+        }
     }
     else {
         header('Location: ../../pages/registration.php?e=1');
     }
-    header('Location: ../../pages/registration.php?s=1');
-
 }
 else {
     header('Location: ../../pages/registration.php?e=0');
