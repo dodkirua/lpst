@@ -7,7 +7,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 ?>
 
     <main>
-        <h1>RESERVATION <span class="colorGreen">DE PAIN</span></h1>
+        <h1>RÉSERVATION <span class="colorGreen">DE PAIN</span></h1>
 
             <select id="baker" class="flexCenter">
                 <option class="optionBaker" value="">Choisissez votre boulangerie</option>
