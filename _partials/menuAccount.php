@@ -5,7 +5,15 @@ $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"
 ?>
 <section id="informationProfil">
         <div id="profil" class="flexColumn flexCenter">
-            <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
+            <?php
+            if ($_SESSION["user"]["role"] !== 2) {
+                foreach ($users as $item) {
+                    $user = $item->getData();
+                    if ($_SESSION["user"]["id"] === $user["id"])
+                    staff("../".$user["image"],"");
+                }
+            }
+            ?>
             <p class="nameStaff colorBlue"><?= $firstname . " " . $lastname ?></p>
 <div class="flexCenter">
     <button id="disconnection" class="redButton disconnection">Déconnexion</button>
@@ -29,11 +37,11 @@ $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"
         ?>
         <div class="separatorHorizontal"></div>
         <div id="userManagement" class="select selectComputer backgroundBlue2">
-            <a href="../pages/userManager.php" class="colorWhite">Gestion des utilisateurs</a>
+            <a href="../pages/userManagement.php" class="colorWhite">Gestion des utilisateurs</a>
         </div>
         <div class="separatorHorizontal"></div>
         <div id="storeManagement" class="select selectComputer backgroundBlue2">
-            <p class="colorWhite">Gestion de notre magasin</p>
+            <a href="../pages/storeManagement.php" class="colorWhite">Gestion de notre magasin</a>
         </div>
         <div class="separatorHorizontal"></div>
         <div id="productManagement" class="select selectComputer backgroundBlue2">
@@ -45,11 +53,11 @@ $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"
         </div>
         <div class="separatorHorizontal"></div>
         <div id="shopManagement" class="select selectComputer backgroundBlue2">
-            <p class="colorWhite">Gestion de l'epicerie en ligne</p>
+            <a href="../pages/shopManagement.php" class="colorWhite">Gestion de l'epicerie en ligne</a>
         </div>
         <div class="separatorHorizontal"></div>
         <div id="breadManagement" class="select selectComputer backgroundBlue2">
-            <p class="colorWhite">Gestion de réservation de pain</p>
+            <a href="../pages/breadManagement.php" class="colorWhite">Gestion de réservation de pain</a>
         </div>
         <?php
     }

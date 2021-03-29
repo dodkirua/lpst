@@ -4,6 +4,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 
+
 if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon compte";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
@@ -30,8 +31,16 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonnées</h2>
                 <div id="pdp" class="flexCenter flexColumn">
-                    <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
-                    <button id="clickModifyPdp" class="send modify modifyProfil">Modifier pdp</button>
+                    <?php
+                    if ($_SESSION["user"]["role"] !== 2) {
+                        foreach ($users as $item) {
+                            $user = $item->getData();
+                            if ($_SESSION["user"]["id"] === $user["id"])
+                                staff("../".$user["image"],"");
+                        }
+                        echo "<button id='clickModifyPdp' class='send modify modifyProfil'>Modifier pdp</button>";
+                    }
+                    ?>
                 </div>
                 <div id="profilImageModify">
                     <form method="post" action="#" class="flexCenter flexColumn width_100">
