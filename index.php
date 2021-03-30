@@ -124,5 +124,6 @@ $users = $managerUser->getStaff();
     </div>
 </main>
 
+
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
