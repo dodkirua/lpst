@@ -53,7 +53,8 @@ a {
     height: 80px;
 }
 
-#lpstLogo, .arrowRight, #scrollMenu, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
+#lpstLogo, .arrowRight, #scrollMenu, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive,
+.fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
     position: absolute;
 }
 
@@ -671,6 +672,10 @@ select, option {
 
 .width_70 {
     width: 70%;
+}
+
+a.colorWhite:hover {
+    color: white;
 }
 
 #formReserved {
