@@ -134,6 +134,10 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                             <button id="modifypwd" class="send modify">Valider</button>
                     </form>
 
+                    <form action="#" method="post" class="flexCenter flexColumn">
+                        <button id="deleteAccount" class="redButton modify">Supprimer mon compte</button>
+                    </form>
+
                 </div>
             </div>
         </section>

@@ -45,6 +45,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <input class="whiteBorder2 margin5-0" placeholder="Nom de l'article" type="text" name="name">
                     <textarea class="whiteBorder2 margin5-0" placeholder="Description" name="description"></textarea>
                     <input class="whiteBorder2 margin5-0" placeholder="Prix" type="text" name="price">
+                    <input class="whiteBorder2 margin5-0" placeholder="Poids" type="text" name="weight">
                     <input class="whiteBorder2 margin5-0" placeholder="Code de l'article" type="text" name="nameRay">
                     <input class="whiteBorder2 margin5-0" placeholder="Nom de son rayon" type="text" name="nameRay">
                     <input class="whiteBorder2 margin5-0" placeholder="Nom du sous-rayon" type="text" name="nameSubRay">
