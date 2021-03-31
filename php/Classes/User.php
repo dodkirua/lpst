@@ -191,8 +191,7 @@ class User{
      * @param string|null $image
      * @return User
      */
-    public function setImage(?string $image): User
-    {
+    public function setImage(?string $image): User    {
         $this->image = $image;
         return $this;
     }
@@ -202,8 +201,7 @@ class User{
      * @param string|null $key
      * @return User
      */
-    public function setKey(?string $key): User
-    {
+    public function setKey(?string $key): User    {
         $this->key = $key;
         return $this;
     }

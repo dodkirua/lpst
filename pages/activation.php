@@ -51,4 +51,9 @@ else {
 }
 
 
-include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
+function e(): void
+{
+    include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
+}
+
+e();

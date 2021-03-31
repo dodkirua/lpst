@@ -224,17 +224,17 @@ class UserManager{
         return $staff;
     }
 
-    /**
+   /**
      * del a user
      * @param $id
      */
-    public function delUser($id){
-        $user = $this->getUserById($id);
-       // if ($user->)
-        $stmt = $this->db->prepare("DELETE FROM user WHERE id = :id");
-        $stmt->bindValue(':id',$id);
-        $stmt->execute();
-    }
+    /*    public function delUser($id){
+           $user = $this->getUserById($id);
+          // if ($user->)
+           $stmt = $this->db->prepare("DELETE FROM user WHERE id = :id");
+           $stmt->bindValue(':id',$id);
+           $stmt->execute();
+       }*/
 
     public function delInfoUser($id){
         $stmt = $this->db->prepare("UPDATE user SET
