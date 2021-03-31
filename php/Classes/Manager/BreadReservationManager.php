@@ -1,7 +1,6 @@
 <?php
 
 
-class BreadReservationManager
-{
+class BreadReservationManager{
 
 }
