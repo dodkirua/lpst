@@ -692,6 +692,10 @@ a.colorWhite:hover {
     background-color: #3b72bd;
 }
 
+.inputBread {
+    width: 75%;
+}
+
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {
         font-size: 12px;
@@ -1025,6 +1029,9 @@ a.colorWhite:hover {
     }
     .articleProduct {
         width: 70%;
+    }
+    .inputBread {
+        width: 90%;
     }
 }
 
