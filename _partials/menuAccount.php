@@ -41,15 +41,11 @@ $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"
         </div>
         <div class="separatorHorizontal"></div>
         <div id="storeManagement" class="select selectComputer backgroundBlue2">
-            <a href="../pages/storeManagement.php" class="colorWhite">Gestion de notre magasin</a>
+            <a href="../pages/storeManagement.php" class="colorWhite">Gestion de notre magasin / nos partenaires locaux</a>
         </div>
         <div class="separatorHorizontal"></div>
         <div id="productManagement" class="select selectComputer backgroundBlue2">
             <p class="colorWhite">Gestion de nos produits</p>
-        </div>
-        <div class="separatorHorizontal"></div>
-        <div id="localManagement" class="select selectComputer backgroundBlue2">
-            <p class="colorWhite">Gestion de nos partenaires locaux</p>
         </div>
         <div class="separatorHorizontal"></div>
         <div id="shopManagement" class="select selectComputer backgroundBlue2">
