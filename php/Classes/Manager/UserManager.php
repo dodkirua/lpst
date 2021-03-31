@@ -5,6 +5,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/User.php";
 class UserManager{
     private ?PDO $db;
 
+    /**
+     * UserManager constructor.
+     */
     public  function __construct(){
         $this->db = DB::getInstance();
     }
@@ -17,7 +20,7 @@ class UserManager{
      * @param $pass
      * @return bool
      */
-    public function addUser($name, $surname, $mail, $pass) : bool{
+    public function addUser(string $name,string $surname, string $mail, string $pass) : bool{
         $name = mb_strtolower($name);
         $surname = mb_strtolower($surname);
         $mail = mb_strtolower($mail);
