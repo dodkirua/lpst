@@ -3,7 +3,6 @@ import {itemQuantity} from "./article.js";
 import {closeModal, numberOfClick, clickToggle} from "./function.js";
 import {clickDisplay} from "./account.js";
 
-
 //When we click on "bars" we unfold or replicate the drop-down menu.
 $("#bars").click(function () {
     $("#scrollMenu").slideToggle();

@@ -4,6 +4,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 
+
 if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon compte";
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
@@ -30,8 +31,16 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
             <div id="informationAccount">
                 <h2 class="subtitle"> Mes coordonnées</h2>
                 <div id="pdp" class="flexCenter flexColumn">
-                    <img class="photoProfil" src="http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png" alt="photoProfil">
-                    <button id="clickModifyPdp" class="send modify modifyProfil">Modifier pdp</button>
+                    <?php
+                    if ($_SESSION["user"]["role"] !== 2) {
+                        foreach ($users as $item) {
+                            $user = $item->getData();
+                            if ($_SESSION["user"]["id"] === $user["id"])
+                                staff("../".$user["image"],"");
+                        }
+                        echo "<button id='clickModifyPdp' class='send modify modifyProfil'>Modifier pdp</button>";
+                    }
+                    ?>
                 </div>
                 <div id="profilImageModify">
                     <form method="post" action="#" class="flexCenter flexColumn width_100">
@@ -117,7 +126,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 <div class="separatorHorizontal"></div>
                 <div class="flexColumn">
                     <h2 class="subtitle"> Changer mon mot de passe</h2>
-                    <form action="#" method="post" class="flexCenter flexColumn">
+                    <form action="../php/modifyPassword.php" method="post" class="flexCenter flexColumn">
                         <label class="colorBlue" for="currentPwd">Mon mot de passe actuel</label>
                         <input id="currentPwd" name="currentPwd" type="password">
                         <label class="colorBlue" for="newPwd">Mon nouveau mot de passe</label>

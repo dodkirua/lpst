@@ -27,9 +27,24 @@ $users = $managerUser->getStaff();
                     $information = $item->getData();
                     if ($token) {
                         containerShop1($information["image"], $information["title"], $information["description"]);
+                        if (isset($_SESSION["user"]["id"])) {
+                            if ($_SESSION['user']['role'] != 2) {
+                                echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
+                                <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
+                            }
+                        }
+                        else {
+                            echo "";
+                        }
                     }
                     else {
                         containerShop2($information["image"], $information["title"], $information["description"]);
+                        if (isset($_SESSION["user"]["id"])) {
+                            if ($_SESSION['user']['role'] !== 2) {
+                                echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
+                                <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
+                            }
+                        }
                     }
                     $token = !$token;
                 }
@@ -51,10 +66,26 @@ $users = $managerUser->getStaff();
                 <div class="margin15-30 colorGreen">
                     <h3><i class="fas fa-map-marker-alt descriptionIcon"></i>La Boutique Les Pieds sur Terre</h3>
                     <p class="information">23 rue Jean Pierre Dupont, 59610 FOURMIES</p>
+                    <?php
+                    if (isset($_SESSION["user"]["id"])) {
+                        if ($_SESSION['user']['role'] !== 2) {
+                            echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
+                                  <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="margin15-30 colorGreen">
                     <h3><i class="fas fa-phone-alt descriptionIcon"></i>Téléphone</h3>
                     <p class="information">07 49 47 20 08</p>
+                    <?php
+                    if (isset($_SESSION["user"]["id"])) {
+                        if ($_SESSION['user']['role'] !== 2) {
+                            echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
+                                  <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="margin15-30 colorGreen">
                     <h3><i class="fas fa-envelope descriptionIcon"></i>Mail</h3>
@@ -64,6 +95,14 @@ $users = $managerUser->getStaff();
                     <h3><i class="fas fa-truck descriptionIcon"></i>Horaires de livraison</h3>
                     <p class="information"><strong>jours</strong></p>
                     <p class="information">Heures - heures</p>
+                    <?php
+                    if (isset($_SESSION["user"]["id"])) {
+                        if ($_SESSION['user']['role'] !== 2) {
+                            echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
+                                  <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="margin15-30 colorGreen">
                     <h3><i class="fas fa-store descriptionIcon"></i>Horaires du magasin</h3>
@@ -71,6 +110,14 @@ $users = $managerUser->getStaff();
                     <p class="information">09:30 - 12:30 / 14:30 - 18:30</p>
                     <p class="information"><strong>du samedi</strong></p>
                     <p class="information">09:00 - 12:30 / 14:30 18:00</p>
+                    <?php
+                    if (isset($_SESSION["user"]["id"])) {
+                        if ($_SESSION['user']['role'] !== 2) {
+                            echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
+                                  <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>

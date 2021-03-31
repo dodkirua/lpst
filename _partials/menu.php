@@ -61,7 +61,7 @@
         }
         else {
             ?>
-            <div class="log2">
+            <div class="log2 center">
                 <a class="colorWhite linkLog" href="../pages/login.php">Se connecter</a>
                 <span> / </span>
                 <a class="colorWhite linkLog" href="../pages/registration.php">Créer un compte</a>
