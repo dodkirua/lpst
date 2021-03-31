@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = "LPST : Fruits et légumes";
+$title = "LPST : Bien-être";
 
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
