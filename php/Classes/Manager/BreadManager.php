@@ -35,5 +35,52 @@ class BreadManager{
         return $stmt->execute();
     }
 
+    /**
+     * get bread by id
+     * @param $id
+     * @return Bread|null*
+     */
+    public function getBreadById($id) : ?Bread{
+        $stmt = $this->db->prepare("SELECT * FROM bread WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        if ($state = $stmt->execute()) {
+            $item = $stmt->fetch();
+            $bread = new Bread($id);
+            $bread = $bread
+                ->setName($item['name'])
+                ->setPrice($item['price'])
+                ->setWeight($item['weight'])
+                ->setDescription($item['description'])
+                ->setBakerId($item['baker_id'])
+            ;
+            return $bread;
+        }
+        else {
+            return null;
+        }
+    }
 
+    /**
+     * get bread by baker
+     * @param int $baker
+     * @return array
+     */
+    public function getBreadByBaker(int $baker):array {
+        $stmt = $this->db->prepare("SELECT * FROM bread WHERE baker_id = :id");
+        $stmt->bindValue(":id",$baker);
+        $breads = [];
+        if ($state = $stmt->execute()) {
+           foreach ($stmt->fetch() as $item){
+               $bread = new Bread($item['id']);
+               $bread = $bread
+                   ->setName($item['name'])
+                   ->setPrice($item['price'])
+                   ->setWeight($item['weight'])
+                   ->setDescription($item['description'])
+                   ->setBakerId($item['baker_id']);
+               $breads[] = $bread;
+           }
+        }
+        return $breads;
+    }
 }
