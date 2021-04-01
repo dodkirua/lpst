@@ -104,6 +104,7 @@ class BreadManager{
                     ->setPrice($item['price'])
                     ->setWeight($item['weight'])
                     ->setDescription($item['description'])
+                    ->setImage($item['image'])
                     ->setBakerId($item['baker_id'])
                 ;
                 $breads[] = $bread;

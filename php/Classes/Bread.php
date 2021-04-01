@@ -7,6 +7,7 @@ class Bread{
     private ?float $price;
     private ?float $weight;
     private ?string $description;
+    private ?string $image;
     private ?int $bakerId;
 
     /**
@@ -57,12 +58,21 @@ class Bread{
         return $this->description;
     }
 
+
     /**
      * get the baker id
      * @return int|null
      */
     public function getBakerId(): ?int    {
         return $this->bakerId;
+    }
+
+    /**
+     * get image
+     * @return string|null
+     */
+    public function getImage(): ?string    {
+        return $this->image;
     }
 
     /**
@@ -87,7 +97,7 @@ class Bread{
     }
 
     /**
-     * the the weight
+     * set the weight
      * @param float|null $weight
      * @return Bread
      */
@@ -119,6 +129,15 @@ class Bread{
         return $this;
     }
 
+    /**
+     * @param int|null $image
+     * @return Bread
+     */
+    public function setImage (?int $image): Bread    {
+        $this->image = $image;
+        return $this;
+    }
+
     public function getData() : array {
 
         $array['id'] = $this->getId();
@@ -126,6 +145,7 @@ class Bread{
         $array['price'] = $this->getPrice();
         $array['weight'] = $this->getWeight();
         $array['description'] = $this->getDescription();
+        $array['image'] = $this->getImage();
         $array['baker_id'] = $this->getBakerId();
 
         return $array;
