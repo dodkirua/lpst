@@ -4,6 +4,7 @@ $title = "LPST : Réserver notre pain";
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BreadManager.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
@@ -219,9 +220,9 @@ $breadManager = new BreadManager();
                 $bread1 = $item->getData();
                 $i++;
                     echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                        imageProducts($bread1['image'], $bread1['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
                             <p class='size20 bold'>" . $bread1['name'] ."</p>
@@ -248,9 +249,9 @@ $breadManager = new BreadManager();
                         $bread2 = $item->getData();
                         $i++;
                         echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                        imageProducts($bread2['image'], $bread2['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
                             <p class='size20 bold'>" . $bread2['name'] ."</p>
@@ -277,9 +278,9 @@ $breadManager = new BreadManager();
                             $bread3 = $item->getData();
                             $i++;
                             echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                            imageProducts($bread3['image'], $bread3['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
                             <p class='size20 bold'>" . $bread3['name'] ."</p>
@@ -306,9 +307,9 @@ $breadManager = new BreadManager();
                                 $bread4 = $item->getData();
                                 $i++;
                                 echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                        imageProducts($bread4['image'], $bread4['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
                             <p class='size20 bold'>" . $bread4['name'] ."</p>

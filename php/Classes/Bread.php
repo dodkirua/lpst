@@ -147,7 +147,6 @@ class Bread{
         $array['description'] = $this->getDescription();
         $array['image'] = $this->getImage();
         $array['baker_id'] = $this->getBakerId();
-
         return $array;
     }
 
