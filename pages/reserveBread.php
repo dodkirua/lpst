@@ -4,6 +4,8 @@ $title = "LPST : Réserver notre pain";
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BreadManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerDeliveryManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/DeliveryDateManager.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
@@ -11,6 +13,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 $bakerManager = new BakerManager();
 $bakers = $bakerManager->getAll();
 $breadManager = new BreadManager();
+$bakerDeliveryManager = new BakerDeliveryManager();
+$deliveryDate = new DeliveryDateManager();
 ?>
 
     <main>
@@ -28,7 +32,10 @@ $breadManager = new BreadManager();
             </select>
 
         <h2 class="subtitle" id="nameBakery"></h2>
-        <div id="choiceBread">
+        <div id="choiceBread" class="flexColumn">
+            <?php
+            bakerDelivery(1, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -45,8 +52,9 @@ $breadManager = new BreadManager();
                     $bread1 = $item->getData();
                     $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread1['image'], $bread1['name']);
+                    echo "<td>
                         <div class='flexColumn'>
                             <p class='size20'>". $bread1['name'] ."</p>
                             <p>". $bread1['description'] ."</p>   
@@ -73,7 +81,10 @@ $breadManager = new BreadManager();
                 ?>
             </table>
         </div>
-        <div id="choiceBread2">
+        <div id="choiceBread2" class="flexColumn">
+            <?php
+            bakerDelivery(2, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -91,8 +102,9 @@ $breadManager = new BreadManager();
                     $bread2 = $item->getData();
                     $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread2['image'], $bread2['name']);
+                    echo "<td>
                         <div class='flexColumn'>
                             <p class='size20'>". $bread2['name'] ."</p>
                             <p>". $bread2['description'] ."</p>   
@@ -119,7 +131,10 @@ $breadManager = new BreadManager();
                 ?>
             </table>
         </div>
-        <div id="choiceBread3">
+        <div id="choiceBread3" class="flexColumn">
+            <?php
+            bakerDelivery(3, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -136,8 +151,9 @@ $breadManager = new BreadManager();
                     $bread3 = $item->getData();
                     $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread3['image'], $bread3['name']);
+                    echo "<td>
                         <div class='flexColumn'>
                             <p class='size20'>". $bread3['name'] ."</p>
                             <p>". $bread3['description'] ."</p>   
@@ -164,7 +180,10 @@ $breadManager = new BreadManager();
                 ?>
             </table>
         </div>
-        <div id="choiceBread4">
+        <div id="choiceBread4" class="flexColumn">
+            <?php
+            bakerDelivery(4, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -181,8 +200,9 @@ $breadManager = new BreadManager();
                     $bread4 = $item->getData();
                     $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread4['image'], $bread4['name']);
+                    echo "<td>
                         <div class='flexColumn'>
                             <p class='size20'>". $bread4['name'] ."</p>
                             <p>". $bread4['description'] ."</p>   
