@@ -48,14 +48,15 @@ class DeliveryDateManager{
     }
 
     /**
+     * del inn DB
      * @param $id
      * @var BakerDelivery $item
      */
     public function delById($id){
-        $bakerdelivery = new BakerDeliveryManager();
-        $array = $bakerdelivery->getByDeliveryDate($id);
+        $bakerDelivery = new BakerDeliveryManager();
+        $array = $bakerDelivery->getByDeliveryDate($id);
         foreach ($array as $item){
-            $bakerdelivery->delById($);
+            $bakerDelivery->delById($item->getId());
         }
         $stmt = $this->db->prepare("DELETE FROM delivery_date WHERE id = :id");
         $stmt->bindValue(":id",$id);

@@ -130,10 +130,10 @@ class Bread{
     }
 
     /**
-     * @param int|null $image
+     * @param string|null $image
      * @return Bread
      */
-    public function setImage (?int $image): Bread    {
+    public function setImage (?string $image): Bread    {
         $this->image = $image;
         return $this;
     }

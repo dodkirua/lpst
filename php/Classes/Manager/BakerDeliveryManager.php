@@ -66,6 +66,10 @@ class BakerDeliveryManager{
         return $this->get($stmt);
     }
 
+    /**
+     * del in DB
+     * @param $id
+     */
     public function delById($id){
         $stmt = $this->db->prepare("DELETE FROM baker_delivery WHERE id = :id");
         $stmt->bindValue(":id",$id);

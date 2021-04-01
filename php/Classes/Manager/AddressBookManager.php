@@ -18,6 +18,7 @@ class AddressBookManager{
      * @param string|null $firstname
      * @param string|null $lastname
      * @param string|null $phone
+     * @param string|null $delivery
      * @return int
      */
     public function add(string $name, int $idUser, int $idAddress, ?string $firstname, ?string $lastname, ?string $phone ,?string $delivery) : int {
@@ -59,9 +60,8 @@ class AddressBookManager{
                 return intval($id["max(id)"]);
             }
         }
-        else {
-            return -1;
-        }
+        return -1;
+
     }
 
     /**
@@ -89,6 +89,15 @@ class AddressBookManager{
 
     }
 
+    /**
+     * del in DB
+     * @param $id
+     */
+    public function delById($id){
+        $stmt = $this->db->prepare("DELETE FROM address_book WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
+    }
 
 
 }
