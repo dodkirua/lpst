@@ -32,20 +32,24 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <input class="whiteBorder2 margin5-0 width_100" placeholder="Titre" type="text" name="titleStore">
                     <input class="whiteBorder2 margin5-0 width_100" type="file" name="imageStore">
                     <span class="margin15-30">Dans:</span>
-                    <div class="flexRow align margin15-30">
-                        <input type="radio" value="index.php">Notre magasin
-                    </div>
-                    <div class="flexRow align margin15-30">
-                        <input type="radio" value="local.php">Nos partenaires locaux
-                    </div>
+                    <select class="width_70 size15 margin20">
+                        <option value="fruits_vegetables.php">Fruits et légumes</option>
+                        <option value="saltyGroceries.php">Epicerie salée</option>
+                        <option value="sweetGroceries.php">Epicerie sucrée</option>
+                        <option value="freshSection.php">Rayon frais</option>
+                        <option value="cosmetic.php">Cosmétique</option>
+                        <option value="hygiene.php">Hygiène</option>
+                        <option value="well-being.php">Bien-être</option>
+                        <option value="houseMaintenance.php">Entretien maison</option>
+                    </select>
+
                     <textarea class="whiteBorder2 margin5-0 width_100" placeholder="Description" name="descriptionStore"></textarea>
                     <input class="send modify modifyProfil" type="submit" value="Ajouter">
                 </form>
-
             </section>
         </div>
     </main>
 
-<?php
+    <?php
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
 }

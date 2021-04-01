@@ -21,42 +21,38 @@ $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"
 </div>
 <div id="informationProfil2">
     <div class="separatorHorizontal"></div>
-    <div id="information" class="select selectComputer">
+    <div id="information" class="select">
         <a href="../pages/account.php" class="colorWhite">Mes informations</a>
     </div>
     <div class="separatorHorizontal"></div>
-    <div id="ordered" class="select selectComputer">
+    <div id="ordered" class="select">
         <a href="../pages/ordered.php" class="colorWhite">Mes commandes</a>
     </div>
     <div class="separatorHorizontal"></div>
-    <div id="basketsSave" class="select selectComputer">
+    <div id="basketsSave" class="select">
         <a href="../pages/basketsFavorite.php" class="colorWhite">Mes paniers sauvegardés</a>
     </div>
     <?php
     if ($_SESSION["user"]["role"] === 1) {
         ?>
         <div class="separatorHorizontal"></div>
-        <div id="userManagement" class="select selectComputer backgroundBlue2">
+        <div id="userManagement" class="select backgroundBlue2">
             <a href="../pages/userManagement.php" class="colorWhite">Gestion des utilisateurs</a>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="storeManagement" class="select selectComputer backgroundBlue2">
-            <a href="../pages/storeManagement.php" class="colorWhite">Gestion de notre magasin</a>
+        <div id="storeManagement" class="select backgroundBlue2">
+            <a href="../pages/storeManagement.php" class="colorWhite">Gestion de notre magasin / nos partenaires locaux</a>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="productManagement" class="select selectComputer backgroundBlue2">
-            <p class="colorWhite">Gestion de nos produits</p>
+        <div id="productManagement" class="select backgroundBlue2">
+            <a href="../pages/productManagement.php" class="colorWhite">Gestion de nos produits</a>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="localManagement" class="select selectComputer backgroundBlue2">
-            <p class="colorWhite">Gestion de nos partenaires locaux</p>
-        </div>
-        <div class="separatorHorizontal"></div>
-        <div id="shopManagement" class="select selectComputer backgroundBlue2">
+        <div id="shopManagement" class="select backgroundBlue2">
             <a href="../pages/shopManagement.php" class="colorWhite">Gestion de l'epicerie en ligne</a>
         </div>
         <div class="separatorHorizontal"></div>
-        <div id="breadManagement" class="select selectComputer backgroundBlue2">
+        <div id="breadManagement" class="select backgroundBlue2">
             <a href="../pages/breadManagement.php" class="colorWhite">Gestion de réservation de pain</a>
         </div>
         <?php

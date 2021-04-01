@@ -53,7 +53,8 @@ a {
     height: 80px;
 }
 
-#lpstLogo, .arrowRight, #scrollMenu, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive, .fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
+#lpstLogo, .arrowRight, #scrollMenu, .reverse, .reverse2, .placePrice, .placePrice2, .placePrice3, #lpstLogo2, #lpstLogoResponsive,
+.fa-bars, .log, .log3, #ab, #biomonde, .modal2, #closeModal, .end {
     position: absolute;
 }
 
@@ -673,6 +674,10 @@ select, option {
     width: 70%;
 }
 
+a.colorWhite:hover {
+    color: white;
+}
+
 #formReserved {
     background-image: url("https://media.istockphoto.com/photos/freshly-baked-bread-on-wooden-table-picture-id617603536?k=6&m=617603536&s=612x612&w=0&h=WfKeflraZVemNe7CM-YJAfhXrrIXA8S863JJqpPyw7w=");
     background-size: 100%;
@@ -685,6 +690,14 @@ select, option {
 
 .backgroundBlue2:hover {
     background-color: #3b72bd;
+}
+
+.inputBread {
+    width: 75%;
+}
+
+.size15 {
+    font-size: 15px;
 }
 
 @media screen and (max-width: 1510px) {
@@ -1020,6 +1033,9 @@ select, option {
     }
     .articleProduct {
         width: 70%;
+    }
+    .inputBread {
+        width: 90%;
     }
 }
 

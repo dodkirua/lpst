@@ -304,8 +304,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <input name="email" class="width30" type="text" placeholder="E-mail">
                 </div>
                 <div class="flexColumn flexCenter">
-                    <input name="phone" class="width65 margin20" type="text" placeholder="Téléphone">
-                    <input id="dateInput" name="date" class="width65 margin20" type="date">
+                    <input name="phone" class="inputBread margin20" type="text" placeholder="Téléphone">
+                    <input id="dateInput" name="date" class="inputBread margin20" type="date">
                 </div>
                 <input id="validateReservedBread" type="submit" class="brownBorder flexCenter modifyProfil" value="Valider la réservation">
             </form>
