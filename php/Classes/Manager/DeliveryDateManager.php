@@ -48,6 +48,7 @@ class DeliveryDateManager{
     }
 
     /**
+     * del inn DB
      * @param $id
      * @var BakerDelivery $item
      */

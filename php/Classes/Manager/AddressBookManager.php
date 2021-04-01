@@ -89,6 +89,15 @@ class AddressBookManager{
 
     }
 
+    /**
+     * del in DB
+     * @param $id
+     */
+    public function delById($id){
+        $stmt = $this->db->prepare("DELETE FROM address_book WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
+    }
 
 
 }
