@@ -141,4 +141,25 @@ class AddressManager{
         return null;
 
     }
+    
+    public function modify(int $id, string $street, string $complement, int $number, string $zip, string $city, string $country): bool    {
+        $street = mb_strtolower($street);
+        $complement = mb_strtolower($complement);
+        $zip = mb_strtolower($zip);
+        $city = mb_strtolower($city);
+        $country = mb_strtolower($country);
+        $stmt = $this->db->prepare("UPDATE address
+                SET street = :street, complement = :complement, number = :number, city = :city, zip_code = :zip, country = :country
+                WHERE id = :id        
+        ");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":street",$street);
+        $stmt->bindValue(":complement",$complement);
+        $stmt->bindValue(":number",$number);
+        $stmt->bindValue(":city",$city);
+        $stmt->bindValue(":zip",$zip);
+        $stmt->bindValue(":country",$country);
+
+        return $stmt->execute();
+    }
 }

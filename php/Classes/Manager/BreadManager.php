@@ -139,6 +139,8 @@ class BreadManager{
      * @return bool
      */
     public function modify(int $id, string $name, float $price, float $weight, string $description): bool    {
+        $name = mb_strtolower($name);
+        $description = mb_strtolower($description);
         $stmt = $this->db->prepare("UPDATE bread 
                 SET name = :title, description = :description, price = :price, weight = :weight
                 WHERE id = :id        

@@ -71,4 +71,25 @@ class BakerManager{
         }
         return $bakers;
     }
+
+    /**
+     * modify name and address
+     * @param int $id
+     * @param string $name
+     * @param int $address
+     * @return bool
+     */
+    public function modify(int $id, string $name, int $address): bool    {
+        $name = mb_strtolower($name);
+        $stmt = $this->db->prepare("UPDATE baker 
+                SET name = :name, address_id = :address_id
+                WHERE id = :id        
+        ");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":name",$name);
+        $stmt->bindValue(":address_id",$address);
+      
+
+        return $stmt->execute();
+    }
 }

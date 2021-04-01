@@ -99,5 +99,31 @@ class AddressBookManager{
         $stmt->execute();
     }
 
+    /**
+     * modify name firstname lastname delivery and address
+     * @param int $id
+     * @param string $name
+     * @param string $firstname
+     * @param string $lastname
+     * @param int $delivery
+     * @param int $address
+     * @return bool
+     */
+    public function modify(int $id, string $name, string $firstname, string $lastname,int $delivery, int $address): bool    {
+        $name = mb_strtolower($name);
+        $lastname = mb_strtolower($lastname);
+        $firstname = mb_strtolower($firstname);
+        $stmt = $this->db->prepare("UPDATE address_book 
+                SET name = :name, firstname = :firstname, lastname = :lastname, delivery = :delivery, address_id = :address
+                WHERE id = :id        
+        ");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":name",$name);
+        $stmt->bindValue(":address",$address);
+        $stmt->bindValue(":firstname",$firstname);
+        $stmt->bindValue(":delivery",$delivery);
+        $stmt->bindValue(":lastname",$lastname);
 
+        return $stmt->execute();
+    }
 }

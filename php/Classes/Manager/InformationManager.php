@@ -117,6 +117,10 @@ class InformationManager{
      * @return bool
      */
     public function modify(int $id, string $title, string $description, string $image, string $location): bool    {
+        $title = mb_strtolower($title);
+        $description = mb_strtolower($description);
+        $image = mb_strtolower($image);
+        $location = mb_strtolower($location);
         $stmt = $this->db->prepare("UPDATE information 
                 SET title = :title, description = :description, image = :image, location = :location
                 WHERE id = :id        
