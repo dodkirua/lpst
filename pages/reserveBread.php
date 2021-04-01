@@ -2,19 +2,23 @@
 session_start();
 $title = "LPST : Réserver notre pain";
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerManager.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
+$bakerManager = new BakerManager();
 ?>
 
     <main>
         <h1>RÉSERVATION <span class="colorGreen">DE PAIN</span></h1>
-
             <select id="baker" class="flexCenter">
                 <option class="optionBaker" value="">Choisissez votre boulangerie</option>
-                <option class="optionBaker" value="Boulangerie 1">Boulangerie 1</option>
-                <option class="optionBaker" value="Boulangerie 2">Boulangerie 2</option>
-                <option class="optionBaker" value="Boulangerie 3">Boulangerie 3</option>
-                <option class="optionBaker" value="Boulangerie 4">Boulangerie 4</option>
+                    <?php
+                    foreach ($bakerManager as $item) {
+                        $baker = $bakerManager
+                        echo "<option class='optionBaker' value='" . $baker['name'] . "'>" . $baker['name'] . "</option";
+                    }
+                    ?>
             </select>
 
         <h2 class="subtitle" id="nameBakery"></h2>
