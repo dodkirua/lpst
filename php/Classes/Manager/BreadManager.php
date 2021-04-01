@@ -86,7 +86,12 @@ class BreadManager{
         }
         return $breads;
     }
-    
+
+    /**
+     * get all bread by baker
+     * @param $baker
+     * @return array
+     */
     public function getByBaker($baker) : array {
         $stmt = $this->db->prepare("SELECT * FROM bread WHERE baker_id = :baker");
         $stmt->bindValue(":baker",$baker);

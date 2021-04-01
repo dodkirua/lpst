@@ -39,7 +39,12 @@ class DeliveryDateManager{
             $item = $stmt->fetch();
             $delivery = new DeliveryDate($id);
             $delivery = $delivery
-                ->
+                ->setDay($item['day'])
+                ->setTime($item["time"])
+            ;
         }
+        return $delivery;
     }
+
+
 }

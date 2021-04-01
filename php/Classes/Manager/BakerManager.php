@@ -29,8 +29,14 @@ class BakerManager{
         return $stmt->execute();
     }
 
+    /**
+     * get baker by id
+     * @param int $id
+     * @return Baker|null
+     */
     public function getBakerById(int $id) : ?Baker {
-        $stmt = $this->db->prepare("SELECT * FROM baker WHERE id='".$id."'");
+        $stmt = $this->db->prepare("SELECT * FROM baker WHERE id=:id");
+        $stmt->bindValue(":id",$id);
         $baker = null;
         if ($state = $stmt->execute()) {
             $item = $stmt->fetch();
@@ -46,6 +52,10 @@ class BakerManager{
         }
     }
 
+    /**
+     * get all baker
+     * @return array
+     */
     public function getAll() : array {
         $stmt = $this->db->prepare("SELECT * FROM baker");
         $bakers =  [];
