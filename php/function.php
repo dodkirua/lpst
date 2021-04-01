@@ -23,18 +23,56 @@ function pre($text){
     echo "<pre>";
 }
 
-function containerShop1 (string $image, string $alt, string $text) {
-    echo "<div class='flexCenter'  id='containerShop1'>
-<img class='shop' alt='". $alt . "' src='". $image . "'>
-<p class='description colorBlue'>$text</p>
-</div>";
+function containerShop1 (?string $image, ?string $title, string $text) {
+    if ($image === "" || $image === null) {
+        echo "<div class='flexCenter width_100'  id='containerShop1'>
+            <div class='description colorBlue'>
+            <h2 class='colorGreen'>$title</h2>
+            <p>$text</p>
+            </div>
+        </div>";
+    }
+    else if ($title === "" || $title === null) {
+        echo "<div class='flexCenter'  id='containerShop1'>
+        <img class='shop' alt='" . $title . "' src='" . $image . "'>
+        <p class='description colorBlue'>$text</p>
+        </div>";
+    }
+    else {
+        echo "<div class='flexCenter'  id='containerShop1'>
+        <img class='shop' alt='" . $title . "' src='" . $image . "'>
+        <div class='description colorBlue'>
+        <h2 class='colorGreen'>$title</h2>
+        <p>$text</p>
+        </div>
+        </div>";
+    }
 }
 
-function containerShop2 (string $image, string $alt, string $text) {
-    echo "<div class='flexCenter'  id='containerShop2'>
-<p class='description colorBlue'>$text</p>
-<img class='shop' alt='". $alt . "' src='". $image . "'>
-</div>";
+function containerShop2 (?string $image, ?string $title, string $text) {
+    if ($image === "" || $image === null) {
+        echo "<div class='flexCenter width_100'  id='containerShop2'>
+            <div class='description colorBlue'>
+            <h2 class='colorGreen'>$title</h2>
+            <p>$text</p>
+            </div>
+        </div>";
+    }
+    else if ($title === "" || $title === null) {
+        echo "<div class='flexCenter'  id='containerShop2'>
+        <p class='description colorBlue'>$text</p>
+        <img class='shop' alt='" . $title . "' src='" . $image . "'>
+        </div>";
+    }
+    else {
+        echo "<div class='flexCenter'  id='containerShop2'>
+        <div class='description colorBlue'>
+        <h2 class='colorGreen'>$title</h2>
+        <p>$text</p>
+        </div>
+        <img class='shop' alt='" . $title . "' src='" . $image . "'>
+        </div>";
+    }
 }
 
 function staff (?string $image, string $firstname) {
@@ -49,7 +87,7 @@ function staff (?string $image, string $firstname) {
 
 function ImageProducts (?string $image, string $name) {
     if ($image === "" || $image === null) {
-        $image = $_SERVER['DOCUMENT_ROOT']. "/assets/img/bread/bread.png";
+        $image = "../assets/img/bread/bread.jpg";
     }
     echo "<img alt='" . $name . "' class='imgTable' src='" . $image . "'>";
 }
