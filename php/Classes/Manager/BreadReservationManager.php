@@ -38,7 +38,7 @@ class BreadReservationManager{
             $breadReservation = new BreadReservation($id);
             $breadReservation = $breadReservation
                 ->setAmount($item['amount'])
-                ->setBreadId($item['bread'])
+                ->setBreadId($item['bread_id'])
                 ->setReservationId($item['reservation_id'])
             ;
             return $breadReservation;
@@ -61,6 +61,27 @@ class BreadReservationManager{
     public function getByBreadId(int $bread) : array    {
         $stmt = $this->db->prepare("SELECT * FROM bread_reservation WHERE bread_id = :id");
         $stmt->bindValue(":id",$bread);
+       return $this->get($stmt);
+    }
+
+    /**
+     * get by reservation
+     * @param int $reservation
+     * @return array
+     */
+    public function getByReservationId(int $reservation) : array    {
+        $stmt = $this->db->prepare("SELECT * FROM bread_reservation WHERE reservation_id = :id");
+        $stmt->bindValue(":id",$reservation);
+        return $this->get($stmt);
+    }
+
+
+    /**
+     * general get
+     * @param $stmt
+     * @return array
+     */
+    private function get($stmt) : array {
         $breadArray = [];
 
         if ($stmt->execute()) {
@@ -68,14 +89,12 @@ class BreadReservationManager{
                 $breadReservation = new BreadReservation($item['id']);
                 $breadReservation = $breadReservation
                     ->setAmount($item['amount'])
-                    ->setBreadId($item['bread'])
+                    ->setBreadId($item['bread_id'])
                     ->setReservationId($item['reservation_id'])
                 ;
-               $breadArray = $breadReservation;
+                $breadArray = $breadReservation;
             }
         }
         return $breadArray;
     }
-
-
 }
