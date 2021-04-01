@@ -16,7 +16,6 @@ $breadManager = new BreadManager();
 $bakerDeliveryManager = new BakerDeliveryManager();
 $deliveryDate = new DeliveryDateManager();
 ?>
-
     <main>
         <h1>RÉSERVATION <span class="colorGreen">DE PAIN</span></h1>
             <select id="baker" class="flexCenter">
