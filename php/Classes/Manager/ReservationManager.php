@@ -95,9 +95,11 @@ class ReservationManager{
     /**
      * del inn DB
      * @param $id
-     * @var BreadReservation$item
+     * @return bool
+     * @var BreadReservation $item
      */
-    public function delById($id){
+    public function delById($id): bool
+    {
         $breadReservation= new BreadReservationManager();
         $array = $breadReservation->getByReservationId($id);
         foreach ($array as $item){
@@ -105,6 +107,22 @@ class ReservationManager{
         }
         $stmt = $this->db->prepare("DELETE FROM reservation WHERE id = :id");
         $stmt->bindValue(":id",$id);
-        $stmt->execute();
+        return $stmt->execute();
+    }
+
+    /**
+     * modify values reservation and validated
+     * @param int $id
+     * @param int $delivery
+     * @param int $validated
+     * @return bool
+     */
+    public function modify(int $id, int $delivery, int $validated): bool
+    {
+        $stmt = $this->db->prepare("UPDATE reservation SET delivery = :delivery, validated = :validated WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":delivery",$delivery);
+        $stmt->bindValue(":validated",$validated);
+        return $stmt->execute();
     }
 }
