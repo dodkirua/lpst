@@ -699,6 +699,9 @@ a.colorWhite:hover {
 .size15 {
     font-size: 15px;
 }
+.bold {
+    font-weight: bold;
+}
 
 @media screen and (max-width: 1510px) {
     .wishlist > p, .wishlist > span {

@@ -3,12 +3,13 @@ session_start();
 $title = "LPST : Réserver notre pain";
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BreadManager.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 $bakerManager = new BakerManager();
 $bakers = $bakerManager->getAll();
-
+$breadManager = new BreadManager();
 ?>
 
     <main>
@@ -37,18 +38,26 @@ $bakers = $bakerManager->getAll();
                     <th class="colorWhite">Ajouter</th>
                 </tr>
                 <?php
-                for ($i = 0; $i < 3; $i++) {
+                $breads1 = $breadManager->getByBaker(1);
+                $i = 0;
+                foreach ($breads1 as $item) {
+                    $bread1 = $item->getData();
+                    $i++;
                     echo "<tr class='trTable'>
                     <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
                     <td>
                         <div class='flexColumn'>
-                            <p>Nom de l'article</p>
+                            <p class='size20'>". $bread1['name'] ."</p>
+                            <p>". $bread1['description'] ."</p>   
+
                             <div class='flexRow'>
                                 <button class='buttonClassic'><i class='far fa-heart'></i></button>
                             </div>
                         </div>
                     </td>
-                    <td class='price1'></td>
+                    <td><p class='bold size20'>". $bread1['price'] ."</p>
+                        <p>". $bread1['weight'] ." / Kg</p>   
+                    </td>
                     <td>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
@@ -56,7 +65,7 @@ $bakers = $bakerManager->getAll();
                             <button class='buttonClassic more1'>+</button>
                         </div>
                     </td>
-                    <td class='total1'></td>
+                    <td class='bold size20'>". $bread1['price'] ."</td>
                     <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
                 </tr>";
                 }
