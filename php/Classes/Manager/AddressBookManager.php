@@ -18,6 +18,7 @@ class AddressBookManager{
      * @param string|null $firstname
      * @param string|null $lastname
      * @param string|null $phone
+     * @param string|null $delivery
      * @return int
      */
     public function add(string $name, int $idUser, int $idAddress, ?string $firstname, ?string $lastname, ?string $phone ,?string $delivery) : int {
@@ -59,9 +60,8 @@ class AddressBookManager{
                 return intval($id["max(id)"]);
             }
         }
-        else {
-            return -1;
-        }
+        return -1;
+
     }
 
     /**
