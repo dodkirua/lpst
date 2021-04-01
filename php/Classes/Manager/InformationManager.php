@@ -57,9 +57,8 @@ class InformationManager{
                 return intval($id["max(id)"]);
             }
         }
-        else {
-            return -1;
-        }
+        return -1;
+
     }
 
     /**
@@ -106,5 +105,28 @@ class InformationManager{
             }
         }
         return $informations;
+    }
+
+    /**
+     * modify  title description image et location
+     * @param int $id
+     * @param string $title
+     * @param string $description
+     * @param string $image
+     * @param string $location
+     * @return bool
+     */
+    public function modify(int $id, string $title, string $description, string $image, string $location): bool    {
+        $stmt = $this->db->prepare("UPDATE information 
+                SET title = :title, description = :description, image = :image, location = :location
+                WHERE id = :id        
+        ");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":title",$title);
+        $stmt->bindValue(":description",$description);
+        $stmt->bindValue(":image",$image);
+        $stmt->bindValue(":location",$location);
+
+        return $stmt->execute();
     }
 }
