@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/DB.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Reservation.php";
-
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BreadReservationManager.php";
 
 class ReservationManager{
     private ?PDO $db;
@@ -88,10 +88,23 @@ class ReservationManager{
                 ;
                 $array[]=$reservation;
             }
-
-
-            return $array;
         }
+        return $array;
+    }
 
+    /**
+     * del inn DB
+     * @param $id
+     * @var BreadReservation$item
+     */
+    public function delById($id){
+        $breadReservation= new BreadReservationManager();
+        $array = $breadReservation->getByReservationId($id);
+        foreach ($array as $item){
+            $breadReservation->delById($item->getId());
+        }
+        $stmt = $this->db->prepare("DELETE FROM reservation WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
     }
 }
