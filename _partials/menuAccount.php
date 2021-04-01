@@ -45,7 +45,7 @@ $lastname = str_replace(" ", "-", ucwords(str_replace("-", " ", $_SESSION["user"
         </div>
         <div class="separatorHorizontal"></div>
         <div id="productManagement" class="select backgroundBlue2">
-            <p class="colorWhite">Gestion de nos produits</p>
+            <a href="../pages/productManagement.php" class="colorWhite">Gestion de nos produits</a>
         </div>
         <div class="separatorHorizontal"></div>
         <div id="shopManagement" class="select backgroundBlue2">

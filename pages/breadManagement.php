@@ -37,6 +37,7 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                 <h2 class="subtitle">Ajouter un article</h2>
                 <form action="#" method="post" class="flexColumn flexCenter">
                     <input class="whiteBorder2 margin5-0" placeholder="Nom de l'article" type="text" name="name">
+                    <input class="whiteBorder2 margin5-0" placeholder="Nom de la boulangerie" type="text" name="nameBeaker">
                     <textarea class="whiteBorder2 margin5-0" placeholder="Description" name="description"></textarea>
                     <input class="whiteBorder2 margin5-0" placeholder="Prix" type="text" name="price">
                     <input class="whiteBorder2 margin5-0" placeholder="Poids" type="text" name="weight">
