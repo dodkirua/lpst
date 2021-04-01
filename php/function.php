@@ -47,8 +47,14 @@ function staff (?string $image, string $firstname) {
     </div>";
 }
 
-function checkPass($pass)
-{
+function ImageProducts (?string $image, string $name) {
+    if ($image === "" || $image === null) {
+        $image = $_SERVER['DOCUMENT_ROOT']. "/assets/img/bread/bread.png";
+    }
+    echo "<img alt='" . $name . "' class='imgTable' src='" . $image . "'>";
+}
+
+function checkPass($pass) {
     $maj = preg_match('@[A-Z]@', $pass);
     $min = preg_match('@[a-z]@', $pass);
     $number = preg_match('@[0-9]@', $pass);
@@ -62,3 +68,19 @@ function checkPass($pass)
     }
 }
 
+function bakerDelivery($baker, $bakerDeliveryManager, $deliveryDate) {
+    echo "<p>Livraison : </p>
+            <ul>";
+    $bakersDelivery = $bakerDeliveryManager->getByBaker($baker);
+    foreach ($bakersDelivery as $item) {
+        echo "<li>";
+        $bakerDelivery = $item->getData();
+        $date = $deliveryDate->getDeliveryDateById($bakerDelivery['delivery_date_id'])->getData();
+        echo $date['day'];
+        if (!is_null($date['time'])) {
+            echo " à ". $date['time'];
+        }
+        echo "</li>";
+    }
+    echo "</ul>";
+}

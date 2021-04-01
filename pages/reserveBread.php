@@ -2,23 +2,40 @@
 session_start();
 $title = "LPST : Réserver notre pain";
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BreadManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerDeliveryManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/DeliveryDateManager.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
+
+$bakerManager = new BakerManager();
+$bakers = $bakerManager->getAll();
+$breadManager = new BreadManager();
+$bakerDeliveryManager = new BakerDeliveryManager();
+$deliveryDate = new DeliveryDateManager();
 ?>
 
     <main>
         <h1>RÉSERVATION <span class="colorGreen">DE PAIN</span></h1>
-
             <select id="baker" class="flexCenter">
                 <option class="optionBaker" value="">Choisissez votre boulangerie</option>
-                <option class="optionBaker" value="Boulangerie 1">Boulangerie 1</option>
-                <option class="optionBaker" value="Boulangerie 2">Boulangerie 2</option>
-                <option class="optionBaker" value="Boulangerie 3">Boulangerie 3</option>
-                <option class="optionBaker" value="Boulangerie 4">Boulangerie 4</option>
+                    <?php
+                    $i = 0;
+                    foreach ($bakers as $item) {
+                        $i++;
+                        $baker = $item->getData();
+                        echo "<option class='optionBaker' id='baker" . $i . "' value='" . $baker['name'] . "'>" . $baker['name'] . "</option>";
+                    }
+                    ?>
             </select>
 
         <h2 class="subtitle" id="nameBakery"></h2>
-        <div id="choiceBread">
+        <div id="choiceBread" class="flexColumn">
+            <?php
+            bakerDelivery(1, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -29,18 +46,27 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <th class="colorWhite">Ajouter</th>
                 </tr>
                 <?php
-                for ($i = 0; $i < 3; $i++) {
+                $breads1 = $breadManager->getByBaker(1);
+                $i = 0;
+                foreach ($breads1 as $item) {
+                    $bread1 = $item->getData();
+                    $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread1['image'], $bread1['name']);
+                    echo "<td>
                         <div class='flexColumn'>
-                            <p>Nom de l'article</p>
+                            <p class='size20'>". $bread1['name'] ."</p>
+                            <p>". $bread1['description'] ."</p>   
+
                             <div class='flexRow'>
                                 <button class='buttonClassic'><i class='far fa-heart'></i></button>
                             </div>
                         </div>
                     </td>
-                    <td class='price1'></td>
+                    <td><p class='bold size20'>". $bread1['price'] ."</p>
+                        <p>". $bread1['weight'] ." / Kg</p>   
+                    </td>
                     <td>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
@@ -48,14 +74,17 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                             <button class='buttonClassic more1'>+</button>
                         </div>
                     </td>
-                    <td class='total1'></td>
+                    <td class='bold size20'>". $bread1['price'] ."</td>
                     <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
                 </tr>";
                 }
                 ?>
             </table>
         </div>
-        <div id="choiceBread2">
+        <div id="choiceBread2" class="flexColumn">
+            <?php
+            bakerDelivery(2, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -67,18 +96,27 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                 </tr>
 
                 <?php
-                for ($i = 0; $i < 6; $i++) {
+                $breads2 = $breadManager->getByBaker(2);
+                $i = 0;
+                foreach ($breads2 as $item) {
+                    $bread2 = $item->getData();
+                    $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread2['image'], $bread2['name']);
+                    echo "<td>
                         <div class='flexColumn'>
-                            <p>Nom de l'article</p>
+                            <p class='size20'>". $bread2['name'] ."</p>
+                            <p>". $bread2['description'] ."</p>   
+
                             <div class='flexRow'>
                                 <button class='buttonClassic'><i class='far fa-heart'></i></button>
                             </div>
                         </div>
                     </td>
-                    <td>0.99€</td>
+                    <td><p class='bold size20'>". $bread2['price'] ."</p>
+                        <p>". $bread2['weight'] ." / Kg</p>   
+                    </td>
                     <td>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
@@ -86,14 +124,17 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                             <button class='buttonClassic more1'>+</button>
                         </div>
                     </td>
-                    <td>0.99€</td>
+                    <td class='bold size20'>". $bread2['price'] ."</td>
                     <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
                 </tr>";
                 }
                 ?>
             </table>
         </div>
-        <div id="choiceBread3">
+        <div id="choiceBread3" class="flexColumn">
+            <?php
+            bakerDelivery(3, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -104,18 +145,27 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <th class="colorWhite">Ajouter</th>
                 </tr>
                 <?php
-                for ($i = 0; $i < 4; $i++) {
+                $breads3 = $breadManager->getByBaker(3);
+                $i = 0;
+                foreach ($breads3 as $item) {
+                    $bread3 = $item->getData();
+                    $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread3['image'], $bread3['name']);
+                    echo "<td>
                         <div class='flexColumn'>
-                            <p>Nom de l'article</p>
+                            <p class='size20'>". $bread3['name'] ."</p>
+                            <p>". $bread3['description'] ."</p>   
+
                             <div class='flexRow'>
                                 <button class='buttonClassic'><i class='far fa-heart'></i></button>
                             </div>
                         </div>
                     </td>
-                    <td>1.35€</td>
+                    <td><p class='bold size20'>". $bread3['price'] ."</p>
+                        <p>". $bread3['weight'] ." / Kg</p>   
+                    </td>
                     <td>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
@@ -123,14 +173,17 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                             <button class='buttonClassic more1'>+</button>
                         </div>
                     </td>
-                    <td>1.35€</td>
+                    <td class='bold size20'>". $bread3['price'] ."</td>
                     <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
                 </tr>";
                 }
                 ?>
             </table>
         </div>
-        <div id="choiceBread4">
+        <div id="choiceBread4" class="flexColumn">
+            <?php
+            bakerDelivery(4, $bakerDeliveryManager, $deliveryDate);
+            ?>
             <table id="tableBaskets" class="flexCenter">
                 <tr class="titleTable">
                     <th class="colorWhite">Article</th>
@@ -141,18 +194,27 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     <th class="colorWhite">Ajouter</th>
                 </tr>
                 <?php
-                for ($i = 0; $i < 10; $i++) {
+                $breads4 = $breadManager->getByBaker(4);
+                $i = 0;
+                foreach ($breads4 as $item) {
+                    $bread4 = $item->getData();
+                    $i++;
                     echo "<tr class='trTable'>
-                    <td><img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'></td>
-                    <td>
+                    <td>";
+                        imageProducts($bread4['image'], $bread4['name']);
+                    echo "<td>
                         <div class='flexColumn'>
-                            <p>Nom de l'article</p>
+                            <p class='size20'>". $bread4['name'] ."</p>
+                            <p>". $bread4['description'] ."</p>   
+
                             <div class='flexRow'>
                                 <button class='buttonClassic'><i class='far fa-heart'></i></button>
                             </div>
                         </div>
                     </td>
-                    <td>0.99€</td>
+                    <td><p class='bold size20'>". $bread4['price'] ."</p>
+                        <p>". $bread4['weight'] ." / Kg</p>   
+                    </td>
                     <td>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
@@ -160,7 +222,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                             <button class='buttonClassic more1'>+</button>
                         </div>
                     </td>
-                    <td>0.99€</td>
+                    <td class='bold size20'>". $bread4['price'] ."</td>
                     <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
                 </tr>";
                 }
@@ -172,24 +234,30 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
         <div id="cartResponsive" class="flexColumn backgroundBlue">
             <div id="choiceBreadResponsive1">
                 <?php
-                for ($i = 0; $i < 3; $i++) {
+                $breads1 = $breadManager->getByBaker(1);
+                $i = 0;
+                foreach ($breads1 as $item) {
+                $bread1 = $item->getData();
+                $i++;
                     echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                        imageProducts($bread1['image'], $bread1['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
-                            <p> Nom de l'article</p>
+                            <p class='size20 bold'>" . $bread1['name'] ."</p>
                             <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
                             <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
                         </div>
-                        <p>1.58 €</p>
+                        <p>". $bread1['description'] ."</p>
+                        <p class='size20 bold'>". $bread1['price'] ." € /</p>
+                        <span>". $bread1['weight'] ." Kg</span>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
                             <p class='numberArticle numberArticle1'>1 </p>
                             <button class='buttonClassic more1'>+</button>
                         </div>
-                        <p>1.58€</p>
+                        <p class='size20 bold'>". $bread1['price'] ."</p>
                     </div>
                 </div>";
                 }
@@ -197,24 +265,28 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
             </div>
                 <div id="choiceBreadResponsive2">
                     <?php
-                    for ($i = 0; $i < 6; $i++) {
+                    foreach ($breads2 as $item) {
+                        $bread2 = $item->getData();
+                        $i++;
                         echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                        imageProducts($bread2['image'], $bread2['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
-                            <p> Nom de l'article</p>
+                            <p class='size20 bold'>" . $bread2['name'] ."</p>
                             <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
                             <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
                         </div>
-                        <p>1.58 €</p>
+                        <p>". $bread2['description'] ."</p>
+                        <p class='size20 bold'>". $bread2['price'] ." € /</p>
+                        <span>". $bread2['weight'] ." Kg</span>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
                             <p class='numberArticle numberArticle1'>1 </p>
                             <button class='buttonClassic more1'>+</button>
                         </div>
-                        <p>1.58€</p>
+                        <p class='size20 bold'>". $bread2['price'] ."</p>
                     </div>
                 </div>";
                     }
@@ -222,24 +294,28 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                 </div>
                     <div id="choiceBreadResponsive3">
                         <?php
-                        for ($i = 0; $i < 4; $i++) {
+                        foreach ($breads3 as $item) {
+                            $bread3 = $item->getData();
+                            $i++;
                             echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                            imageProducts($bread3['image'], $bread3['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
-                            <p> Nom de l'article</p>
+                            <p class='size20 bold'>" . $bread3['name'] ."</p>
                             <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
                             <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
                         </div>
-                        <p>1.58 €</p>
+                        <p>". $bread3['description'] ."</p>
+                        <p class='size20 bold'>". $bread3['price'] ." € /</p>
+                        <span>". $bread3['weight'] ." Kg</span>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
                             <p class='numberArticle numberArticle1'>1 </p>
                             <button class='buttonClassic more1'>+</button>
                         </div>
-                        <p>1.58€</p>
+                        <p class='size20 bold'>". $bread3['price'] ."</p>
                     </div>
                 </div>";
                         }
@@ -247,24 +323,28 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
                     </div>
                         <div id="choiceBreadResponsive4">
                             <?php
-                            for ($i = 0; $i < 10; $i++) {
+                            foreach ($breads4 as $item) {
+                                $bread4 = $item->getData();
+                                $i++;
                                 echo "<div class='flexRow cartResponsive'>
-                    <div>
-                        <img alt='articlePhoto' class='imgTable' src='https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164'>
-                    </div>
+                    <div>";
+                        imageProducts($bread4['image'], $bread4['name']);
+                    echo "</div>
                     <div class='flexColumn infoCart'>
                         <div class='flexRow flexCenter'>
-                            <p> Nom de l'article</p>
+                            <p class='size20 bold'>" . $bread4['name'] ."</p>
                             <button class='buttonClassic favoriteArticleCart'><i class='far fa-heart'></i></button>
                             <button class='favoriteDelete buttonClassic'><i class='far fa-trash-alt'></i></button>
                         </div>
-                        <p>1.58 €</p>
+                        <p>". $bread4['description'] ."</p>
+                        <p class='size20 bold'>". $bread4['price'] ." € /</p>
+                        <span>". $bread4['weight'] ." Kg</span>
                         <div class='flexRow flexCenter'>
                             <button class='buttonClassic less1'>-</button>
                             <p class='numberArticle numberArticle1'>1 </p>
                             <button class='buttonClassic more1'>+</button>
                         </div>
-                        <p>1.58€</p>
+                        <p class='size20 bold'>". $bread4['price'] ."</p>
                     </div>
                 </div>";
                             }
