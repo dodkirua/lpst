@@ -129,5 +129,27 @@ class BreadManager{
         $stmt->execute();
     }
 
+    /**
+     * modify name, price, description and weight
+     * @param int $id
+     * @param string $name
+     * @param float $price
+     * @param float $weight
+     * @param string $description
+     * @return bool
+     */
+    public function modify(int $id, string $name, float $price, float $weight, string $description): bool    {
+        $stmt = $this->db->prepare("UPDATE bread 
+                SET name = :title, description = :description, price = :price, weight = :weight
+                WHERE id = :id        
+        ");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":name",$name);
+        $stmt->bindValue(":description",$description);
+        $stmt->bindValue(":price",$price);
+        $stmt->bindValue(":weight",$weight);
+
+        return $stmt->execute();
+    }
 
 }

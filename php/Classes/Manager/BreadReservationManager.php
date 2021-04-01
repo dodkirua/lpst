@@ -97,4 +97,18 @@ class BreadReservationManager{
         }
         return $breadArray;
     }
+    
+    public function modify(int $id, float $amount, int $bread, int $reservation): bool    {
+        $stmt = $this->db->prepare("UPDATE bread_reservation 
+                SET amount = :title, bread_id = :bread_id, reservation_id = :reservation_id
+                WHERE id = :id        
+        ");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":amount",$amount);
+        $stmt->bindValue(":bread_id",$bread);
+        $stmt->bindValue(":reservation_id",$reservation);
+        
+
+        return $stmt->execute();
+    }
 }

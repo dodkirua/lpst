@@ -62,4 +62,24 @@ class DeliveryDateManager{
         $stmt->bindValue(":id",$id);
         $stmt->execute();
     }
+
+    /**
+     * modify day and time
+     * @param int $id
+     * @param string $day
+     * @param string $time
+     * @return bool
+     */
+    public function modify(int $id, string $day, string $time): bool
+    {
+        $stmt = $this->db->prepare("UPDATE delivery_date 
+                SET day = :day, time = :time
+                WHERE id = :id        
+        ");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":day",$day);
+        $stmt->bindValue(":time",$time);
+
+        return $stmt->execute();
+    }
 }
