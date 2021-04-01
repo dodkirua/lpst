@@ -7,6 +7,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/_partials/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menu.php";
 
 $bakerManager = new BakerManager();
+$bakers = $bakerManager->getAll();
+
 ?>
 
     <main>
@@ -14,9 +16,11 @@ $bakerManager = new BakerManager();
             <select id="baker" class="flexCenter">
                 <option class="optionBaker" value="">Choisissez votre boulangerie</option>
                     <?php
-                    foreach ($bakerManager as $item) {
-                        $baker = $bakerManager
-                        echo "<option class='optionBaker' value='" . $baker['name'] . "'>" . $baker['name'] . "</option";
+                    $i = 0;
+                    foreach ($bakers as $item) {
+                        $i++;
+                        $baker = $item->getData();
+                        echo "<option class='optionBaker' id='baker" . $i . "' value='" . $baker['name'] . "'>" . $baker['name'] . "</option>";
                     }
                     ?>
             </select>

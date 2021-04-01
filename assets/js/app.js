@@ -250,7 +250,7 @@ let baker = document.getElementById("baker");
 if (baker) {
     baker.addEventListener("change",function (){
         document.getElementById("nameBakery").innerHTML = baker.value;
-        if (baker.value === "Boulangerie 1") {
+        if (document.getElementById("baker1")) {
             document.getElementById("choiceBread").style.display = "flex";
             document.getElementById("choiceBread2").style.display = "none";
             document.getElementById("choiceBread3").style.display = "none";
@@ -261,7 +261,7 @@ if (baker) {
             document.getElementById("choiceBreadResponsive3").style.display = "none";
             document.getElementById("choiceBreadResponsive4").style.display = "none";
         }
-        else if (baker.value === "Boulangerie 2") {
+        if (document.getElementById("baker2")) {
             document.getElementById("choiceBread").style.display = "none";
             document.getElementById("choiceBread2").style.display = "flex";
             document.getElementById("choiceBread3").style.display = "none";
@@ -272,7 +272,7 @@ if (baker) {
             document.getElementById("choiceBreadResponsive3").style.display = "none";
             document.getElementById("choiceBreadResponsive4").style.display = "none";
         }
-        else if (baker.value === "Boulangerie 3") {
+        if (document.getElementById("baker3")) {
             document.getElementById("choiceBread").style.display = "none";
             document.getElementById("choiceBread2").style.display = "none";
             document.getElementById("choiceBread3").style.display = "flex";
