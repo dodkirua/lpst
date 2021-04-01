@@ -21,7 +21,7 @@ class BakerManager{
     public function addBaker(string $name, int $address) : bool{
         $name = mb_strtolower($name);
         $stmt = $this->db->prepare("
-        INSERT INTO baker (name, address_id) VALUE (:name, :address_id)");
+        INSERT INTO baker (name, address_id) VALUES (:name, :address_id)");
 
         $stmt->bindValue(":name",$name);
         $stmt->bindValue(":address_id",$address);
@@ -44,5 +44,21 @@ class BakerManager{
         else {
             return null;
         }
+    }
+
+    public function getAll() : array {
+        $stmt = $this->db->prepare("SELECT * FROM baker");
+        $bakers =  [];
+        if ($state = $stmt->execute()) {
+            foreach ($stmt->fetchAll() as $item){
+                $baker = new Baker($item['id']);
+                $baker = $baker
+                    ->setName($item['name'])
+                    ->setAddressId($item['address_id'])
+                ;
+                $bakers[] = $baker;
+            }
+        }
+        return $bakers;
     }
 }
