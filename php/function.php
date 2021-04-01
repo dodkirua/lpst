@@ -47,6 +47,14 @@ function staff (?string $image, string $firstname) {
     </div>";
 }
 
+function ImageProducts (?string $image) {
+    if ($image === "" || $image === null) {
+        $image = "https://tse4.mm.bing.net/th?id=OIP.-MZ8_5qRcbVJLZmiROsf-AHaFj&pid=Api&P=0&w=217&h=164";
+    }
+    echo "<img alt='" . $firstname . "' class='staffPhoto' src='" . $image . "'>";
+
+}
+
 function checkPass($pass)
 {
     $maj = preg_match('@[A-Z]@', $pass);
