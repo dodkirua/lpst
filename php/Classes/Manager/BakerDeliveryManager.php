@@ -57,6 +57,22 @@ class BakerDeliveryManager{
     public function getByBaker(int $baker) : array{
         $stmt = $this->db->prepare("SELECT * FROM baker_delivery WHERE baker_id = :baker");
         $stmt->bindValue(":baker",$baker);
+        return $this->get($stmt);
+    }
+
+    public function getByDeliveryDate(int $delivery) : array{
+        $stmt = $this->db->prepare("SELECT * FROM baker_delivery WHERE delivery_date_id = :delivery");
+        $stmt->bindValue(":delivery",$delivery);
+        return $this->get($stmt);
+    }
+
+    public function delById($id){
+        $stmt = $this->db->prepare("DELETE FROM baker_delivery WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
+    }
+
+    private function get($stmt): array    {
         $bakers = [];
         if ($state = $stmt->execute()) {
             foreach ($stmt->fetchAll() as $item){

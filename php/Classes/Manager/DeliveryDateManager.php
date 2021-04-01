@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/DB.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/DeliveryDate.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/BakerDeliveryManager.php";
 
 class DeliveryDateManager{
     private ?PDO $db;
@@ -46,5 +47,18 @@ class DeliveryDateManager{
         return $delivery;
     }
 
-
+    /**
+     * @param $id
+     * @var BakerDelivery $item
+     */
+    public function delById($id){
+        $bakerdelivery = new BakerDeliveryManager();
+        $array = $bakerdelivery->getByDeliveryDate($id);
+        foreach ($array as $item){
+            $bakerdelivery->delById($);
+        }
+        $stmt = $this->db->prepare("DELETE FROM delivery_date WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
+    }
 }
