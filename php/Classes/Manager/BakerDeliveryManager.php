@@ -11,4 +11,5 @@ class BakerDeliveryManager{
     public  function __construct(){
         $this->db = DB::getInstance();
     }
+
 }
