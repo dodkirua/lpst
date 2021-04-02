@@ -262,4 +262,16 @@ class UserManager
         public function modifyBase(int $id,string $firstname,string){
     }*/
 
+    /**
+     * modify pass
+     * @param $id
+     * @param $pass
+     * @return bool
+     */
+    public function modifyPass($id,$pass) : bool {
+        $stmt = $this->db->prepare("UPDATE user SET pass = :pass WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":pass",$pass);
+        return $stmt->execute();
+    }
 }
