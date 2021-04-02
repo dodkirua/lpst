@@ -15,10 +15,13 @@ export function itemQuantity (priceArticle, idQuantity, idPrice, total, idMore, 
         let totalPrice = document.getElementsByClassName(total)[i];
 
         document.getElementsByClassName(idMore)[i].addEventListener("click", function () {
-            let price = document.getElementById(priceArticle).value;
-            let addArticle = price;
+            let priceA = document.getElementById(priceArticle).value;
+            console.log(priceA);
+            let price = parseFloat(priceA);
+            let addArticle = parseFloat(priceA);
             totalPrice.innerHTML = "<strong>" + (price += addArticle).toFixed(2) + "€ </strong>";
             numberArticle1 = valueArticle1 += 1;
+            idQuant = numberArticle1;
         });
 
         document.getElementsByClassName(idLess)[i].addEventListener("click", function () {
