@@ -30,8 +30,12 @@ if (isset($_GET['e'])){
 elseif (isset($_GET['s'])){
     $id = "success";
     switch ($_GET['s']){
+        case 1:
+            $return = "Connexion réussit";
+            break;
         case 2:
             $return = "Le mot de passe a bien été changé";
+            break;
     }
 
 }
