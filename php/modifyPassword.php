@@ -12,17 +12,20 @@ if (isset($_POST["currentPwd"]) && isset($_POST["password"]) && isset($_POST["re
     if (password_verify($currentPass, $_SESSION["user"]["pass"])) {
         echo "ils correspondent";
         if ($newPass === $verifPass){
-            if (checkPass($newPass)){
-                $pass = password_hash($newPass,PASSWORD_BCRYPT );
-                if($manager->modifyPass($id,$pass)){
-                    header('Location: ../../pages/account.php?s=2');
-                }
-                else {
-                    header('Location: ../../pages/account.php?e=4');
+            if (password_verify($newPass, $_SESSION["user"]["pass"])) {
+                if (checkPass($newPass)) {
+                    $pass = password_hash($newPass, PASSWORD_BCRYPT);
+                    if ($manager->modifyPass($id, $pass)) {
+                        header('Location: ../../pages/account.php?s=2');
+                    } else {
+                        header('Location: ../../pages/account.php?e=4');
+                    }
+                } else {
+                    header('Location: ../../pages/account.php?e=3');
                 }
             }
             else {
-                header('Location: ../../pages/account.php?e=3');
+                header('Location: ../../pages/account.php?e=5');
             }
         }
         else {

@@ -25,6 +25,9 @@ if (isset($_GET['e'])){
         case '4':
             $return = "Erreur lors de la modification du mot de passe veuillez recommencer merci.";
             break;
+        case '5':
+            $return = "Le mot de passe actuel et le nouveau mot de passe sont identique";
+            break;
     }
 }
 elseif (isset($_GET['s'])){
