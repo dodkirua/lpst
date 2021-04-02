@@ -129,18 +129,22 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <form action="../php/modifyPassword.php" method="post" class="flexCenter flexColumn" id= "registration">
                         <label class="colorBlue" for="currentPwd">Mon mot de passe actuel</label>
                         <input id="currentPwd" name="currentPwd" type="password">
-                        <label class="colorBlue" for="newPwd">Mon nouveau mot de passe</label>
-                        <input name="newPwd" id="newPwd" type="password">
-                        <div id="pwMsg">
-                            <span id="maj" class="colorRed2">Une majuscule</span>
-                            <span id="min" class="colorRed2">Une minuscule</span>
-                            <span id="char" class="colorRed2">Un caractère spéciale</span>
-                            <span id="number" class="colorRed2">Un chiffre</span>
-                            <span id="length" class="colorRed2">10 caractères minimum</span>
+                        <div class="flexColumn contact">
+                            <label for="passwordRegistration" class="colorBlue">Nouveau Mot de passe*</label>
+                            <input type="password" id="passwordRegistration" name="password" required>
+                            <div id="pwMsg">
+                                <span id="maj" class="colorRed2">Une majuscule</span>
+                                <span id="min" class="colorRed2">Une minuscule</span>
+                                <span id="char" class="colorRed2">Un caractère spéciale</span>
+                                <span id="number" class="colorRed2">Un chiffre</span>
+                                <span id="length" class="colorRed2">10 caractères minimum</span>
+                            </div>
                         </div>
-                            <label for="repeatPassword" class="colorBlue">Répéter le mot de passe*</label>
-                            <input type="password" id="repeatPassword" name="repeatPassword" class="whiteBorder2" required>
-                            <div id="pwMsgRepeat"></div>
+                <div class="flexColumn contact">
+                    <label for="repeatPassword" class="colorBlue">Répéter le mot de passe*</label>
+                    <input type="password" id="repeatPassword" name="repeatPassword" required>
+                    <div id="pwMsgRepeat"></div>
+                </div>
                         <button id="modifypwd" class="send modify">Valider</button>
                     </form>
 

@@ -2,13 +2,15 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/DB.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/User.php";
 
-class UserManager{
+class UserManager
+{
     private ?PDO $db;
 
     /**
      * UserManager constructor.
      */
-    public  function __construct(){
+    public function __construct()
+    {
         $this->db = DB::getInstance();
     }
 
@@ -20,7 +22,8 @@ class UserManager{
      * @param $pass
      * @return bool
      */
-    public function addUser(string $name,string $surname, string $mail, string $pass) : bool{
+    public function addUser(string $name, string $surname, string $mail, string $pass): bool
+    {
         $name = mb_strtolower($name);
         $surname = mb_strtolower($surname);
         $mail = mb_strtolower($mail);
@@ -28,11 +31,11 @@ class UserManager{
                 INSERT INTO  user (lastname, firstname, mail, pass, role_id) VALUES (:lastname, :firstname, :mail, :pass, :role)                
             ");
 
-        $stmt->bindValue(':lastname',$name);
-        $stmt->bindValue(':firstname',$surname);
-        $stmt->bindValue(':mail',$mail);
-        $stmt->bindValue(':pass',$pass);
-        $stmt->bindValue(":role",2);
+        $stmt->bindValue(':lastname', $name);
+        $stmt->bindValue(':firstname', $surname);
+        $stmt->bindValue(':mail', $mail);
+        $stmt->bindValue(':pass', $pass);
+        $stmt->bindValue(":role", 2);
 
         return $stmt->execute();
     }
@@ -42,12 +45,12 @@ class UserManager{
      * @param $mail
      * @return int|null
      */
-   public function searchMail($mail) : ?int{
+    public function searchMail($mail): ?int
+    {
         $stmt = $this->db->prepare("SELECT id FROM user WHERE mail = '$mail'");
-        if($stmt->execute()) {
+        if ($stmt->execute()) {
             return intval($stmt->fetch()['id']);
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -58,10 +61,11 @@ class UserManager{
      * @param string $pass
      * @return User|null
      */
-    public function testConnection(string $mail, string $pass) :?User {
+    public function testConnection(string $mail, string $pass): ?User
+    {
         $mail = strtolower($mail);
         $id = $this->searchMail($mail);
-        if (!is_null($id)){
+        if (!is_null($id)) {
             $user = $this->getUserById($id);
             if (!is_null($user)) {
                 if (password_verify($pass, $user->getPass())) {
@@ -69,12 +73,10 @@ class UserManager{
                 } else {
                     return null;
                 }
-            }
-            else {
+            } else {
                 return null;
             }
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -83,7 +85,8 @@ class UserManager{
      * get the Staff
      * @return array
      */
-    public function getStaff() : array{
+    public function getStaff(): array
+    {
         $stmt = $this->db->prepare("SELECT * FROM user WHERE role_id != 2");
         return $this->getUser($stmt);
     }
@@ -92,34 +95,35 @@ class UserManager{
      * get the Staff
      * @return array
      */
-    public function getAllUser() : array{
+    public function getAllUser(): array
+    {
         $stmt = $this->db->prepare("SELECT * FROM user");
         return $this->getUser($stmt);
     }
 
-    public function validateMail($mail,$id): bool
+    public function validateMail($mail, $id): bool
     {
         //generate token
         $key = md5(time() . uniqid());
         $date = new DateTime();
         $date = $date->modify('+1 day');
-        $date =  $date->getTimestamp();
+        $date = $date->getTimestamp();
 
         // modify DB
         $stmt = $this->db->prepare("UPDATE user SET 
                 key_verification = :key ,
                 date_token = :date
                 WHERE id = :id");
-        $stmt->bindValue(':key',$key);
-        $stmt->bindValue(':date',$date);
-        $stmt->bindValue(':id',$id);
+        $stmt->bindValue(':key', $key);
+        $stmt->bindValue(':date', $date);
+        $stmt->bindValue(':id', $id);
 
         $stmt->execute();
 
         // Preparation of the email containing the activation link
         $recipient = $mail;
-        $subject = "Activer votre compte" ;
-        $from = "contact@lspt.fr" ;
+        $subject = "Activer votre compte";
+        $from = "contact@lspt.fr";
         $header = array(
             "from" => $from,
             "X-Mailer" => 'PHP/' . phpversion(),
@@ -127,19 +131,19 @@ class UserManager{
             'MIME-Version' => '1.0'
         );
         // The activation link is composed of the id and the key
-                $message = 'Bienvenue sur VotreSite,
+        $message = 'Bienvenue sur VotreSite,
          
         Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
         ou copier/coller dans votre navigateur Internet.
          
-        http://localhost:8000/activation.php?log='.urlencode($id).'&key='.urlencode($key).'
+        http://localhost:8000/activation.php?log=' . urlencode($id) . '&key=' . urlencode($key) . '
          
          
         ---------------
         Ceci est un mail automatique, Merci de ne pas y répondre.';
 
 
-        return mail($recipient, $subject, $message, $header) ;
+        return mail($recipient, $subject, $message, $header);
     }
 
     /**
@@ -147,8 +151,9 @@ class UserManager{
      * @param int $id
      * @return User|null
      */
-    public function getUserById(int $id) : ?User{
-        $stmt = $this->db->prepare("SELECT * FROM user WHERE id='".$id."'");
+    public function getUserById(int $id): ?User
+    {
+        $stmt = $this->db->prepare("SELECT * FROM user WHERE id='" . $id . "'");
         $user = null;
         if ($state = $stmt->execute()) {
             $item = $stmt->fetch();
@@ -163,8 +168,7 @@ class UserManager{
                 ->setPhone($item["phone"])
                 ->setImage($item["image"]);
             return $user;
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -174,7 +178,8 @@ class UserManager{
      * @param User $user
      * @return bool
      */
-    public function modifyUser(User $user): bool    {
+    public function modifyUser(User $user): bool
+    {
         $stmt = $this->db->prepare("UPDATE user SET 
                 lastname = :last,
                 firstname = :first,
@@ -186,16 +191,16 @@ class UserManager{
                 key_verification = :key,
                 date_token = :date
                 WHERE id= :id");
-        $stmt->bindValue(':id',$user->getId());
-        $stmt->bindValue(':last',$user->getLastname());
-        $stmt->bindValue(':first',$user->getFirstname());
-        $stmt->bindValue(':mail',$user->getMail());
-        $stmt->bindValue(':pass',$user->getPass());
-        $stmt->bindValue(':phone',$user->getPhone());
-        $stmt->bindValue(':img',$user->getImage());
-        $stmt->bindValue(':check',$user->getChecked());
-        $stmt->bindValue(':key',$user->getKey());
-        $stmt->bindValue(':date',$user->getDate());
+        $stmt->bindValue(':id', $user->getId());
+        $stmt->bindValue(':last', $user->getLastname());
+        $stmt->bindValue(':first', $user->getFirstname());
+        $stmt->bindValue(':mail', $user->getMail());
+        $stmt->bindValue(':pass', $user->getPass());
+        $stmt->bindValue(':phone', $user->getPhone());
+        $stmt->bindValue(':img', $user->getImage());
+        $stmt->bindValue(':check', $user->getChecked());
+        $stmt->bindValue(':key', $user->getKey());
+        $stmt->bindValue(':date', $user->getDate());
 
         return $stmt->execute();
     }
@@ -207,9 +212,9 @@ class UserManager{
      */
     private function getUser($stmt): array
     {
-        $staff =[];
+        $staff = [];
         if ($state = $stmt->execute()) {
-            foreach ($stmt->fetchAll() as $item){
+            foreach ($stmt->fetchAll() as $item) {
                 $user = new User($item['id']);
                 $user = $user
                     ->setLastname($item['lastname'])
@@ -219,15 +224,14 @@ class UserManager{
                     ->setPass($item['pass'])
                     ->setPhone($item['phone'])
                     ->setChecked($item['checked'])
-                    ->setRole($item['role_id'])
-                ;
-                $staff[]=$user;
+                    ->setRole($item['role_id']);
+                $staff[] = $user;
             }
         }
         return $staff;
     }
 
-   /**
+    /**
      * del a user
      * @param $id
      */
@@ -239,7 +243,8 @@ class UserManager{
            $stmt->execute();
        }*/
 
-    public function delInfoUser($id){
+    public function delInfoUser($id)
+    {
         $stmt = $this->db->prepare("UPDATE user SET
                                 mail = null,
                                 pass = null,
@@ -250,7 +255,11 @@ class UserManager{
                                 date_token = null
                                 WHERE id = :id
                                 ");
-        $stmt->bindValue(':id',$id);
+        $stmt->bindValue(':id', $id);
         $stmt->execute();
     }
+    /*
+        public function modifyBase(int $id,string $firstname,string){
+    }*/
+
 }
