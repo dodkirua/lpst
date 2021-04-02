@@ -3,7 +3,42 @@ session_start();
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/Classes/Manager/UserManager.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/function.php";
+$firstname = "";
+$lastname = "";
+$return = "";
+$id = "";
+if (isset($_GET['e'])){
+    $id = "error";
+    switch ($_GET['e']){
+        case '0':
+            $return = "Problème lors de l'envoi des données du formulaire.";
+            break;
+        case '1':
+            $return = "L'ancien mot de passe ne correspond pas";
+            break;
+        case '2':
+            $return = "le nouveau mot de passe et le mot de passe de vérification ne corresponde pas";
+            break;
+        case '3':
+            $return = "Le mot de passe ne suis pas les spécifications demandées.";
+            break;
+        case '4':
+            $return = "Erreur lors de la modification du mot de passe veuillez recommencer merci.";
+            break;
+    }
+}
+elseif (isset($_GET['s'])){
+    $id = "success";
+    switch ($_GET['s']){
+        case 1:
+            $return = "Vous êtes bien connecté";
+            break;
+        case 2:
+            $return = "Le mot de passe a bien été changé";
+            break;
+    }
 
+}
 
 if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     $title = "LPST : Mon compte";
@@ -25,6 +60,8 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
     <?php
     include $_SERVER['DOCUMENT_ROOT'] . "/_partials/menuAccount.php";
     ?>
+    <div id='<?= $id?>' class='modal2 flexCenter colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
+
     <div class="flexColumn width65">
         <h1 id="hello">Bonjour, <span class="colorGreen"><?=$firstname . " " . $lastname ?> !</span></h1>
         <section id="otherInformation">
