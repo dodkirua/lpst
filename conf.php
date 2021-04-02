@@ -1,5 +1,5 @@
 <?php
-$host = 'http://pma.mutu.firstheberg.net';
-$db = '';
-$user = '';
-$pass = '';
+$host = 'sql-1';
+$db = 'lpst';
+$user = 'lpst596101';
+$pass = 'Yy3hL3Mh0KoO';

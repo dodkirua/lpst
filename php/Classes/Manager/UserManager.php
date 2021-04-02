@@ -258,9 +258,13 @@ class UserManager
         $stmt->bindValue(':id', $id);
         $stmt->execute();
     }
-    /*
-        public function modifyBase(int $id,string $firstname,string){
-    }*/
+
+    public function modifyPhone(int $id ,string $phone):bool {
+        $stmt = $this->db->prepare("UPDATE user SET phone = :phone WHERE id = :id");
+        $stmt->bindValue(":id",$id);
+        $stmt->bindValue(":phone",$phone);
+        return $stmt->execute();
+    }
 
     /**
      * modify pass

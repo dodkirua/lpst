@@ -23,7 +23,7 @@ if (isset($_GET['e'])){
             $return = "Le mot de passe ne suis pas les spécifications demandées.";
             break;
         case '4':
-            $return = "Erreur lors de la modification du mot de passe veuillez recommencer merci.";
+            $return = "Erreur lors de la modification des données recommencer merci.";
             break;
         case '5':
             $return = "Le mot de passe actuel et le nouveau mot de passe sont identique";
@@ -120,9 +120,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                     <p class='whiteBorder padding30 width_100'></p>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
                                     </div>
-                                    <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
+                                    <form action='../php/modifyPassword.php' method='post' id='modifyPhone' class='flexColumn flexCenter'>
                                             <label class='colorBlue'>Téléphone</label>
-                                            <input class='whiteBorder width_100' type='tel' value=''>
+                                            <input class='whiteBorder width_100' name='tel' value=''>
                                             <input id='validatePhone' class='send modify modifyProfil' type='submit' value='Valider'>
                                        </form>";
                             }
@@ -132,9 +132,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                     <p id='containerPhone' class='whiteBorder width_100'>" . $_SESSION['user']['phone'] . "</p>
                                     <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
                                     </div>
-                                    <form action='#' method='post' id='modifyPhone' class='flexColumn flexCenter'>
+                                    <form action='../php/modifyPassword.php' method='post' id='modifyPhone' class='flexColumn flexCenter'>
                                             <label class='colorBlue'>Téléphone</label>
-                                            <input class='whiteBorder width_100' type='tel' value='" . $_SESSION['user']['phone'] . "'>
+                                            <input class='whiteBorder width_100' name='tel' value='" . $_SESSION['user']['phone'] . "'>
                                             <input id='validatePhone' class='send modify modifyProfil' type='submit' value='Valider'>
                                        </form>";
                             }

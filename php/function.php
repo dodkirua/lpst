@@ -106,6 +106,7 @@ function checkPass($pass) {
     }
 }
 
+
 function bakerDelivery($baker, $bakerDeliveryManager, $deliveryDate) {
     echo "<p>Livraison : </p>
             <ul>";
