@@ -70,8 +70,9 @@ class DeliveryDateManager{
      * @param string $time
      * @return bool
      */
-    public function modify(int $id, string $day, string $time): bool
-    {
+    public function modify(int $id, string $day, string $time): bool    {
+        $day = mb_strtolower($day);
+        $time = mb_strtolower($time);
         $stmt = $this->db->prepare("UPDATE delivery_date 
                 SET day = :day, time = :time
                 WHERE id = :id        
