@@ -70,5 +70,6 @@ elseif (isset($_GET['s'])){
     </form>
 </main>
 
+
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
