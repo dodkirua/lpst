@@ -22,32 +22,35 @@ $users = $managerUser->getStaff();
     <div id="computer">
         <h1>NOTRE <span class="colorGreen">MAGASIN</span></h1>
         <?php
-                $token = true;
-                foreach ($informations as $item) {
-                    $information = $item->getData();
-                    if ($token) {
-                        containerShop1($information["image"], $information["title"], $information["description"]);
-                        if (isset($_SESSION["user"]["id"])) {
-                            if ($_SESSION['user']['role'] != 2) {
-                                echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
-                                <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
-                            }
-                        }
-                        else {
-                            echo "";
-                        }
+        $i = 0;
+        $token = true;
+        foreach ($informations as $item) {
+            $information = $item->getData();
+            $_SESSION['information'][$i] = $information;
+            if ($token) {
+                containerShop1($information["image"], $information["title"], $information["description"]);
+                if (isset($_SESSION["user"]["id"])) {
+                    if ($_SESSION['user']['role'] != 2) {
+                        echo "<a href='/pages/deleteIndex.php?id=$i' class='buttonClassic'><i class='far fa-trash-alt'></i></a>
+                         <a href='/pages/modifyIndex.php?id=$i' class='buttonClassic'><i class='fas fa-edit'></i></a>";
                     }
-                    else {
-                        containerShop2($information["image"], $information["title"], $information["description"]);
-                        if (isset($_SESSION["user"]["id"])) {
-                            if ($_SESSION['user']['role'] !== 2) {
-                                echo "<button class='buttonClassic'><i class='far fa-trash-alt'></i></button>
-                                <button class='buttonClassic'><i class='fas fa-edit'></i></button>";
-                            }
-                        }
-                    }
-                    $token = !$token;
                 }
+                else {
+                    echo "";
+                }
+            }
+            else {
+                containerShop2($information["image"], $information["title"], $information["description"]);
+                if (isset($_SESSION["user"]["id"])) {
+                    if ($_SESSION['user']['role'] !== 2) {
+                        echo "<a href='/pages/deleteIndex.php?id=$i' class='buttonClassic'><i class='far fa-trash-alt'></i></a>
+                         <a href='/pages/modifyindex.php?id=$i' class='buttonClassic'><i class='fas fa-edit'></i></a>";
+                    }
+                }
+            }
+            $i++;
+            $token = !$token;
+        }
             ?>
 
         <h1>NOTRE <span class="colorGreen">PERSONNEL</span></h1>
