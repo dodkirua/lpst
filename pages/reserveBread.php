@@ -63,7 +63,8 @@ $deliveryDate = new DeliveryDateManager();
                             </div>
                         </div>
                     </td>
-                    <td><p class='bold size20'>". $bread1['price'] ."</p>
+                    <td><p class='bold size20'>". $bread1['price'] ." €</p>
+                    <input type='hidden' id='price' class='price1' value='". $bread1['price'] ."'>
                         <p>". $bread1['weight'] ." / Kg</p>   
                     </td>
                     <td>
@@ -73,7 +74,7 @@ $deliveryDate = new DeliveryDateManager();
                             <button class='buttonClassic more1'>+</button>
                         </div>
                     </td>
-                    <td class='bold size20'>". $bread1['price'] ."</td>
+                    <td class='bold size20 total1'>". $bread1['price'] ."€</td>
                     <td><button class='send width65'><i class='fas fa-plus'></i></button></td>
                 </tr>";
                 }

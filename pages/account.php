@@ -129,9 +129,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <form action="../php/modifyPassword.php" method="post" class="flexCenter flexColumn" id= "registration">
                         <label class="colorBlue" for="currentPwd">Mon mot de passe actuel</label>
                         <input id="currentPwd" name="currentPwd" type="password">
-                        <div class="flexColumn contact">
+                        <div class="flexColumn contact width_100">
                             <label for="passwordRegistration" class="colorBlue">Nouveau Mot de passe*</label>
-                            <input type="password" id="passwordRegistration" name="password" required>
+                            <input type="password" id="passwordRegistration" name="password" class="whiteBorder2" required>
                             <div id="pwMsg">
                                 <span id="maj" class="colorRed2">Une majuscule</span>
                                 <span id="min" class="colorRed2">Une minuscule</span>
@@ -140,9 +140,9 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                                 <span id="length" class="colorRed2">10 caractères minimum</span>
                             </div>
                         </div>
-                <div class="flexColumn contact">
+                <div class="flexColumn contact width_100">
                     <label for="repeatPassword" class="colorBlue">Répéter le mot de passe*</label>
-                    <input type="password" id="repeatPassword" name="repeatPassword" required>
+                    <input type="password" id="repeatPassword" name="repeatPassword" class="whiteBorder2" required>
                     <div id="pwMsgRepeat"></div>
                 </div>
                         <button id="modifypwd" class="send modify">Valider</button>
