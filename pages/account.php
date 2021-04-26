@@ -39,6 +39,10 @@ elseif (isset($_GET['s'])){
         case 2:
             $return = "Le mot de passe a bien été changé";
             break;
+        case 3:
+            $return = "Numéro de téléphone changer avec succès";
+            break;
+
     }
 
 }
@@ -115,29 +119,22 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
                     <div class="padding30 flexCenter flexColumn">
                             <?php
                             if ($_SESSION["user"]["phone"] === null || $_SESSION["user"]["phone"] === "") {
-                                echo " <div id='phone' class='flexCenter flexColumn'>
-                                        <p class='colorBlue'>Téléphone</p>
-                                    <p class='whiteBorder padding30 width_100'></p>
-                                    <button id='clickPhone' class='send flexCenter modify modifyProfil'>Ajouter un téléphone </button>
-                                    </div>
-                                    <form action='../php/modifyPassword.php' method='post' id='modifyPhone' class='flexColumn flexCenter'>
-                                            <label class='colorBlue'>Téléphone</label>
-                                            <input class='whiteBorder width_100' name='tel' value=''>
-                                            <input id='validatePhone' class='send modify modifyProfil' type='submit' value='Valider'>
-                                       </form>";
+                                $phone = "";
                             }
                             else {
-                                echo " <div id='phone' class='flexCenter flexColumn'>
-                                        <p class='colorBlue'>Téléphone</p>
-                                    <p id='containerPhone' class='whiteBorder width_100'>" . $_SESSION['user']['phone'] . "</p>
-                                    <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
-                                    </div>
-                                    <form action='../php/modifyPassword.php' method='post' id='modifyPhone' class='flexColumn flexCenter'>
-                                            <label class='colorBlue'>Téléphone</label>
-                                            <input class='whiteBorder width_100' name='tel' value='" . $_SESSION['user']['phone'] . "'>
-                                            <input id='validatePhone' class='send modify modifyProfil' type='submit' value='Valider'>
-                                       </form>";
+                                $phone = $_SESSION['user']['phone'];
                             }
+                            echo " <div id='phone' class='flexCenter flexColumn'>
+                                    <p class='colorBlue'>Téléphone</p>
+                                <p id='containerPhone' class='whiteBorder width_100'>$phone</p>
+                                <button id='clickPhone' class='send flexCenter modify modifyProfil'>Modifier </button>
+                                </div>
+                                <form action='../php/modifyPhone.php' method='post' id='modifyPhone' class='flexColumn flexCenter'>
+                                        <label class='colorBlue'>Téléphone</label>
+                                        <input class='whiteBorder width_100' name='tel' value='$phone'>
+                                        <input id='validatePhone' class='send modify modifyProfil' type='submit' value='Valider'>
+                                   </form>";
+
                             ?>
                     </div>
                 </div>
@@ -199,96 +196,22 @@ if (isset($_SESSION["user"]['mail']) && isset($_SESSION["user"]['pass'])) {
 </main>
 
     <!-- Modal billing address -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title subtitle" id="staticBackdropLabel">Ajout d'une adresse de facturation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form  action="../php/addAddress.php" method="post" class="flexColumn flexCenter width_100">
-                        <input type="hidden" value="0" name="delivery">
-                        <label for="addressName" class="colorBlue center margin15-30">Nom de l'adresse </label>
-                        <input id="addressName" name="addressName" class="whiteBorder width_100" type="text">
-                        <label for="firstname" class="colorBlue center margin15-30">Prénom </label>
-                        <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
-                        <label for="lastname" class="colorBlue center margin15-30">Nom </label>
-                        <input id="lastname" name="lastname" class="whiteBorder width_100" type="text">
-                        <label for="num_street" class="colorBlue center margin15-30" >N° et nom de la voie </label>
-                        <div class="flexRow">
-                            <input id="num_street" name="num" class="whiteBorder width30" type="text" placeholder="10">
-                            <input id="num_street" name="street" class="whiteBorder width65" type="text" placeholder="rue des blés">
-                        </div>
-                        <p id="complements" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
-                        <div id="input_complements">
-                            <input name="floor" class="whiteBorder width_100" type="text" placeholder="4e étage">
-                            <input name="num_door" class="whiteBorder width_100" type="text" placeholder="porte 24">
-                            <input name="complements" class="whiteBorder width_100" type="text" placeholder="compléments">
-                        </div>
-                        <label for="country" class="colorBlue center margin15-30">Pays </label>
-                        <input id="country" name="firstname" class="whiteBorder width_100" type="text">
-                        <label for="postalCode" class="colorBlue center margin15-30">Code postal </label>
-                        <input id="postalCode" name="postalCode" class="whiteBorder width_100" type="text">
-                        <label for="city" class="colorBlue center margin15-30">Ville </label>
-                        <input id="city" name="city" class="whiteBorder width_100" type="text">
-                        <label for="phone" class="colorBlue center margin15-30">Téléphone </label>
-                        <input id="phone" name="phone" class="whiteBorder width_100" type="tel">
-                        <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer">
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="redButton" data-bs-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php
+    $title = "Ajout d'une adresse de facturation";
+    $delivery = 0;
+    $idModal = 'staticBackdrop';
+    include $_SERVER['DOCUMENT_ROOT'] . "/_partials/addressModal.php";
+    ?>
+
 
     <!-- Modal delivery address -->
-    <div class="modal fade" id="modalDeliveryAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title subtitle" id="staticBackdropLabel">Ajout d'une adresse de livraison</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form  action="../php/addAddress.php" method="post" class="flexColumn flexCenter width_100">
-                        <input type="hidden" value="1" name="delivery">
-                        <label for="addressName" class="colorBlue center margin15-30">Nom de l'adresse </label>
-                        <input id="addressName" name="addressName" class="whiteBorder width_100" type="text">
-                        <label for="firstname" class="colorBlue center margin15-30">Prénom </label>
-                        <input id="firstname" name="firstname" class="whiteBorder width_100" type="text">
-                        <label for="lastname" class="colorBlue center margin15-30">Nom </label>
-                        <input id="lastname" name="lastname" class="whiteBorder width_100" type="text">
-                        <label for="num_street" class="colorBlue center margin15-30" >N° et nom de la voie </label>
-                        <div class="flexRow">
-                            <input id="num_street" name="num" class="whiteBorder width30" type="text" placeholder="10">
-                            <input id="num_street" name="street" class="whiteBorder width65" type="text" placeholder="rue des blés">
-                        </div>
-                        <p id="complements2" class="underline"><i class="fas fa-plus leftIcon"></i>Compléments (bâtiments, étages)</p>
-                        <div id="input_complements2">
-                            <input name="floor" class="whiteBorder width_100" type="text" placeholder="4e étage">
-                            <input name="num_door" class="whiteBorder width_100" type="text" placeholder="porte 24">
-                            <input name="complements" class="whiteBorder width_100" type="text" placeholder="compléments">
-                        </div>
-                        <label for="country" class="colorBlue center margin15-30">Pays </label>
-                        <input id="country" name="firstname" class="whiteBorder width_100" type="text">
-                        <label for="postalCode" class="colorBlue center margin15-30">Code postal </label>
-                        <input id="postalCode" name="postalCode" class="whiteBorder width_100" type="text">
-                        <label for="city" class="colorBlue center margin15-30">Ville </label>
-                        <input id="city" name="city" class="whiteBorder width_100" type="text">
-                        <label for="phone" class="colorBlue center margin15-30">Téléphone </label>
-                        <input id="phone" name="phone" class="whiteBorder width_100" type="tel">
-                        <input type="submit" id="modifyInformation2" class="send modify modifyProfil" value="Enregistrer">
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="redButton" data-bs-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php
+    $title = "Ajout d'une adresse de livraison";
+    $delivery = 1;
+    $idModal = 'modalDeliveryAddress';
+    include $_SERVER['DOCUMENT_ROOT'] . "/_partials/addressModal.php";
+    ?>
+
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/_partials/footer.php";
