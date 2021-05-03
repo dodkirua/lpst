@@ -19,7 +19,7 @@ function sanitize(string $data) : String {
 function pre($text){
     echo "<pre>";
     var_dump($text);
-    echo "<pre>";
+    echo "</pre>";
 }
 
 function containerShop1 (?string $image, ?string $title, string $text) {
