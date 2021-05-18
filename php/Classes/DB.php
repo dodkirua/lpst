@@ -1,9 +1,7 @@
 <?php
 
 class DB{
-
     private static  ?PDO $dbInstance = null;
-
     /**
      * DbStatic constructor.
      */
@@ -14,7 +12,6 @@ class DB{
         else {
             require_once $_SERVER['DOCUMENT_ROOT'] . "/conf.php";
         }
-
         /**
          * @var String $host
          * @var String $db
@@ -30,7 +27,6 @@ class DB{
             echo $exception->getMessage();
         }
     }
-
     /**
      * Return PDO instance.
      */
@@ -41,7 +37,6 @@ class DB{
         }
         return self::$dbInstance;
     }
-
     /**
      * Avoid instance to be cloned.
      */

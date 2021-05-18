@@ -11,10 +11,10 @@ if (isset ($_POST['firstname']) || isset($_POST['lastname']) || isset($_POST['em
     $passRepeat = sanitize($_REQUEST['repeatPassword']);
     // verify that the password and verification password are the same
     if ($pass === $passRepeat){
-        $pass = password_hash($pass,PASSWORD_BCRYPT );
-
         //verify pattern of the pass
         if (checkPass($pass)){
+            $pass = password_hash($pass,PASSWORD_BCRYPT );
+
             $user = new UserManager();
             // test if mail exist in DB
             $id = $user->searchMail($mail);
